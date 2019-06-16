@@ -1,2 +1,2 @@
 # portfolio
-A webpage designed and developed to display personal projects.
+# A webpage designed and developed to display personal projects.
