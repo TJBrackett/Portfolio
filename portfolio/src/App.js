@@ -4,6 +4,7 @@ import './App.css'
 
 
 
+
 function Navbar() {
   return (
     <React.Fragment>
@@ -51,13 +52,21 @@ function Header() {
 
 function Portfolio() {
   return (
-    <article id="portfolio" className="portfolio">
-      <div className="text-center py-5">
-        <h1 className="display-4">Portfolio</h1>
-        <p className="lead">This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured content or information.</p>
-        <p>It uses utility classes for typography and spacing to space content out within the larger container.</p>
-      </div>
-    </article>
+    <React.Fragment>
+      <article id="portfolio">
+        <div className="text-center py-5">
+          <h1 className="display-4">Portfolio</h1>
+          <p className="lead">This is an example of my set of skills. Where I utitlize different languages to accomplish clean layouts.</p>
+        </div>
+      </article>
+      <article className="portfolio">
+        <div className="text-center py-5">
+          <h1 className="display-4">Portfolio</h1>
+          <p className="lead">This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured content or information.</p>
+          <p>It uses utility classes for typography and spacing to space content out within the larger container.</p>
+        </div>
+      </article>
+    </React.Fragment>
   )
 }
 
