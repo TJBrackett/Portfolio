@@ -9,7 +9,7 @@ function Navbar() {
   return (
     <React.Fragment>
       <nav class="navbar sticky-top navbar-expand-lg navbar-light bg-light">
-        <a class="navbar-brand" href="#">Navbar</a>
+        <a class="navbar-brand" href="#">Picture or Signature</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
@@ -19,16 +19,16 @@ function Navbar() {
           <div class="form-inline my-5 my-lg-0">
             <ul class="navbar-nav mr-auto">
               <li class="nav-item ml-3 mr-2">
-                <a class="nav-link" href="#header">Home</a>
+                <a class="nav-link " href="#header">Home</a>
               </li>
               <li class="nav-item ml-3 mr-2">
-                <a class="nav-link" href="#portfolio">Portfolio</a>
+                <a class="nav-link " href="#portfolio">Portfolio</a>
               </li>
               <li class="nav-item ml-3 mr-2">
-                <a class="nav-link" href="#about">About</a>
+                <a class="nav-link " href="#about">About</a>
               </li>
               <li class="nav-item ml-3 mr-2">
-                <a class="nav-link" href="#contact">Contact</a>
+                <a class="nav-link " href="#contact">Contact</a>
               </li>
             </ul>
           </div>
@@ -60,10 +60,10 @@ function Portfolio() {
         </div>
       </article>
       <article className="portfolio">
-        <div className="text-center py-5">
-          <h1 className="display-4">Portfolio</h1>
-          <p className="lead">This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured content or information.</p>
-          <p>It uses utility classes for typography and spacing to space content out within the larger container.</p>
+        <div class="view-overlay-zoom">
+          <img src="https://mdbootstrap.com/img/Photos/Horizontal/Nature/6-col/img%20(131).jpg" class="img-fluid " alt="smaple-image"/>
+          <div class="mask flex-center">
+          </div>
         </div>
       </article>
     </React.Fragment>
@@ -73,17 +73,17 @@ function Portfolio() {
 function About() {
   return (
     <React.Fragment>
-    <div id="about" class="flip-card">
-      <div class="flip-card-inner">
-      <div class="flip-card-front">
-      <h1>About Front</h1> 
-    </div>
-    <div class="flip-card-back">
-      <h1>About Back</h1> 
-    </div>
-  </div>
-</div>
-</React.Fragment>
+      <div id="about" class="flip-card">
+        <div class="flip-card-inner">
+          <div class="flip-card-front">
+            <h1>About Front</h1>
+          </div>
+          <div class="flip-card-back">
+            <h1>About Back</h1>
+          </div>
+        </div>
+      </div>
+    </React.Fragment>
   )
 }
 
@@ -92,13 +92,13 @@ function Contact() {
     <div id="contact" class="flip-card">
       <div class="flip-card-inner">
         <div class="flip-card-front">
-        <h1>Contact Front</h1> 
+          <h1>Contact Front</h1>
+        </div>
+        <div class="flip-card-back">
+          <h1>Contact Back</h1>
+        </div>
+      </div>
     </div>
-    <div class="flip-card-back">
-      <h1>Contact Back</h1> 
-    </div>
-  </div>
-</div>
   )
 }
 
