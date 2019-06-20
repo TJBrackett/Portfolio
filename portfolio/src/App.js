@@ -4,12 +4,11 @@ import './App.css'
 
 
 
-
 function Navbar() {
   return (
     <React.Fragment>
       <nav class="navbar sticky-top navbar-expand-lg navbar-light bg-light">
-        <a class="navbar-brand" href="#">Picture or Signature</a>
+        <img src="" alt="initals"/>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
@@ -45,6 +44,7 @@ function Header() {
         <h1 className="display-4">Hello, world!</h1>
         <p className="lead">This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured content or information.</p>
         <p>It uses utility classes for typography and spacing to space content out within the larger container.</p>
+        <button type="button" className="btn btn-success btn-lg mt-5" onClick>Portfolio</button>
       </div>
     </article>
   )
@@ -60,10 +60,12 @@ function Portfolio() {
         </div>
       </article>
       <article className="portfolio">
-        <div class="view-overlay-zoom">
-          <img src="https://mdbootstrap.com/img/Photos/Horizontal/Nature/6-col/img%20(131).jpg" class="img-fluid " alt="smaple-image"/>
-          <div class="mask flex-center">
-          </div>
+        <h3>Thumbnail Images</h3>
+        <div class="list-inline gallery">
+          <img class="thumbnail zoom" src="https://placeimg.com/110/110/abstract/1" alt="man" />
+          <img class="thumbnail zoom" src="https://placeimg.com/110/110/abstract/2" alt="girls" />
+          <img class="thumbnail zoom" src="https://placeimg.com/110/110/abstract/3" alt="girl" />
+          <img class="thumbnail zoom" src="https://placeimg.com/110/110/abstract/4" alt="girls" />
         </div>
       </article>
     </React.Fragment>
