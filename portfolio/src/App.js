@@ -1,8 +1,7 @@
 import React from 'react'
 import "bootstrap/dist/css/bootstrap.css"
 import './App.css'
-import logo from "./initial.JPG"
-
+import logo from "./initial.jpg"
 
 
 function Navbar() {
@@ -19,7 +18,7 @@ function Navbar() {
           <div class="form-inline my-5 my-lg-0">
             <ul class="navbar-nav mr-auto">
               <li class="nav-item ml-3 mr-2">
-                <a class="nav-link " href="#header">Home</a>
+                <a class="nav-link" href="#header">Home</a>
               </li>
               <li class="nav-item ml-3 mr-2">
                 <a class="nav-link " href="#portfolio">Portfolio</a>
@@ -76,13 +75,50 @@ function Portfolio() {
 function About() {
   return (
     <React.Fragment>
-      <div id="about" class="flip-card">
-        <div class="flip-card-inner">
-          <div class="flip-card-front">
-            <h1>About Front</h1>
+      <div className="container-fluid">
+        <div className="row">
+          <div className="col-lg-6">
+            <div id="about" class="flip-card">
+              <div className="flip-card-inner">
+                <div className="flip-card-front">
+                  <h1>About Front</h1>
+                </div>
+                <div className="flip-card-back">
+                  <h1>About Back</h1>
+                </div>
+              </div>
+            </div>
           </div>
-          <div class="flip-card-back">
-            <h1>About Back</h1>
+          <div className="col-lg-6">
+            <div id="contact" class="flip-card">
+              <div className="flip-card-inner">
+                <div className="flip-card-front">
+                  <h1>Contact Front</h1>
+                </div>
+                <div className="flip-card-back" >
+                  <form>
+                    <div class="form-row">
+                      <div class="form-group col-lg-12 col-md-6">
+                        <label for="FName">First Name</label>
+                        <input class="form-control form-control-sm" id="FName" placeholder="First Name" />
+                      </div>
+                      <div class="form-group col-lg-12 col-md-6">
+                        <label for="LName">Last Name</label>
+                        <input class="form-control form-control-sm" id="LName" placeholder="Last Name" />
+                      </div>
+                      <div class="form-group col-lg-12 col-md-6 col-sm-5">
+                        <label for="MI">MI</label>
+                        <input class="form-control form-control-sm" id="MI" placeholder="MI" />
+                      </div>
+                      <div class="form-group col form-group col-lg-12 col-md-6 col-sm-6">
+                        <label for="DOB">Birthday</label>
+                        <input class="form-control form-control-sm" id="DOB" type="date" placeholder="12345" />
+                      </div>
+                    </div>
+                  </form>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -90,20 +126,6 @@ function About() {
   )
 }
 
-function Contact() {
-  return (
-    <div id="contact" class="flip-card">
-      <div class="flip-card-inner">
-        <div class="flip-card-front">
-          <h1>Contact Front</h1>
-        </div>
-        <div class="flip-card-back">
-          <h1>Contact Back</h1>
-        </div>
-      </div>
-    </div>
-  )
-}
 
 function App() {
   return (
@@ -112,7 +134,6 @@ function App() {
       <Header />
       <Portfolio />
       <About />
-      <Contact />
     </React.Fragment>
   )
 }
