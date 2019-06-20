@@ -72,25 +72,33 @@ function Portfolio() {
 
 function About() {
   return (
-    <article id="about" className="about">
-      <div className="text-center py-5">
-        <h1 className="display-4">About</h1>
-        <p className="lead">This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured content or information.</p>
-        <p>It uses utility classes for typography and spacing to space content out within the larger container.</p>
-      </div>
-    </article>
+    <React.Fragment>
+    <div id="about" class="flip-card">
+      <div class="flip-card-inner">
+      <div class="flip-card-front">
+      <h1>About Front</h1> 
+    </div>
+    <div class="flip-card-back">
+      <h1>About Back</h1> 
+    </div>
+  </div>
+</div>
+</React.Fragment>
   )
 }
 
 function Contact() {
   return (
-    <article id="contact" className="footer">
-      <div className="text-center py-5">
-        <h1 className="display-4">Contact</h1>
-        <p className="lead">This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured content or information.</p>
-        <p>It uses utility classes for typography and spacing to space content out within the larger container.</p>
-      </div>
-    </article>
+    <div id="contact" class="flip-card">
+      <div class="flip-card-inner">
+        <div class="flip-card-front">
+        <h1>Contact Front</h1> 
+    </div>
+    <div class="flip-card-back">
+      <h1>Contact Back</h1> 
+    </div>
+  </div>
+</div>
   )
 }
 
