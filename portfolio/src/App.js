@@ -1,6 +1,7 @@
 import React from 'react'
 import "bootstrap/dist/css/bootstrap.css"
 import './App.css'
+import logo from "./initial.JPG"
 
 
 
@@ -8,7 +9,7 @@ function Navbar() {
   return (
     <React.Fragment>
       <nav class="navbar sticky-top navbar-expand-lg navbar-light bg-light">
-        <img src="" alt="initals" />
+        <img src={logo} alt="initals" />
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
