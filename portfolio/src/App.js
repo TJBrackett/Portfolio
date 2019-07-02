@@ -2,6 +2,7 @@ import React from 'react'
 import "bootstrap/dist/css/bootstrap.css"
 import './App.css'
 import logo from "./initial.jpg"
+import Card from './Card.js'
 
 
 function Navbar() {
