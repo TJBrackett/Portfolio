@@ -2,6 +2,7 @@ import React from 'react'
 import "bootstrap/dist/css/bootstrap.css"
 import './App.css'
 import logo from "./initial.jpg"
+import Project from "./Projects/Project.js"
 
 
 function Navbar() {
@@ -62,10 +63,8 @@ function Portfolio() {
       <article className="portfolio">
         <h3>Thumbnail Images</h3>
         <div class="list-inline gallery">
-          <img class="thumbnail zoom" src="https://placeimg.com/110/110/abstract/1" alt="man" />
-          <img class="thumbnail zoom" src="https://placeimg.com/110/110/abstract/2" alt="girls" />
-          <img class="thumbnail zoom" src="https://placeimg.com/110/110/abstract/3" alt="girl" />
-          <img class="thumbnail zoom" src="https://placeimg.com/110/110/abstract/4" alt="girls" />
+          {Project("Stuff", "thing", "https://www.google.com", "https://github.com/TJBrackett")}
+          {Project("Thing", "thing", "one more thing", "and another one")}
         </div>
       </article>
     </React.Fragment>
