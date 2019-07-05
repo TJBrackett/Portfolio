@@ -3,11 +3,15 @@ import { Card, Button } from "react-bootstrap";
 
 
 function Project(title, description, img, pageLink, githubLink) {
-  console.log(img);
+  let pic = "";
+  for (let key in img) {
+    pic = img[key];
+  }
+
   return (
     <Card style={{ width: '18rem' }}>
       <Card.Title>{title}</Card.Title>
-      <Card.Img src={img} alt="background-image" />
+      <Card.Img src={pic} alt="background-image" />
       <Card.Body>
         <Card.Text>
           {description}
