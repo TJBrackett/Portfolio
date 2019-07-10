@@ -126,6 +126,7 @@ function About() {
     </React.Fragment>
   )
 }
+
 function Footer() {
   return(
     <div>
