@@ -1,4 +1,4 @@
-.hero{
+.hero {
     height: 50rem;
     background: grey;
 }
@@ -6,6 +6,7 @@
     height: 50rem;
     background: brown;
 }
+
 
 /**THE SAME CSS IS USED IN ALL 3 DEMOS**/    
 /**gallery margins**/  

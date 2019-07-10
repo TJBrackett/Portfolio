@@ -24,13 +24,13 @@ function Navbar() {
                 <a class="nav-link" href="#header">Home</a>
               </li>
               <li class="nav-item ml-3 mr-2">
-                <a class="nav-link " href="#portfolio">Portfolio</a>
+                <a class="nav-link" href="#portfolio">Portfolio</a>
               </li>
               <li class="nav-item ml-3 mr-2">
-                <a class="nav-link " href="#about">About</a>
+                <a class="nav-link" href="#about">About</a>
               </li>
               <li class="nav-item ml-3 mr-2">
-                <a class="nav-link " href="#contact">Contact</a>
+                <a class="nav-link" href="#contact">Contact</a>
               </li>
             </ul>
           </div>
@@ -66,7 +66,7 @@ function Portfolio() {
         <h3>Thumbnail Images</h3>
         <div class="list-inline gallery">
           {Project("Stuff", "thing", {logo},"https://www.google.com", "https://github.com/TJBrackett")}
-          {Project("Thing", "thing", {logo2}, "one more thing", "and another one")}
+          {Project("Thing", "thing", {logo2}, "https://www.google.com", "https://github.com/joemark1989/portfolio")}
         </div>
       </article>
     </React.Fragment>
@@ -128,6 +128,15 @@ function About() {
   )
 }
 
+function Footer() {
+  return(
+    <div>
+
+    </div>
+  )
+
+}
+
 
 function App() {
   return (
@@ -136,6 +145,7 @@ function App() {
       <Header />
       <Portfolio />
       <About />
+      <Footer />
     </React.Fragment>
   )
 }

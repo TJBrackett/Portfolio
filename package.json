@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/joemark1989/portfolio/issues"
   },
-  "homepage": "https://github.com/joemark1989/portfolio#readme"
+  "homepage": "https://github.com/joemark1989/portfolio#readme",
+  "dependencies": {
+    "nodemailer": "^6.2.1"
+  }
 }
