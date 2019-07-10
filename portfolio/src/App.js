@@ -97,7 +97,7 @@ function About() {
                   <h1>Contact Front</h1>
                 </div>
                 <div className="flip-card-back" >
-                  <form>
+                  <form method="post">
                     <div class="form-row">
                       <div class="form-group col-lg-12 col-md-6">
                         <label for="FName">First Name</label>
@@ -116,6 +116,7 @@ function About() {
                         <input class="form-control form-control-sm" id="DOB" type="date" placeholder="12345" />
                       </div>
                     </div>
+                    <button type="submit">Submit</button> 
                   </form>
                 </div>
               </div>

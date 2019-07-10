@@ -24,5 +24,4 @@ function Project(title, description, img, pageLink, githubLink) {
 }
 
 
-
 export default Project;
