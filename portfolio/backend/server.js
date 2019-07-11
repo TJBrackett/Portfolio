@@ -1,33 +1,49 @@
-const http = require("http");
-const nodemailer = require("nodemailer");
+const nodemailer = require('nodemailer');
+const express = require('express');
+const bodyParser = require('body-parser');
+const app = express();
 
-
-
-http.createServer ((req, res) => {
-    console.log('Server created.');
-    res.writeHead(200, {'Content-type': 'text/html'});
-    res.end('Hello World!');
-}).listen(8888);
-
-let transporter = nodemailer.createTransport({
-    service: 'gmail',
-    auth: {
-        user: 'brackett.tj@gmail.com',
-        pass: 'kosmysmpgdvklzrx'
-    }
+app.use((req, res, next) => {
+    res.header('Access-Control-Allow-Origin', "*");
+    res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept');
+    next();
 });
 
-let mailOptions = {
-    from: '',
-    to: 'tj@brackett.dev',
-    subject: '',
-    text: '',
-};
 
-transporter.sendMail(mailOptions, (error, info) => {
-    if (error) {
-        console.log(error);
-    } else {
-        console.log('Email sent: ' + info.response);
-    }
-});
+app.use(bodyParser.urlencoded({ extended: true }));
+app.use(express.json());
+
+app.post('/', (req, res) => {
+    let name = req.body.name;
+    let email = req.body.email;
+    let subject = req.body.subject;
+    let message = req.body.message;
+    console.log(req.body);
+    
+    let transporter = nodemailer.createTransport({
+        service: 'gmail',
+        auth: {
+            user: 'brackett.tj@gmail.com',
+            pass: 'kosmysmpgdvklzrx'
+        }
+    });
+    
+    let mailOptions = {
+        from: email,
+        to: 'brackett.tj@gmail.com',
+        subject: subject,
+        text: message + "\nName: " + name + "\nEmail: " + email,
+    };
+    
+    transporter.sendMail(mailOptions, (error, info) => {
+        if (error) {
+            console.log(error);
+        } else {
+            console.log('Email sent: ' + info.response);
+        }
+    });
+    
+    res.send(req.body);
+})
+
+app.listen(8888);
