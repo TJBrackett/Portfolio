@@ -27,10 +27,10 @@ function Navbar() {
                 <a className="nav-link" href="#portfolio">Portfolio</a>
               </li>
               <li className="nav-item ml-3 mr-2">
-                <a className="nav-link" href="#about">About</a>
+                <a className="nav-link" href="http://localhost:3000/about">About</a>
               </li>
               <li className="nav-item ml-3 mr-2">
-                <a className="nav-link" href="#contact">Contact</a>
+                <a className="nav-link" href="http://localhost:3000/contact">Contact</a>
               </li>
             </ul>
           </div>
