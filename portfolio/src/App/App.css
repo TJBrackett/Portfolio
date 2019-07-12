@@ -7,6 +7,11 @@
     background: brown;
 }
 
+.contactHero{
+    height: 25rem;
+    background: grey;
+}
+
 
 /**THE SAME CSS IS USED IN ALL 3 DEMOS**/    
 /**gallery margins**/  
@@ -107,8 +112,3 @@ ul.gallery{
 .emailLabel{
     float:left;
 }
-/* .form-group{
-    width:75%;
-    float: right;
-    text-align: left;
-} */
