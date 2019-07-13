@@ -2,6 +2,7 @@ import React from 'react';
 import Navbar from "../Navbar/Navbar.js"
 import "./Contact.css"
 import header from "../Images/Contact-Image.jpg"
+import Footer from "../Footer/Footer.js"
 
 
 class Contact extends React.Component {
@@ -79,6 +80,7 @@ class Contact extends React.Component {
                         <button type="submit" class="btn-secondary btn-outline-dark btn-lg col-centered col-md-3 mt-5">Submit</button>
                     </div>
                 </form>
+                <Footer/>
             </React.Fragment>
         );
     }

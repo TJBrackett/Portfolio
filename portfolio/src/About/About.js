@@ -1,5 +1,6 @@
 import React from 'react';
 import Navbar from "../Navbar/Navbar.js"
+import Footer from "../Footer/Footer.js"
 
 function About() {
   return (
@@ -19,6 +20,7 @@ function Render() {
     <React.Fragment>
       <Navbar />
       <About />
+      <Footer/>
     </React.Fragment>
   )
 }

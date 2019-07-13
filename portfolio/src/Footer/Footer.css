@@ -1,0 +1,9 @@
+.footer {
+    height: 7rem;
+    background: rgb(39, 38, 38);
+}
+
+a:hover {
+    text-decoration-style: none;
+    color:white;
+}

@@ -1,9 +1,9 @@
 import React from 'react'
 import './App.css'
-import logo from "../Images/initial.png"
-import logo2 from "../Images/logo.svg"
 import Project from "../Projects/Project.js"
 import Navbar from "../Navbar/Navbar.js"
+import Footer from "../Footer/Footer.js"
+import test from "../Projects/backgrounds/test.jpg"
 
 function Header() {
   return (
@@ -27,32 +27,33 @@ function Portfolio() {
           <p className="lead">This is an example of my set of skills. Where I utitlize different languages to accomplish clean layouts.</p>
         </div>
       </article>
-      <article className="portfolio">
-        <h3>Thumbnail Images</h3>
-        <div className="list-inline gallery">
-          {Project("Stuff", "thing", { logo }, "https://www.google.com", "https://github.com/TJBrackett")}
-          {Project("Thing", "thing", { logo2 }, "https://www.google.com", "https://github.com/joemark1989/portfolio")}
+      <div className="portfolio container-fluid p-5">
+        <div className="row">
+          {Project("Stuff", "thing", { test }, "https://www.google.com", "https://github.com/TJBrackett")}
+          {Project("Thing", "thing", { test }, "https://www.google.com", "https://github.com/joemark1989/portfolio")}
         </div>
-      </article>
+      </div>
     </React.Fragment>
   )
 }
 
 function TopFooter() {
   return (
-    <div>
-
-    </div>
+    <React.Fragment>
+      <div className="container-fluid">
+        <div className="row">
+          <a href="http://localhost:3000/about" className="topFooter-about col-lg-6 col-sm-12">
+              <h1 className="display-4 center">About Me</h1>
+          </a>
+          <a href="http://localhost:3000/contact" className="topFooter-contact col-lg-6 col-sm-12">
+              <h1 className="display-4 center">Contact Me</h1>
+          </a>
+        </div>
+      </div>
+    </React.Fragment>
   )
 }
 
-function Footer() {
-  return (
-    <div>
-      
-    </div>
-  )
-}
 
 function Render() {
   return (

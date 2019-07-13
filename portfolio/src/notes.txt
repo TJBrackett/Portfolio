@@ -1,0 +1,6 @@
+1. Get cards styled --- Done
+2. Create big footer just on homepage to style the href to hover a color --Done
+3. create small footer --Working
+4. Create about me
+5. General clean up on all pages for example header on home. Clean up errors as well noticeable in terminal.
+6. Lastly, host this shit. 

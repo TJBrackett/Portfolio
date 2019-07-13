@@ -5,3 +5,6 @@
 .pic {
     max-width: 45%;
 }
+a:hover {
+    background-color: #616A7F;
+}
