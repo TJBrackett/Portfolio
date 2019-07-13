@@ -66,6 +66,7 @@ ul.gallery{
 
 .topFooter-about {
     border-right: 1px solid #507e4e;
+    border-bottom: 1px solid #507e4e;
     background-color: rgb(58, 56, 56);
     color: #507e4e;
 }
@@ -78,6 +79,7 @@ ul.gallery{
 
 .topFooter-contact {
     border-left: 1px solid #507e4e;
+    border-bottom: 1px solid #507e4e;
     background: rgb(58, 56, 56);
     color: #507e4e;
 }
