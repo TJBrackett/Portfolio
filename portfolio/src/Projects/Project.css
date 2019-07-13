@@ -2,3 +2,7 @@
     background: rgb(58, 56, 56);
     color: white;
 }
+#projCard {
+    max-width: 300px;
+    max-height: 400px;
+}

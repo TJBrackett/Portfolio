@@ -20,7 +20,7 @@ function Project(title, description, img, pageLink, githubLink) {
     //     <Button href={pageLink}>Check it out</Button>
     //   </Card.Body>
     // </Card>
-    <div>
+    <div id="projCard">
       <div className="card bg-color border-dark border rounded-0 m-2">
         <h5 className="card-title text-center">{title}</h5>
         <img className="img-fluid card-img-top" src={pic}/>
