@@ -1,3 +1,0 @@
-1. Figure out how make image flush with background color and no white space. 
-2. General clean up on all pages for example header on home. Clean up errors as well noticeable in terminal. 
-2. Lastly, host this shit.
