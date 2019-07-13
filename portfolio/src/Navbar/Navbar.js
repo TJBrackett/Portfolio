@@ -24,7 +24,7 @@ function Navbar() {
                   </a>
                 </li>
                 <li className="nav-item">
-                  <a className="link nav-link text-white font-weight-bold" href={Resume} target="_blank">
+                  <a className="link nav-link text-white font-weight-bold" href={Resume} target="_blank" rel="noopener noreferrer">
                     <div className="navLink">
                       Resume
                     </div>
