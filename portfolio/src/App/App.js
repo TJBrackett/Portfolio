@@ -12,7 +12,6 @@ function Header() {
         <h1 className="display-4">Hello, world!</h1>
         <p className="lead">This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured content or information.</p>
         <p>It uses utility classes for typography and spacing to space content out within the larger container.</p>
-        <button type="button" className="btn btn-success btn-lg mt-5" onClick>Resume</button>
       </div>
     </article>
   )
@@ -27,11 +26,9 @@ function Portfolio() {
           <p className="lead">This is an example of my set of skills. Where I utitlize different languages to accomplish clean layouts.</p>
         </div>
       </article>
-      <div className="portfolio container-fluid p-5">
-        <div className="row">
+      <div className="portfolio p-5 d-flex justify-content-center flex-wrap">
           {Project("Stuff", "thing", { test }, "https://www.google.com", "https://github.com/TJBrackett")}
           {Project("Thing", "thing", { test }, "https://www.google.com", "https://github.com/joemark1989/portfolio")}
-        </div>
       </div>
     </React.Fragment>
   )
@@ -43,10 +40,10 @@ function TopFooter() {
       <div className="container-fluid">
         <div className="row">
           <a href="http://localhost:3000/about" className="topFooter-about col-lg-6 col-sm-12">
-              <h1 className="display-4 center">About Me</h1>
+            <h1 className="display-4 center">About Me</h1>
           </a>
           <a href="http://localhost:3000/contact" className="topFooter-contact col-lg-6 col-sm-12">
-              <h1 className="display-4 center">Contact Me</h1>
+            <h1 className="display-4 center">Contact Me</h1>
           </a>
         </div>
       </div>

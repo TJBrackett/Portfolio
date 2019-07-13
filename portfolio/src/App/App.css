@@ -4,7 +4,7 @@
 }
 .portfolio {
 
-    background: #616A7F;
+    background: #4e5e7e;
 }
 
 
@@ -71,11 +71,8 @@ ul.gallery{
 }
 
 .topFooter-about {
-    height: 30rem;
-    width: 60rem;
     background-color: grey;
     color:black;
-    
 }
 
 .topFooter-about:hover{
@@ -84,8 +81,6 @@ ul.gallery{
 }
 
 .topFooter-contact {
-    height: 30rem;
-    width: 60rem;
     background: rgb(58, 56, 56);
     color:white;
 }

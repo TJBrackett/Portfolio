@@ -5,6 +5,17 @@
 .pic {
     max-width: 45%;
 }
-a:hover {
-    background-color: #616A7F;
+.navLink{
+    text-align: center;
+    vertical-align: middle;
+    line-height: 3rem;
+}
+.link:hover {
+    background-color: #4e5e7e;
+}
+
+.navbar-collapse {
+    display: inline-block;
+    float: none;
+    vertical-align: top;
 }

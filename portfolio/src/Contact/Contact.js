@@ -12,7 +12,8 @@ class Contact extends React.Component {
             name: '',
             email: '',
             subject: '',
-            message: ''
+            message: '',
+            status: 0
         };
 
         this.nameChange = this.nameChange.bind(this);
@@ -20,6 +21,7 @@ class Contact extends React.Component {
         this.subjectChange = this.subjectChange.bind(this);
         this.messageChange = this.messageChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
+
     }
     nameChange(event) {
         this.setState({ name: event.target.value });
@@ -32,6 +34,14 @@ class Contact extends React.Component {
     }
     messageChange(event) {
         this.setState({ message: event.target.value });
+    }
+
+    handleLoginClick() {
+        this.setState({ handleSubmit: true });
+    }
+
+    handleLogoutClick() {
+        this.setState({ handleSubmit: false });
     }
 
     handleSubmit(event) {
@@ -47,42 +57,73 @@ class Contact extends React.Component {
                 message: this.state.message
             })
         })
-            .then(res => res.json())
-            .then(data => console.log(data))
-            .catch(err => console.log(err))
-        console.log(this.state.name);
+            .then(res => {
+                if (res.ok) {
+                    this.setState({ status: res.status })
+                    this.setState({ name: "" });
+                    this.setState({ email: "" });
+                    this.setState({ subject: "" });
+                    this.setState({ message: "" });
+                } else {
+                    this.state({ status: res.status })
+                }
+            })
+            .catch(err => console.log(err));
     }
     render() {
+
+        const status = this.state.status;
+        let alert;
+
+        if (status === 200) {
+            alert = (<div class="alert alert-success alert-dismissible fade show text-center" data-auto-dismiss="2000" role="alert">
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <strong>Email successfully sent!</strong>
+          </div>)
+        } else if (status > 0 && status !== 200) {
+            alert = (<div class="alert alert-danger alert-dismissible fade show text-center" data-auto-dismiss="2000" role="alert">
+                <strong>Email failed to send. Please try again.</strong>
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>)
+        }
         return (
             <React.Fragment>
                 <Navbar />
-                    <div className="resize">
-                        <img src={header} class="img-fluid"/>
-                    </div>
+                <div>
+                    <img src={header} class="img-fluid" />
+                </div>
                 <form className="bg" onSubmit={this.handleSubmit}>
                     <div class="form-row p-4">
                         <div class="form-group col-md-10 col-centered mt-5">
                             <label className="textChange" for="name">Name:</label>
-                            <input type="text" class="form-control form-control-lg" id="name" value={this.state.name} onChange={this.nameChange} placeholder="Name" />
+                            <input type="text" class="form-control form-control-lg" id="name" value={this.state.name} onChange={this.nameChange} placeholder="Name" required />
                         </div>
                         <div class="form-group col-md-10 col-centered mt-5">
                             <label className="textChange" for="email">Email:</label>
-                            <input type="email" class="form-control form-control-lg" id="email" value={this.state.email} onChange={this.emailChange} placeholder="Email" />
+                            <input type="email" class="form-control form-control-lg" id="email" value={this.state.email} onChange={this.emailChange} placeholder="Email" required />
                         </div>
                         <div class="form-group col-md-10 col-centered mt-5">
                             <label className="textChange" for="subject">Subject:</label>
-                            <input type="text" class="form-control form-control-lg" id="subject" value={this.state.subject} onChange={this.subjectChange} placeholder="Subject" />
+                            <input type="text" class="form-control form-control-lg" id="subject" value={this.state.subject} onChange={this.subjectChange} placeholder="Subject" required />
                         </div>
                         <div class="form-group col-md-10 col-centered mt-5">
                             <label className="textChange" for="message">Message:</label>
-                            <textarea class="form-control form-control-lg" id="message" rows="4" value={this.state.message} onChange={this.messageChange}></textarea>
+                            <textarea class="form-control form-control-lg" id="message" rows="4" value={this.state.message} onChange={this.messageChange} required></textarea>
                         </div>
-                        <button type="submit" class="btn-secondary btn-outline-dark btn-lg col-centered col-md-3 mt-5">Submit</button>
+                        <button type="submit" class="subButton btn-secondary btn-outline-dark btn-lg col-centered col-md-3 mt-5">Submit</button>
                     </div>
                 </form>
-                <Footer/>
+                <div className="bg text-center d-flex justify-content-center">
+                    <div className="row">
+                        {alert}
+                    </div>
+                </div>
+                <Footer />
             </React.Fragment>
-        );
+        )
     }
 }
+
 export default Contact;

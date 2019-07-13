@@ -21,16 +21,16 @@ function Project(title, description, img, pageLink, githubLink) {
     //     <Button href={pageLink}>Check it out</Button>
     //   </Card.Body>
     // </Card>
-    <div class="col-lg-3 col-md-6 mb-4 col-sm-12">
-      <div class="card bg-color border-dark border rounded-0">
-        <h5 class="card-title text-center">{title}</h5>
-        <img class="img-fluid card-img-top" src={pic} alt="Card image"></img>
-        <div class="card-body">
-          <p class="card-text">{description}</p>
+    <div>
+      <div className="card bg-color border-dark border rounded-0 m-2">
+        <h5 className="card-title text-center">{title}</h5>
+        <img className="img-fluid card-img-top" src={pic} alt="Card image"></img>
+        <div className="card-body">
+          <p className="card-text">{description}</p>
         </div>
-        <div class="btn-group" role="group">
-          <button type="button" class="border rounded-0 border-dark btn-secondary btn-outline-dark btn-lg col-6" href={githubLink}>Github</button>
-          <button type="button" class="border rounded-0 border-dark btn-secondary btn-outline-dark btn-lg col-6" href={pageLink}>Check it out</button>
+        <div className="btn-group" role="group">
+          <button type="button" className="border rounded-0 border-dark btn-secondary btn-outline-dark btn-lg col-6" href={githubLink}>Github</button>
+          <button type="button" className="border rounded-0 border-dark btn-secondary btn-outline-dark btn-lg col-6" href={pageLink}>Check it out</button>
         </div>
       </div>
     </div>
@@ -39,3 +39,18 @@ function Project(title, description, img, pageLink, githubLink) {
 
 
 export default Project;
+
+
+{/* <div className="col-lg-3 col-md-6 mb-4 col-sm-12">
+<div className="card bg-color border-dark border rounded-0">
+  <h5 className="card-title text-center">{title}</h5>
+  <img className="img-fluid card-img-top" src={pic} alt="Card image"></img>
+  <div className="card-body">
+    <p className="card-text">{description}</p>
+  </div>
+  <div className="btn-group" role="group">
+    <button type="button" className="border rounded-0 border-dark btn-secondary btn-outline-dark btn-lg col-6" href={githubLink}>Github</button>
+    <button type="button" className="border rounded-0 border-dark btn-secondary btn-outline-dark btn-lg col-6" href={pageLink}>Check it out</button>
+  </div>
+</div>
+</div> */}

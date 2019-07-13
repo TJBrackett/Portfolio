@@ -1,9 +1,11 @@
 .footer {
-    height: 7rem;
     background: rgb(39, 38, 38);
 }
 
+a {
+    color: #4e5e7e;
+}
 a:hover {
-    text-decoration-style: none;
+    background-color: transparent;
     color:white;
 }

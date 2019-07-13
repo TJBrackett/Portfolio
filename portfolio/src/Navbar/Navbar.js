@@ -11,22 +11,38 @@ function Navbar() {
           <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span className="navbar-toggler-icon"></span>
           </button>
-          <div className="collapse navbar-collapse" id="navbarSupportedContent">
+          <div className="navbar collapse navbar-collapse" id="navbarSupportedContent">
             <div className="navbar-nav mr-auto">
             </div>
-            <div className="form-inline my-5 my-lg-0">
+            <div className="form-inline my-5 my-lg-0 mr-4">
               <ul className="navbar-nav mr-auto">
-                <li className="nav-item ml-3 mr-2">
-                  <a className="nav-link text-white font-weight-bold" href="http://localhost:3000">Home</a>
+                <li className="nav-item">
+                  <a className="link nav-link text-white font-weight-bold" href="http://localhost:3000">
+                    <div className="navLink">
+                      Home
+                    </div>
+                  </a>
                 </li>
-                <li className="nav-item ml-3 mr-2">
-                  <a className="nav-link text-white font-weight-bold" href={Resume} target="_blank">Resume</a>
+                <li className="nav-item">
+                  <a className="link nav-link text-white font-weight-bold" href={Resume} target="_blank">
+                    <div className="navLink">
+                      Resume
+                    </div>
+                  </a>
                 </li>
-                <li className="nav-item ml-3 mr-2">
-                  <a className="nav-link text-white font-weight-bold" href="http://localhost:3000/about">About</a>
+                <li className="nav-item">
+                  <a className="link nav-link text-white font-weight-bold" href="http://localhost:3000/about">
+                    <div className="navLink">
+                      About
+                    </div>
+                  </a>
                 </li>
-                <li className="nav-item ml-3 mr-2">
-                  <a className="nav-link text-white font-weight-bold" href="http://localhost:3000/contact">Contact</a>
+                <li className="nav-item">
+                  <a className="link nav-link text-white font-weight-bold" href="http://localhost:3000/contact">
+                    <div className="navLink">
+                      Contact
+                    </div>
+                  </a>
                 </li>
               </ul>
             </div>
