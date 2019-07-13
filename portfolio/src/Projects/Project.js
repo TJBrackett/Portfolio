@@ -29,8 +29,8 @@ function Project(title, description, img, pageLink, githubLink) {
           <p className="card-text">{description}</p>
         </div>
         <div className="btn-group" role="group">
-          <button type="button" className="border rounded-0 border-dark btn-secondary btn-outline-dark btn-lg col-6" href={githubLink}>Github</button>
-          <button type="button" className="border rounded-0 border-dark btn-secondary btn-outline-dark btn-lg col-6" href={pageLink}>Check it out</button>
+          <a type="button" className="border rounded-0 border-dark btn-secondary btn-outline-dark btn-lg col-6 text-center" href={githubLink}>Github</a>
+          <a type="button" className="border rounded-0 border-dark btn-secondary btn-outline-dark btn-lg col-6 text-center" href={pageLink}>Check it out</a>
         </div>
       </div>
     </div>

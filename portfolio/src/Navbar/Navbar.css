@@ -8,10 +8,11 @@
 .navLink{
     text-align: center;
     vertical-align: middle;
-    line-height: 3rem;
+    line-height: 4rem;
 }
-.link:hover {
+.link:hover .navLink {
     background-color: #4e5e7e;
+    color: black;
 }
 
 .navbar-collapse {

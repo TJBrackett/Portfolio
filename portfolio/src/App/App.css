@@ -1,17 +1,16 @@
 .hero {
     height: 50rem;
-    background: grey;
+    background: rgb(58, 56, 56);
+    color: white;
 }
 .portfolio {
 
     background: #4e5e7e;
 }
-
-
-.contactHero{
-    height: 25rem;
-    background: grey;
+#portfolio {
+    background: #507e4e;
 }
+
 a:link {
     text-decoration: none;
 }
@@ -61,33 +60,32 @@ ul.gallery{
     }
 
 
-.about {
-    height: 50rem;
-    background: blue;
-}
-
 .emailLabel{
     float:left;
 }
 
 .topFooter-about {
-    background-color: grey;
-    color:black;
+    border-right: 1px solid #507e4e;
+    background-color: rgb(58, 56, 56);
+    color: #507e4e;
 }
 
 .topFooter-about:hover{
-    background-color: #616A7F;
+    border-top: 1px solid rgb(58, 56, 56);
+    background-color: #507e4e;
     color:rgb(58, 56, 56);
 }
 
 .topFooter-contact {
+    border-left: 1px solid #507e4e;
     background: rgb(58, 56, 56);
-    color:white;
+    color: #507e4e;
 }
 
 .topFooter-contact:hover{
-    background-color: grey;
-    color:black;
+    border-top: 1px solid rgb(58, 56, 56);
+    background-color: #507e4e;
+    color:rgb(58, 56, 56);
 }
 
 .center{

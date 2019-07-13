@@ -94,7 +94,7 @@ class Contact extends React.Component {
                 <div>
                     <img src={header} class="img-fluid" />
                 </div>
-                <form className="bg" onSubmit={this.handleSubmit}>
+                <form className="bgContact" onSubmit={this.handleSubmit}>
                     <div class="form-row p-4">
                         <div class="form-group col-md-10 col-centered mt-5">
                             <label className="textChange" for="name">Name:</label>
@@ -115,7 +115,7 @@ class Contact extends React.Component {
                         <button type="submit" class="subButton btn-secondary btn-outline-dark btn-lg col-centered col-md-3 mt-5">Submit</button>
                     </div>
                 </form>
-                <div className="bg text-center d-flex justify-content-center">
+                <div className="bgContact text-center d-flex justify-content-center">
                     <div className="row">
                         {alert}
                     </div>

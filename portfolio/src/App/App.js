@@ -28,7 +28,7 @@ function Portfolio() {
       </article>
       <div className="portfolio p-5 d-flex justify-content-center flex-wrap">
           {Project("Stuff", "thing", { test }, "https://www.google.com", "https://github.com/TJBrackett")}
-          {Project("Thing", "thing", { test }, "https://www.google.com", "https://github.com/joemark1989/portfolio")}
+          {Project("Street Smarts", "Final Project for Computer Science at MJC. Collaborated with two other students over 3 months.", { test }, "http://streetsmarts.dev", "https://github.com/TJBrackett-School/Street-Smarts-frontend")}
       </div>
     </React.Fragment>
   )
