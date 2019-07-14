@@ -24,7 +24,7 @@ function Footer() {
       </div>
       <div className="container-fluid footer text-center text-white">
         <div>
-          © 2019 TJ Brackett All Rights Reserved.
+          © 2019 TJ Brackett
       </div>
       </div>
     </React.Fragment>

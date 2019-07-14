@@ -5,10 +5,10 @@
 }
 .portfolio {
 
-    background: #4e5e7e;
+    background: #557A95;
 }
-#portfolio {
-    background: #4e5e7e;
+#portfolioHeader {
+    background: #D5D5D7;
 }
 
 a:link {
@@ -65,33 +65,37 @@ ul.gallery{
 }
 
 .topFooter-about {
-    border-right: 1px solid #4e5e7e;
-    border-bottom: 1px solid #4e5e7e;
+    max-height: 30rem;
+    border-right: 1px solid #557A95;
+    border-bottom: 1px solid #557A95;
     background-color: rgb(58, 56, 56);
-    color: #4e5e7e;
+    color: #557A95;
 }
 
 .topFooter-about:hover{
     border-top: 1px solid rgb(58, 56, 56);
-    background-color: #4e5e7e;
+    border-bottom: 1px solid rgb(58, 56, 56);
+    background-color: #557A95;
     color:rgb(58, 56, 56);
 }
 
 .topFooter-contact {
-    border-left: 1px solid #4e5e7e;
-    border-bottom: 1px solid #4e5e7e;
+    max-height: 30rem;
+    border-left: 1px solid #557A95;
+    border-bottom: 1px solid #557A95;
     background: rgb(58, 56, 56);
-    color: #4e5e7e;
+    color: #557A95;
 }
 
 .topFooter-contact:hover{
     border-top: 1px solid rgb(58, 56, 56);
-    background-color: #4e5e7e;
+    border-bottom: 1px solid rgb(58, 56, 56);
+    background-color: #557A95;
     color:rgb(58, 56, 56);
 }
 
 .center{
     text-align: center;
     vertical-align: middle;
-    line-height: 30rem;
+    line-height: 15rem;
 }

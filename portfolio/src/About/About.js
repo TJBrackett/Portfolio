@@ -10,7 +10,7 @@ function About() {
       <div className="container-fluid bg">
         <div className="row">
           <div className="col-lg-6 col-md-6 col-sm-12 p-0">
-            <img className="img-fluid aboutImg" src={rock}/>
+            <img className="img-fluid aboutImg" src={rock} alt="Me" />
           </div>
           <div className="rightSide col-lg-6 col-md-6 col-sm-12 mt-5 text-center p-4">
             <h1 className="display-4 text-center">Hello, world!</h1>

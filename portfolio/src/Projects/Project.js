@@ -21,15 +21,15 @@ function Project(title, description, img, pageLink, githubLink) {
     //   </Card.Body>
     // </Card>
     <div id="projCard">
-      <div className="card bg-color border-dark border rounded-0 m-2">
+      <div className="card bg-color border-dark border rounded-0 m-3">
         <h5 className="card-title text-center">{title}</h5>
-        <img className="img-fluid card-img-top" src={pic}/>
+        <img className="img-fluid card-img-top" src={pic} alt="projectPic" />
         <div className="card-body">
           <p className="card-text">{description}</p>
         </div>
         <div className="btn-group" role="group">
           <a type="button" className="border rounded-0 border-dark btn-secondary btn-outline-dark btn-lg col-6 text-center" href={githubLink}>Github</a>
-          <a type="button" className="border rounded-0 border-dark btn-secondary btn-outline-dark btn-lg col-6 text-center" href={pageLink}>Check it out</a>
+          <a type="button" className="border rounded-0 border-dark btn-secondary btn-outline-dark btn-lg col-6 text-center" href={pageLink}>App</a>
         </div>
       </div>
     </div>

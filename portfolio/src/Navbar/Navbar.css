@@ -1,5 +1,5 @@
 .nav-bg {
-    background-color: #353535d5;
+    background-color: rgba(58, 56, 56, 0.945);
 }
 
 .pic {
@@ -9,10 +9,11 @@
     text-align: center;
     vertical-align: middle;
     line-height: 4rem;
+    color: #557A95
 }
 .link:hover .navLink {
-    background-color: #4e5e7e;
-    color: black;
+    /* background-color: #4e5e7e; */
+    color: white;
 }
 
 .navbar-collapse {
