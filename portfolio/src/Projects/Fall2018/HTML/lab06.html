@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Lab 06</title>
+	<meta charset = "utf-8">
+	<link rel = "stylesheet" href = "../CSS/lab06.css">
+	<script src = "../JS/lab06.js"></script>
+</head>
+<body>
+	<h1>Math Game</h1>
+		<br>
+	<label>Enter your name:</label>
+		<br>
+	<input type = "text" id = "user" value = "">
+		<br>
+	<label>Please enter the range of numbers you'd like to use.</label>
+		<br><br>
+	<label>Minimum:</label>
+		<br>
+	<input type = "text" id = "min" value = "">
+		<br>
+	<label>Maximum:</label>
+		<br>
+	<input type = "text" id = "max" value = "">
+		<br>
+	<select id = "gameType" name = "gameType">
+		<option value = "add">Addition</option>
+		<option value = "sub">Subtraction</option>
+		<option value = "multi">Multiplication</option>
+		<option value = "rand">Random Signs</option>
+	</select>
+	<input type = "button" name ="redirect" id = "redirect" value = "Go" onClick ="init();redirect();"> 
+<script>window.onload = roll();</script>
+</body>
+</html>

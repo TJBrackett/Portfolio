@@ -1,0 +1,33 @@
+input [type=text]:focus {
+	border: 3px solid #555;
+	background-color: #3CBC8D;
+}
+input[type=button] {
+    background-color: #4CAF50;
+    border: none;
+    color: white;
+    padding: 16px 32px;
+    text-decoration: none;
+    margin: 4px 2px;
+    cursor: pointer;
+}
+input[type=text] {
+    padding: 12px 20px;
+    margin: 8px 0;
+	font-size: 40px;
+	text-align: center;
+	background-color: lightgray;
+}
+body {
+	text-align: center;
+	background-color: lightblue;
+}
+form {
+	display: inline-block;
+}
+p {
+	line-height: 10%;
+	font-size: 50px;
+	font-weight: bold;
+}
+

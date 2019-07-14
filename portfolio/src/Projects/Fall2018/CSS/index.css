@@ -1,0 +1,40 @@
+.box{
+	display: none;
+	max-width: 50%;
+	max-height:50%;
+}
+a:hover + .box, .box:hover{
+	display: block;
+	position: relative;
+	z-index: 100;
+}
+table, td{
+	border: 2px solid black;
+	border-collapse: collapse;
+	padding: 10px;
+	background-color: white;
+	font-family: 'Julius Sans One', sans-serif;
+}
+img {
+	border: 1px solid;
+	border-radius: 8px;
+	width: 150px;
+}
+img:hover + .box, .box:hover{
+	display: block;
+	position: relative;
+	z-index: 100;
+}
+body {
+	background-color:Silver;
+}
+th {
+	background-color: #4CAF50;
+	color: white;
+	border: 2px solid black;
+	padding: 15px;
+}
+h1 {
+	text-align: center;
+	font-family: 'Cinzel', serif;
+}

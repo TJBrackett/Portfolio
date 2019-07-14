@@ -1,0 +1,46 @@
+<DOCTYPE html>
+<html>
+<head>
+	<title>252 Final</title>
+	<meta charset = "utf-8">
+	<link rel = "stylesheet" href = "../css/index.css">
+	<script src="https://www.gstatic.com/firebasejs/5.6.0/firebase-app.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/5.6.0/firebase-firestore.js"></script>
+</head>
+<body>
+	<h1 id = "user"></h1>
+	<h2 id = "score"></h2>
+<form>
+	<div id = "num1"></div>
+		<br>
+	<div id = "sign"></div>
+		<br>
+	<div id = "num2"></div>
+		<br>
+	<div>=</div>
+		<br>
+	Attempts remaining:
+	<div id = "attempts"></div>
+	Time remaining:
+	<div id = "timer"></div>
+	<input type = "text" name = "input" id = "input" value = "">
+	<input type = "button" name ="submit" id = "submit" value = "Check Answer" onClick = "checkAnswer(this.Form)"> 
+</form>
+	<script>
+	  // Initialize Firebase
+	  var config = {
+	    apiKey: "AIzaSyD8C5N_X4I1OAahcS_7h8N3sQg1Q2GnsDo",
+	    authDomain: "final-proj-252.firebaseapp.com",
+	    databaseURL: "https://final-proj-252.firebaseio.com",
+	    projectId: "final-proj-252",
+	    storageBucket: "final-proj-252.appspot.com",
+	    messagingSenderId: "500261577938"
+	  };
+	  firebase.initializeApp(config);
+	const db = firebase.firestore();
+	db.settings({timestampsInSnapshots: true});	
+	</script>
+	<script src = "../js/index.js"></script>
+	<script> window.onload = newGame();</script>
+</body>
+</html>

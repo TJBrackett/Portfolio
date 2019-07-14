@@ -19,7 +19,6 @@ function Header() {
 }
 
 function Portfolio() {
-  console.log({ FallClass });
   return (
     <React.Fragment>
       <article id="portfolioHeader">

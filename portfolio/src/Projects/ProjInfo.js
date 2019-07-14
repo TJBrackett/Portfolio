@@ -1,3 +1,5 @@
+// import FallPage from "./Fall2018/index.html"
+
 export const FallClass = {
     title: "Fall 2018",
     desc: "First jump into web development. Started the semester with zero knowledge of HTML or JS.",
