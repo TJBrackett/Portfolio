@@ -4,6 +4,7 @@ import Project from "../Projects/Project.js"
 import Navbar from "../Navbar/Navbar.js"
 import Footer from "../Footer/Footer.js"
 import test from "../Projects/backgrounds/test.jpg"
+import { FallClass } from "../Projects/ProjInfo.js"
 
 function Header() {
   return (
@@ -18,6 +19,7 @@ function Header() {
 }
 
 function Portfolio() {
+  console.log({FallClass});
   return (
     <React.Fragment>
       <article id="portfolio">
@@ -27,8 +29,10 @@ function Portfolio() {
         </div>
       </article>
       <div className="portfolio p-5 d-flex justify-content-center flex-wrap">
-          {Project("Stuff", "thing", { test }, "https://www.google.com", "https://github.com/TJBrackett")}
+          {Project("Fall 2018 Semester(HTML/JS)", "Final Project for Computer Science at MJC. Collaborated with two other students over 3 months.", { test }, "https://www.google.com", "https://github.com/TJBrackett")}
           {Project("Street Smarts", "Final Project for Computer Science at MJC. Collaborated with two other students over 3 months.", { test }, "http://streetsmarts.dev", "https://github.com/TJBrackett-School/Street-Smarts-frontend")}
+          {Project("Fall 2018 Semester(HTML/JS)", "Final Project for Computer Science at MJC. Collaborated with two other students over 3 months.", { test }, "https://www.google.com", "https://github.com/TJBrackett")}
+          {/* {Project(FallClass[0])} */}
       </div>
     </React.Fragment>
   )

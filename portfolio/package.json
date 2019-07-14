@@ -50,5 +50,8 @@
   "bugs": {
     "url": "https://github.com/joemark1989/portfolio/issues"
   },
-  "homepage": "https://github.com/joemark1989/portfolio#readme"
+  "homepage": "https://github.com/joemark1989/portfolio#readme",
+  "devDependencies": {
+    "json-loader": "^0.5.7"
+  }
 }
