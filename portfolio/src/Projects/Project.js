@@ -22,7 +22,7 @@ function Project(title, description, img, pageLink, githubLink) {
     // </Card>
     <div id="projCard">
       <div className="card bg-color border-dark border rounded-0 m-3">
-        <h5 className="card-title text-center">{title}</h5>
+        <h5 className="card-title text-center mt-2">{title}</h5>
         <img className="img-fluid card-img-top" src={pic} alt="projectPic" />
         <div className="card-body">
           <p className="card-text">{description}</p>
