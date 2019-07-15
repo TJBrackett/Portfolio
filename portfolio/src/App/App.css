@@ -21,30 +21,26 @@ a:link {
 
 .topFooter-about {
     max-height: 30rem;
-    border-right: 1px solid #557A95;
-    border-bottom: 1px solid #557A95;
+    border: 1px solid #557A95;
     background-color: rgb(58, 56, 56);
     color: #557A95;
 }
 
 .topFooter-about:hover{
-    border-top: 1px solid rgb(58, 56, 56);
-    border-bottom: 1px solid rgb(58, 56, 56);
+    border: 1px solid rgb(58, 56, 56);
     background-color: #557A95;
     color:rgb(58, 56, 56);
 }
 
 .topFooter-contact {
     max-height: 30rem;
-    border-left: 1px solid #557A95;
-    border-bottom: 1px solid #557A95;
+    border: 1px solid #557A95;
     background: rgb(58, 56, 56);
     color: #557A95;
 }
 
 .topFooter-contact:hover{
-    border-top: 1px solid rgb(58, 56, 56);
-    border-bottom: 1px solid rgb(58, 56, 56);
+    border: 1px solid rgb(58, 56, 56);
     background-color: #557A95;
     color:rgb(58, 56, 56);
 }
