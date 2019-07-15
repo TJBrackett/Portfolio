@@ -7,7 +7,7 @@ function Navbar() {
   return (
     <React.Fragment>
       <nav className="nav-bg navbar sticky-top navbar-expand-lg navbar-light">
-        <a href="http://localhost:3000"><img className="pic" src={logo} alt="logo" /></a>
+        <a href="http://www.tjbrackett.com"><img className="pic" src={logo} alt="logo" /></a>
         <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span className="navbar-toggler-icon"></span>
         </button>
@@ -17,7 +17,7 @@ function Navbar() {
           <div className="form-inline my-5 my-lg-0 mr-4 p-0">
             <ul className="navbar-nav mr-auto">
               <li className="nav-item">
-                <a className="link nav-link text-white font-weight-bold" href="http://localhost:3000">
+                <a className="link nav-link text-white font-weight-bold" href="http://www.tjbrackett.com">
                   <div className="navLink">
                     Home
                     </div>
@@ -31,14 +31,14 @@ function Navbar() {
                 </a>
               </li>
               <li className="nav-item">
-                <a className="link nav-link text-white font-weight-bold" href="http://localhost:3000/about">
+                <a className="link nav-link text-white font-weight-bold" href="http://www.tjbrackett.com/about">
                   <div className="navLink">
                     About
                     </div>
                 </a>
               </li>
               <li className="nav-item">
-                <a className="link nav-link text-white font-weight-bold" href="http://localhost:3000/contact">
+                <a className="link nav-link text-white font-weight-bold" href="http://www.tjbrackett.com/contact">
                   <div className="navLink">
                     Contact
                     </div>

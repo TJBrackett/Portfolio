@@ -42,10 +42,10 @@ function TopFooter() {
     <React.Fragment>
       <div className="container-fluid">
         <div className="row">
-          <a href="http://localhost:3000/about" className="topFooter-about col-lg-6 col-sm-12">
+          <a href="http://www.tjbrackett.com/about" className="topFooter-about col-lg-6 col-sm-12">
             <h1 className="display-4 center">About Me</h1>
           </a>
-          <a href="http://localhost:3000/contact" className="topFooter-contact col-lg-6 col-sm-12">
+          <a href="http://www.tjbrackett.com/contact" className="topFooter-contact col-lg-6 col-sm-12">
             <h1 className="display-4 center">Contact Me</h1>
           </a>
         </div>
