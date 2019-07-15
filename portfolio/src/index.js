@@ -7,6 +7,7 @@ import * as serviceWorker from './serviceWorker'
 import Contact from './Contact/Contact.js'
 import { BrowserRouter, Route } from "react-router-dom"
 import About from "./About/About.js"
+import School from "./Projects/Fall2018/index.js"
 
 
 ReactDOM.render(
@@ -14,6 +15,7 @@ ReactDOM.render(
         <Route exact path='/' component={App} />
         <Route exact path='/contact' component={Contact} />
         <Route exact path='/about' component={About} />
+        <Route exact path='/school' component={School} />
     </BrowserRouter>,
     document.getElementById('root')
 )

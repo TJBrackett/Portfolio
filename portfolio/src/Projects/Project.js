@@ -9,17 +9,6 @@ function Project(title, description, img, pageLink, githubLink) {
   }
 
   return (
-    // <Card style={{ width: '18rem' }}>
-    //   <Card.Title>{title}</Card.Title>
-    //   <Card.Img src={pic} alt="background-image" />
-    //   <Card.Body>
-    //     <Card.Text>
-    //       {description}
-    //     </Card.Text>
-    //     <Button href={githubLink}>GitHub</Button>
-    //     <Button href={pageLink}>Check it out</Button>
-    //   </Card.Body>
-    // </Card>
     <div id="projCard">
       <div className="card bg-color border-dark border rounded-0 m-3">
         <h5 className="card-title text-center mt-2">{title}</h5>

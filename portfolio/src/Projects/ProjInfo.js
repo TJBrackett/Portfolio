@@ -1,9 +1,10 @@
 // import FallPage from "./Fall2018/index.html"
+import School from "../Projects/Fall2018/index.js"
 
 export const FallClass = {
     title: "Fall 2018",
     desc: "First jump into web development. Started the semester with zero knowledge of HTML or JS.",
-    pageLink: "http://streetsmarts.dev",
+    pageLink: { School },
     githubLink: "https://github.com/TJBrackett-School/Fall2018"
 }
 
