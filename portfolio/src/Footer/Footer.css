@@ -2,10 +2,14 @@
     background: rgb(58, 56, 56);
 }
 
-a {
+.footer-link {
     color: #557A95;
 }
-a:hover {
+.footer-link:hover {
     background-color: transparent;
     color:white;
+}
+
+.footer-link:link {
+    text-decoration: none;
 }
