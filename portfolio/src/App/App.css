@@ -11,7 +11,9 @@
     background: #D5D5D7;
 }
 
-
+a:link {
+    text-decoration: none;
+}
 
 .emailLabel{
     float:left;
@@ -37,23 +39,12 @@
     color: #557A95;
 }
 
-/* .topFooter-about:hover{
-    border: 1px solid rgb(58, 56, 56);
-    background-color: #557A95;
-    color:rgb(58, 56, 56);
-} */
 .topFooter-contact {
     max-height: 30rem;
     border: 1px solid #557A95;
     background: rgb(58, 56, 56);
     color: #557A95;
 }
-
-/* .topFooter-contact:hover{
-    border: 1px solid rgb(58, 56, 56);
-    background-color: #557A95;
-    color:rgb(58, 56, 56);
-} */
 
 .overlay-contact {
     color:rgb(58, 56, 56);
