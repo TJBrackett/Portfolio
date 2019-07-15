@@ -13,12 +13,12 @@ function Project(title, description, img, pageLink, githubLink) {
       <div className="card bg-color border-dark border rounded-0 m-3">
         <h5 className="card-title text-center mt-2">{title}</h5>
         <img className="img-fluid card-img-top" src={pic} alt="projectPic" />
-        <div className="card-body">
-          <p className="card-text">{description}</p>
+        <div className="card-body text-centered">
+          <p className="card-text  text-center">{description}</p>
         </div>
         <div className="btn-group" role="group">
           <a type="button" className="border rounded-0 border-dark btn-secondary btn-outline-dark btn-lg col-6 text-center" href={githubLink}>Github</a>
-          <a type="button" className="border rounded-0 border-dark btn-secondary btn-outline-dark btn-lg col-6 text-center" href={pageLink}>App</a>
+          <a type="button" className="border rounded-0 border-dark btn-secondary btn-outline-dark btn-lg col-6 text-center" href={pageLink}>Website</a>
         </div>
       </div>
     </div>

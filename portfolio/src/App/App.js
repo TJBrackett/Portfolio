@@ -3,8 +3,9 @@ import './App.css'
 import Project from "../Projects/Project.js"
 import Navbar from "../Navbar/Navbar.js"
 import Footer from "../Footer/Footer.js"
-import test from "../Projects/backgrounds/test.jpg"
-import { FallClass, FinalProj } from "../Projects/ProjInfo.js"
+import finalImg from "../Projects/backgrounds/final.jpg"
+import stickyImg from "../Projects/backgrounds/Lab03.jpg"
+import { Sticky, FinalProj, StreetSmarts } from "../Projects/ProjInfo.js"
 
 function Header() {
   return (
@@ -28,8 +29,9 @@ function Portfolio() {
         </div>
       </article>
       <div className="portfolio p-5 d-flex justify-content-center flex-wrap">
-        {Project(FallClass.title, FallClass.desc, { test }, FallClass.pageLink, FallClass.githubLink)}
-        {Project(FinalProj.title, FinalProj.desc, { test }, FinalProj.pageLink, FinalProj.githubLink)}
+        {Project(Sticky.title, Sticky.desc, { stickyImg }, Sticky.pageLink, Sticky.githubLink)}
+        {Project(FinalProj.title, FinalProj.desc, { finalImg }, FinalProj.pageLink, FinalProj.githubLink)}
+        {Project(StreetSmarts.title, StreetSmarts.desc, { finalImg }, StreetSmarts.pageLink, StreetSmarts.githubLink)}
       </div>
     </React.Fragment>
   )
