@@ -10,10 +10,11 @@ import About from "./About/About.js"
 
 
 ReactDOM.render(
-    <BrowserRouter>
-        <Route exact path='#/' component={App} />
-        <Route exact path='#/contact' component={Contact} />
-        <Route exact path='#/about' component={About} />
+    <BrowserRouter
+        basename="http://www.tjbrackett.com">
+        <Route exact path='/' component={App} />
+        <Route exact path='/contact' component={Contact} />
+        <Route exact path='/about' component={About} />
     </BrowserRouter>,
     document.getElementById('root')
 )
