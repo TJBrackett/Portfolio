@@ -31,7 +31,7 @@ function Navbar() {
                 </a>
               </li>
               <li className="nav-item">
-                <a className="link nav-link text-white font-weight-bold" href="http://www.tjbrackett.com/about">
+                <a className="link nav-link text-white font-weight-bold" href="/about">
                   <div className="navLink">
                     About
                     </div>
