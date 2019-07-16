@@ -43,14 +43,14 @@
   "main": "index.js",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/joemark1989/portfolio.git"
+    "url": "git+https://github.com/TJBrackett/Portfolio.git"
   },
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/joemark1989/portfolio/issues"
+    "url": "https://github.com/TJBrackett/Portfolio/issues"
   },
-  "homepage": "https://github.com/joemark1989/portfolio#readme",
+  "homepage": "http://tjbrackett.com",
   "devDependencies": {
     "json-loader": "^0.5.7"
   }
