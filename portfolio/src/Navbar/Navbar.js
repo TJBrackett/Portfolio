@@ -8,7 +8,7 @@ function Navbar() {
   return (
     <React.Fragment>
       <nav className="nav-bg navbar sticky-top navbar-expand-lg navbar-light">
-        <a href="http://www.tjbrackett.com"><img className="pic" src={logo} alt="logo" /></a>
+        <Link to="/"><img className="pic" src={logo} alt="logo" /></Link>
         <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span className="navbar-toggler-icon"></span>
         </button>
@@ -18,11 +18,11 @@ function Navbar() {
           <div className="form-inline my-5 my-lg-0 mr-4 p-0">
             <ul className="navbar-nav mr-auto">
               <li className="nav-item">
-                <a className="link nav-link text-white font-weight-bold" href="http://www.tjbrackett.com">
+                <Link className="link nav-link text-white font-weight-bold" to="/">
                   <div className="navLink">
                     Home
                     </div>
-                </a>
+                </Link>
               </li>
               <li className="nav-item">
                 <a className="link nav-link text-white font-weight-bold" href={Resume} target="_blank" rel="noopener noreferrer">
@@ -40,11 +40,11 @@ function Navbar() {
                 </Link>
               </li>
               <li className="nav-item">
-                <a className="link nav-link text-white font-weight-bold" href="http://www.tjbrackett.com/contact">
+                <Link className="link nav-link text-white font-weight-bold" to="/contact">
                   <div className="navLink">
                     Contact
                     </div>
-                </a>
+                </Link>
               </li>
             </ul>
           </div>
