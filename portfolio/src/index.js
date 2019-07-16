@@ -5,7 +5,7 @@ import './index.css'
 import App from './App/App.js';
 import * as serviceWorker from './serviceWorker'
 import Contact from './Contact/Contact.js'
-import { BrowserRouter, Route } from "react-router-dom"
+import { BrowserRouter, Route, Switch } from "react-router-dom"
 import About from "./About/About.js"
 import { NOTFOUND } from 'dns';
 
