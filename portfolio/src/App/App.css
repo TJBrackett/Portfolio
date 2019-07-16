@@ -22,13 +22,11 @@ a:link {
     background: rgb(58, 56, 56);
     color: #557A95;
 }
-.topFooter-about:link {
-    text-decoration: none;
+.topFooter-about:hover {
     color:#557A95;
 }
 
-.topFooter-contact:link {
-    text-decoration: none;
+.topFooter-contact:hover {
     color:#557A95;
 }
 
