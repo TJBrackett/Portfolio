@@ -33,7 +33,7 @@ function Navbar() {
               </li>
               <li className="nav-item">
                 
-                <Link to="/about">
+                <Link className="link nav-link text-white font-weight-bold" to="/about">
                   <div className="navLink">
                     About
                     </div>
