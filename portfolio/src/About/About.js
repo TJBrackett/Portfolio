@@ -13,9 +13,8 @@ function About() {
             <img className="img-fluid aboutImg" src={ Me } alt="Me" />
           </div>
           <div className="rightSide col-lg-6 col-md-6 col-sm-12 mt-5 text-center p-4">
-            <h1 className="display-4 text-center">Hello, world!</h1>
-            <p className="lead">This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured content or information.</p>
-            <p>It uses utility classes for typography and spacing to space content out within the larger container.</p>
+            <h1 className="display-4 text-center">TJ Brackett</h1>
+            <p className="lead">I am a software expert who specializes in building applications specific to the business needs of my clients.  I have done work in software development, front-end/back-end web, database/server management.</p>
           </div>
         </div>
       </div>
