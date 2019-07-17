@@ -8,6 +8,7 @@
     "bootstrap": "^4.3.1",
     "bootstrap-auto-dismiss-alert": "^1.0.2",
     "express": "^4.17.1",
+    "http-proxy-middleware": "^0.19.1",
     "react": "^16.8.6",
     "react-alert": "^5.5.0",
     "react-alert-template-basic": "^1.0.0",
