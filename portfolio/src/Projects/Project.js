@@ -10,7 +10,7 @@ function Project(title, description, img, pageLink, githubLink) {
 
   return (
     <div id="projCard">
-      <div className="card bg-color border-dark border rounded-0 m-3">
+      <div className="card bg-color border-dark border rounded-0 m-3 p-0">
         <h5 className="card-title text-center mt-2">{title}</h5>
         <img className="img-fluid card-img-top" src={pic} alt="projectPic" />
         <div className="card-body text-centered">

@@ -95,7 +95,7 @@ class Contact extends React.Component {
                     <img src={header} class="img-fluid" alt="header" />
                 </div>
                 <form className="bgContact" onSubmit={this.handleSubmit}>
-                    <div class="form-row p-4">
+                    <div class="form-row p-4 col-centered">
                         <div class="form-group col-md-10 col-centered mt-5">
                             <input type="text" class="form-control form-control-lg" id="name" value={this.state.name} onChange={this.nameChange} placeholder="Name" required />
                         </div>
