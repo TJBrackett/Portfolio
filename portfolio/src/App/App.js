@@ -13,7 +13,7 @@ function Header() {
     <div className="headerBackground">
       <div className="text-center text-white caption">
         <h1 className="display-2" id="Home">TJB</h1>
-        <p className="lead">Welcome to my responsive portfolio web application.</p>
+        <p className="lead">Welcome to my portfolio website built in React.</p>
         <A type="input" class="btn btn-outline-light btn-lg" href="#Portfolio" offset="108">Projects</A>
       </div>
     </div>
