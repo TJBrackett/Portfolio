@@ -3,18 +3,35 @@
     color: white;
 }
 #projCard {
-    max-width: 40rem;
-    max-height: 40rem;
+    max-width: 30rem;
+    max-height: 30rem;
     margin-bottom: 1.2rem;
 }
 
-/* does not work on mobile */
 #projImg {
+  height: 15rem;
+  width: 25rem;
+  transition: .75s ease;
+  overflow: hidden;
+}
+@media only screen and (max-width: 600px){
+  #projImg {
     height: 15rem;
     width: 20rem;
     transition: .75s ease;
     overflow: hidden;
 }
+}
+
+@media only screen and (max-width: 350px){
+  #projImg {
+    height: 15rem;
+    width: 15rem;
+    transition: .75s ease;
+    overflow: hidden;
+}
+}
+/* does not work on mobile */
 /* #projImg:hover {
     height: 17.5rem;
     width: 35rem;
