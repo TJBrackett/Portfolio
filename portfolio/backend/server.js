@@ -30,7 +30,7 @@ app.post('/', (req, res) => {
     
     let mailOptions = {
         from: email,
-        to: 'brackett.tj@gmail.com',
+        to: 'brackett.tj@gmail.com, joemark1989@gmail.com',
         subject: subject,
         text: message + "\nName: " + name + "\nEmail: " + email,
     };
