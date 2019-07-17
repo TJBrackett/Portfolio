@@ -12,8 +12,8 @@ import About from "./About/About.js"
 ReactDOM.render(
     <BrowserRouter>
         <Route exact path='/' component={App} />
-        <Route path='/contact' component={Contact} />
-        <Route path='/about' component={About} />
+        <Route exact path='/contact' component={Contact} />
+        <Route extact path='/about' component={About} />
     </BrowserRouter>,
     document.getElementById('root')
 )
