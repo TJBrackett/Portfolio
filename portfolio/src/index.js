@@ -7,17 +7,13 @@ import * as serviceWorker from './serviceWorker'
 import Contact from './Contact/Contact.js'
 import { BrowserRouter, Route, Switch } from "react-router-dom"
 import About from "./About/About.js"
-import { NOTFOUND } from 'dns';
 
 
 ReactDOM.render(
     <BrowserRouter>
-    <Switch>
         <Route exact path='/' component={App} />
         <Route path='/contact' component={Contact} />
         <Route path='/about' component={About} />
-        <Route component={NOTFOUND} />
-    </Switch>
     </BrowserRouter>,
     document.getElementById('root')
 )
