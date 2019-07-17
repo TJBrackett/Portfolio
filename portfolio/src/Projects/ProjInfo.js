@@ -1,4 +1,3 @@
-// import FallPage from "./Fall2018/index.html"
 
 export const Sticky = {
     title: "Sticky Notes",
