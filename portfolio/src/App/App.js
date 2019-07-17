@@ -3,36 +3,36 @@ import './App.css'
 import Project from "../Projects/Project.js"
 import Navbar from "../Navbar/Navbar.js"
 import Footer from "../Footer/Footer.js"
-import finalImg from "../Projects/backgrounds/final.jpg"
-import stickyImg from "../Projects/backgrounds/Lab03.jpg"
 import { Sticky, FinalProj, StreetSmarts } from "../Projects/ProjInfo.js"
 import { Link } from "react-router-dom";
+import { ProjPics } from "../Projects/ProjInfo.js"
+import A from "react-anchor-link-smooth-scroll"
 
 function Header() {
   return (
-    <article id="header" className="hero">
-      <div className="text-center py-5 p-2">
-        <h1 className="display-4">Hello, world!</h1>
-        <p className="lead p-3">This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured content or information.</p>
-        <p className="p-3">It uses utility classes for typography and spacing to space content out within the larger container.</p>
+    <div className="headerBackground">
+      <div className="text-center text-white caption">
+        <h1 className="display-2" id="Home">TJB</h1>
+        <p className="lead">Welcome to my responsive portfolio web application.</p>
+        <A type="input" class="btn btn-outline-light btn-lg" href="#Portfolio" offset="108">Projects</A>
       </div>
-    </article>
+    </div>
   )
 }
 
 function Portfolio() {
   return (
     <React.Fragment>
-      <article id="portfolioHeader">
+      <div className="portfolioHeader" id="Portfolio">
         <div className="text-center py-5 p-2">
           <h1 className="display-4">Portfolio</h1>
           <p className="lead">This is an example of my set of skills. Where I utitlize different languages to accomplish clean layouts.</p>
         </div>
-      </article>
+      </div>
       <div className="portfolio p-5 d-flex justify-content-center flex-wrap">
-        {Project(Sticky.title, Sticky.desc, { stickyImg }, Sticky.pageLink, Sticky.githubLink)}
-        {Project(FinalProj.title, FinalProj.desc, { finalImg }, FinalProj.pageLink, FinalProj.githubLink)}
-        {Project(StreetSmarts.title, StreetSmarts.desc, { finalImg }, StreetSmarts.pageLink, StreetSmarts.githubLink)}
+        {Project(Sticky.title, Sticky.desc, ProjPics.Sticky, Sticky.pageLink, Sticky.githubLink)}
+        {Project(FinalProj.title, FinalProj.desc, ProjPics.Final, FinalProj.pageLink, FinalProj.githubLink)}
+        {Project(StreetSmarts.title, StreetSmarts.desc, ProjPics.Sticky, StreetSmarts.pageLink, StreetSmarts.githubLink)}
       </div>
     </React.Fragment>
   )

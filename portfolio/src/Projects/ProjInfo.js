@@ -1,3 +1,5 @@
+import Final from "../Projects/backgrounds/final.jpg"
+import StickyNotes from "../Projects/backgrounds/Lab03.jpg"
 
 export const Sticky = {
     title: "Sticky Notes",
@@ -18,4 +20,9 @@ export const StreetSmarts = {
     desc: "Angular / Serverless / MySQL",
     pageLink: "http://streetsmarts.dev",
     githubLink: "https://github.com/TJBrackett-School/Street-Smarts-frontend"
+}
+
+export const ProjPics = {
+    Sticky: { StickyNotes },
+    Final: { Final }
 }

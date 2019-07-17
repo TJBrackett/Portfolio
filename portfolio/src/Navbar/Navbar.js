@@ -1,14 +1,14 @@
 import React from "react"
-import logo from "../Images/initial.png"
 import "./Navbar.css"
 import Resume from "../TJ_Resume.pdf"
 import { Link } from "react-router-dom";
+import Logo from "../Images/initial.png"
 
 function Navbar() {
   return (
     <React.Fragment>
       <nav className="nav-bg navbar sticky-top navbar-expand-lg navbar-light">
-        <Link to="/"><img className="pic" src={logo} alt="logo" /></Link>
+        <Link to="/"><img className="pic" src={Logo} alt="logo" /></Link>
         <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span className="navbar-toggler-icon"></span>
         </button>
