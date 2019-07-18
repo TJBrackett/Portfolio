@@ -58,13 +58,15 @@ app.post('/', (req, res) => {
 
 
 httpProxy.createServer({
-    ssl: {
-        key: fs.readFileSync(__dirname + '/key.pem'),
-        cert: fs.readFileSync(__dirname + '/cert.pem')
+    target: {
+        host: '45.79.34.27',
+        port: '9521'
     },
-    target: 'https://45.79.34.27:9521',
-    secure: true
-  }).listen(443);
+    ssl: {
+        key: fs.readFileSync(__dirname + '/key.pem', 'utf8'),
+        cert: fs.readFileSync(__dirname + '/cert.pem', 'utf8')
+    }
+  }).listen(8888);
 
 // app.set('port' ,(process.env.PORT || 9521));
 // http.createServer( app).listen(app.get('port'), () => {
