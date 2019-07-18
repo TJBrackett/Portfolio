@@ -55,6 +55,10 @@ app.post('/', (req, res) => {
 })
 
 app.set('port' ,(process.env.PORT || 443 || 80));
-app.createServer(options, app).listen(app.get('port'), () => {
+
+http.createServer( app).listen(app.get('port'), () => {
+    console.log("Server started on port " + app.get('port'));
+});
+https.createServer(options, app).listen(app.get('port'), () => {
         console.log("Server started on port " + app.get('port'));
 });
