@@ -1,0 +1,16 @@
+.col-centered{
+    margin: 0 auto;
+    float: none;
+}
+
+.bgContact {
+    background-color: #557A95;
+}
+
+.textChange{
+    font-weight: bold;
+    font-size: 1.4rem;
+}
+.form-row {
+    max-width:80rem;
+}

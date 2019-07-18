@@ -1,0 +1,23 @@
+.nav-bg {
+    background-color: rgba(58, 56, 56, 0.945);
+}
+
+.pic {
+    max-width: 45%;
+}
+.navLink{
+    text-align: center;
+    vertical-align: middle;
+    line-height: 4rem;
+    color: #557A95
+}
+.link:hover .navLink {
+    /* background-color: #4e5e7e; */
+    color: white;
+}
+
+.navbar-collapse {
+    display: inline-block;
+    float: none;
+    vertical-align: top;
+}

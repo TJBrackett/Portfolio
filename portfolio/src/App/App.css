@@ -1,0 +1,145 @@
+.headerBackground{
+    height: 55rem;
+    width: 100%;
+    background: linear-gradient(-45deg, rgb(58, 56, 56), #557A95, rgb(58, 56, 56), #557A95, rgb(58, 56, 56));
+    background-size: 400% 400%;
+    position: relative;
+    animation: change 9s ease-in-out infinite;
+}
+
+@keyframes change{
+    0%{
+        background-position: 0 50%;
+    }
+    50%{
+        background-position: 100% 50%;
+    }
+    100%{
+        background-position: 0 50%;
+    }
+
+}
+
+.caption {
+    border: 2px solid #fff;
+    position: absolute;
+    top: 25%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    padding: 2rem 5rem;
+}
+
+@media only screen and (max-width: 576px) {
+    .caption {
+        border: 2px solid #fff;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width:70%;
+        transform: translate(-50%,-50%);
+        padding: 1rem 1rem;
+
+    }
+    .headerBackground{
+        height: 36rem;
+        width: 100%;
+    }
+    .display-2{
+        font-size: 4rem;
+    }
+ }
+
+.portfolio {
+
+    background: #557A95;
+}
+.portfolioHeader {
+    background: rgb(58, 56, 56);
+    color: #557A95;
+}
+
+a:link {
+    text-decoration: none;
+}
+
+.emailLabel{
+    float:left;
+}
+.top-footer {
+    background: rgb(58, 56, 56);
+    color: #557A95;
+}
+.topFooter-about:hover {
+    color:#557A95;
+}
+
+.topFooter-contact:hover {
+    color:#557A95;
+}
+
+.topFooter-about {
+    max-height: 30rem;
+    border: 1px solid #557A95;
+    background-color: rgb(58, 56, 56);
+    color: #557A95;
+}
+
+.topFooter-contact {
+    max-height: 30rem;
+    border: 1px solid #557A95;
+    background: rgb(58, 56, 56);
+    color: #557A95;
+}
+
+.overlay-contact {
+    color:rgb(58, 56, 56);
+    border: 1px solid rgb(58, 56, 56);
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: #557A95;
+    overflow: hidden;
+    width: 0;
+    height: 100%;
+    transition: .75s ease;
+  }
+
+  .overlay-about {
+    color:rgb(58, 56, 56);
+    border: 1px solid rgb(58, 56, 56);
+    position: absolute;
+    bottom: 0;
+    left: 100%;
+    right: 0;
+    background-color: #557A95;
+    overflow: hidden;
+    width: 0;
+    height: 100%;
+    transition: .75s ease;
+  }
+
+  .topFooter-about:hover .overlay-about {
+      width: 100%;
+      left: 0;
+  }
+
+  .topFooter-contact:hover .overlay-contact {
+      width: 100%;
+  }
+
+  .text-slide {
+    color: rgb(58, 56, 56);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    white-space: nowrap;
+  }
+.center{
+    text-align: center;
+    vertical-align: middle;
+    line-height: 15rem;
+}
