@@ -14,7 +14,7 @@ function About() {
           </div>
           <div className="rightSide col-lg-6 col-md-6 col-sm-12 p-4 text-center ">
             <h1 className="display-4 text-center aboutHeader">TJ Brackett</h1>
-            <p className="lead aboutP">I am a software expert who specializes in building applications specific to the business needs of my clients.  I have done work in software development, front-end/back-end web, database/server management.</p>
+            <p className="lead aboutP">I am a software engineer who specializes in building applications specific to the business needs of my clients.  I have done work in software development, database design and implementation, native applications, full stack web development, and server management.</p>
           </div>
         </div>
       </div>
