@@ -3,7 +3,7 @@ import './App.css'
 import Project from "../Projects/Project.js"
 import Navbar from "../Navbar/Navbar.js"
 import Footer from "../Footer/Footer.js"
-import { Sticky, FinalProj, StreetSmarts } from "../Projects/ProjInfo.js"
+import { Sticky, FinalProj, StreetSmarts, MyPage } from "../Projects/ProjInfo.js"
 import { Link } from "react-router-dom";
 import { ProjPics } from "../Projects/ProjInfo.js"
 import A from "react-anchor-link-smooth-scroll"
@@ -13,7 +13,7 @@ function Header() {
     <div className="headerBackground">
       <div className="text-center text-white caption">
         <h1 className="display-2" id="Home">TJB</h1>
-        <p className="lead">Welcome to my portfolio website built in React.</p>
+        <p className="lead">Welcome to my responsive portfolio website.</p>
         <A type="input" class="btn btn-outline-light btn-lg" href="#Portfolio" offset="108">Projects</A>
       </div>
     </div>
@@ -32,6 +32,7 @@ function Portfolio() {
       <div className="portfolio p-5 d-flex justify-content-center flex-wrap">
         {Project(Sticky.title, Sticky.desc, ProjPics.Sticky, Sticky.pageLink, Sticky.githubLink, Sticky.date)}
         {Project(FinalProj.title, FinalProj.desc, ProjPics.Final, FinalProj.pageLink, FinalProj.githubLink, FinalProj.date)}
+        {Project(MyPage.title, MyPage.desc, ProjPics.Portfolio, MyPage.pageLink, MyPage.githubLink, MyPage.date)}
       </div>
     </React.Fragment>
   )
