@@ -30,8 +30,8 @@ function Portfolio() {
         </div>
       </div>
       <div className="portfolio p-5 d-flex justify-content-center flex-wrap">
-        {Project(Sticky.title, Sticky.desc, ProjPics.Sticky, Sticky.pageLink, Sticky.githubLink)}
-        {Project(FinalProj.title, FinalProj.desc, ProjPics.Final, FinalProj.pageLink, FinalProj.githubLink)}
+        {Project(Sticky.title, Sticky.desc, ProjPics.Sticky, Sticky.pageLink, Sticky.githubLink, Sticky.date)}
+        {Project(FinalProj.title, FinalProj.desc, ProjPics.Final, FinalProj.pageLink, FinalProj.githubLink, FinalProj.date)}
       </div>
     </React.Fragment>
   )
