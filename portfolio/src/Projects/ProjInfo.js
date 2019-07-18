@@ -1,6 +1,7 @@
 import Final from "../Projects/backgrounds/final.jpg"
 import StickyNotes from "../Projects/backgrounds/Lab03.jpg"
 import Portfolio from "../Projects/backgrounds/portfolio.jpg"
+import Final290 from "../Projects/backgrounds/streetsmarts.jpg"
 
 export const Sticky = {
     title: "Sticky Notes",
@@ -21,7 +22,7 @@ export const FinalProj = {
 export const StreetSmarts = {
     title: "Street Smarts",
     desc: "Angular / Serverless / MySQL",
-    pageLink: "http://streetsmarts.dev",
+    pageLink: "https://streetsmarts.dev",
     githubLink: "https://github.com/TJBrackett-School/Street-Smarts-frontend",
     date: "Spring 2019"
 }
@@ -29,7 +30,7 @@ export const StreetSmarts = {
 export const MyPage = {
     title: "Portfolio",
     desc: "React / Express / Apache",
-    pageLink: "http://www.tjbrackett.com",
+    pageLink: "https://www.tjbrackett.com",
     githubLink: "https://github.com/TJBrackett/Portfolio",
     date: "July 2019"
 }
@@ -37,5 +38,6 @@ export const MyPage = {
 export const ProjPics = {
     Sticky: { StickyNotes },
     Final: { Final },
-    Portfolio: { Portfolio }
+    Portfolio: { Portfolio },
+    StreetSmarts: { Final290 }
 }
