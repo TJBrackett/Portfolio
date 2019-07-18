@@ -1,8 +1,16 @@
 const nodemailer = require('nodemailer');
 const express = require('express');
 const bodyParser = require('body-parser');
+const fs = require('fs');
+const http = require('http');
+const https = require('https');
+const httpProxy = require('http-proxy-middleware');
 const app = express();
 
+const options = {
+    key: fs.readFileSync(__dirname + 'key.pem'),
+    cert: fs.readFileSync(__dirname + 'cert.pem')
+}
 app.use((req, res, next) => {
     res.header('Access-Control-Allow-Origin', "*");
     res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept');
@@ -46,7 +54,7 @@ app.post('/', (req, res) => {
     res.send(req.body);
 })
 
-app.set('port' ,(process.env.PORT || 8888));
-app.listen(app.get('port'), () => {
+app.set('port' ,(process.env.PORT || 443 || 80));
+app.createServer(options, app).listen(app.get('port'), () => {
         console.log("Server started on port " + app.get('port'));
 });
