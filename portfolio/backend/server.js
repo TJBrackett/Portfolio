@@ -22,7 +22,7 @@ app.use((req, res, next) => {
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.json());
 
-app.post('/', (req, res) => {
+app.post('/emailer', (req, res) => {
     let name = req.body.name;
     let email = req.body.email;
     let subject = req.body.subject;
@@ -83,6 +83,6 @@ app.post('/', (req, res) => {
 http.createServer(app).listen(8080, () => {
     console.log("Server started on port 8080");
 });
-https.createServer(options, app).listen(443, () => {
+https.createServer(options, app).listen(8443, () => {
     console.log("Server started on port 8443");
 });
