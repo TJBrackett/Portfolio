@@ -83,6 +83,6 @@ app.post('/', (req, res) => {
 http.createServer(app).listen(8080, () => {
     console.log("Server started on port 8080");
 });
-https.createServer(options, app).listen(8443, () => {
+https.createServer(options, app).listen(443, () => {
     console.log("Server started on port 8443");
 });
