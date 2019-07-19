@@ -28,7 +28,7 @@ app.post('/', (req, res) => {
     let subject = req.body.subject;
     let message = req.body.message;
     let mailOptions = "";
-    let urlName = req.get('host');
+    let fullUrl = req.protocol + '://' + req.get('host') + req.originalUrl;
     console.log(req.body);
     
     let transporter = nodemailer.createTransport({
@@ -42,7 +42,7 @@ app.post('/', (req, res) => {
             rejectUnauthorized: false
         }
     });
-    if (urlName == "http://www.tjbrackett.com/contact"){
+    if (fullUrl == "http://www.tjbrackett.com/contact"){
         mailOptions = {
             from: email,
             to: 'brackett.tj@gmail.com',
