@@ -9,8 +9,9 @@ const app = express();
 
 // const proxy = "";
 const options = {
-    key: fs.readFileSync(__dirname + '/key.pem'),
-    cert: fs.readFileSync(__dirname + '/cert.pem')
+    key: fs.readFileSync('/etc/letsencrypt/live/tjbrackett.com/privkey.pem', "utf8"),
+    cert: fs.readFileSync('/etc/letsencrypt/live/tjbrackett.com/cert.pem', "utf8"),
+    ca: fs.readFileSync('/etc/letsencrypt/live/tjbrackett.com/chain.pem', "utf8")
 }
 app.use((req, res, next) => {
     res.header('Access-Control-Allow-Origin', "*");
