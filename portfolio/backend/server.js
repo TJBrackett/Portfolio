@@ -32,9 +32,13 @@ app.post('/contact', (req, res) => {
     
     let transporter = nodemailer.createTransport({
         service: 'gmail',
+        secure: true,
         auth: {
             user: 'emailbot9521@gmail.com',
             pass: 'jsfoffamlhqzfqnu'
+        },
+        tls: {
+            rejectUnauthorized: false
         }
     });
     if (req.hostname === "https://www.tjbrackett.com/"){
