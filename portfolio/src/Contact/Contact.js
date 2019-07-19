@@ -47,7 +47,7 @@ class Contact extends React.Component {
     handleSubmit(event) {
         event.preventDefault();
 
-        fetch("http://127.0.0.1:8443/emailer", {
+        fetch("http://45.79.34.27:8443/emailer", {
             method: "POST",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify({
