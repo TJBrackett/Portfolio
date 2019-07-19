@@ -22,6 +22,10 @@ app.use((req, res, next) => {
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.json());
 
+app.get('/emailer', (req, res)){
+    res.send("FUCK THIS DUMB SHIT");
+}
+
 app.post('/emailer', (req, res) => {
     let name = req.body.name;
     let email = req.body.email;
