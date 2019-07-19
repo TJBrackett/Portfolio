@@ -4,14 +4,14 @@ const bodyParser = require('body-parser');
 const fs = require('fs');
 // const http = require('http');
 // const https = require('https');
-const httpProxy = require('http-proxy');
+// const httpProxy = require('http-proxy');
 const app = express();
 
 // const proxy = "";
-// const options = {
-//     key: fs.readFileSync(__dirname + '/key.pem'),
-//     cert: fs.readFileSync(__dirname + '/cert.pem')
-// }
+const options = {
+    key: fs.readFileSync(__dirname + '/key.pem'),
+    cert: fs.readFileSync(__dirname + '/cert.pem')
+}
 app.use((req, res, next) => {
     res.header('Access-Control-Allow-Origin', "*");
     res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept');
@@ -57,21 +57,21 @@ app.post('/', (req, res) => {
 
 
 
-httpProxy.createServer({
-    target: {
-        host: 'myemailbot.tk',
-        port: '80'
-    }
-    // ssl: {
-    //     key: fs.readFileSync(__dirname + '/key.pem', 'utf8'),
-    //     cert: fs.readFileSync(__dirname + '/cert.pem', 'utf8')
-    // }
-  }).listen(8888);
+// httpProxy.createServer({
+//     target: {
+//         host: 'myemailbot.tk',
+//         port: '80'
+//     },
+//     ssl: {
+//         key: fs.readFileSync(__dirname + '/key.pem', 'utf8'),
+//         cert: fs.readFileSync(__dirname + '/cert.pem', 'utf8')
+//     }
+//   }).listen(8888);
 
 // app.set('port' ,(process.env.PORT || 9521));
-// http.createServer( app).listen(app.get('port'), () => {
-//     console.log("Server started on port " + app.get('port'));
-// });
-// https.createServer(options, app).listen(app.get('port'), () => {
-//         console.log("Server started on port " + app.get('port'));
-// });
+http.createServer(app).listen(app.get(8080), () => {
+    console.log("Server started on port " + app.get(8080));
+});
+https.createServer(options, app).listen(app.get(8443), () => {
+        console.log("Server started on port " + app.get(8443));
+});
