@@ -64,8 +64,10 @@ class Contact extends React.Component {
                     this.setState({ email: "" });
                     this.setState({ subject: "" });
                     this.setState({ message: "" });
+                    console.log(res)
                 } else {
                     this.state({ status: res.status })
+                    console.log(res)
                 }
             })
             .catch(err => console.log(err));

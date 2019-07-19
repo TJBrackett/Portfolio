@@ -27,6 +27,7 @@ app.post('/', (req, res) => {
     let email = req.body.email;
     let subject = req.body.subject;
     let message = req.body.message;
+    let mailOptions = "";
     console.log(req.body);
     
     let transporter = nodemailer.createTransport({
@@ -36,13 +37,23 @@ app.post('/', (req, res) => {
             pass: 'jsfoffamlhqzfqnu'
         }
     });
-    
-    let mailOptions = {
-        from: email,
-        to: 'brackett.tj@gmail.com, joemark1989@gmail.com',
-        subject: subject,
-        text: message + "\nName: " + name + "\nEmail: " + email,
-    };
+    if (req.hostname === "https://www.tjbrackett.com/"){
+        mailOptions = {
+            from: email,
+            to: 'brackett.tj@gmail.com',
+            subject: subject,
+            text: message + "\nName: " + name + "\nEmail: " + email,
+        };
+        console.log(req.hostname);
+    } else {
+        mailOptions = {
+            from: email,
+            to: 'joemark1989@gmail.com',
+            subject: subject,
+            text: message + "\nName: " + name + "\nEmail: " + email,
+        }
+        console.log(req.hostname);
+    }
     
     transporter.sendMail(mailOptions, (error, info) => {
         if (error) {
@@ -73,5 +84,5 @@ http.createServer(app).listen(8080, () => {
     console.log("Server started on port 8080");
 });
 https.createServer(options, app).listen(8443, () => {
-        console.log("Server started on port 8443");
+    console.log("Server started on port 8443");
 });
