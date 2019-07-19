@@ -22,7 +22,7 @@ app.use((req, res, next) => {
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.json());
 
-app.post('/contact', (req, res) => {
+app.post('/', (req, res) => {
     let name = req.body.name;
     let email = req.body.email;
     let subject = req.body.subject;
