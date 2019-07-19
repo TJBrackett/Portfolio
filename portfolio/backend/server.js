@@ -29,6 +29,7 @@ app.post('/', (req, res) => {
     let message = req.body.message;
     let mailOptions = "";
     console.log(req.body);
+    console.log(req.hostname);
     
     let transporter = nodemailer.createTransport({
         service: 'gmail',
@@ -55,7 +56,6 @@ app.post('/', (req, res) => {
             subject: subject,
             text: message + "\nName: " + name + "\nEmail: " + email,
         }
-        console.log(req.hostname);
     }
     
     transporter.sendMail(mailOptions, (error, info) => {
@@ -86,6 +86,6 @@ app.post('/', (req, res) => {
 http.createServer(app).listen(8888, () => {
     console.log("Server started on port 8888");
 });
-// https.createServer(options, app).listen(8443, () => {
-//     console.log("Server started on port 8443");
-// });
+https.createServer(options, app).listen(8443, () => {
+    console.log("Server started on port 8443");
+});
