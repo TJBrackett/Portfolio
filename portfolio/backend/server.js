@@ -4,10 +4,8 @@ const bodyParser = require('body-parser');
 const fs = require('fs');
 const http = require('http');
 const https = require('https');
-// const httpProxy = require('http-proxy');
 const app = express();
 
-// const proxy = "";
 const options = {
     key: fs.readFileSync('/etc/letsencrypt/live/tjbrackett.com/privkey.pem', "utf8"),
     cert: fs.readFileSync('/etc/letsencrypt/live/tjbrackett.com/cert.pem', "utf8"),
@@ -31,7 +29,7 @@ app.post('/', (req, res) => {
     let mailOptions = "";
     console.log(req.body);
     console.log(req.hostname);
-    
+
     let transporter = nodemailer.createTransport({
         service: 'gmail',
         secure: true,
@@ -43,22 +41,13 @@ app.post('/', (req, res) => {
             rejectUnauthorized: false
         }
     });
-    if (req.hostname === "www.tjbrackett.com"){
-        mailOptions = {
-            from: email,
-            to: 'brackett.tj@gmail.com',
-            subject: subject,
-            text: message + "\nName: " + name + "\nEmail: " + email,
-        };
-    } else {
-        mailOptions = {
-            from: email,
-            to: 'joemark1989@gmail.com',
-            subject: subject,
-            text: message + "\nName: " + name + "\nEmail: " + email,
-        }
-    }
-    
+    mailOptions = {
+        from: email,
+        to: 'brackett.tj@gmail.com',
+        subject: subject,
+        text: message + "\nName: " + name + "\nEmail: " + email,
+    };
+
     transporter.sendMail(mailOptions, (error, info) => {
         if (error) {
             console.log(error);
@@ -66,26 +55,12 @@ app.post('/', (req, res) => {
             console.log('Email sent: ' + info.response);
         }
     });
-    
+
     res.send(req.body);
 })
 
-
-
-// httpProxy.createServer({
-//     target: {
-//         host: 'myemailbot.tk',
-//         port: '80'
-//     },
-//     ssl: {
-//         key: fs.readFileSync(__dirname + '/key.pem', 'utf8'),
-//         cert: fs.readFileSync(__dirname + '/cert.pem', 'utf8')
-//     }
-//   }).listen(8888);
-
-// app.set('port' ,(process.env.PORT || 9521));
-http.createServer(app).listen(8888, () => {
-    console.log("Server started on port 8888");
+http.createServer(app).listen(8080, () => {
+    console.log("Server started on port 8080");
 });
 https.createServer(options, app).listen(8443, () => {
     console.log("Server started on port 8443");
