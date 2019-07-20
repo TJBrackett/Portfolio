@@ -12,7 +12,7 @@ export const Sticky = {
 }
 
 export const FinalProj = {
-    title: "Final Project",
+    title: "Math Game",
     desc: "HTML / JS / Firebase",
     pageLink: "https://final-proj-252.firebaseapp.com/",
     githubLink: "https://github.com/TJBrackett-School/Fall2018/tree/master/Final",
