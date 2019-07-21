@@ -14,3 +14,13 @@
 .form-row {
     max-width:80rem;
 }
+
+#contact-header {
+    text-align: center;
+    vertical-align: middle;
+    background: #557A95;
+    color: rgb(58, 56, 56);
+}
+#header {
+    background: #557A95;
+}

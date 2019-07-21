@@ -83,7 +83,7 @@ class Contact extends React.Component {
             </div>)
         } else if (status > 0) {
             alert = (<div class="alert alert-danger alert-dismissible fade show text-center" data-auto-dismiss="2000" role="alert">
-                <strong>Email failed to send. Please try again.</strong>
+                <strong>Email failed to send. Please try again. Status code: { this.state.status }</strong>
                 <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
@@ -96,6 +96,10 @@ class Contact extends React.Component {
                     <img src={header} class="img-fluid" alt="header" />
                 </div>
                 <form className="bgContact" onSubmit={this.handleSubmit}>
+                    <div id="contact-header">
+                        <br></br>
+                        <h2>Have a question or want to work together?</h2>
+                    </div>
                     <div class="form-row p-4 col-centered">
                         <div class="form-group col-md-10 col-centered mt-5">
                             <input type="text" class="form-control form-control-lg" id="name" value={this.state.name} onChange={this.nameChange} placeholder="Name" required />
