@@ -7,6 +7,14 @@
     animation: change 9s ease-in-out infinite;
 }
 
+.headerBtn:hover {
+    transition: .5s ease;
+    box-shadow: 0 4px 8px 0 rgba(58, 56, 56), 0 6px 20px 0 rgba(58, 56, 56);
+}
+
+.headerBtn {
+    transition: .75s ease;
+}
 @keyframes change{
     0%{
         background-position: 0 50%;
@@ -102,7 +110,7 @@ a:link {
     overflow: hidden;
     width: 0;
     height: 100%;
-    transition: .75s ease;
+    transition: .95s ease;
   }
 
   .overlay-about {
@@ -116,16 +124,18 @@ a:link {
     overflow: hidden;
     width: 0;
     height: 100%;
-    transition: .75s ease;
+    transition: .95s ease;
   }
 
   .topFooter-about:hover .overlay-about {
       width: 100%;
       left: 0;
+      box-shadow: 0 4px 8px 0 rgba(58, 56, 56), 0 6px 20px 0 rgba(58, 56, 56);
   }
 
   .topFooter-contact:hover .overlay-contact {
       width: 100%;
+      box-shadow: 0 4px 8px 0 rgba(58, 56, 56), 0 6px 20px 0 rgba(58, 56, 56);
   }
 
   .text-slide {

@@ -14,7 +14,7 @@ function Header() {
       <div className="text-center text-white caption">
         <h1 className="display-2" id="Home">TJB</h1>
         <p className="lead">Welcome to my responsive portfolio website.</p>
-        <A type="input" class="btn btn-outline-light btn-lg" href="#Portfolio" offset="106">Projects</A>
+        <A type="input" className="btn btn-outline-light btn-lg headerBtn" href="#Portfolio" offset="106">Projects</A>
       </div>
     </div>
   )

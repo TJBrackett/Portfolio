@@ -12,7 +12,7 @@ function Footer() {
             < i className="fa fa-twitter fa-3x m-3" />
           </a>
           <a className="footer-link" href="https://www.linkedin.com/in/tjbrackett/" target="_blank" rel="noopener noreferrer">
-            <i class="fa fa-linkedin fa-3x m-3" />
+            <i className="fa fa-linkedin fa-3x m-3" />
           </a>
           <a className="footer-link" href="https://stackoverflow.com/users/11122711/tj-brackett" target="_blank" rel="noopener noreferrer">
             <i className="fa fa-stack-overflow fa-3x m-3" />
@@ -22,7 +22,7 @@ function Footer() {
           </a>
         </div>
       </div>
-      <div className="container-fluid footer text-center text-white">
+      <div className="container-fluid footer text-center text-white py-3">
         <div>
           © 2019 TJ Brackett
       </div>

@@ -8,6 +8,7 @@
 .footer-link:hover {
     background-color: transparent;
     color:white;
+    transition: .75s ease;
 }
 
 .footer-link:link {

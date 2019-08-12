@@ -14,6 +14,7 @@
 .link:hover .navLink {
     /* background-color: #4e5e7e; */
     color: white;
+    transition: .75s ease;
 }
 
 .navbar-collapse {

@@ -4,7 +4,10 @@
 }
 
 .bgContact {
-    background-color: #557A95;
+    height: 100%;
+    background: #557A95;
+    background-size: 450% 450%;
+    position: relative;
 }
 
 .textChange{
@@ -17,10 +20,31 @@
 
 #contact-header {
     text-align: center;
-    vertical-align: middle;
+    vertical-align: bottom;
     background: #557A95;
     color: rgb(58, 56, 56);
+    padding: 1rem;
 }
-#header {
-    background: #557A95;
+
+.contactBtn:hover{
+    transition: .5s ease;
+    box-shadow: 0 4px 8px 0 rgba(58, 56, 56), 0 6px 20px 0 rgba(58, 56, 56);
+}
+
+.contactBtn{
+    transition: .5s ease;
+}
+
+.form-control:focus {
+    transition: .5s ease;
+    box-shadow: 0 4px 8px 0 rgba(58, 56, 56), 0 6px 20px 0 rgba(58, 56, 56);
+}
+
+.form-control:hover {
+    transition: .5s ease;
+    box-shadow: 0 4px 8px 0 rgba(58, 56, 56), 0 6px 20px 0 rgba(58, 56, 56);
+}
+
+.form-control {
+    transition: .5s ease;
 }
