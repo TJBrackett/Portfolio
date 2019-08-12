@@ -70,7 +70,7 @@
     width: 100%;
     transition: .75s ease;
   }
-  #projPic:hover #projDesc {
+  #projImg:hover #projDesc {
     height: 30%;
   }
   #projBtn {
@@ -122,28 +122,27 @@
   bottom: 100%;
   left: 0;
   right: 0;
-  background-color: rgba(58, 56, 56);
+  background-color: rgb(58, 56, 56);
   overflow: hidden;
   width: 100%;
   height:0;
   transition: .75s ease;
 }
-#projTop {
-  background-color: rgb(58, 56, 56);
-  color: #557A95;
+.moreInfoBtn {
   position: absolute;
   top: 0%;
   left: 0%;
   -webkit-transform: translate(-50%, -50%);
   -ms-transform: translate(-50%, -50%);
-  transform: translate( 0%, 0%);
+  transform: translate(0%, 0%);
   white-space: nowrap;
   transition: .75s ease;
+  text-align: center;
 }
 
 
 #projImg:hover #projTop {
-  bottom: 0;
+  bottom: 0%;
   height: 100%;
   transition: .75s ease;
 }
@@ -153,12 +152,18 @@
 }
 
 .moreInfoBtn {
+  position: absolute;
+  bottom: 100%;
+  left: 0;
+  right: 0;
+  overflow: hidden;
+  width: 100%;
+  height:0;
   transition: .75s ease;
 }
 
 
 #projImg:hover .moreInfoBtn {
-  /* bottom: 0; */
+  bottom: 0;
   height: 20%;
-  transition: .75s ease;
 }
