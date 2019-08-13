@@ -7,6 +7,7 @@ function Project(title, description, img, pageLink, githubLink, date) {
   for (let key in img) {
     pic = img[key];
   }
+const [info, setInfo] = useState('More')
 
 //try just doing a card for more info on click
   return (
@@ -15,7 +16,7 @@ function Project(title, description, img, pageLink, githubLink, date) {
           <div id="projImg">
             <img className="img-fluid card-img-top" src={pic} alt="projectPic" />
             <div id="projTop">
-              <button type="button" class="moreInfoBtn border rounded-0 border-dark btn-secondary btn-outline-dark btn-lg col-12 text-center">More Info</button>
+              <button type="button" className="moreInfoBtn border rounded-0 border-dark btn-secondary btn-outline-dark btn-lg col-12 text-center" onClick={{info} !== 'More' ? setInfo('More') : setInfo('Less')}>{info} Info</button>
             </div>
             <div id="projBottom">
               <h5 className="card-title text-center mt-2">{title}</h5>

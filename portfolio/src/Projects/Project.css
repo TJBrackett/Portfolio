@@ -1,7 +1,7 @@
 .bg-color {
     background: rgb(58, 56, 56);
-    color: white;
 }
+
 #projCard {
     max-width: 30rem;
     max-height: 30rem;
@@ -9,37 +9,32 @@
 }
 
 #projImg {
-  height: 15rem;
-  width: 27rem;
-  transition: .75s ease;
-  overflow: hidden;
-}
-@media only screen and (max-width: 600px){
-  #projImg {
     height: 15rem;
-    width: 20rem;
+    width: 27rem;
     transition: .75s ease;
     overflow: hidden;
-}
 }
 
-@media only screen and (max-width: 350px){
-  #projImg {
-    height: 15rem;
-    width: 15rem;
-    transition: .75s ease;
-    overflow: hidden;
+@media only screen and (max-width: 600px) {
+    #projImg {
+        height: 15rem;
+        width: 20rem;
+        transition: .75s ease;
+        overflow: hidden;
+    }
 }
+
+@media only screen and (max-width: 350px) {
+    #projImg {
+        height: 15rem;
+        width: 15rem;
+        transition: .75s ease;
+        overflow: hidden;
+    }
 }
-/* does not work on mobile */
-/* #projImg:hover {
-    height: 17.5rem;
-    width: 35rem;
-    margin-bottom: 1.2rem;
-    transition: .75s ease;
-} */
+
 #projBottom {
-    color:rgb(58, 56, 56);
+    color: rgb(58, 56, 56);
     border: 1px solid rgb(58, 56, 56);
     position: absolute;
     bottom: 100%;
@@ -50,15 +45,15 @@
     width: 100%;
     height: 0;
     transition: .75s ease;
-  }
+}
 
-  #projImg:hover #projBottom {
+#projImg:hover #projBottom {
     bottom: 0;
     height: 70%;
-  }
+}
 
-  #projDesc {
-    color:#557A95;
+#projDesc {
+    color: #557A95;
     border: 1px solid rgb(58, 56, 56);
     position: absolute;
     bottom: 0;
@@ -69,12 +64,14 @@
     height: 0;
     width: 100%;
     transition: .75s ease;
-  }
-  #projImg:hover #projDesc {
+}
+
+#projImg:hover #projDesc {
     height: 30%;
-  }
-  #projBtn {
-    color:rgb(58, 56, 56);
+}
+
+#projBtn {
+    color: rgb(58, 56, 56);
     border: 1px solid rgb(58, 56, 56);
     position: absolute;
     bottom: 0;
@@ -85,12 +82,13 @@
     width: 100%;
     height: 0;
     transition: .75s ease;
-  }
-  #projImg:hover #projBtn {
-      height: 20%;
-  }
+}
 
-  #projBottom {
+#projImg:hover #projBtn {
+    height: 20%;
+}
+
+#projBottom {
     background-color: rgb(58, 56, 56);
     color: #557A95;
     position: absolute;
@@ -100,9 +98,9 @@
     -ms-transform: translate(-50%, -50%);
     transform: translate(-50%, -100%);
     white-space: nowrap;
-  }
+}
 
-  .githubBtn:hover {
+.githubBtn:hover {
     transition: .5s ease;
 }
 
@@ -111,56 +109,66 @@
 }
 
 .pageLinkBtn:hover {
-  transition: .5s ease;
+    transition: .5s ease;
 }
 
 .pageLinkBtn {
-  transition: .5s ease;
-}
-#projTop {
-  position: absolute;
-  bottom: 0%;
-  left: 0;
-  right: 0;
-  background-color: rgb(58, 56, 56);
-  overflow: hidden;
-  width: 100%;
-  height:0;
-  transition: .75s ease;
-}
-.moreInfoBtn {
-  position: absolute;
-  top: 0%;
-  left: 0%;
-  bottom: 100%;
-  right: 0;
-  overflow: hidden;
-  width: 100%;
-  height:0;
-  -webkit-transform: translate(-50%, -50%);
-  -ms-transform: translate(-50%, -50%);
-  transform: translate(0%, 0%);
-  white-space: nowrap;
-  transition: .75s ease;
-  text-align: center;
+    transition: .5s ease;
 }
 
+#projTop {
+    position: absolute;
+    bottom: 0%;
+    left: 0;
+    right: 0;
+    background-color: rgb(58, 56, 56);
+    overflow: hidden;
+    width: 100%;
+    height: 0;
+    transition: .75s ease;
+}
+
+#cardSlide {
+    background: rgba(140, 140, 140, 0.9);
+    position: absolute;
+    top: 85%;
+    right: 0;
+    left: 0;
+    height: 100vh;
+}
+
+.moreInfoBtn {
+    position: absolute;
+    top: 0%;
+    left: 0%;
+    bottom: 100%;
+    right: 0;
+    overflow: hidden;
+    width: 100%;
+    height: 0;
+    -webkit-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(0%, 0%);
+    white-space: nowrap;
+    transition: .75s ease;
+    text-align: center;
+}
 
 #projImg:hover #projTop {
-  bottom: 0;
-  height: 100%;
-  transition: .75s ease;
+    bottom: 0;
+    height: 100%;
+    transition: .75s ease;
 }
 
 .moreInfoBtn:hover {
-  transition: .5s ease;
+    transition: .5s ease;
 }
 
 .moreInfoBtn:focus {
-  outline: none;
+    outline: none;
 }
 
 #projImg:hover .moreInfoBtn {
-  bottom: 0;
-  height: 20%;
+    bottom: 0;
+    height: 20%;
 }
