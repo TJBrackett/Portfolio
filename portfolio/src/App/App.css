@@ -15,6 +15,10 @@
 .headerBtn {
     transition: .75s ease;
 }
+
+.headerBtn:focus {
+    outline: none;
+}
 @keyframes change{
     0%{
         background-position: 0 50%;

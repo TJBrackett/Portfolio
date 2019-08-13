@@ -3,7 +3,7 @@ import './App.css'
 import Project from "../Projects/Project.js"
 import Navbar from "../Navbar/Navbar.js"
 import Footer from "../Footer/Footer.js"
-import { Sticky, FinalProj, StreetSmarts, MyPage } from "../Projects/ProjInfo.js"
+import { Sticky, FinalProj, StreetSmarts, MyPage, Hackermap } from "../Projects/ProjInfo.js"
 import { Link } from "react-router-dom";
 import { ProjPics } from "../Projects/ProjInfo.js"
 import A from "react-anchor-link-smooth-scroll"
@@ -34,6 +34,7 @@ function Portfolio() {
         {Project(FinalProj.title, FinalProj.desc, ProjPics.Final, FinalProj.pageLink, FinalProj.githubLink, FinalProj.date)}
         {Project(StreetSmarts.title, StreetSmarts.desc, ProjPics.StreetSmarts, StreetSmarts.pageLink, StreetSmarts.githubLink, StreetSmarts.date)}
         {Project(MyPage.title, MyPage.desc, ProjPics.Portfolio, MyPage.pageLink, MyPage.githubLink, MyPage.date)}
+        {Project(Hackermap.title, Hackermap.desc, ProjPics.Hackermap, Hackermap.pageLink, Hackermap.githubLink, Hackermap.date)}
       </div>
     </React.Fragment>
   )

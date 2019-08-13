@@ -2,6 +2,7 @@ import Final from "../Projects/backgrounds/final.jpg"
 import StickyNotes from "../Projects/backgrounds/Lab03.jpg"
 import Portfolio from "../Projects/backgrounds/portfolio.jpg"
 import Final290 from "../Projects/backgrounds/streetsmarts.jpg"
+import HackerMap from "../Projects/backgrounds/hackermap.jpg"
 
 export const Sticky = {
     title: "Sticky Notes",
@@ -39,5 +40,14 @@ export const ProjPics = {
     Sticky: { StickyNotes },
     Final: { Final },
     Portfolio: { Portfolio },
-    StreetSmarts: { Final290 }
+    StreetSmarts: { Final290 },
+    Hackermap: { HackerMap }
+}
+
+export const Hackermap = {
+    title: "WIP - Hackermap",
+    desc: "Express / Apache / MySQL / React",
+    pageLink: "https://github.com/TJBrackett/HackerMap/tree/develop",
+    githubLink: "https://github.com/TJBrackett/HackerMap/tree/develop",
+    date: "July 2019"
 }
