@@ -119,7 +119,7 @@
 }
 #projTop {
   position: absolute;
-  bottom: 100%;
+  bottom: 0%;
   left: 0;
   right: 0;
   background-color: rgb(58, 56, 56);
@@ -142,7 +142,7 @@
 
 
 #projImg:hover #projTop {
-  bottom: 0%;
+  bottom: 0;
   height: 100%;
   transition: .75s ease;
 }
@@ -162,6 +162,9 @@
   transition: .75s ease;
 }
 
+.moreInfoBtn:focus {
+  outline: none;
+}
 
 #projImg:hover .moreInfoBtn {
   bottom: 0;
