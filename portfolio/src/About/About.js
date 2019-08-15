@@ -24,13 +24,13 @@ function About() {
     <React.Fragment>
       <div className="container-fluid aboutBg">
         <div className="row">
-          <div className="rightSide p-5 text-center ">
+          <div className="rightSide p-5 text-center">
             <h1 className="display-4 text-center aboutHeader">TJ Brackett</h1>
             <p className="lead aboutP">I am a software engineer who specializes in building applications specific to the business needs of my clients.  
               I have done work in software development, database design and implementation, native applications, full stack web development, and server management.</p>
               <div>
-                <h2 className="aboutTech">Technologies I have worked with:</h2>
-                <div className="p-5 d-flex justify-content-center flex-wrap">
+                <h2 className="aboutTech">Technologies I have worked with</h2>
+                <div className="p-5 mt-5 d-flex justify-content-center flex-wrap">
                   <div>
                     <img className="aboutIcon p-0" src={Angular} alt="Angular"></img><br></br>
                     <h5>Angular</h5>
