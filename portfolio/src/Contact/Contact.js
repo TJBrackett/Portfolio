@@ -93,20 +93,20 @@ class Contact extends React.Component {
                 <Navbar />
                 <form className="bgContact" onSubmit={this.handleSubmit}>
                     <div id="contact-header">
-                        <h2>Have a question or want to work together?</h2>
+                        <h2 className="mt-5">Have a question or want to work together?</h2>
                     </div>
                     <div className="form-row p-4 col-centered">
-                        <div className="form-group col-md-10 col-centered mt-5 py-1">
-                            <input type="text" className="form-control form-control-lg" id="name" value={this.state.name} onChange={this.nameChange} placeholder="Name" required />
+                        <div className="form-group col-md-10 col-centered mt-5 py-4">
+                            <input type="text" aria-label="name" className="name form-control form-control-lg" value={this.state.name} onChange={this.nameChange} placeholder="Name" required />
                         </div>
-                        <div className="form-group col-md-10 col-centered mt-5 py-1">
-                            <input type="email" className="form-control form-control-lg" id="email" value={this.state.email} onChange={this.emailChange} placeholder="Email" required />
+                        <div className="form-group col-md-10 col-centered mt-5 py-4">
+                            <input type="email" aria-label="email" className="email form-control form-control-lg" value={this.state.email} onChange={this.emailChange} placeholder="Email" required />
                         </div>
-                        <div className="form-group col-md-10 col-centered mt-5 py-1">
-                            <input type="text" className="form-control form-control-lg" id="subject" value={this.state.subject} onChange={this.subjectChange} placeholder="Subject" required />
+                        <div className="form-group col-md-10 col-centered mt-5 py-4">
+                            <input type="text" aria-label="subject" className="subject form-control form-control-lg" value={this.state.subject} onChange={this.subjectChange} placeholder="Subject" required />
                         </div>
-                        <div className="form-group col-md-10 col-centered mt-5 py-1">
-                            <textarea className="form-control form-control-lg" id="message" rows="4" value={this.state.message} onChange={this.messageChange} placeholder="Your Message" required></textarea>
+                        <div className="form-group col-md-10 col-centered mt-5 py-4">
+                            <textarea aria-label="message" className="message form-control form-control-lg" rows="4" value={this.state.message} onChange={this.messageChange} placeholder="Your Message" required></textarea>
                         </div>
                         <button type="submit" className="contactBtn btn-secondary btn-outline-dark btn-lg col-centered col-md-3 mt-5">Submit</button>
                     </div>

@@ -46,15 +46,13 @@ function TopFooter() {
       <div className="top-footer container-fluid">
         <div className="row">
           <Link to="/about" className="topFooter-about col-lg-6 col-sm-12">
-            <h1 className="display-4 center">About Me</h1>
+            <h1 className="display-4 center topFooter-text">About Me</h1>
             <div className="overlay-about">
-            <h1 className="display-4 center text-slide">About Me</h1>
           </div>
           </Link>
           <Link to="/contact" className="topFooter-contact col-lg-6 col-sm-12">
-            <h1 className="display-4 center">Contact Me</h1>
+            <h1 className="display-4 center topFooter-text">Contact Me</h1>
             <div className="overlay-contact">
-            <h1 className="display-4 center text-slide">Contact Me</h1>
           </div>
           </Link>
         </div>

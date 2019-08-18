@@ -19,6 +19,9 @@
 .headerBtn:focus {
     outline: none;
 }
+.portfolio {
+    background: linear-gradient(rgba(58, 56, 56), #557A95);
+}
 @keyframes change{
     0%{
         background-position: 0 50%;
@@ -43,28 +46,20 @@
 
 @media only screen and (max-width: 576px) {
     .caption {
-        border: 2px solid #fff;
-        position: absolute;
         top: 35%;
         left: 50%;
         width:70%;
-        transform: translate(-50%,-50%);
         padding: 1rem 1rem;
 
     }
     .headerBackground{
         height: 36rem;
-        width: 100%;
     }
     .display-2{
         font-size: 4rem;
     }
  }
 
-.portfolio {
-
-    background: #557A95;
-}
 .portfolioHeader {
     background: rgb(58, 56, 56);
     color: #557A95;
@@ -91,16 +86,27 @@ a:link {
 
 .topFooter-about {
     max-height: 30rem;
-    border: 1px solid #557A95;
-    background-color: rgb(58, 56, 56);
-    color: #557A95;
+    border: 1px solid rgb(58, 56, 56);
+    background: linear-gradient(#557A95,#557A95, rgba(58, 56, 56));
+    color: white;
+    transition: .75s ease;
 }
 
 .topFooter-contact {
     max-height: 30rem;
-    border: 1px solid #557A95;
-    background: rgb(58, 56, 56);
-    color: #557A95;
+    border: 1px solid rgb(58, 56, 56);
+    background: linear-gradient(#557A95,#557A95, rgba(58, 56, 56));
+    color: white;
+    transition: .75s ease;
+}
+
+.topFooter-about:hover {
+    color: black;
+    transition: .75s ease;
+}
+.topFooter-contact:hover {
+    color: black;
+    transition: .75s ease;
 }
 
 .overlay-contact {
@@ -110,50 +116,52 @@ a:link {
     bottom: 0;
     left: 0;
     right: 0;
-    background-color: #557A95;
+    background: linear-gradient(90deg, rgb(58, 56, 56, 0.5),rgba(85, 122, 149, 0.5), rgb(58, 56, 56, 0.5));
     overflow: hidden;
     width: 0;
     height: 100%;
-    transition: .95s ease;
+    transition: .75s ease;
   }
 
   .overlay-about {
-    color:rgb(58, 56, 56);
+    color:#557A95;
     border: 1px solid rgb(58, 56, 56);
     position: absolute;
     bottom: 0;
     left: 100%;
     right: 0;
-    background-color: #557A95;
+    background: linear-gradient(-90deg, rgb(58, 56, 56, 0.5),rgba(85, 122, 149, 0.5), rgb(58, 56, 56, 0.5));
     overflow: hidden;
     width: 0;
     height: 100%;
-    transition: .95s ease;
+    transition: .75s ease;
   }
 
   .topFooter-about:hover .overlay-about {
       width: 100%;
       left: 0;
       box-shadow: 0 4px 8px 0 rgba(58, 56, 56), 0 6px 20px 0 rgba(58, 56, 56);
+      background-size: 400% 400%;
+      position: absolute;
+      animation: change 9s ease-in-out infinite;
   }
 
   .topFooter-contact:hover .overlay-contact {
       width: 100%;
       box-shadow: 0 4px 8px 0 rgba(58, 56, 56), 0 6px 20px 0 rgba(58, 56, 56);
+      background-size: 400% 400%;
+      position: absolute;
+      animation: change 9s ease-in-out infinite;
   }
 
-  .text-slide {
-    color: rgb(58, 56, 56);
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    -webkit-transform: translate(-50%, -50%);
-    -ms-transform: translate(-50%, -50%);
-    transform: translate(-50%, -50%);
-    white-space: nowrap;
-  }
 .center{
     text-align: center;
     vertical-align: middle;
     line-height: 15rem;
+}
+
+@media only screen and (max-width: 375px) {
+    .topFooter-text  {
+        font-size: 250%;
+    }
 }

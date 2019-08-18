@@ -15,7 +15,7 @@ function Navbar() {
         <div className="navbar collapse navbar-collapse" id="navbarSupportedContent">
           <div className="navbar-nav mr-auto">
           </div>
-          <div className="form-inline my-5 my-lg-0 mr-4 p-0">
+          <div className="form-inline my-lg-0 mr-4 p-0">
             <ul className="navbar-nav mr-auto">
               <li className="nav-item">
                 <Link className="link nav-link text-white font-weight-bold" to="/">
