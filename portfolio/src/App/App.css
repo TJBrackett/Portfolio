@@ -20,7 +20,7 @@
     outline: none;
 }
 .portfolio {
-    background: linear-gradient(rgba(58, 56, 56), #557A95);
+    background:#557A95;
 }
 @keyframes change{
     0%{

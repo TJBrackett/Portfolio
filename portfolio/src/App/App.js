@@ -7,6 +7,8 @@ import { Sticky, FinalProj, StreetSmarts, MyPage, Hackermap } from "../Projects/
 import { Link } from "react-router-dom";
 import { ProjPics } from "../Projects/ProjInfo.js"
 import A from "react-anchor-link-smooth-scroll"
+import About from '../About/About'
+import Contact from '../Contact/Contact'
 
 function Header() {
   return (
@@ -30,9 +32,9 @@ function Portfolio() {
         </div>
       </div>
       <div className="portfolio p-5 d-flex justify-content-center flex-wrap">
-        {/* {Project(Sticky.title, Sticky.desc, ProjPics.Sticky, Sticky.pageLink, Sticky.githubLink, Sticky.date)} */}
+        {Project(Sticky.title, Sticky.desc, ProjPics.Sticky, Sticky.pageLink, Sticky.githubLink, Sticky.date)}
         {Project(FinalProj.title, FinalProj.desc, ProjPics.Final, FinalProj.pageLink, FinalProj.githubLink, FinalProj.date)}
-        {/* {Project(StreetSmarts.title, StreetSmarts.desc, ProjPics.StreetSmarts, StreetSmarts.pageLink, StreetSmarts.githubLink, StreetSmarts.date)} */}
+        {Project(StreetSmarts.title, StreetSmarts.desc, ProjPics.StreetSmarts, StreetSmarts.pageLink, StreetSmarts.githubLink, StreetSmarts.date)}
         {Project(MyPage.title, MyPage.desc, ProjPics.Portfolio, MyPage.pageLink, MyPage.githubLink, MyPage.date)}
         {Project(Hackermap.title, Hackermap.desc, ProjPics.Hackermap, Hackermap.pageLink, Hackermap.githubLink, Hackermap.date)}
       </div>
@@ -67,8 +69,9 @@ function Render() {
     <React.Fragment>
       <Navbar />
       <Header />
+      <About />
       <Portfolio />
-      <TopFooter />
+      <Contact />
       <Footer />
     </React.Fragment>
   )

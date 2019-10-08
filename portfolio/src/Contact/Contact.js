@@ -90,7 +90,6 @@ class Contact extends React.Component {
         }
         return (
             <React.Fragment>
-                <Navbar />
                 <form className="bgContact" onSubmit={this.handleSubmit}>
                     <div id="contact-header">
                         <h2 className="mt-5">Have a question or want to work together?</h2>
@@ -116,7 +115,6 @@ class Contact extends React.Component {
                         {alert}
                     </div>
                 </div>
-                <Footer />
             </React.Fragment>
         )
     }

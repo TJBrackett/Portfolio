@@ -23,7 +23,7 @@ import Sql from "../Images/sql.png"
 import Vb from "../Images/vb.png"
 import "./About.css"
 
-function About() {
+export function About() {
   return (
     <React.Fragment>
       <div className="container-fluid aboutBg">
@@ -50,10 +50,10 @@ function About() {
                 <img className="aboutIcon" src={Bash} alt="Bash"></img><br></br>
                 <h5>Bash</h5>
               </div>
-              <div>
+              {/* <div>
                 <img className="aboutIcon" src={Bootstrap} alt="Bootstrap"></img><br></br>
                 <h5>Bootstrap</h5>
-              </div>
+              </div> */}
               <div>
                 <img className="aboutIcon" src={Cpp} alt="Cpp"></img><br></br>
                 <h5>C++</h5>
@@ -125,11 +125,7 @@ function About() {
 
 function Render() {
   return (
-    <React.Fragment>
-      <Navbar />
       <About />
-      <Footer />
-    </React.Fragment>
   )
 }
 

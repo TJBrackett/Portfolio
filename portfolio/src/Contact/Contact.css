@@ -4,7 +4,7 @@
 }
 
 .bgContact {
-    background: linear-gradient(#557A95,#557A95, rgba(58, 56, 56));
+    background:#557A95;
 }
 
 .textChange{
@@ -24,24 +24,24 @@
 }
 
 .contactBtn:hover{
-    transition: .5s ease;
+    transition: .75s ease;
     box-shadow: 0 4px 8px 0 rgba(58, 56, 56), 0 6px 20px 0 rgba(58, 56, 56);
 }
 
 .contactBtn{
-    transition: .5s ease;
+    transition: .75s ease;
 }
 
 .form-control:focus {
-    transition: .5s ease;
+    transition: .75s ease;
     box-shadow: 0 4px 8px 0 rgba(58, 56, 56), 0 6px 20px 0 rgba(58, 56, 56);
 }
 
 .form-control:hover {
-    transition: .5s ease;
+    transition: .75s ease;
     box-shadow: 0 4px 8px 0 rgba(58, 56, 56), 0 6px 20px 0 rgba(58, 56, 56);
 }
 
 .form-control {
-    transition: .5s ease;
+    transition: .75s ease;
 }
