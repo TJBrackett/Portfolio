@@ -4,10 +4,11 @@ import "bootstrap/dist/css/bootstrap.css"
 import './index.css'
 import App from './App/App.js';
 import * as serviceWorker from './serviceWorker'
+
+// Router example. Saving for future reference
 import Contact from './Contact/Contact.js'
 import { BrowserRouter, Route } from "react-router-dom"
 import About from "./About/About.js"
-
 
 ReactDOM.render(
     <BrowserRouter>
@@ -17,5 +18,7 @@ ReactDOM.render(
     </BrowserRouter>,
     document.getElementById('root')
 )
+
+//ReactDOM.render(<App />, document.getElementById('root'));
 
 serviceWorker.register();

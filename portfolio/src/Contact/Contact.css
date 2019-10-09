@@ -15,7 +15,7 @@
     max-width:80rem;
 }
 
-#contact-header {
+.contact-header {
     text-align: center;
     vertical-align: bottom;
     background: #557A95;

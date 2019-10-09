@@ -19,14 +19,14 @@ import Node from "../Images/node.png"
 import Python from "../Images/python.png"
 import ReactIcon from "../Images/react.png"
 import Ssl from "../Images/ssl.png"
-import Sql from "../Images/sql.png"
+import Mysql from "../Images/mysql.png"
 import Vb from "../Images/vb.png"
 import "./About.css"
 
 export function About() {
   return (
     <React.Fragment>
-      <div className="container-fluid aboutBg">
+      <div className="container-fluid aboutBg" id="About">
         <div className="p-5 text-center">
           <h1 className="display-4 text-center aboutHeader">TJ Brackett</h1>
           <p className="lead aboutP">I am a software engineer who specializes in building applications specific to the business needs of my clients.
@@ -50,10 +50,10 @@ export function About() {
                 <img className="aboutIcon" src={Bash} alt="Bash"></img><br></br>
                 <h5>Bash</h5>
               </div>
-              {/* <div>
+              <div>
                 <img className="aboutIcon" src={Bootstrap} alt="Bootstrap"></img><br></br>
                 <h5>Bootstrap</h5>
-              </div> */}
+              </div>
               <div>
                 <img className="aboutIcon" src={Cpp} alt="Cpp"></img><br></br>
                 <h5>C++</h5>
@@ -91,6 +91,10 @@ export function About() {
                 <h5>Linux</h5>
               </div>
               <div>
+                <img className="aboutIcon" src={Mysql} alt="Mysql"></img><br></br>
+                <h5>MySQL</h5>
+              </div>
+              <div>
                 <img className="aboutIcon" src={Node} alt="Node"></img><br></br>
                 <h5>NodeJS</h5>
               </div>
@@ -105,10 +109,6 @@ export function About() {
               <div>
                 <img className="aboutIcon" src={Ssl} alt="SSL"></img><br></br>
                 <h5>SSL</h5>
-              </div>
-              <div>
-                <img className="aboutIcon" src={Sql} alt="Sql"></img><br></br>
-                <h5>SQL</h5>
               </div>
               <div>
                 <img className="aboutIcon" src={Vb} alt="Vb"></img><br></br>
