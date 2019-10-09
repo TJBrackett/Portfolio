@@ -1,6 +1,4 @@
 import React from 'react';
-import Navbar from "../Navbar/Navbar.js"
-import Footer from "../Footer/Footer.js"
 import Angular from "../Images/angular.png"
 import Apache from "../Images/apache.png"
 import Assembly from "../Images/assembly.png"
@@ -25,7 +23,6 @@ import "./About.css"
 
 export function About() {
   return (
-    <React.Fragment>
       <div className="container-fluid aboutBg" id="About">
         <div className="p-5 text-center">
           <h1 className="display-4 text-center aboutHeader">TJ Brackett</h1>
@@ -118,8 +115,6 @@ export function About() {
           </div>
         </div>
       </div>
-
-    </React.Fragment>
   )
 }
 
