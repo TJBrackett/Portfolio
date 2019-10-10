@@ -22,7 +22,7 @@ import "./About.css"
 import { TwitterTimelineEmbed } from 'react-twitter-embed';
 
 export function About() {
-  return ( 
+  return (
     <div className="aboutBg" id="About">
       <div className="py-3 p=2 text-center aboutHeader">
         <h1 className="display-4">TJ Brackett</h1>
@@ -112,14 +112,20 @@ export function About() {
               {/* <h5 className="techName">Visual Basic</h5> */}
             </div>
           </div>
-          <div className="col-lg-6 col-md-12 col-sm-12">
-            <TwitterTimelineEmbed
+          <div className="tweetsContainer col-lg-6 col-md-12 col-sm-12">
+            <div className="col-12">
+              <h2 className="aboutTech">What I'm up to now</h2>
+            </div>
+            <TwitterTimelineEmbed className="tweets"
               sourceType="profile"
               screenName="TJBrackett"
-              options={{ 
+              options={{
                 height: 400
               }}
               noScrollbar
+              noHeader
+              noFooter
+              theme="dark"
             />
           </div>
         </div>
