@@ -95,6 +95,7 @@
     width: 100%;
     height: 0;
     transition: .75s ease;
+    -webkit-appearance: none;
 }
 
 .githubBtn:hover {
