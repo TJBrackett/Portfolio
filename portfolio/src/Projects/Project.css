@@ -95,7 +95,6 @@
     width: 100%;
     height: 0;
     transition: .75s ease;
-    -webkit-appearance: none;
 }
 
 .githubBtn:hover {
@@ -103,6 +102,7 @@
 }
 .githubBtn {
     transition: .5s ease;
+    -webkit-appearance: none;
 }
 
 .pageLinkBtn:hover {
@@ -110,6 +110,7 @@
 }
 .pageLinkBtn {
     transition: .5s ease;
+    -webkit-appearance: none;
 }
 
 .projTop {
