@@ -85,3 +85,8 @@
         -webkit-appearance: none;
     }
 }
+
+.tweets {
+    -webkit-appearance: none;
+    width: 100vw;
+}
