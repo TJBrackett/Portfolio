@@ -1,3 +1,7 @@
+.bg-color {
+    background: rgb(58, 56, 56);
+}
+
 .projCard {
     max-width: 30rem;
     max-height: 30rem;
