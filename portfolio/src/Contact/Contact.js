@@ -1,7 +1,5 @@
 import React from 'react';
-import Navbar from "../Navbar/Navbar.js"
 import "./Contact.css"
-import Footer from "../Footer/Footer.js"
 
 
 class Contact extends React.Component {
@@ -80,7 +78,7 @@ class Contact extends React.Component {
                 <button type="button" className="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
                 <strong>Email successfully sent!</strong>
             </div>)
-        } else if (status > 0) {
+        } else if (status > 0 && status !==200) {
             alert = (<div className="alert alert-danger alert-dismissible fade show text-center" data-auto-dismiss="2000" role="alert">
                 <strong>Email failed to send. Please try again. Status code: { this.state.status }</strong>
                 <button type="button" className="close" data-dismiss="alert" aria-label="Close">

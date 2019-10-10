@@ -18,3 +18,19 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
+
+a {
+  transition: .75s ease;
+}
+button {
+  transition: .75s ease;
+}
+a:hover {
+  transition: .75s ease; 
+}
+button:hover {
+  transition: .75s ease;
+}
+a:link {
+  text-decoration: none;
+}

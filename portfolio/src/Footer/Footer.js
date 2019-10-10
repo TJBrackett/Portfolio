@@ -22,7 +22,7 @@ function Footer() {
           </a>
         </div>
       </div>
-      <div className="container-fluid footer text-center text-white py-1">
+      <div className="container-fluid footer text-center text-white">
         <div className="copyright">
           © 2019 TJ Brackett
       </div>

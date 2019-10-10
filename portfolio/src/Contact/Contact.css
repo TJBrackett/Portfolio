@@ -11,6 +11,7 @@
     font-weight: bold;
     font-size: 1.4rem;
 }
+
 .form-row {
     max-width:80rem;
 }
@@ -23,25 +24,18 @@
     color: rgba(58, 56, 56);
 }
 
-.contactBtn:hover{
-    transition: .75s ease;
-    box-shadow: 0 4px 8px 0 rgba(58, 56, 56), 0 6px 20px 0 rgba(58, 56, 56);
-}
-
-.contactBtn{
+.form-control {
     transition: .75s ease;
 }
-
 .form-control:focus {
     transition: .75s ease;
     box-shadow: 0 4px 8px 0 rgba(58, 56, 56), 0 6px 20px 0 rgba(58, 56, 56);
 }
-
 .form-control:hover {
     transition: .75s ease;
     box-shadow: 0 4px 8px 0 rgba(58, 56, 56), 0 6px 20px 0 rgba(58, 56, 56);
 }
 
-.form-control {
-    transition: .75s ease;
+.emailLabel{
+    float:left;
 }

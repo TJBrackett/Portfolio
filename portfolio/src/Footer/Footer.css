@@ -4,16 +4,10 @@
 
 .footer-link {
     color: #557A95;
-    transition: .75s ease;
 }
 .footer-link:hover {
     background-color: transparent;
     color:white;
-    transition: .75s ease;
-}
-
-.footer-link:link {
-    text-decoration: none;
 }
 
 .copyright {

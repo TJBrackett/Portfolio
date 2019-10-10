@@ -5,6 +5,7 @@
 .pic {
     max-width: 50%;
 }
+
 .navLink{
     border-bottom: 3px solid linear-gradient(rgb(58, 56, 56), #557A95, rgb(58, 56, 56));
     text-align: center;

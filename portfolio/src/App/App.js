@@ -41,28 +41,6 @@ function Portfolio() {
   )
 }
 
-// function TopFooter() {
-//   return (
-//     <React.Fragment>
-//       <div className="top-footer container-fluid">
-//         <div className="row">
-//           <Link to="/about" className="topFooter-about col-lg-6 col-sm-12">
-//             <h1 className="display-4 center topFooter-text">About Me</h1>
-//             <div className="overlay-about">
-//             </div>
-//           </Link>
-//           <Link to="/contact" className="topFooter-contact col-lg-6 col-sm-12">
-//             <h1 className="display-4 center topFooter-text">Contact Me</h1>
-//             <div className="overlay-contact">
-//             </div>
-//           </Link>
-//         </div>
-//       </div>
-//     </React.Fragment>
-//   )
-// }
-
-
 function Render() {
   if (window.innerWidth < 768) {
     return (
