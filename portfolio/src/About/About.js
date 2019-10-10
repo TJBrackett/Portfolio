@@ -116,7 +116,7 @@ export function About() {
             <div className="col-12">
               <h2 className="aboutTech">What I'm up to now</h2>
             </div>
-            <TwitterTimelineEmbed className="tweets"
+            <TwitterTimelineEmbed
               sourceType="profile"
               screenName="TJBrackett"
               options={{
