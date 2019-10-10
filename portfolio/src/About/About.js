@@ -112,7 +112,7 @@ export function About() {
               {/* <h5 className="techName">Visual Basic</h5> */}
             </div>
           </div>
-          <div className="col-6">
+          <div className="col-lg-6 col-md-12 col-sm-12">
             <TwitterTimelineEmbed
               sourceType="profile"
               screenName="TJBrackett"
