@@ -19,7 +19,6 @@ import Ssl from "../Images/ssl.png"
 import Mysql from "../Images/mysql.png"
 import Vb from "../Images/vb.png"
 import "./About.css"
-import { TwitterTimelineEmbed } from 'react-twitter-embed';
 
 export function About() {
   return (
@@ -116,17 +115,6 @@ export function About() {
             <div className="col-12">
               <h2 className="aboutTech">What I'm up to now</h2>
             </div>
-            <TwitterTimelineEmbed className="tweets"
-              sourceType="profile"
-              screenName="TJBrackett"
-              options={{
-                height: 400
-              }}
-              noScrollbar
-              noHeader
-              noFooter
-              theme="dark"
-            />
           </div>
         </div>
       </div>

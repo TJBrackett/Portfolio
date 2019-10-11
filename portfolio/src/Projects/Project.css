@@ -29,26 +29,6 @@
     height: 100%;
     transition: .75s ease;
 }
-.projImg:hover .moreInfoBtn {
-    bottom: 0;
-    height: 20%;
-}
-@media only screen and (max-width: 600px) {
-    .projImg {
-        height: 15rem;
-        width: 20rem;
-        transition: .75s ease;
-        overflow: hidden;
-    }
-}
-@media only screen and (max-width: 350px) {
-    .projImg {
-        height: 15rem;
-        width: 15rem;
-        transition: .75s ease;
-        overflow: hidden;
-    }
-}
 
 .projBottom {
     border: 1px solid rgb(58, 56, 56);
@@ -125,25 +105,21 @@
     transition: .75s ease;
 }
 
-.moreInfoBtn {
-    position: absolute;
-    top: 0%;
-    left: 0%;
-    bottom: 100%;
-    right: 0;
-    overflow: hidden;
-    width: 100%;
-    height: 0;
-    -webkit-transform: translate(-50%, -50%);
-    -ms-transform: translate(-50%, -50%);
-    transform: translate(0%, 0%);
-    white-space: nowrap;
-    transition: .75s ease;
-    text-align: center;
-}
-.moreInfoBtn:hover {
-    transition: .5s ease;
-}
-.moreInfoBtn:focus {
-    outline: none;
+@media only screen and (max-width: 500px) {
+    .projImg {
+        height: 10rem;
+        width: 20rem;
+        transition: .75s ease;
+        overflow: hidden;
+    }
+    .projImg:hover .projBottom {
+        bottom: 0;
+        height: 100%;
+    }
+    .projImg:hover .projDesc {
+        height: 35%;
+    }
+    .projImg:hover .projBtn {
+        height: 30%;
+    }
 }
