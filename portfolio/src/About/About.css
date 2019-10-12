@@ -18,7 +18,7 @@
     padding: 1rem;
 }
 
-.aboutTech {
+.aboutTitle {
     text-align: center;
     vertical-align: middle;
     padding: 2rem;
@@ -91,3 +91,33 @@
     -webkit-appearance: none;
     width: 100%;
 } */
+
+/* 
+.part {
+    padding: 50px 20px 85px;
+ }
+
+ .hexa, .hexa div {
+    margin: 0 auto;
+    transform-origin: 50% 50%;
+    overflow: hidden;
+    width: 300px;
+    height: 300px;
+  }
+  .hexa {
+    width: 325px;
+    height: 230px;
+  }
+  .hexa div {
+    width: 100%;
+    height: 100%;
+  }
+  .hexa {
+    transform: rotate(120deg);
+  }
+  .hex1 {
+    transform: rotate(-60deg);
+  }
+  .hex2 {
+    transform: rotate(-60deg);
+  } */
