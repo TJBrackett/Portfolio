@@ -34,8 +34,13 @@ export function About() {
             <div className="col-12">
               <h2 className="aboutTitle">Technologies I am proficient with</h2>
             </div>
-            <div className="container skillsDescription">
+            <div className="container-fluid">
+              <div className="skillsIconLG col-12">
 
+              </div>
+              <div className="skillsDescription col-12">
+
+              </div>
             </div>
             <div className="col-12">
               <h2 className="aboutTitle">Technologies I have worked with</h2>
@@ -49,15 +54,15 @@ export function About() {
         </div>
       </div>
     </div>
-          //     <div class="part">
-          //     <div class="hexa">
-          //       <div class="hex1">
-          //         <div class="hex2">
-          //         <img className="img-fluid aboutImg" src={Me} alt="Me" width="320" height="313" />
-          //         </div>
-          //       </div>
-          //     </div>
-          //   </div>
+    //     <div class="part">
+    //     <div class="hexa">
+    //       <div class="hex1">
+    //         <div class="hex2">
+    //         <img className="img-fluid aboutImg" src={Me} alt="Me" width="320" height="313" />
+    //         </div>
+    //       </div>
+    //     </div>
+    //   </div>
   )
 }
 
