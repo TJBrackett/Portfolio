@@ -4,6 +4,10 @@ import "bootstrap/dist/css/bootstrap.css"
 import './index.css'
 import App from './App/App.js';
 import * as serviceWorker from './serviceWorker'
+import AOS from 'aos'
+import 'aos/dist/aos.css'
+
+AOS.init()
 
 // Router example. Saving code here for future reference
 // import Contact from './Contact/Contact.js'
