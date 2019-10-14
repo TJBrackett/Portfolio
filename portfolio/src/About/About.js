@@ -1,6 +1,6 @@
 import React from 'react';
 // import Angular from "../Images/angular.png"
-// import Apache from "../Images/apache.png"
+import Apache from "../Images/apache.png"
 // import Bash from "../Images/bash.png"
 // import Bootstrap from "../Images/bootstrap.png"
 // import Cpp from "../Images/cpp.png"
@@ -9,15 +9,15 @@ import React from 'react';
 // import Git from "../Images/git.png"
 // import Html from "../Images/html.png"
 // import Java from "../Images/java.png"
-// import Js from "../Images/js.png"
+import Js from "../Images/js.png"
 // import Linode from "../Images/linode.png"
 // import Linux from "../Images/linux.png"
-// import Node from "../Images/node.png"
+import Node from "../Images/node.png"
 // import Python from "../Images/python.png"
 // import ReactIcon from "../Images/react.png"
 // import Ssl from "../Images/ssl.png"
-// import Mysql from "../Images/mysql.png"
-// import Vb from "../Images/vb.png"
+import Mysql from "../Images/mysql.png"
+import Vb from "../Images/vb.png"
 import "./About.css"
 
 export function About() {
@@ -35,11 +35,57 @@ export function About() {
               <h2 className="aboutTitle">Technologies I am proficient with</h2>
             </div>
             <div className="container-fluid">
-              <div className="skillsIconLG col-12">
+              <div className="row">
+              <div className="skillsIconLG col-6">
+                <div className="part">
+                  <div className="hexa">
+                    <div className="hex1">
+                      <div className="hex2">
+                        <img className="img-fluid aboutImg" src={Apache} alt="Apache" />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div className="part">
+                <div className="hexa">
+                  <div className="hex1">
+                    <div className="hex2">
+                      <img className="img-fluid aboutImg" src={Js} alt="Js" />
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div className="part">
+                <div className="hexa">
+                  <div className="hex1">
+                    <div className="hex2">
+                      <img className="img-fluid aboutImg" src={Node} alt="Node" />
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div className="part">
+                <div className="hexa">
+                  <div className="hex1">
+                    <div className="hex2">
+                      <img className="img-fluid aboutImg" src={Mysql} alt="Mysql" />
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div className="part">
+                <div className="hexa">
+                  <div className="hex1">
+                    <div className="hex2">
+                      <img className="img-fluid aboutImg" src={Vb} alt="Vb" />
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div className="skillDescription col-10">
 
               </div>
-              <div className="skillsDescription col-12">
-
               </div>
             </div>
             <div className="col-12">
@@ -54,15 +100,15 @@ export function About() {
         </div>
       </div>
     </div>
-    //     <div class="part">
-    //     <div class="hexa">
-    //       <div class="hex1">
-    //         <div class="hex2">
-    //         <img className="img-fluid aboutImg" src={Me} alt="Me" width="320" height="313" />
-    //         </div>
+    //   <div className="part">
+    //   <div className="hexa">
+    //     <div className="hex1">
+    //       <div className="hex2">
+    //       <img className="img-fluid aboutImg" src={Me} alt="Me" width="320" height="313" />
     //       </div>
     //     </div>
     //   </div>
+    // </div>
   )
 }
 

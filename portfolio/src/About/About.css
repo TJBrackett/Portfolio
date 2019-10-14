@@ -92,21 +92,20 @@
     width: 100%;
 } */
 
-/* 
+
 .part {
-    padding: 50px 20px 85px;
+    padding: 0px 0px 0px;
  }
 
  .hexa, .hexa div {
-    margin: 0 auto;
+    margin: 0;
     transform-origin: 50% 50%;
     overflow: hidden;
-    width: 300px;
-    height: 300px;
   }
   .hexa {
-    width: 325px;
-    height: 230px;
+    /* border: 1px solid black; */
+    width: 125px;
+    height: 160px;
   }
   .hexa div {
     width: 100%;
@@ -120,4 +119,18 @@
   }
   .hex2 {
     transform: rotate(-60deg);
-  } */
+    transition: .75s ease;
+  }
+
+  .hex2:hover {
+    background: white;
+    transition: .75s ease;
+  }
+.aboutImg {
+    margin-top: 1.8rem;
+    margin-left: .85rem;
+}
+
+.skillDescription {
+    border: 1px solid black;
+}
