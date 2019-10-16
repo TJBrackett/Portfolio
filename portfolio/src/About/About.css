@@ -129,8 +129,12 @@
 .aboutImg {
     margin-top: 1.8rem;
     margin-left: .85rem;
+    padding: 0px;
 }
 
 .skillDescription {
+    border: 1px solid black;
+}
+.testBox {
     border: 1px solid black;
 }

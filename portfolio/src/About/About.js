@@ -34,8 +34,7 @@ export function About() {
             <div className="col-12">
               <h2 className="aboutTitle">Technologies I am proficient with</h2>
             </div>
-            <div className="container-fluid">
-              <div className="row">
+            <div className="container-fluid row testBox">
               <div className="skillsIconLG col-6">
                 <div className="part">
                   <div className="hexa">
@@ -46,7 +45,6 @@ export function About() {
                     </div>
                   </div>
                 </div>
-              </div>
               <div className="part">
                 <div className="hexa">
                   <div className="hex1">
@@ -80,11 +78,18 @@ export function About() {
                     <div className="hex2">
                       <img className="img-fluid aboutImg" src={Vb} alt="Vb" />
                     </div>
-                  </div>
                 </div>
               </div>
-              <div className="skillDescription col-10">
-
+              </div>
+              </div>
+              <div className="skillDescription col-6">
+                Testing the test to test the testing test testfully tested.
+                Testing the test to test the testing test testfully tested.
+                Testing the test to test the testing test testfully tested.
+                Testing the test to test the testing test testfully tested.
+                Testing the test to test the testing test testfully tested.
+                Testing the test to test the testing test testfully tested.
+                Testing the test to test the testing test testfully tested.
               </div>
               </div>
             </div>
@@ -98,7 +103,6 @@ export function About() {
             </div>
           </div>
         </div>
-      </div>
     </div>
     //   <div className="part">
     //   <div className="hexa">
