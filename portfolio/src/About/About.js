@@ -19,6 +19,7 @@ import Node from "../Images/node.png"
 import Mysql from "../Images/mysql.png"
 import Vb from "../Images/vb.png"
 import "./About.css"
+import { TwitterTimelineEmbed } from 'react-twitter-embed';
 
 export function About() {
   return (
@@ -28,9 +29,9 @@ export function About() {
       </div>
       <p className="lead py-4 aboutP">I am a software engineer who specializes in building applications specific to the business needs of my clients.
               I have experience in software development, database design and implementation, native applications, full stack web development, and server management.</p>
-      <div>
-        <div className="row container-fluid">
-          <div className="d-flex justify-content-center flex-wrap col-lg-6 col-md-12 col-sm-12">
+      <div className="row">
+        <div className="container-fluid col-6">
+          <div className="d-flex justify-content-center flex-wrap">
             <div className="col-12">
               <h2 className="aboutTitle">Technologies I am proficient with</h2>
             </div>
@@ -93,15 +94,26 @@ export function About() {
               </div>
               </div>
             </div>
-            <div className="col-12">
-              <h2 className="aboutTitle">Technologies I have worked with</h2>
-            </div>
           </div>
-          <div className="tweetsContainer col-lg-6 col-md-12 col-sm-12">
+          <div className="tweetsContainer col-lg-6 col-md-6 col-sm-6">
             <div className="col-12">
               <h2 className="aboutTitle">What I'm up to now</h2>
             </div>
+            <TwitterTimelineEmbed className="tweets"
+              sourceType="profile"
+              screenName="TJBrackett"
+              options={{
+                height: 800
+              }}
+              noScrollbar
+              noHeader
+              noFooter
+              theme="dark"
+            />
           </div>
+          <div className="col-12">
+              <h2 className="aboutTitle">Technologies I have worked with</h2>
+            </div>
         </div>
     </div>
     //   <div className="part">

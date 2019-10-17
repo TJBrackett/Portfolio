@@ -72,7 +72,7 @@
     }
 }
 
-/* .tweetsContainer {
+.tweetsContainer {
     width: 100vw;
     vertical-align: middle;
     border-left: 1px solid black;
@@ -90,7 +90,7 @@
 .tweets {
     -webkit-appearance: none;
     width: 100%;
-} */
+}
 
 
 .part {
