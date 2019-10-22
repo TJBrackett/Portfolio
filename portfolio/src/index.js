@@ -9,6 +9,10 @@ import 'aos/dist/aos.css'
 
 AOS.init()
 
+ReactDOM.render(<App />, document.getElementById('root'));
+
+serviceWorker.register();
+
 // Router example. Saving code here for future reference
 // import Contact from './Contact/Contact.js'
 // import { BrowserRouter, Route } from "react-router-dom"
@@ -22,7 +26,3 @@ AOS.init()
 //     </BrowserRouter>,
 //     document.getElementById('root')
 // )
-
-ReactDOM.render(<App />, document.getElementById('root'));
-
-serviceWorker.register();
