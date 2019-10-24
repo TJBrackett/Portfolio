@@ -14,15 +14,14 @@ ReactDOM.render(<App />, document.getElementById('root'));
 serviceWorker.register();
 
 // Router example. Saving code here for future reference
-// import Contact from './Contact/Contact.js'
 // import { BrowserRouter, Route } from "react-router-dom"
-// import About from "./About/About.js"
-
+// import Page404 from './Page404/Page404.js'
+// import Blog from './Blog/Blog.js'
 // ReactDOM.render(
 //     <BrowserRouter>
 //         <Route exact path='/' component={App} />
-//         <Route exact path='/contact' component={Contact} />
-//         <Route exact path='/about' component={About} />
+//         <Route exact path='/blog' component={Blog} />
+//         <Route exact path='/*' component={Page404} />
 //     </BrowserRouter>,
 //     document.getElementById('root')
 // )
