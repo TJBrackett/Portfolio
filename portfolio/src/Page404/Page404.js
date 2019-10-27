@@ -1,5 +1,6 @@
 import React, {useEffect, useState} from 'react'
 import '../App/App.css'
+import './Page404.css'
 import { Link } from 'react-router-dom'
 import { quotes404 } from './Page404Quotes.js'
 
@@ -10,9 +11,9 @@ function Page404() {
         setQuote(quotes404[randNum])
     })
     return (
-      <div className="headerBackground" id="Header">
+      <div className="header404" id="Page404">
         <div className="text-center text-white caption">
-          <h1 className="display-2" id="Home">404</h1>
+          <h1 className="display-2" id="Page404">404</h1>
           <p className="lead">{quote}</p>
           <Link type="input" className="btn btn-outline-light btn-lg headerBtn" to="/" offset="80">Go Back</Link>
         </div>

@@ -24,107 +24,39 @@ import { TwitterTimelineEmbed } from 'react-twitter-embed';
 export function About() {
   return (
     <div className="aboutBg" id="About">
-      <div className="py-3 p=2 text-center aboutHeader">
+      <div className="py-3 p-2 text-center aboutHeader">
         <h1 className="display-4">TJ Brackett</h1>
       </div>
       <p className="lead py-4 aboutP">I am a software engineer who specializes in building applications specific to the business needs of my clients.
               I have experience in software development, database design and implementation, native applications, full stack web development, and server management.</p>
-      <div className="row">
-        <div className="container-fluid col-6">
-          <div className="d-flex justify-content-center flex-wrap">
-            <div className="col-12">
-              <h2 className="aboutTitle">Technologies I am proficient with</h2>
-            </div>
-            <div className="container-fluid row testBox">
-              <div className="skillsIconLG col-6">
-                <div className="part">
-                  <div className="hexa">
-                    <div className="hex1">
-                      <div className="hex2">
-                        <img className="img-fluid aboutImg" src={Apache} alt="Apache" />
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              <div className="part">
-                <div className="hexa">
-                  <div className="hex1">
-                    <div className="hex2">
-                      <img className="img-fluid aboutImg" src={Js} alt="Js" />
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div className="part">
-                <div className="hexa">
-                  <div className="hex1">
-                    <div className="hex2">
-                      <img className="img-fluid aboutImg" src={Node} alt="Node" />
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div className="part">
-                <div className="hexa">
-                  <div className="hex1">
-                    <div className="hex2">
-                      <img className="img-fluid aboutImg" src={Mysql} alt="Mysql" />
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div className="part">
-                <div className="hexa">
-                  <div className="hex1">
-                    <div className="hex2">
-                      <img className="img-fluid aboutImg" src={Vb} alt="Vb" />
-                    </div>
-                </div>
-              </div>
-              </div>
-              </div>
-              <div className="skillDescription col-6">
-                Testing the test to test the testing test testfully tested.
-                Testing the test to test the testing test testfully tested.
-                Testing the test to test the testing test testfully tested.
-                Testing the test to test the testing test testfully tested.
-                Testing the test to test the testing test testfully tested.
-                Testing the test to test the testing test testfully tested.
-                Testing the test to test the testing test testfully tested.
-              </div>
-              </div>
-            </div>
-          </div>
-          <div className="tweetsContainer col-lg-6 col-md-6 col-sm-6">
-            <div className="col-12">
-              <h2 className="aboutTitle">What I'm up to now</h2>
-            </div>
-            <TwitterTimelineEmbed className="tweets"
-              sourceType="profile"
-              screenName="TJBrackett"
-              options={{
-                height: 800
-              }}
-              noScrollbar
-              noHeader
-              noFooter
-              theme="dark"
-            />
-          </div>
+
+        <div className="tweetsContainer col-lg-12 col-md-12 col-sm-12">
           <div className="col-12">
-              <h2 className="aboutTitle">Technologies I have worked with</h2>
-            </div>
+            <h2 className="aboutTitle">What I'm up to now</h2>
+          </div>
+          <TwitterTimelineEmbed className="tweets"
+            sourceType="profile"
+            screenName="TJBrackett"
+            options={{
+              height: 400
+            }}
+            noScrollbar
+            noHeader
+            noFooter
+            theme="dark"
+          />
         </div>
-    </div>
-    //   <div className="part">
-    //   <div className="hexa">
-    //     <div className="hex1">
-    //       <div className="hex2">
-    //       <img className="img-fluid aboutImg" src={Me} alt="Me" width="320" height="313" />
-    //       </div>
-    //     </div>
-    //   </div>
-    // </div>
+      </div>
+    /* </div>
+       <div className="part">
+       <div className="hexa">
+         <div className="hex1">
+           <div className="hex2">
+           <img className="img-fluid aboutImg" src={Me} alt="Me" width="320" height="313" />
+           </div>
+         </div>
+       </div>
+     </div> */
   )
 }
 

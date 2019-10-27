@@ -80,16 +80,17 @@
 }
 @media only screen and (max-width: 991px) {
     .tweetsContainer {
-        margin-left: 1rem;
+        margin-right: 1rem;
         border-top: 1px solid black;
         border-left: 0px;
         -webkit-appearance: none;
+        padding: 1rem;
     }
 }
 
 .tweets {
     -webkit-appearance: none;
-    width: 100%;
+    padding: 0rem;
 }
 
 
@@ -103,7 +104,6 @@
     overflow: hidden;
   }
   .hexa {
-    /* border: 1px solid black; */
     width: 125px;
     height: 160px;
   }

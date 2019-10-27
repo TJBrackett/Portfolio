@@ -16,7 +16,7 @@
 }
 .projImg:hover .projBottom {
     bottom: 0;
-    height: 75%;
+    height: 100%;
 }
 .projImg:hover .projDesc {
     height: 30%;
@@ -108,13 +108,9 @@
 @media only screen and (max-width: 500px) {
     .projImg {
         height: 10rem;
-        width: 20rem;
+        width: 19rem;
         transition: .75s ease;
         overflow: hidden;
-    }
-    .projImg:hover .projBottom {
-        bottom: 0;
-        height: 100%;
     }
     .projImg:hover .projDesc {
         height: 35%;
