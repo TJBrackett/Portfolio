@@ -4,7 +4,7 @@
 }
 
 .bgContact {
-    background:#557A95;
+    background: rgba(85, 122, 149, 0.75);
 }
 
 .textChange{
@@ -19,23 +19,34 @@
 .contact-header {
     text-align: center;
     vertical-align: bottom;
-    background: #557A95;
+    background: rgba(58, 56, 56);
     padding: 1rem;
-    color: rgba(58, 56, 56);
+    color: #557A95;
 }
 
 .form-control {
     transition: .75s ease;
+    background: rgba(58, 56, 56);
+    color: #557A95;
 }
 .form-control:focus {
     transition: .75s ease;
     box-shadow: 0 4px 8px 0 rgba(58, 56, 56), 0 6px 20px 0 rgba(58, 56, 56);
+    background: rgba(58, 56, 56);
+    color: #557A95;
 }
 .form-control:hover {
     transition: .75s ease;
     box-shadow: 0 4px 8px 0 rgba(58, 56, 56), 0 6px 20px 0 rgba(58, 56, 56);
+    background: rgba(58, 56, 56);
+    color: #557A95;
 }
 
 .emailLabel{
     float:left;
+}
+
+.contactBtn:hover {
+    background: rgba(58, 56, 56);
+    color: #557A95;
 }

@@ -25,9 +25,9 @@ export function About() {
   return (
     <div className="aboutBg" id="About">
       <div className="py-3 p-2 text-center aboutHeader">
-        <h1 className="display-4">TJ Brackett</h1>
+        <h1 className="display-4">About Me</h1>
       </div>
-      <p className="lead py-4 aboutP">I am a software engineer who specializes in building applications specific to the business needs of my clients.
+      <p className="lead py-4 aboutP">My name is TJ Brackett. I am a software engineer who specializes in building applications specific to the business needs of my clients.
               I have experience in software development, database design and implementation, native applications, full stack web development, and server management.</p>
 
         <div className="tweetsContainer col-lg-12 col-md-12 col-sm-12">

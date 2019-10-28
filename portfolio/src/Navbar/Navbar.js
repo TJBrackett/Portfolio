@@ -1,12 +1,10 @@
-import React, { useEffect } from "react";
-import "./Navbar.css";
-import Resume from "../TJ_Resume.pdf";
-import A from "react-anchor-link-smooth-scroll";
+import React from "react"
+import "./Navbar.css"
+import Resume from '../TJ_Resume.pdf'
+import A from "react-anchor-link-smooth-scroll"
+import { Link } from 'react-router-dom'
 
 function Navbar() {
-  // useEffect(() => {
-  //   onclick()
-  // });
   return (
     <nav className="nav-bg navbar sticky-top navbar-expand-md navbar-light">
       <button
@@ -34,10 +32,11 @@ function Navbar() {
                 className="link nav-link text-white font-weight-bold"
                 data-target=".navbar-collapse.show"
                 data-toggle="collapse"
-                href="#Header"
-                offset={window.innerWidth < 768 ? "335" : "80"}
+                href="#Home"
+                offset={window.innerWidth < 768 ? "335" : "385"}
               >
                 <div className="navLink">Home</div>
+                <hr />
               </A>
             </li>
             <li className="nav-item">
@@ -46,9 +45,10 @@ function Navbar() {
                 data-target=".navbar-collapse.show"
                 data-toggle="collapse"
                 href="#About"
-                offset={window.innerWidth < 768 ? "335" : "80"}
+                offset={window.innerWidth < 768 ? "385" : "80"}
               >
                 <div className="navLink">About</div>
+                <hr />
               </A>
             </li>
             <li className="nav-item">
@@ -57,9 +57,10 @@ function Navbar() {
                 data-target=".navbar-collapse.show"
                 data-toggle="collapse"
                 href="#Portfolio"
-                offset={window.innerWidth < 768 ? "335" : "80"}
+                offset={window.innerWidth < 768 ? "385" : "80"}
               >
                 <div className="navLink">Portfolio</div>
+                <hr />
               </A>
             </li>
             <li className="nav-item">
@@ -68,21 +69,32 @@ function Navbar() {
                 data-target=".navbar-collapse.show"
                 data-toggle="collapse"
                 href="#Contact"
-                offset={window.innerWidth < 768 ? "335" : "80"}
+                offset={window.innerWidth < 768 ? "385" : "80"}
               >
                 <div className="navLink">Contact</div>
+                <hr />
               </A>
             </li>
             <li className="nav-item">
               <a
                 className="link nav-link text-white font-weight-bold"
                 data-target=".navbar-collapse.show"
-                data-toggle="collapse"
                 href={Resume}
                 target="_blank"
                 rel="noopener noreferrer"
               >
                 <div className="navLink">Resume</div>
+                <hr />
+              </a>
+            </li>
+            <li className="nav-item">
+              <a
+                className="link nav-link text-white font-weight-bold"
+                data-target=".navbar-collapse.show"
+                href="/blog"
+              >
+                <div className="navLink">Blog</div>
+                <hr />
               </a>
             </li>
           </ul>

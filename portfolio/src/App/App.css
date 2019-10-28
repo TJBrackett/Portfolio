@@ -19,6 +19,13 @@
 
 }
 
+.headerWrapper {
+    top:0;
+    left:0;
+    position: sticky;
+    z-index: -1;
+}
+
 .headerBtn{
     transition: .75s ease;
 }
@@ -28,7 +35,7 @@
 }
 
 .portfolio {
-    background:#557A95;
+    background: rgba(85, 122, 149, 0.75);
 }
 
 .caption {
