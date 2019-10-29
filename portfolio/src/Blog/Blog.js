@@ -1,17 +1,23 @@
-import React from 'react'
-import '../App/App.css'
-import { Link } from 'react-router-dom'
+import React from "react";
+import "./Blog.css";
 
 function Blog() {
-    return (
-      <div className="headerBackground" id="Header">
-        <div className="text-center text-white caption">
-          <h1 className="display-2" id="Home">Blog</h1>
-          <p className="lead">Blog stuff here</p>
-          <Link type="input" className="btn btn-outline-light btn-lg headerBtn" to="/" offset="80">Go Back</Link>
+  let test = "";
+  for (let i = 0; i < 1000; i++) {
+    test += " blog test";
+  }
+  return (
+    <React.Fragment>
+      <div className="blogBackground" id="Blog"></div>
+      <div className="postContainer row">
+        <div className="col-lg-2 col-md-2 col-sm-0"></div>
+        <div className="col-lg-8 col-md-8 col-sm-12 middleSection">
+          <p>{test}</p>
         </div>
+        <div className="col-lg-2 col-md-2 col-sm-0"></div>
       </div>
-    )
+    </React.Fragment>
+  );
 }
 
 export default Blog;
