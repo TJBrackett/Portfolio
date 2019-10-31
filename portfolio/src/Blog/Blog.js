@@ -12,7 +12,7 @@ function Blog() {
       <div className="postContainer row">
         <div className="col-lg-2 col-md-2 col-sm-0"></div>
         <div className="col-lg-8 col-md-8 col-sm-12 middleSection">
-          <p>{test}</p>
+          <p className="testP">{test}</p>
         </div>
         <div className="col-lg-2 col-md-2 col-sm-0"></div>
       </div>

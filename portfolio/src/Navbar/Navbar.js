@@ -2,7 +2,6 @@ import React from "react"
 import "./Navbar.css"
 import Resume from '../TJ_Resume.pdf'
 import A from "react-anchor-link-smooth-scroll"
-import { Link } from 'react-router-dom'
 
 function Navbar() {
   return (
