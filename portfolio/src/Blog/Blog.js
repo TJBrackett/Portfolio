@@ -1,5 +1,6 @@
 import React from "react";
 import "./Blog.css";
+import Konami from 'react-konami-code'
 
 function Blog() {
   let test = "";
@@ -19,5 +20,39 @@ function Blog() {
     </React.Fragment>
   );
 }
+function LoginInfo() {
+  const username = prompt("Username")
 
-export default Blog;
+  if (username !== "" || username !== null) {
+    const password = prompt("Password")
+
+    if (password !== "" || password !== null) {
+      BlogLogin(username, password)
+    }
+  }
+}
+function BlogLogin(username, password) {
+
+} 
+function Render() {
+  let loginCode = []
+  const secretCode = process.env.REACT_APP_LOGIN_CODE
+  for (let i = 0; i < process.env.REACT_APP_LOGIN_CODE.length; i++) {
+    loginCode.push(secretCode[i])
+  }
+  console.log(secretCode[0])
+  return(
+    <React.Fragment>
+      <Blog />
+      <Konami
+        code={[17, 57, 53, 50, 49]}
+        action={LoginInfo}
+        resetDelay={3000}
+        timeout={5000}
+      >
+    </Konami>
+    </React.Fragment>
+  )
+}
+
+export default Render;
