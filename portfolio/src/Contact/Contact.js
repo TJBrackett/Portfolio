@@ -40,7 +40,7 @@ class Contact extends React.Component {
   }
 
   handleSubmit(event) {
-    const backendUrl = process.env.REACT_APP_BACKEND_URL
+    const backendUrl = process.env.REACT_APP_CONTACT_ROUTE
     event.preventDefault();
     
     fetch((backendUrl), {

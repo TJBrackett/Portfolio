@@ -28,6 +28,7 @@
   transition: 0.75s ease;
   background-color: transparent;
   border: transparent;
+  border-left: 1px solid rgba(58, 56, 56);
   border-bottom: 1px solid rgba(58, 56, 56);
 }
 .form-control::placeholder {
@@ -38,7 +39,7 @@
   transition: 0.75s ease;
   background: transparent;
   color: black;
-  border: 1px solid rgba(58, 56, 56);
+  border-left: 5px solid rgba(58, 56, 56);
   border-bottom: 5px solid rgba(58, 56, 56);
   box-shadow: none;
 }
@@ -51,20 +52,3 @@
   background: rgba(58, 56, 56);
   color: #557a95;
 }
-
-hr {
-    display: block;
-    height: 1px;
-    border: 0;
-    background-image: linear-gradient(
-      90deg,
-      transparent,
-      #557a95,
-      white,
-      #557a95,
-      transparent
-    );
-    margin: 0;
-    padding: 0;
-    transition: 0.75s ease;
-  }
