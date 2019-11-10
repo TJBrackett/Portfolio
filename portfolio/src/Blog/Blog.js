@@ -11,17 +11,18 @@ function Blog() {
   return (
     <React.Fragment>
       <div className="blogBackground" id="Blog"></div>
-      <div className="postContainer row" id="Posts">
+      <div className="postContainer row">
         <div className="col-lg-2 col-md-2 col-sm-0"></div>
-        <div className="col-lg-8 col-md-8 col-sm-12 middleSection">
+        <div className="col-lg-8 col-md-8 col-sm-12 middleSection" id="Posts">
           <p className="testP">{test}</p>
         </div>
         <div className="col-lg-2 col-md-2 col-sm-0"></div>
       </div>
-      <div id="Create">
-        <div className="postForm">
-          <input type="text" className="createTitle"></input>
-          <textarea rows="4" className="createPost"></textarea>
+      <div className="form-row" id="Create">
+        <div className="postForm form-group">
+          <input type="text" className="createTitle col-12 form-control form-control-lg" placeholder="title"></input>
+          <textarea rows="10" className="createPost col-12 form-control form-control-lg" placeholder="body"></textarea>
+          <button type="submit">Create Post</button>
         </div>
       </div>
     </React.Fragment>
