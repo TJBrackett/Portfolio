@@ -25,23 +25,24 @@
 }
 
 .form-control {
-  transition: 0.75s ease;
   background-color: transparent;
   border: transparent;
   border-left: 1px solid rgba(58, 56, 56);
   border-bottom: 1px solid rgba(58, 56, 56);
+  margin-bottom: 1rem;
+  transition: 0.75s;
 }
 .form-control::placeholder {
     opacity: 1;
     color: rgba(58, 56, 56);
 }
 .form-control:focus {
-  transition: 0.75s ease;
   background: transparent;
   color: black;
   border-left: 5px solid rgba(58, 56, 56);
   border-bottom: 5px solid rgba(58, 56, 56);
   box-shadow: none;
+  transition: 0.75s ease;
 }
 
 .emailLabel {
@@ -51,4 +52,17 @@
 .contactBtn:hover {
   background: rgba(58, 56, 56);
   color: #557a95;
+}
+
+.form-control:-webkit-autofill,
+.form-control:-webkit-autofill:hover, 
+.form-control:-webkit-autofill:focus {
+  background-color: transparent;
+  border: transparent;
+  border-left: 1px solid rgba(58, 56, 56);
+  border-bottom: 1px solid rgba(58, 56, 56);
+  margin-bottom: 1rem;
+  transition: 0.75s;
+  -webkit-text-fill-color: black;
+  -webkit-box-shadow: 0 0 0px 1000px #557a95 inset;
 }

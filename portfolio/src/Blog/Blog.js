@@ -1,6 +1,7 @@
-import React from "react";
+import React, {useState} from "react";
 import "./Blog.css";
 import Konami from "react-konami-code";
+import ImageUploader from 'react-images-upload'
 
 function Blog() {
   let test = "";
@@ -8,27 +9,87 @@ function Blog() {
     test += " blog test";
   }
 
+  //Need to create card layout and receive cards
+  const [image, setImage] = useState('')
+  const [title, setTitle] = useState('')
+  const [body, setBody] = useState('')
+
+  const imgDrop = (img) => {
+    setImage(img)
+  }
+  const changeTitle = (event) => {
+    setTitle(event.target.value)
+  }
+  const changeBody = (event) => {
+    setBody(event.target.value)
+  }
+  const submitPost = (event) => {
+    const blogPostUrl = process.env.REACT_APP_CREATE_POST
+    event.preventDefault()
+    //Need to send JWT with post
+    fetch((blogPostUrl), {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      post: JSON.stringify({
+        image: image,
+        title: title,
+        body: body
+      })
+    }).then(res => {
+      if (res.ok) {
+        ShowPosts()
+      } else {
+        console.log(res)
+        ShowPosts()
+      }
+    }).catch(err => console.log(err))
+  }
   return (
     <React.Fragment>
       <div className="blogBackground" id="Blog"></div>
-      <div className="postContainer row">
+      <div className="postContainer row" id="Posts">
         <div className="col-lg-2 col-md-2 col-sm-0"></div>
-        <div className="col-lg-8 col-md-8 col-sm-12 middleSection" id="Posts">
+        <div className="col-lg-8 col-md-8 col-sm-12 middleSection">
+          {/* replace this paragraph with posts */}
           <p className="testP">{test}</p>
         </div>
         <div className="col-lg-2 col-md-2 col-sm-0"></div>
       </div>
+      <form className="postForm" onSubmit={submitPost}>
       <div className="form-row" id="Create">
         <div className="postForm form-group">
-          <input type="text" className="createTitle col-12 form-control form-control-lg" placeholder="title"></input>
-          <textarea rows="10" className="createPost col-12 form-control form-control-lg" placeholder="body"></textarea>
-          <button type="submit">Create Post</button>
+          <ImageUploader
+            withIcon={true}
+            buttonText="Header Image"
+            withPreview={true}
+            onChange={imgDrop}
+            imgExtension={['.jpg', '.gif', '.png']}
+            maxFileSize={5242880}
+          />
+          <input 
+            type="text" 
+            className="createTitle col-12 form-control form-control-lg" 
+            placeholder="title"
+            onChange={changeTitle}
+          ></input>
+          <textarea
+            rows="10" 
+            className="createPost col-12 form-control form-control-lg" 
+            placeholder="body"  
+            onChange={changeBody}
+          ></textarea>
+          <button
+            type="submit"
+            className="submitPost"
+          >Create Post</button>
         </div>
       </div>
+      </form>
     </React.Fragment>
   );
 }
 function LoginInfo() {
+  //Need to receive JWT on login
   const username = prompt("Username");
 
   if (username !== "" || username !== null) {
