@@ -40,10 +40,10 @@ class Contact extends React.Component {
   }
 
   handleSubmit(event) {
-    const backendUrl = process.env.REACT_APP_CONTACT_ROUTE
+    const backendUrl = process.env.REACT_APP_CONTACT_ROUTE;
     event.preventDefault();
-    
-    fetch((backendUrl), {
+
+    fetch(backendUrl, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
@@ -113,13 +113,13 @@ class Contact extends React.Component {
     }
     return (
       <React.Fragment>
-        <form className="bgContact" onSubmit={this.handleSubmit}>
-          <div className="contact-header" id="Contact">
-            <div className="text-center py-3 p-2">
-              <h1 className="display-4">Contact Me</h1>
-              <p className="lead">Have a question or want to work together?</p>
-            </div>
+        <div className="contact-header" id="Contact">
+          <div className="text-center py-3 p-2">
+            <h1 className="display-4">Contact Me</h1>
+            <p className="lead">Have a question or want to work together?</p>
           </div>
+        </div>
+        <form className="bgContact" onSubmit={this.handleSubmit}>
           <div className="form-row p-4 col-centered">
             <div className="form-group col-md-10 col-centered mt-5 py-0">
               <input

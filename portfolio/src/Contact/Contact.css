@@ -4,7 +4,7 @@
 }
 
 .bgContact {
-  background: rgba(85, 122, 149, 0.75);
+  background: rgb(204, 204, 204);
 }
 
 .textChange {
@@ -19,9 +19,9 @@
 .contact-header {
   text-align: center;
   vertical-align: bottom;
-  background: rgba(58, 56, 56);
+  background: rgba(255, 255, 255, 0.75);
   padding: 1rem;
-  color: #557a95;
+  color:rgba(58, 56, 56);
 }
 
 .form-control {

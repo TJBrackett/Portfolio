@@ -1,33 +1,33 @@
-import React, {useState} from "react";
+import React, { useState } from "react";
 import "./Blog.css";
 import Konami from "react-konami-code";
-import ImageUploader from 'react-images-upload'
+import ImageUploader from "react-images-upload";
 
 function Blog() {
   let test = "";
   for (let i = 0; i < 1000; i++) {
     test += " blog test";
   }
-
   //Need to create card layout and receive cards
-  const [image, setImage] = useState('')
-  const [title, setTitle] = useState('')
-  const [body, setBody] = useState('')
+  const [image, setImage] = useState("");
+  const [title, setTitle] = useState("");
+  const [body, setBody] = useState("");
 
-  const imgDrop = (img) => {
-    setImage(img)
-  }
-  const changeTitle = (event) => {
-    setTitle(event.target.value)
-  }
-  const changeBody = (event) => {
-    setBody(event.target.value)
-  }
-  const submitPost = (event) => {
-    const blogPostUrl = process.env.REACT_APP_CREATE_POST
-    event.preventDefault()
-    //Need to send JWT with post
-    fetch((blogPostUrl), {
+  const imgDrop = img => {
+    setImage(img);
+  };
+  const changeTitle = event => {
+    setTitle(event.target.value);
+  };
+  const changeBody = event => {
+    setBody(event.target.value);
+  };
+
+  const submitPost = event => {
+    // Need to send JWT on submit
+    const blogPostUrl = process.env.REACT_APP_CREATE_POST;
+    // event.preventDefault()
+    fetch(blogPostUrl, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       post: JSON.stringify({
@@ -35,15 +35,18 @@ function Blog() {
         title: title,
         body: body
       })
-    }).then(res => {
-      if (res.ok) {
-        ShowPosts()
-      } else {
-        console.log(res)
-        ShowPosts()
-      }
-    }).catch(err => console.log(err))
-  }
+    })
+      .then(res => {
+        if (res.ok) {
+          ShowPosts();
+        } else {
+          console.log(res);
+          ShowPosts();
+        }
+      })
+      .catch(err => console.log(err));
+  };
+
   return (
     <React.Fragment>
       <div className="blogBackground" id="Blog"></div>
@@ -56,34 +59,35 @@ function Blog() {
         <div className="col-lg-2 col-md-2 col-sm-0"></div>
       </div>
       <form className="postForm" onSubmit={submitPost}>
-      <div className="form-row" id="Create">
-        <div className="postForm form-group">
-          <ImageUploader
-            withIcon={true}
-            buttonText="Header Image"
-            withPreview={true}
-            onChange={imgDrop}
-            imgExtension={['.jpg', '.gif', '.png']}
-            maxFileSize={5242880}
-          />
-          <input 
-            type="text" 
-            className="createTitle col-12 form-control form-control-lg" 
-            placeholder="title"
-            onChange={changeTitle}
-          ></input>
-          <textarea
-            rows="10" 
-            className="createPost col-12 form-control form-control-lg" 
-            placeholder="body"  
-            onChange={changeBody}
-          ></textarea>
-          <button
-            type="submit"
-            className="submitPost"
-          >Create Post</button>
+        <div className="form-row" id="Create">
+          <div className="postForm form-group col-6 m-0 p-0">
+            <ImageUploader
+              withIcon={true}
+              buttonText="Header Image"
+              withPreview={true}
+              onChange={imgDrop}
+              imgExtension={[".jpg", ".gif", ".png"]}
+              maxFileSize={5242880}
+            />
+          </div>
+          <div className="row p-2 m-2">
+            <input
+              type="text"
+              className="createTitle form-control form-control-lg"
+              placeholder="title"
+              onChange={changeTitle}
+            ></input>
+            <textarea
+              rows="10"
+              className="createPost form-control form-control-lg"
+              placeholder="body"
+              onChange={changeBody}
+            ></textarea>
+          </div>
+          <button type="submit" className="submitPost col-12">
+            Create Post
+          </button>
         </div>
-      </div>
       </form>
     </React.Fragment>
   );

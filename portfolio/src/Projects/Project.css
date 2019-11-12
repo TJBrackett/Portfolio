@@ -78,18 +78,24 @@
 }
 
 .githubBtn:hover {
-    transition: .5s ease;
+    background: rgba(58, 56, 56);
+    color: #557a95;
+    transition: .75s ease;
 }
 .githubBtn {
-    transition: .5s ease;
+    transition: .75s ease;
     -webkit-appearance: none;
 }
 
 .pageLinkBtn:hover {
-    transition: .5s ease;
+    margin: 0;
+    padding: 0;
+    background: rgba(58, 56, 56);
+    color: #557a95;
+    transition: .75s ease;
 }
 .pageLinkBtn {
-    transition: .5s ease;
+    transition: .75s ease;
     -webkit-appearance: none;
 }
 

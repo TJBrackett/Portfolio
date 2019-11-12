@@ -35,7 +35,7 @@
 }
 
 .portfolio {
-    background: rgba(85, 122, 149, 0.75);
+    background: rgb(204, 204, 204);
 }
 
 .caption {
@@ -86,6 +86,6 @@
     }
  }
 .portfolioHeader {
-    background: rgb(58, 56, 56);
-    color: #557A95;
+    background: rgba(255, 255, 255, 0.75);
+    color: rgba(58, 56, 56);
 }
