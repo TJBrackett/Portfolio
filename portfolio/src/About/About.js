@@ -36,7 +36,7 @@ export function About() {
           server management.
         </p>
 
-        <div className="tweetsContainer col-lg-12 col-md-12 col-sm-12">
+        {/* <div className="tweetsContainer col-lg-12 col-md-12 col-sm-12">
           <div className="col-12">
             <h2 className="aboutTitle">What I'm up to now</h2>
           </div>
@@ -52,7 +52,7 @@ export function About() {
             noFooter
             theme="dark"
           />
-        </div>
+        </div> */}
       </div>
     </React.Fragment>
     /* </div>
