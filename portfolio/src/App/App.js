@@ -19,7 +19,7 @@ function Header() {
         <h1 className="display-2" id="Home">
           TJB
         </h1>
-        <p className="lead">Welcome to my responsive portfolio website.</p>
+        <p className="lead">Full Stack Web Developer</p>
         <A
           type="input"
           className="btn btn-outline-light btn-lg headerBtn"
