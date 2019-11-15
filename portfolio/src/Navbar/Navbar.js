@@ -35,7 +35,7 @@ function Navbar() {
                 offset={window.innerWidth < 768 ? "335" : "385"}
               >
                 <div className="navLink">Home</div>
-                <hr />
+                <hr className="navHr" />
               </A>
             </li>
             <li className="nav-item">
@@ -47,7 +47,7 @@ function Navbar() {
                 offset={window.innerWidth < 768 ? "385" : "185"}
               >
                 <div className="navLink">About</div>
-                <hr />
+                <hr className="navHr" />
               </A>
             </li>
             <li className="nav-item">
@@ -59,7 +59,7 @@ function Navbar() {
                 offset={window.innerWidth < 768 ? "385" : "80"}
               >
                 <div className="navLink">Portfolio</div>
-                <hr />
+                <hr className="navHr" />
               </A>
             </li>
             <li className="nav-item">
@@ -71,7 +71,7 @@ function Navbar() {
                 offset={window.innerWidth < 768 ? "385" : "80"}
               >
                 <div className="navLink">Contact</div>
-                <hr />
+                <hr className="navHr" />
               </A>
             </li>
             <li className="nav-item">
@@ -83,7 +83,7 @@ function Navbar() {
                 rel="noopener noreferrer"
               >
                 <div className="navLink">Resume</div>
-                <hr />
+                <hr className="navHr" />
               </a>
             </li>
             {/* <li className="nav-item">
