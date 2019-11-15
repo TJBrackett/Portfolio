@@ -40,9 +40,9 @@ class Contact extends React.Component {
   }
 
   handleSubmit(event) {
-    const backendUrl = 'https://www.tjbrackett.com:8443';
+    const backendUrl = process.env.REACT_APP_CONTACT_ROUTE;
     event.preventDefault();
-
+    console.log(backendUrl)
     fetch(backendUrl, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
