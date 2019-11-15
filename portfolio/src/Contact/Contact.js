@@ -63,7 +63,6 @@ class Contact extends React.Component {
         } else {
           this.state({ status: res.status });
         }
-        console.log(res);
       })
       .catch(err => console.log(err));
   }
