@@ -4,7 +4,7 @@
 }
 
 .bgContact {
-  background: rgb(204, 204, 204);
+  background: rgba(58, 56, 56);
 }
 
 .textChange {
@@ -20,28 +20,29 @@
 .contact-header {
   text-align: center;
   vertical-align: bottom;
-  background: rgba(255, 255, 255, 0.75);
+  background: rgba(0, 0, 0, 0.75);
   padding: 1rem;
-  color:rgba(58, 56, 56);
+  color:white;
 }
 
 .form-control {
   background-color: transparent;
   border: transparent;
-  border-left: 1px solid rgba(58, 56, 56);
-  border-bottom: 1px solid rgba(58, 56, 56);
+  border-left: 1px solid #557A95;
+  border-bottom: 1px solid #557A95;
   margin-bottom: 1rem;
+  color:white;
   transition: 0.75s;
 }
 .form-control::placeholder {
     opacity: 1;
-    color: rgba(58, 56, 56);
+    color: rgb(204, 204, 204);
 }
 .form-control:focus {
   background: transparent;
-  color: black;
-  border-left: 5px solid rgba(58, 56, 56);
-  border-bottom: 5px solid rgba(58, 56, 56);
+  color: white;
+  border-left: 5px solid #557A95;
+  border-bottom: 5px solid #557A95;
   box-shadow: none;
   transition: 0.75s ease;
 }
@@ -50,10 +51,25 @@
   float: left;
 }
 
-.contactBtn:hover {
-  background: rgba(58, 56, 56);
-  color: #557a95;
+.contactBtn {
+  background: transparent;
+  color: white;
+  border: 1px solid white;
+  transition: 0.75s ease;
 }
+
+.contactBtn:hover {
+  background: linear-gradient(
+    90deg,
+    rgba(58, 56, 56),
+    #557a95,
+    rgba(58, 56, 56)
+  );
+  color: white;
+  border: 1px solid transparent;
+  transition: 0.75s ease;
+}
+
 
 .form-control:-webkit-autofill,
 .form-control:-webkit-autofill:hover, 

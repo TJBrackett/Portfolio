@@ -36,6 +36,7 @@ function Header() {
 function Portfolio() {
   return (
     <React.Fragment>
+      <hr />
       <div className="portfolioHeader" id="Portfolio">
         <div className="text-center py-3 p-2">
           <h1 className="display-4">Projects</h1>
@@ -45,6 +46,7 @@ function Portfolio() {
           </p>
         </div>
       </div>
+      <hr />
       <div className="portfolio p-5 d-flex justify-content-center flex-wrap">
         {Project(
           Sticky.title,

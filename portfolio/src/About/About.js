@@ -19,15 +19,17 @@ import React from "react";
 // import Mysql from "../Images/mysql.png"
 // import Vb from "../Images/vb.png"
 import "./About.css";
-import { TwitterTimelineEmbed } from "react-twitter-embed";
+// import { TwitterTimelineEmbed } from "react-twitter-embed";
 
 export function About() {
   return (
     <React.Fragment>
+      <hr />
       <div className="py-3 p-2 text-center aboutHeader">
         <h1 className="display-4">About Me</h1>
       </div>
-      <div className="aboutBg" id="About">
+      <hr />
+      <div className="aboutBg d-flex flex-wrap justify-content-center" id="About">
         <p className="lead py-4 aboutP">
           My name is TJ Brackett. I am a software engineer who specializes in
           building applications specific to the business needs of my clients. I
@@ -35,7 +37,13 @@ export function About() {
           implementation, native applications, full stack web development, and
           server management.
         </p>
-
+        <p className=" lead aboutP">
+          You can see more of what I do on my&nbsp;
+          <a className="aboutLink" href="https://twitter.com/TJBrackett">Twitter</a>,&nbsp; 
+          <a className="aboutLink" href="https://www.linkedin.com/in/tjbrackett/">LinkedIn</a>,&nbsp;
+          <a className="aboutLink" href="https://stackoverflow.com/users/11122711/tj-brackett">Stack Overflow</a>,&nbsp;and&nbsp;
+          <a className="aboutLink" href="https://github.com/TJBrackett">GitHub</a>
+        </p>
         {/* <div className="tweetsContainer col-lg-12 col-md-12 col-sm-12">
           <div className="col-12">
             <h2 className="aboutTitle">What I'm up to now</h2>

@@ -6,7 +6,8 @@ import "./Footer.css"
 function Footer() {
   return (
     <React.Fragment>
-      <div className="container-fluid text-center footer text-white py-1">
+      <hr />
+      <div className="container-fluid text-center footer text-white">
         <div>
           <a className="footer-link" href="https://twitter.com/TJBrackett" target="_blank" rel="noopener noreferrer" aria-label="Twitter">
             <i className="fa fa-twitter fa-3x m-2" alt="twitter" />

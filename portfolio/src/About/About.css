@@ -1,13 +1,13 @@
 .aboutBg {
-    background: rgb(204, 204, 204);
+    background: rgba(58, 56, 56);
     height:100%;
 }
 
 .aboutHeader {
     text-align: center;
     vertical-align: middle;
-    background: rgba(255, 255, 255, 0.75);
-    color: rgba(58, 56, 56);
+    background: rgba(0, 0, 0, 0.75);
+    color: white;
 }
 
 .aboutP {
@@ -16,6 +16,7 @@
     margin-left: 15rem;
     margin-right: 15rem;
     padding: 1rem;
+    color: white;
 }
 
 .aboutTitle {
@@ -25,9 +26,10 @@
 }
 
 .aboutIcon {
+    padding: 1rem;
     vertical-align: middle;
-    max-width: 50px;
-    max-height: 50px;
+    max-width: 250px;
+    max-height: 250px;
     margin-left: 1rem;
     margin-right: 1rem;
     transition: .75s ease;
@@ -137,4 +139,11 @@
 }
 .testBox {
     border: 1px solid black;
+}
+
+.aboutLink {
+    color: #557A95;
+}
+.aboutLink:hover {
+    color:white;
 }

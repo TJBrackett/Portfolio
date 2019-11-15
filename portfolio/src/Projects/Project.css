@@ -77,25 +77,48 @@
     justify-content: center;
     transition: .75s ease;
 }
-
-.githubBtn:hover {
-    background: rgba(58, 56, 56);
-    color: #557a95;
-    transition: .75s ease;
-}
 .githubBtn {
+    background: transparent;
+    color: white;
+    border: 1px solid white;
+    border-radius: 0;
+    transition: 0.75s ease;
     transition: .75s ease;
     -webkit-appearance: none;
+}
+.githubBtn:hover {
+    background: linear-gradient(
+        90deg,
+        rgba(58, 56, 56),
+        #557a95,
+        rgba(58, 56, 56)
+      );
+    color: white;
+    border: 1px solid transparent;
+    border-right: 1px solid white;
+    transition: .75s ease;
 }
 
-.pageLinkBtn:hover {
-    background: rgba(58, 56, 56);
-    color: #557a95;
-    transition: .75s ease;
-}
 .pageLinkBtn {
+    background: transparent;
+    color: white;
+    border: 1px solid white;
+    border-radius: 0;
+    transition: 0.75s ease;
     transition: .75s ease;
     -webkit-appearance: none;
+}
+.pageLinkBtn:hover {
+    background: linear-gradient(
+        90deg,
+        rgba(58, 56, 56),
+        #557a95,
+        rgba(58, 56, 56)
+      );
+    color: white;
+    border: 1px solid transparent;
+    border-left: 1px solid white;
+    transition: .75s ease;
 }
 
 .projTop {

@@ -86,7 +86,7 @@ function Navbar() {
                 <hr />
               </a>
             </li>
-            <li className="nav-item">
+            {/* <li className="nav-item">
               <a
                 className="link nav-link text-white font-weight-bold"
                 data-target=".navbar-collapse.show"
@@ -95,7 +95,7 @@ function Navbar() {
                 <div className="navLink">Blog</div>
                 <hr />
               </a>
-            </li>
+            </li> */}
           </ul>
         </div>
       </div>

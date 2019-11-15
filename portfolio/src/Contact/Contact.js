@@ -113,12 +113,14 @@ class Contact extends React.Component {
     }
     return (
       <React.Fragment>
+        <hr />
         <div className="contact-header" id="Contact">
           <div className="text-center py-3 p-2">
             <h1 className="display-4">Contact Me</h1>
             <p className="lead">Have a question or want to work together?</p>
           </div>
         </div>
+        <hr />
         <form className="bgContact" onSubmit={this.handleSubmit}>
           <div className="form-row p-4 col-centered">
             <div className="form-group col-md-10 col-centered mt-5 py-0">
