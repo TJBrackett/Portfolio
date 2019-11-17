@@ -8,7 +8,7 @@ import AOS from 'aos'
 import 'aos/dist/aos.css'
 import { BrowserRouter, Route, Switch } from "react-router-dom"
 import Page404 from './Page404/Page404.js'
-import Blog from './Blog/Blog.js'
+// import Blog from './Blog/Blog.js'
 
 ReactDOM.render(
     <BrowserRouter>
