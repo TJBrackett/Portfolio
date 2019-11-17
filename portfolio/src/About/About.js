@@ -25,11 +25,11 @@ export function About() {
   return (
     <React.Fragment>
       <hr />
-      <div className="py-3 p-2 text-center aboutHeader">
+      <div className="py-3 p-2 text-center aboutHeader" id="About">
         <h1 className="display-4">About Me</h1>
       </div>
       <hr />
-      <div className="aboutBg d-flex flex-wrap justify-content-center" id="About">
+      <div className="aboutBg d-flex flex-wrap justify-content-center">
         <p className="lead py-4 aboutP">
           My name is TJ Brackett. I am a software engineer who specializes in
           building applications specific to the business needs of my clients. I
