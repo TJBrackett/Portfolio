@@ -44,7 +44,7 @@ function Navbar() {
                 data-target=".navbar-collapse.show"
                 data-toggle="collapse"
                 href="#About"
-                offset={window.innerWidth < 768 ? "342" : "185"}
+                offset={window.innerWidth < 768 ? "342" : "80"}
               >
                 <div className="navLink">About</div>
                 <hr className="navHr" />

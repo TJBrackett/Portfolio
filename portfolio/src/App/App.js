@@ -24,7 +24,7 @@ function Header() {
           type="input"
           className="btn btn-outline-light btn-lg headerBtn"
           href="#About"
-          offset="185"
+          offset="80"
         >
           Explore
         </A>

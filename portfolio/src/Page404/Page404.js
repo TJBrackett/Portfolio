@@ -15,7 +15,7 @@ function Page404() {
         <div className="text-center text-white caption">
           <h1 className="display-2" id="Page404">404</h1>
           <p className="lead">{quote}</p>
-          <Link type="input" className="btn btn-outline-light btn-lg headerBtn" to="/" offset="80">Go Back</Link>
+          <Link type="input" className="btn btn-outline-light btn-lg headerBtn" to="/">Go Back</Link>
         </div>
       </div>
     )
