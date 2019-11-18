@@ -19,16 +19,15 @@
 
 .navHr {
   display: block;
-  height: 1px;
   border: 0;
-  background-image: transparent;
+  background: transparent;
   margin: 0;
   padding: 0;
-  transition: 0.75s ease;
+  transition: height 0.75s ease;
 }
 
 .link:hover .navHr {
-  background-image: linear-gradient(
+  background: linear-gradient(
     90deg,
     transparent,
     #557a95,
@@ -36,7 +35,7 @@
     #557a95,
     transparent
   );
-  transition: 0.75s ease;
+  transition: height 0.75s ease;
 }
 
 @media only screen and (max-width: 767px) {

@@ -1,23 +1,42 @@
 import React from "react";
-import Angular from "../Images/angular.png";
-import Apache from "../Images/apache.png";
-import Cpp from "../Images/cpp.png";
-import Css from "../Images/css.png";
-import Firebase from "../Images/firebase.png";
-import Git from "../Images/git.png";
-import Html from "../Images/html.png";
-import Java from "../Images/java.png";
-import Js from "../Images/js.png";
-import Linux from "../Images/linux.png";
-import Node from "../Images/node.png";
-import Python from "../Images/python.png";
-import ReactIcon from "../Images/react.png";
-import Mysql from "../Images/mysql.png";
-import Vb from "../Images/vb.png";
+import Angular from "./Icons/angular.png";
+import Apache from "./Icons/apache.png";
+import Cpp from "./Icons/cpp.png";
+import Css from "./Icons/css.png";
+import Firebase from "./Icons/firebase.png";
+import Git from "./Icons/git.png";
+import Html from "./Icons/html.png";
+import Java from "./Icons/java.png";
+import Js from "./Icons/js.png";
+import Linux from "./Icons/linux.png";
+import Node from "./Icons/node.png";
+import Python from "./Icons/python.png";
+import ReactIcon from "./Icons/react.png";
+import Mysql from "./Icons/mysql.png";
+import Vb from "./Icons/vb.png";
 import "./About.css";
 
 export function About() {
-  const profeciencyHigh = [Js, Linux, Node, ReactIcon, Mysql];
+  const profeciencyHigh = [{
+    icon: Js,
+    name: 'Javascript'
+  },
+  {
+    icon: Linux,
+    name: 'Linux'
+  },
+  {
+    icon: Node,
+    name: 'Node.js'
+  },
+  {
+    icon: ReactIcon,
+    name: 'React'
+  },
+  {
+    icon: Mysql,
+    name: 'MySQL'
+  }];
   const profeciencyMid = [Apache, Css, Git, Html, Vb];
   const profeciencyLow = [Angular, Cpp, Java, Python, Firebase];
   return (
@@ -46,7 +65,7 @@ export function About() {
           </div>
           <div className="techRow col-12">
             {profeciencyHigh.map(tech => (
-              <img className="techImgOne" key={tech} src={tech} />
+              <img className="techImgOne" key={tech.icon} src={tech.icon} />
             ))}
           </div>
           <hr className="hrAbout" />

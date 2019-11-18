@@ -85,7 +85,14 @@ hr.hrAbout{
     margin-top: 2rem;
     margin-bottom: 2rem;
     height: 1px;
-    background:#557A95;
+    background-image: linear-gradient(
+        90deg,
+        transparent,
+        #557a95,
+        white,
+        #557a95,
+        transparent
+      );
 }
 .techRow {
     width: 100vw;
