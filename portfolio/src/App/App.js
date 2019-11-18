@@ -64,8 +64,6 @@ function Portfolio() {
           FinalProj.githubLink,
           FinalProj.date
         )}
-        {/* {Project(StreetSmarts.title, StreetSmarts.desc, ProjPics.StreetSmarts, StreetSmarts.pageLink, StreetSmarts.githubLink, StreetSmarts.date)} */}
-        {/* {Project(MyPage.title, MyPage.desc, ProjPics.Portfolio, MyPage.pageLink, MyPage.githubLink, MyPage.date)} */}
         {Project(
           Hackermap.title,
           Hackermap.desc,

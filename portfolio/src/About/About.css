@@ -18,35 +18,70 @@
     padding: 1rem;
     color: white;
 }
-
+.techHeader {
+    color: white;
+    font-size: 25px;
+}
+.techLevel{
+    color: white;
+}
 .aboutTitle {
     text-align: center;
     vertical-align: middle;
     padding: 2rem;
 }
 
-.aboutIcon {
+.techImg1 {
     padding: 1rem;
-    vertical-align: middle;
-    max-width: 250px;
-    max-height: 250px;
-    margin-left: 1rem;
-    margin-right: 1rem;
+    max-width: 125px;
+    max-height: 125px;
+    margin-left: auto;
+    margin-right: auto;
     transition: .75s ease;
 }
-.aboutIcon:hover {
+.techImg1:hover {
     border-radius: 25px;
-    box-shadow: 0 4px 8px 0 rgba(58, 56, 56), 0 6px 20px 0 rgba(58, 56, 56);
+    background: #557A95;
+    box-shadow: 0 4px 8px 0 black, 0 6px 20px 0 black;
     transition: .75s ease;
 }
-
-.techName {
-    vertical-align: middle;
-    padding: 5px;
-    font-size: 15px;
-    text-align: center;
+.techImg2 {
+    padding: 1rem;
+    max-width: 115px;
+    max-height: 115px;
+    margin-left: auto;
+    margin-right: auto;
+    transition: .75s ease;
 }
-
+.techImg2:hover {
+    border-radius: 25px;
+    background: #557A95;
+    box-shadow: 0 4px 8px 0 black, 0 6px 20px 0 black;
+    transition: .75s ease;
+}
+.techImg3 {
+    padding: 1rem;
+    max-width: 100px;
+    max-height: 100px;
+    margin-left: auto;
+    margin-right: auto;
+    transition: .75s ease;
+}
+.techImg3:hover {
+    border-radius: 25px;
+    background: #557A95;
+    box-shadow: 0 4px 8px 0 black, 0 6px 20px 0 black;
+    transition: .75s ease;
+}
+hr.hrAbout{
+    margin-top: .5rem;
+    margin-bottom: .5rem;
+    height: 1px;
+    background:#557A95;
+}
+.techRow {
+    width: 100vw;
+}
 @media only screen and (max-width: 800px) {
     .aboutIcon  {
         padding: 0;
@@ -72,73 +107,6 @@
     .aboutTech {
         font-size: 150%;
     }
-}
-
-.tweetsContainer {
-    width: 100vw;
-    vertical-align: middle;
-    border-left: 1px solid black;
-    -webkit-appearance: none;
-}
-@media only screen and (max-width: 991px) {
-    .tweetsContainer {
-        margin-right: 1rem;
-        border-top: 1px solid black;
-        border-left: 0px;
-        -webkit-appearance: none;
-        padding: 1rem;
-    }
-}
-
-.tweets {
-    -webkit-appearance: none;
-    padding: 0rem;
-}
-
-
-.part {
-    padding: 0px 0px 0px;
- }
-
- .hexa, .hexa div {
-    margin: 0;
-    transform-origin: 50% 50%;
-    overflow: hidden;
-  }
-  .hexa {
-    width: 125px;
-    height: 160px;
-  }
-  .hexa div {
-    width: 100%;
-    height: 100%;
-  }
-  .hexa {
-    transform: rotate(120deg);
-  }
-  .hex1 {
-    transform: rotate(-60deg);
-  }
-  .hex2 {
-    transform: rotate(-60deg);
-    transition: .75s ease;
-  }
-
-  .hex2:hover {
-    background: white;
-    transition: .75s ease;
-  }
-.aboutImg {
-    margin-top: 1.8rem;
-    margin-left: .85rem;
-    padding: 0px;
-}
-
-.skillDescription {
-    border: 1px solid black;
-}
-.testBox {
-    border: 1px solid black;
 }
 
 .aboutLink {

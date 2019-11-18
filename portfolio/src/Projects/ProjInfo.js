@@ -1,7 +1,5 @@
 import Final from "../Projects/backgrounds/final.jpg"
 import StickyNotes from "../Projects/backgrounds/Lab03.jpg"
-import Portfolio from "../Projects/backgrounds/portfolio.jpg"
-import Final290 from "../Projects/backgrounds/streetsmarts.jpg"
 import HackerMap from "../Projects/backgrounds/hackermap.jpg"
 
 export const Sticky = {
@@ -20,27 +18,9 @@ export const FinalProj = {
     date: "December 2018"
 }
 
-export const StreetSmarts = {
-    title: "Street Smarts",
-    desc: "Angular / Serverless / MySQL",
-    pageLink: "https://streetsmarts.dev",
-    githubLink: "https://github.com/TJBrackett-School/Street-Smarts-frontend",
-    date: "Spring 2019"
-}
-
-export const MyPage = {
-    title: "Portfolio",
-    desc: "React / Express / Apache",
-    pageLink: "https://www.tjbrackett.com",
-    githubLink: "https://github.com/TJBrackett/Portfolio",
-    date: "July 2019"
-}
-
 export const ProjPics = {
     Sticky: { StickyNotes },
     Final: { Final },
-    Portfolio: { Portfolio },
-    StreetSmarts: { Final290 },
     Hackermap: { HackerMap }
 }
 
