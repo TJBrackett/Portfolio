@@ -36,60 +36,37 @@ export function About() {
             implementation, native applications, full stack web development, and
             server management.
           </p>
-          <p className="lead aboutP">
-            You can see more of what I do on my&nbsp;
-            <a className="aboutLink" href="https://twitter.com/TJBrackett">
-              Twitter
-            </a>
-            ,&nbsp;
-            <a
-              className="aboutLink"
-              href="https://www.linkedin.com/in/tjbrackett/"
-            >
-              LinkedIn
-            </a>
-            ,&nbsp;
-            <a
-              className="aboutLink"
-              href="https://stackoverflow.com/users/11122711/tj-brackett"
-            >
-              Stack Overflow
-            </a>
-            ,&nbsp;and&nbsp;
-            <a className="aboutLink" href="https://github.com/TJBrackett">
-              GitHub
-            </a>
-          </p>
         </div>
         <div className="text-center">
           <div className="techHeader lead">Technologies I've Used</div>
           <hr className="hrAbout" />
           <div>
-            <div className="lead techLevel">I've Extensively Used</div>
+            <div className="lead techLevelOne">Intermediate</div>
           </div>
           <div className="techRow col-12">
             {profeciencyHigh.map(tech => (
-              <img className="techImg1" key={tech} src={tech} />
+              <img className="techImgOne" key={tech} src={tech} />
             ))}
           </div>
           <hr className="hrAbout" />
           <div>
-            <div className="lead techLevel">I Frequently Use</div>
+            <div className="lead techLevelTwo">Novice</div>
           </div>
           <div className="techRow col-12">
             {profeciencyMid.map(tech => (
-              <img className="techImg2" key={tech} src={tech} />
+              <img className="techImgTwo" key={tech} src={tech} />
             ))}
           </div>
           <hr className="hrAbout" />
           <div>
-            <div className="lead techLevel">I've Dabbled In</div>
+            <div className="lead techLevelThree">Dabbled</div>
           </div>
           <div className="techRow col-12">
             {profeciencyLow.map(tech => (
-              <img className="techImg3 img-fluid" key={tech} src={tech} />
+              <img className="techImgThree img-fluid" key={tech} src={tech} />
             ))}
           </div>
+          <hr className="hrAbout" />
         </div>
       </div>
     </React.Fragment>
