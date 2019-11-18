@@ -37,6 +37,7 @@ export function About() {
             server management.
           </p>
         </div>
+        {/* Have images be cards with slide over on hover effects */}
         <div className="text-center">
           <div className="techHeader lead">Technologies I've Used</div>
           <hr className="hrAbout" />
