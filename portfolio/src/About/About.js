@@ -1,44 +1,13 @@
 import React from "react";
-import Angular from "./Icons/angular.png";
-import Apache from "./Icons/apache.png";
-import Cpp from "./Icons/cpp.png";
-import Css from "./Icons/css.png";
-import Firebase from "./Icons/firebase.png";
-import Git from "./Icons/git.png";
-import Html from "./Icons/html.png";
-import Java from "./Icons/java.png";
-import Js from "./Icons/js.png";
-import Linux from "./Icons/linux.png";
-import Node from "./Icons/node.png";
-import Python from "./Icons/python.png";
-import ReactIcon from "./Icons/react.png";
-import Mysql from "./Icons/mysql.png";
-import Vb from "./Icons/vb.png";
+import {
+  profeciencyHigh,
+  profeciencyMid,
+  profeciencyLow
+} from "./Tech/TechInfo.js";
+import { Tech } from "./Tech/Tech.js";
 import "./About.css";
 
 export function About() {
-  const profeciencyHigh = [{
-    icon: Js,
-    name: 'Javascript'
-  },
-  {
-    icon: Linux,
-    name: 'Linux'
-  },
-  {
-    icon: Node,
-    name: 'Node.js'
-  },
-  {
-    icon: ReactIcon,
-    name: 'React'
-  },
-  {
-    icon: Mysql,
-    name: 'MySQL'
-  }];
-  const profeciencyMid = [Apache, Css, Git, Html, Vb];
-  const profeciencyLow = [Angular, Cpp, Java, Python, Firebase];
   return (
     <React.Fragment>
       <hr />
@@ -65,7 +34,7 @@ export function About() {
           </div>
           <div className="techRow col-12">
             {profeciencyHigh.map(tech => (
-              <img className="techImgOne" key={tech.icon} src={tech.icon} />
+              <Tech key={tech.icon} icon={tech.icon} name={tech.name} level={tech.level}></Tech>
             ))}
           </div>
           <hr className="hrAbout" />
@@ -74,7 +43,7 @@ export function About() {
           </div>
           <div className="techRow col-12">
             {profeciencyMid.map(tech => (
-              <img className="techImgTwo" key={tech} src={tech} />
+              <Tech key={tech.icon} icon={tech.icon} name={tech.name} level={tech.level}></Tech>
             ))}
           </div>
           <hr className="hrAbout" />
@@ -83,7 +52,7 @@ export function About() {
           </div>
           <div className="techRow col-12">
             {profeciencyLow.map(tech => (
-              <img className="techImgThree img-fluid" key={tech} src={tech} />
+              <Tech key={tech.icon} icon={tech.icon} name={tech.name} level={tech.level}></Tech>
             ))}
           </div>
           <hr className="hrAbout" />

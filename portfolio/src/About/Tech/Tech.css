@@ -1,0 +1,47 @@
+
+.techImgOne {
+    padding: 1rem;
+    max-width: 125px;
+    max-height: 125px;
+    margin-left: auto;
+    margin-right: auto;
+    transition: .75s ease;
+}
+.techImgOne:hover {
+    border-radius: 25px;
+    background: #557A95;
+    box-shadow: 0 4px 8px 0 black, 0 6px 20px 0 black;
+    transition: .75s ease;
+}
+.techImgTwo {
+    padding: 1rem;
+    max-width: 115px;
+    max-height: 115px;
+    margin-left: auto;
+    margin-right: auto;
+    transition: .75s ease;
+}
+.techImgTwo:hover {
+    border-radius: 25px;
+    background: #557A95;
+    box-shadow: 0 4px 8px 0 black, 0 6px 20px 0 black;
+    transition: .75s ease;
+}
+.techImgThree {
+    padding: 1rem;
+    max-width: 100px;
+    max-height: 100px;
+    margin-left: auto;
+    margin-right: auto;
+    transition: .75s ease;
+}
+.techImgThree:hover {
+    border-radius: 25px;
+    background: #557A95;
+    box-shadow: 0 4px 8px 0 black, 0 6px 20px 0 black;
+    transition: .75s ease;
+}
+
+.techRow {
+    width: 100vw;
+}
