@@ -114,8 +114,8 @@ class Contact extends React.Component {
       <React.Fragment>
         <hr />
         <div className="contact-header text-center py-3 p-2" id="Contact">
-            <h1 className="display-4"  data-aos="zoom-in" data-aos-duration="1750">Contact Me</h1>
-            <p className="lead"  data-aos="zoom-in" data-aos-duration="1750">Have a question or want to work together?</p>
+            <h1 className="display-4"  data-aos="fade-up-left" data-aos-duration="1750">Contact Me</h1>
+            <p className="lead"  data-aos="fade-up-right" data-aos-duration="1750">Have a question or want to work together?</p>
         </div>
         <hr />
         <form className="bgContact" onSubmit={this.handleSubmit}>
@@ -167,7 +167,7 @@ class Contact extends React.Component {
             <button
               type="submit"
               className="contactBtn btn-secondary btn-outline-dark btn-lg col-centered col-md-3 mt-5"
-              data-aos="fade-up" data-aos-duration="1750"
+              data-aos="zoom-in" data-aos-duration="1750"
             >
               Submit
             </button>
