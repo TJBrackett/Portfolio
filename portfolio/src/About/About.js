@@ -31,7 +31,7 @@ export function About() {
           <div>
             <div className="lead techLevelOne">Intermediate</div>
           </div>
-          <div className="d-flex justify-content-center" data-aos="flip-up" data-aos-duration="1750">
+          <div className="d-flex justify-content-center" data-aos="zoom-up" data-aos-duration="1750">
             <div className="row m-0 p-0 justify-content-center">
               {profeciencyHigh.map(tech => (
                 <Tech
@@ -47,7 +47,7 @@ export function About() {
           <div>
             <div className="lead techLevelTwo">Novice</div>
           </div>
-          <div className="d-flex justify-content-center" data-aos="flip-up" data-aos-duration="1750">
+          <div className="d-flex justify-content-center" data-aos="zoom-up" data-aos-duration="1750">
             <div className="row m-0 p-0 justify-content-center">
               {profeciencyMid.map(tech => (
                 <Tech
@@ -63,7 +63,7 @@ export function About() {
           <div>
             <div className="lead techLevelThree">Dabbled</div>
           </div>
-          <div className="d-flex justify-content-center" data-aos="flip-up" data-aos-duration="1750">
+          <div className="d-flex justify-content-center" data-aos="zoom-up" data-aos-duration="1750">
             <div className="row m-0 p-0 justify-content-center">
               {profeciencyLow.map(tech => (
                 <Tech

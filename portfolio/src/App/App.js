@@ -37,14 +37,12 @@ function Portfolio() {
   return (
     <React.Fragment>
       <hr />
-      <div className="portfolioHeader" id="Portfolio">
-        <div className="text-center py-3 p-2" data-aos="zoom-in" data-aos-duration="1750">
-          <h1 className="display-4">Projects</h1>
-          <p className="lead">
+      <div className="portfolioHeader text-center py-3 p-2" id="Portfolio">
+          <h1 className="display-4" data-aos="zoom-in" data-aos-duration="1750">Projects</h1>
+          <p className="lead"  data-aos="zoom-in" data-aos-duration="1750">
             A timeline of my progess in software development ranging from
             previous schoolwork to my current personal projects.
           </p>
-        </div>
       </div>
       <hr />
       <div className="portfolio p-5 d-flex justify-content-center flex-wrap">

@@ -10,7 +10,7 @@ function Project(title, description, img, pageLink, githubLink, date) {
   }
 
   return (
-      <div className="projCard" data-aos="zoom-in" data-aos-duration="1750">
+      <div className="projCard" data-aos="fade-up" data-aos-duration="1750">
         <div className="card bg-color border-dark border rounded-0 m-0 p-0">
           <div className="projImg">
             <img className="img-fluid card-img-top" src={pic} alt="projectPic" />

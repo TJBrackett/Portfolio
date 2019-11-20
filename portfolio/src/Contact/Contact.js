@@ -113,11 +113,9 @@ class Contact extends React.Component {
     return (
       <React.Fragment>
         <hr />
-        <div className="contact-header" id="Contact">
-          <div className="text-center py-3 p-2" data-aos="zoom-in" data-aos-duration="1750">
-            <h1 className="display-4">Contact Me</h1>
-            <p className="lead">Have a question or want to work together?</p>
-          </div>
+        <div className="contact-header text-center py-3 p-2" id="Contact">
+            <h1 className="display-4"  data-aos="zoom-in" data-aos-duration="1750">Contact Me</h1>
+            <p className="lead"  data-aos="zoom-in" data-aos-duration="1750">Have a question or want to work together?</p>
         </div>
         <hr />
         <form className="bgContact" onSubmit={this.handleSubmit}>
