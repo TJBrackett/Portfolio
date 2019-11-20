@@ -38,7 +38,7 @@ function Portfolio() {
     <React.Fragment>
       <hr />
       <div className="portfolioHeader" id="Portfolio">
-        <div className="text-center py-3 p-2">
+        <div className="text-center py-3 p-2" data-aos="zoom-in" data-aos-duration="1750">
           <h1 className="display-4">Projects</h1>
           <p className="lead">
             A timeline of my progess in software development ranging from

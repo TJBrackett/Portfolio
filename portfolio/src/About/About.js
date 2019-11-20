@@ -12,11 +12,11 @@ export function About() {
     <React.Fragment>
       <hr />
       <div className="py-3 p-2 text-center aboutHeader" id="About">
-        <h1 className="display-4">About Me</h1>
+        <h1 className="display-4" data-aos="zoom-in" data-aos-duration="1750">About Me</h1>
       </div>
       <hr />
-      <div className="aboutBg d-flex flex-wrap justify-content-center">
-        <div>
+      <div className="aboutBg">
+        <div className="d-flex justify-content-center">
           <p className="lead py-4 aboutP">
             My name is TJ Brackett. I am a software engineer who specializes in
             building applications specific to the business needs of my clients.
@@ -25,37 +25,56 @@ export function About() {
             server management.
           </p>
         </div>
-        {/* Have images be cards with slide over on hover effects */}
         <div className="text-center">
           <div className="techHeader lead">Technologies I've Used</div>
           <hr className="hrAbout" />
           <div>
             <div className="lead techLevelOne">Intermediate</div>
           </div>
-          <div className="techRow col-12">
-            {profeciencyHigh.map(tech => (
-              <Tech key={tech.icon} icon={tech.icon} name={tech.name} level={tech.level}></Tech>
-            ))}
+          <div className="d-flex justify-content-center" data-aos="flip-up" data-aos-duration="1750">
+            <div className="row m-0 p-0 justify-content-center">
+              {profeciencyHigh.map(tech => (
+                <Tech
+                  key={tech.name}
+                  icon={tech.icon}
+                  name={tech.name}
+                  level={tech.level}
+                ></Tech>
+              ))}
+            </div>
           </div>
           <hr className="hrAbout" />
           <div>
             <div className="lead techLevelTwo">Novice</div>
           </div>
-          <div className="techRow col-12">
-            {profeciencyMid.map(tech => (
-              <Tech key={tech.icon} icon={tech.icon} name={tech.name} level={tech.level}></Tech>
-            ))}
+          <div className="d-flex justify-content-center" data-aos="flip-up" data-aos-duration="1750">
+            <div className="row m-0 p-0 justify-content-center">
+              {profeciencyMid.map(tech => (
+                <Tech
+                  key={tech.name}
+                  icon={tech.icon}
+                  name={tech.name}
+                  level={tech.level}
+                ></Tech>
+              ))}
+            </div>
           </div>
           <hr className="hrAbout" />
           <div>
             <div className="lead techLevelThree">Dabbled</div>
           </div>
-          <div className="techRow col-12">
-            {profeciencyLow.map(tech => (
-              <Tech key={tech.icon} icon={tech.icon} name={tech.name} level={tech.level}></Tech>
-            ))}
+          <div className="d-flex justify-content-center" data-aos="flip-up" data-aos-duration="1750">
+            <div className="row m-0 p-0 justify-content-center">
+              {profeciencyLow.map(tech => (
+                <Tech
+                  key={tech.name}
+                  icon={tech.icon}
+                  name={tech.name}
+                  level={tech.level}
+                ></Tech>
+              ))}
+            </div>
           </div>
-          <hr className="hrAbout" />
         </div>
       </div>
     </React.Fragment>

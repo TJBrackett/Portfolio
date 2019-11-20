@@ -81,7 +81,7 @@ export const profeciencyHigh = [{
   },
   {
     icon: Python,
-    name: 'Pyton',
+    name: 'Python',
     level: 'techImgThree'
   },
   {

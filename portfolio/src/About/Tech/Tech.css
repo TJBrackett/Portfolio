@@ -1,47 +1,75 @@
-
 .techImgOne {
-    padding: 1rem;
-    max-width: 125px;
-    max-height: 125px;
-    margin-left: auto;
-    margin-right: auto;
-    transition: .75s ease;
+  padding: 1rem;
+  max-width: 125px;
+  max-height: 125px;
+  margin-left: auto;
+  margin-right: auto;
+  transition: 0.75s ease;
 }
-.techImgOne:hover {
-    border-radius: 25px;
-    background: #557A95;
-    box-shadow: 0 4px 8px 0 black, 0 6px 20px 0 black;
-    transition: .75s ease;
-}
+/* .techImgOne:hover {
+  border-radius: 25px;
+  background: #557a95;
+  box-shadow: 0 4px 8px 0 black, 0 6px 20px 0 black;
+  transition: 0.75s ease;
+} */
 .techImgTwo {
-    padding: 1rem;
-    max-width: 115px;
-    max-height: 115px;
-    margin-left: auto;
-    margin-right: auto;
-    transition: .75s ease;
+  padding: 1rem;
+  max-width: 115px;
+  max-height: 115px;
+  margin-left: auto;
+  margin-right: auto;
+  transition: 0.75s ease;
 }
-.techImgTwo:hover {
-    border-radius: 25px;
-    background: #557A95;
-    box-shadow: 0 4px 8px 0 black, 0 6px 20px 0 black;
-    transition: .75s ease;
-}
+/* .techImgTwo:hover {
+  border-radius: 25px;
+  background: #557a95;
+  box-shadow: 0 4px 8px 0 black, 0 6px 20px 0 black;
+  transition: 0.75s ease;
+} */
 .techImgThree {
-    padding: 1rem;
-    max-width: 100px;
-    max-height: 100px;
-    margin-left: auto;
-    margin-right: auto;
-    transition: .75s ease;
+  padding: 1rem;
+  max-width: 100px;
+  max-height: 100px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 2rem;
+  transition: 0.75s ease;
 }
-.techImgThree:hover {
-    border-radius: 25px;
-    background: #557A95;
-    box-shadow: 0 4px 8px 0 black, 0 6px 20px 0 black;
-    transition: .75s ease;
-}
+/* .techImgThree:hover {
+  border-radius: 25px;
+  background: #557a95;
+  box-shadow: 0 4px 8px 0 black, 0 6px 20px 0 black;
+  transition: 0.75s ease;
+} */
 
 .techRow {
-    width: 100vw;
+  width: 100vw;
 }
+
+.iconOverlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: rgba(58, 56, 56);
+  overflow: hidden;
+  width: 100%;
+  height: 0;
+  transition: 0.75s ease;
+}
+
+.techIcon:hover .iconOverlay {
+  height: 100%;
+  transition: 0.75s ease;
+}
+
+.techName {
+    color: white;
+    font-size: 20px;
+    margin-top: 3rem;
+    top: 50%;
+    left: 50%;
+}
+.techIcon {
+    position: relative;
+  }

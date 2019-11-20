@@ -114,7 +114,7 @@ class Contact extends React.Component {
       <React.Fragment>
         <hr />
         <div className="contact-header" id="Contact">
-          <div className="text-center py-3 p-2">
+          <div className="text-center py-3 p-2" data-aos="zoom-in" data-aos-duration="1750">
             <h1 className="display-4">Contact Me</h1>
             <p className="lead">Have a question or want to work together?</p>
           </div>
@@ -122,7 +122,7 @@ class Contact extends React.Component {
         <hr />
         <form className="bgContact" onSubmit={this.handleSubmit}>
           <div className="form-row p-4 col-centered">
-            <div className="form-group col-md-10 col-centered mt-5 py-0">
+            <div className="form-group col-md-10 col-centered mt-5 py-0" data-aos="fade-left" data-aos-duration="1750">
               <input
                 type="text"
                 aria-label="name"
@@ -133,7 +133,7 @@ class Contact extends React.Component {
                 required
               />
             </div>
-            <div className="form-group col-md-10 col-centered mt-5 py-0">
+            <div className="form-group col-md-10 col-centered mt-5 py-0" data-aos="fade-right" data-aos-duration="1750">
               <input
                 type="email"
                 aria-label="email"
@@ -144,7 +144,7 @@ class Contact extends React.Component {
                 required
               />
             </div>
-            <div className="form-group col-md-10 col-centered mt-5 py-0">
+            <div className="form-group col-md-10 col-centered mt-5 py-0" data-aos="fade-left" data-aos-duration="1750">
               <input
                 type="text"
                 aria-label="subject"
@@ -155,7 +155,7 @@ class Contact extends React.Component {
                 required
               />
             </div>
-            <div className="form-group col-md-10 col-centered mt-5 py-0">
+            <div className="form-group col-md-10 col-centered mt-5 py-0" data-aos="fade-right" data-aos-duration="1750">
               <textarea
                 aria-label="message"
                 className="message form-control form-control-lg"
@@ -169,6 +169,7 @@ class Contact extends React.Component {
             <button
               type="submit"
               className="contactBtn btn-secondary btn-outline-dark btn-lg col-centered col-md-3 mt-5"
+              data-aos="zoom-out" data-aos-duration="1750"
             >
               Submit
             </button>
