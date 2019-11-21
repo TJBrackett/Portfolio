@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import "./Blog.css";
 import Konami from "react-konami-code";
 import ImageUploader from "react-images-upload";
+import Footer from '../Footer/Footer.js'
 
 function Blog() {
   let test = "";
@@ -55,6 +56,7 @@ function Blog() {
         <div className="col-lg-8 col-md-8 col-sm-12 middleSection">
           {/* replace this paragraph with posts */}
           <p className="testP">{test}</p>
+          <Footer />
         </div>
         <div className="col-lg-2 col-md-2 col-sm-0"></div>
       </div>
@@ -126,7 +128,7 @@ function ShowPosts() {
   document.getElementById("Create").style.zIndex = -1;
 }
 function Render() {
-  const secretCode = process.env.REACT_APP_LOGIN_CODE.split(" ");
+  const secretCode = [17, 57, 53, 50, 49];
 
   return (
     <React.Fragment>

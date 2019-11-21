@@ -4,6 +4,8 @@ import "./Footer.css"
 
 
 function Footer() {
+  const year = new Date().getFullYear()
+  const copyright = `© ${year} TJ Brackett`
   return (
     <React.Fragment>
       <hr />
@@ -25,7 +27,7 @@ function Footer() {
       </div>
       <div className="container-fluid footer text-center text-white">
         <div className="copyright">
-          © 2019 TJ Brackett
+          <p className="m-0 p-0">{copyright}</p>
       </div>
       </div>
     </React.Fragment>

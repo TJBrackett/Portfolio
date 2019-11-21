@@ -167,7 +167,6 @@ class Contact extends React.Component {
             <button
               type="submit"
               className="contactBtn btn-secondary btn-outline-dark btn-lg col-centered col-md-3 mt-5"
-              data-aos="zoom-in" data-aos-duration="1750"
             >
               Submit
             </button>

@@ -86,16 +86,16 @@ function Navbar() {
                 <hr className="navHr" />
               </a>
             </li>
-            {/* <li className="nav-item">
+            <li className="nav-item">
               <a
                 className="link nav-link text-white font-weight-bold"
                 data-target=".navbar-collapse.show"
                 href="/blog"
               >
                 <div className="navLink">Blog</div>
-                <hr />
+                <hr className="navHr" />
               </a>
-            </li> */}
+            </li>
           </ul>
         </div>
       </div>
