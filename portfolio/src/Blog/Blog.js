@@ -1,19 +1,26 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "./Blog.css";
 import Konami from "react-konami-code";
 import ImageUploader from "react-images-upload";
 import Footer from '../Footer/Footer.js'
 
 function Blog() {
-  let test = "";
-  for (let i = 0; i < 1000; i++) {
-    test += " blog test";
-  }
   //Need to create card layout and receive cards
   const [image, setImage] = useState("");
   const [title, setTitle] = useState("");
   const [body, setBody] = useState("");
-
+  const [posts, setPost] = useState('')
+    GetPosts()
+  function GetPosts() {
+    const getPostUrl = 'http://jsonplaceholder.typicode.com/posts'
+    fetch(getPostUrl)
+    .then(res => res.json())
+    .then(json => json.map(posts => setPost([{
+      id: posts.id,
+      title: posts.title,
+      body: posts.body
+    }])))
+  }
   const imgDrop = img => {
     setImage(img);
   };
@@ -55,7 +62,13 @@ function Blog() {
         <div className="col-lg-2 col-md-2 col-sm-0"></div>
         <div className="col-lg-8 col-md-8 col-sm-12 middleSection">
           {/* replace this paragraph with posts */}
-          <p className="testP">{test}</p>
+          {posts.map(post => (
+            <div>
+            <p>{post.id}</p>
+            <p>{post.title}</p>
+            <p>{post.body}</p>
+            </div>
+          ))}
           <Footer />
         </div>
         <div className="col-lg-2 col-md-2 col-sm-0"></div>
@@ -107,7 +120,6 @@ function LoginInfo() {
   }
 }
 function BlogLogin(username, password) {
-  console.log(`username: ${username}, password: ${password}`);
   if (username === "tjb" && password === "123") {
     ShowSecret();
   } else {
