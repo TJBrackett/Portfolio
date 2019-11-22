@@ -10,8 +10,8 @@ function Blog() {
   const [title, setTitle] = useState("");
   const [body, setBody] = useState("");
   const [posts, setPost] = useState('')
-    GetPosts()
-  function GetPosts() {
+
+  const setPosts = () => {
     const getPostUrl = 'http://jsonplaceholder.typicode.com/posts'
     fetch(getPostUrl)
     .then(res => res.json())
