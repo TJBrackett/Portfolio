@@ -2,24 +2,31 @@ import React, { useState, useEffect } from "react";
 import "./Blog.css";
 import Konami from "react-konami-code";
 import ImageUploader from "react-images-upload";
-import Footer from '../Footer/Footer.js'
+import Footer from "../Footer/Footer.js";
+import BlogPosts from './BlogPosts/BlogPosts.js'
 
 function Blog() {
   //Need to create card layout and receive cards
   const [image, setImage] = useState("");
   const [title, setTitle] = useState("");
   const [body, setBody] = useState("");
-  const [posts, setPost] = useState('')
+  const [posts, setPost] = useState([{
+    id: '',
+    title: '',
+    body: ''
+  }])
 
-  const setPosts = () => {
-    const getPostUrl = 'http://jsonplaceholder.typicode.com/posts'
+  useEffect( () => {
+    GetPosts();
+  });
+
+const GetPosts = () => {
+    const getPostUrl = "http://jsonplaceholder.typicode.com/posts";
     fetch(getPostUrl)
-    .then(res => res.json())
-    .then(json => json.map(posts => setPost([{
-      id: posts.id,
-      title: posts.title,
-      body: posts.body
-    }])))
+      .then(res => res.json())
+      .then(json => {
+        setPost(json)
+      })
   }
   const imgDrop = img => {
     setImage(img);
@@ -33,8 +40,8 @@ function Blog() {
 
   const submitPost = event => {
     // Need to send JWT on submit
-    const blogPostUrl = process.env.REACT_APP_CREATE_POST;
-    // event.preventDefault()
+    const blogPostUrl = "http://jsonplaceholder.typicode.com/posts";
+    event.preventDefault()
     fetch(blogPostUrl, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
@@ -45,10 +52,10 @@ function Blog() {
       })
     })
       .then(res => {
+        console.log(res);
         if (res.ok) {
           ShowPosts();
         } else {
-          console.log(res);
           ShowPosts();
         }
       })
@@ -61,13 +68,13 @@ function Blog() {
       <div className="postContainer row" id="Posts">
         <div className="col-lg-2 col-md-2 col-sm-0"></div>
         <div className="col-lg-8 col-md-8 col-sm-12 middleSection">
-          {/* replace this paragraph with posts */}
           {posts.map(post => (
-            <div>
-            <p>{post.id}</p>
-            <p>{post.title}</p>
-            <p>{post.body}</p>
-            </div>
+            <BlogPosts
+              key={post.id}
+              id={post.id}
+              title={post.title}
+              body={post.body}
+            ></BlogPosts>
           ))}
           <Footer />
         </div>
@@ -88,13 +95,13 @@ function Blog() {
           <div className="row p-2 m-2">
             <input
               type="text"
-              className="createTitle form-control form-control-lg"
+              className="createTitle form-control-lg"
               placeholder="title"
               onChange={changeTitle}
             ></input>
             <textarea
               rows="10"
-              className="createPost form-control form-control-lg"
+              className="createPost form-control-lg"
               placeholder="body"
               onChange={changeBody}
             ></textarea>
