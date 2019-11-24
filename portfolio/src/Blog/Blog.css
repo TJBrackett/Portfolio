@@ -1,11 +1,20 @@
 .blogBackground{
     height: 100vh;
     width: 100%;
-    background: linear-gradient(90deg, rgb(58, 56, 56),#557A95, #557A95, #557A95, rgb(58, 56, 56));
+    background: linear-gradient(90deg, rgb(58, 56, 56), #557A95, #557A95, #557A95, rgb(58, 56, 56));
     background-size: 400% 400%;
     position: relative;
     animation: change 9s ease-in-out infinite;
 }
+
+.blogHeaderBg {
+    width: 100%;
+    background: linear-gradient(90deg, rgb(58, 56, 56), #557A95, #557A95, #557A95, rgb(58, 56, 56));
+    background-size: 400% 400%;
+    position: relative;
+    animation: change 9s ease-in-out infinite;
+}
+
 @keyframes change{
     0%{
         background-position: 0 50%;
@@ -74,4 +83,25 @@
 .postForm {
     max-height: 100vh;
     width: 100vw;
+}
+
+.sideSection {
+    background: rgba(0, 0, 0, 0.75);
+}
+
+.blogHeader {
+    text-align: center;
+    vertical-align: bottom;
+    background: rgba(0, 0, 0, 0.75);
+    padding: 1rem;
+    color:white;
+    overflow-x: hidden;
+    overflow-y: hidden;
+}
+.blogFooter {
+    width: 100%;
+    background: linear-gradient(90deg, rgb(58, 56, 56), #557A95, #557A95, #557A95, rgb(58, 56, 56));
+    background-size: 400% 400%;
+    position: relative;
+    animation: change 9s ease-in-out infinite;
 }

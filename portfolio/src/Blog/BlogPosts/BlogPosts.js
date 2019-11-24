@@ -1,4 +1,4 @@
-import React, {useEffect} from 'react'
+import React from 'react'
 import './BlogPosts.css'
 
 export default function BlogPosts(props) {

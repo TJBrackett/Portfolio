@@ -1,11 +1,20 @@
-import React from "react"
-import "./Navbar.css"
-import Resume from '../TJ_Resume.pdf'
-import A from "react-anchor-link-smooth-scroll"
+import React from "react";
+import "./Navbar.css";
+import Resume from "../TJ_Resume.pdf";
+import A from "react-anchor-link-smooth-scroll";
 
 function Navbar() {
   return (
     <nav className="nav-bg navbar sticky-top navbar-expand-md navbar-light">
+      <div>
+        <A 
+          className="logo" 
+          href="#Home"
+          offset={window.innerWidth < 768 ? "335" : "385"}
+          >
+          TJB
+        </A>
+      </div>
       <button
         className="navbar-toggler ml-auto mt-3 mb-2"
         type="button"
@@ -18,9 +27,11 @@ function Navbar() {
         <span className="navbar-toggler-icon"></span>
       </button>
       <div
-        className={window.innerWidth < 768
-          ? "navbar collapse navbar-collapse justify-content-center"
-          : "navbar collapse navbar-collapse"}
+        className={
+          window.innerWidth < 768
+            ? "navbar collapse navbar-collapse justify-content-center"
+            : "navbar collapse navbar-collapse"
+        }
         id="navbarSupportedContent"
       >
         <div className="navbar-nav"></div>
@@ -58,7 +69,7 @@ function Navbar() {
                 href="#Portfolio"
                 offset={window.innerWidth < 768 ? "350" : "80"}
               >
-                <div className="navLink">Portfolio</div>
+                <div className="navLink">Projects</div>
                 <hr className="navHr" />
               </A>
             </li>

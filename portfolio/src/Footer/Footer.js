@@ -24,8 +24,6 @@ function Footer() {
             <i className="fa fa-lg fa-github fa-3x m-2" />
           </a>
         </div>
-      </div>
-      <div className="container-fluid footer text-center text-white">
         <div className="copyright">
           <p className="m-0 p-0">{copyright}</p>
       </div>

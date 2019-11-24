@@ -17,7 +17,7 @@ export function About() {
       <hr />
       <div className="aboutBg">
         <div className="d-flex justify-content-center">
-          <p className="lead py-4 aboutP">
+          <p className="lead py-4 aboutP"  data-aos="zoom-in" data-aos-duration="1750">
             My name is TJ Brackett. I am a software engineer who specializes in
             building applications specific to the business needs of my clients.
             I have experience in software development, database design and

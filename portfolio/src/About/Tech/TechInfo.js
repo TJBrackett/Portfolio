@@ -25,6 +25,11 @@ export const profeciencyHigh = [{
     level: 'techImgOne'
   },
   {
+    icon: Mysql,
+    name: 'MySQL',
+    level: 'techImgOne'
+  },
+  {
     icon: Node,
     name: 'Node.js',
     level: 'techImgOne'
@@ -32,11 +37,6 @@ export const profeciencyHigh = [{
   {
     icon: ReactIcon,
     name: 'React',
-    level: 'techImgOne'
-  },
-  {
-    icon: Mysql,
-    name: 'MySQL',
     level: 'techImgOne'
   }];
   export const profeciencyMid = [{
