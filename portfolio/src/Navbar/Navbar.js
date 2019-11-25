@@ -37,7 +37,7 @@ function Navbar() {
         <div className="navbar-nav"></div>
         <div>
           <ul className="navbar-nav">
-            <li className="nav-item">
+            {/* <li className="nav-item">
               <A
                 className="link nav-link text-white font-weight-bold"
                 data-target=".navbar-collapse.show"
@@ -48,14 +48,14 @@ function Navbar() {
                 <div className="navLink">Home</div>
                 <hr className="navHr" />
               </A>
-            </li>
+            </li> */}
             <li className="nav-item">
               <A
                 className="link nav-link text-white font-weight-bold"
                 data-target=".navbar-collapse.show"
                 data-toggle="collapse"
                 href="#About"
-                offset={window.innerWidth < 768 ? "342" : "80"}
+                offset={window.innerWidth < 768 ? "385" : "80"}
               >
                 <div className="navLink">About</div>
                 <hr className="navHr" />
@@ -67,7 +67,7 @@ function Navbar() {
                 data-target=".navbar-collapse.show"
                 data-toggle="collapse"
                 href="#Portfolio"
-                offset={window.innerWidth < 768 ? "350" : "80"}
+                offset={window.innerWidth < 768 ? "385" : "80"}
               >
                 <div className="navLink">Projects</div>
                 <hr className="navHr" />
@@ -97,7 +97,7 @@ function Navbar() {
                 <hr className="navHr" />
               </a>
             </li>
-            <li className="nav-item">
+            {/* <li className="nav-item">
               <a
                 className="link nav-link text-white font-weight-bold"
                 data-target=".navbar-collapse.show"
@@ -106,7 +106,7 @@ function Navbar() {
                 <div className="navLink">Blog</div>
                 <hr className="navHr" />
               </a>
-            </li>
+            </li> */}
           </ul>
         </div>
       </div>

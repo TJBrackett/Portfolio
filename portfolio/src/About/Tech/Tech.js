@@ -10,7 +10,7 @@ export function Tech(props) {
 
   return (
     <div className="techIcon">
-      <img className={props.level} key={props.icon} src={props.icon} id={props.icon} alt={props.icon}/>
+      <img className="techImgThree" key={props.icon} src={props.icon} id={props.icon} alt={props.icon}/>
       <div className="iconOverlay" id="iconOverlay">
         <div className="techName">{props.name}</div>
       </div>

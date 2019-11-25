@@ -38,8 +38,8 @@ function Portfolio() {
     <React.Fragment>
       <hr />
       <div className="portfolioHeader text-center py-3 p-2" id="Portfolio">
-          <h1 className="display-4" data-aos="fade-up-left" data-aos-duration="1750">Projects</h1>
-          <p className="lead"  data-aos="fade-up-right" data-aos-duration="1750">
+          <h1 className="display-4" data-aos="fade-down" data-aos-duration="1750">Projects</h1>
+          <p className="lead"  data-aos="fade-down" data-aos-duration="1750">
             A timeline of my progess in software development ranging from
             previous schoolwork to my current personal projects.
           </p>

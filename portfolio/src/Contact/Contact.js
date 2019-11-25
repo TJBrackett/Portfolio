@@ -114,13 +114,13 @@ class Contact extends React.Component {
       <React.Fragment>
         <hr />
         <div className="contact-header text-center py-3 p-2" id="Contact">
-            <h1 className="display-4"  data-aos="fade-up-left" data-aos-duration="1750">Contact Me</h1>
-            <p className="lead"  data-aos="fade-up-right" data-aos-duration="1750">Have a question or want to work together?</p>
+            <h1 className="display-4"  data-aos="fade-up-left" data-aos="fade-down" data-aos-duration="1750">Contact Me</h1>
+            <p className="lead"  data-aos="fade-up-right" data-aos="fade-down" data-aos-duration="1750">Have a question or want to work together?</p>
         </div>
         <hr />
         <form className="bgContact" onSubmit={this.handleSubmit}>
           <div className="form-row p-4 col-centered">
-            <div className="form-group col-md-10 col-centered mt-5 py-0" data-aos="zoom-in" data-aos-duration="1750">
+            <div className="form-group col-md-10 col-centered mt-5 py-0" data-aos="fade-down" data-aos-duration="1750">
               <input
                 type="text"
                 aria-label="name"
@@ -131,7 +131,7 @@ class Contact extends React.Component {
                 required
               />
             </div>
-            <div className="form-group col-md-10 col-centered mt-5 py-0" data-aos="zoom-in" data-aos-duration="1750">
+            <div className="form-group col-md-10 col-centered mt-5 py-0" data-aos="fade-down" data-aos-duration="1750">
               <input
                 type="email"
                 aria-label="email"
@@ -142,7 +142,7 @@ class Contact extends React.Component {
                 required
               />
             </div>
-            <div className="form-group col-md-10 col-centered mt-5 py-0" data-aos="zoom-in" data-aos-duration="1750">
+            <div className="form-group col-md-10 col-centered mt-5 py-0" data-aos="fade-down" data-aos-duration="1750">
               <input
                 type="text"
                 aria-label="subject"
@@ -153,7 +153,7 @@ class Contact extends React.Component {
                 required
               />
             </div>
-            <div className="form-group col-md-10 col-centered mt-5 py-0" data-aos="zoom-in" data-aos-duration="1750">
+            <div className="form-group col-md-10 col-centered mt-5 py-0" data-aos="fade-down" data-aos-duration="1750">
               <textarea
                 aria-label="message"
                 className="message form-control form-control-lg"

@@ -9,19 +9,6 @@
     transition: 0.75s ease;
 }
 
-.logo {
-    border: 2px solid #fff;
-    position: relative;
-    color: white;
-    font-size: 30px;
-    padding: .5rem;
-}
-
-.logo:hover {
-    color: #557A95;
-    border: 2px solid transparent;
-}
-
 .blogSearch:hover{
     border: 1px solid white;
     transition: 0.75s ease;
