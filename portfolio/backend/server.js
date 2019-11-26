@@ -21,9 +21,10 @@ app.use((req, res, next) => {
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.json());
 
-app.post('/', (req, res) => {
+app.post('/email', (req, res) => {
     let name = req.body.name;
     let email = req.body.email;
+    let phone = req.body.phone;
     let subject = req.body.subject;
     let message = req.body.message;
     let mailOptions = "";
@@ -45,7 +46,7 @@ app.post('/', (req, res) => {
         from: email,
         to: 'brackett.tj@gmail.com',
         subject: subject,
-        text: message + "\nName: " + name + "\nEmail: " + email,
+        text: message + "\nName: " + name + "\nEmail: " + email + "\nPhone: " + phone
     };
 
     transporter.sendMail(mailOptions, (error, info) => {

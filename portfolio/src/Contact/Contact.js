@@ -7,6 +7,7 @@ class Contact extends React.Component {
     this.state = {
       name: "",
       email: "",
+      phone: "",
       subject: "",
       message: "",
       status: 0
@@ -16,6 +17,7 @@ class Contact extends React.Component {
     this.emailChange = this.emailChange.bind(this);
     this.subjectChange = this.subjectChange.bind(this);
     this.messageChange = this.messageChange.bind(this);
+    this.phoneChange = this.phoneChange.bind(this)
     this.handleSubmit = this.handleSubmit.bind(this);
   }
   nameChange(event) {
@@ -23,6 +25,9 @@ class Contact extends React.Component {
   }
   emailChange(event) {
     this.setState({ email: event.target.value });
+  }
+  phoneChange(event) {
+    this.setState({ phone: event.target.value });
   }
   subjectChange(event) {
     this.setState({ subject: event.target.value });
@@ -40,7 +45,7 @@ class Contact extends React.Component {
   }
 
   handleSubmit(event) {
-    const backendUrl = 'https://www.tjbrackett.com:8443';
+    const backendUrl = 'https://www.tjbrackett.com/email:8443';
     event.preventDefault();
 
     fetch(backendUrl, {
@@ -49,6 +54,7 @@ class Contact extends React.Component {
       body: JSON.stringify({
         name: this.state.name,
         email: this.state.email,
+        phone: this.state.phone,
         subject: this.state.subject,
         message: this.state.message
       })
@@ -58,6 +64,7 @@ class Contact extends React.Component {
           this.setState({ status: res.status });
           this.setState({ name: "" });
           this.setState({ email: "" });
+          this.setState({ phone: ""});
           this.setState({ subject: "" });
           this.setState({ message: "" });
         } else {
@@ -120,7 +127,7 @@ class Contact extends React.Component {
         <hr />
         <form className="bgContact" onSubmit={this.handleSubmit}>
           <div className="form-row p-4 col-centered">
-            <div className="form-group col-md-10 col-centered mt-5 py-0" data-aos="fade-down" data-aos-duration="1750">
+            <div className="form-group col-lg-6 col-md-6 col-sm-12 col-centered mt-5 py-0" data-aos="fade-down" data-aos-duration="1750">
               <input
                 type="text"
                 aria-label="name"
@@ -131,7 +138,7 @@ class Contact extends React.Component {
                 required
               />
             </div>
-            <div className="form-group col-md-10 col-centered mt-5 py-0" data-aos="fade-down" data-aos-duration="1750">
+            <div className="form-group col-lg-6 col-md-6 col-sm-12 col-centered mt-5 py-0" data-aos="fade-down" data-aos-duration="1750">
               <input
                 type="email"
                 aria-label="email"
@@ -142,7 +149,18 @@ class Contact extends React.Component {
                 required
               />
             </div>
-            <div className="form-group col-md-10 col-centered mt-5 py-0" data-aos="fade-down" data-aos-duration="1750">
+            <div className="form-group col-lg-6 col-md-6 col-sm-12 col-centered mt-5 py-0" data-aos="fade-down" data-aos-duration="1750">
+              <input
+                type="text"
+                aria-label="phone"
+                className="phone form-control form-control-lg"
+                value={this.state.phone}
+                onChange={this.phoneChange}
+                placeholder="Phone"
+                required
+              />
+            </div>
+            <div className="form-group col-lg-6 col-md-6 col-sm-12 col-centered mt-5 py-0" data-aos="fade-down" data-aos-duration="1750">
               <input
                 type="text"
                 aria-label="subject"
@@ -153,7 +171,7 @@ class Contact extends React.Component {
                 required
               />
             </div>
-            <div className="form-group col-md-10 col-centered mt-5 py-0" data-aos="fade-down" data-aos-duration="1750">
+            <div className="form-group col-12 col-centered mt-5 py-0" data-aos="fade-down" data-aos-duration="1750">
               <textarea
                 aria-label="message"
                 className="message form-control form-control-lg"

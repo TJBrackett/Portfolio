@@ -88,7 +88,7 @@
 }
 .githubBtn:hover {
     background: linear-gradient(
-        90deg,
+        -45deg,
         rgba(58, 56, 56),
         #557a95,
         rgba(58, 56, 56)
@@ -110,7 +110,7 @@
 }
 .pageLinkBtn:hover {
     background: linear-gradient(
-        90deg,
+        -45deg,
         rgba(58, 56, 56),
         #557a95,
         rgba(58, 56, 56)

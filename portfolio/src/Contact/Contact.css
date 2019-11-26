@@ -49,6 +49,10 @@
   transition: 0.75s ease;
 }
 
+.message:focus {
+  margin-bottom: .75rem;
+}
+
 .emailLabel {
   float: left;
 }
@@ -63,7 +67,7 @@
 
 .contactBtn:hover {
   background: linear-gradient(
-    90deg,
+    -45deg,
     rgba(58, 56, 56),
     #557a95,
     rgba(58, 56, 56)
