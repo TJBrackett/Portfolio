@@ -1,7 +1,7 @@
 .blogBackground{
     height: 100vh;
     width: 100%;
-    background: linear-gradient(90deg, rgb(58, 56, 56), #557A95, #557A95, #557A95, rgb(58, 56, 56));
+    background: linear-gradient(90deg, #557A95, rgb(58, 56, 56),  rgb(58, 56, 56),  rgb(58, 56, 56), #557A95 );
     background-size: 400% 400%;
     position: relative;
     animation: change 9s ease-in-out infinite;
@@ -9,7 +9,7 @@
 
 .blogHeaderBg {
     width: 100%;
-    background: linear-gradient(90deg, rgb(58, 56, 56), #557A95, #557A95, #557A95, rgb(58, 56, 56));
+    background: linear-gradient(90deg, #557A95, rgb(58, 56, 56),  rgb(58, 56, 56),  rgb(58, 56, 56), #557A95 );
     background-size: 400% 400%;
     position: relative;
     animation: change 9s ease-in-out infinite;

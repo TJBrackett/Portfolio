@@ -1,5 +1,6 @@
 import React, {useState} from "react";
 import "./BlogNav.css";
+import A from "react-anchor-link-smooth-scroll";
 
 export default function BlogNav(props) {
     const [search, setSearch] = useState('')
@@ -10,13 +11,13 @@ export default function BlogNav(props) {
   return (
     <nav className="nav-bg navbar sticky-top navbar-expand-md navbar-light">
       <div>
-        <a 
+        <A 
             className="logo"
             href="#BlogHome"
             offset="400"
         >
           TJB
-        </a>
+        </A>
       </div>
       <button
         className="navbar-toggler ml-auto mt-3 mb-2"

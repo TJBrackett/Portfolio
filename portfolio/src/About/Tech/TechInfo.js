@@ -12,7 +12,6 @@ import Node from "../Icons/node.png";
 import Python from "../Icons/python.png";
 import ReactIcon from "../Icons/react.png";
 import Mysql from "../Icons/mysql.png";
-import Vb from "../Icons/vb.png";
 
 export const proficiency = [
   {
@@ -84,10 +83,5 @@ export const proficiency = [
     icon: ReactIcon,
     name: "React",
     level: "techImgOne"
-  },
-  {
-    icon: Vb,
-    name: "Visual Basic",
-    level: "techImgTwo"
   }
 ];
