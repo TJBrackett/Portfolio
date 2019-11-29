@@ -1,5 +1,6 @@
 .nav-bg {
   background-color: rgba(58, 56, 56, 0.945);
+  border-bottom: 1px solid white;
 }
 
 .navLink {

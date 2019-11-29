@@ -55,7 +55,7 @@ function Navbar() {
                 data-target=".navbar-collapse.show"
                 data-toggle="collapse"
                 href="#About"
-                offset={window.innerWidth < 768 ? "335" : "80"}
+                offset={window.innerWidth < 768 ? "295" : "80"}
               >
                 <div className="navLink">About</div>
                 <hr className="navHr" />
@@ -67,7 +67,7 @@ function Navbar() {
                 data-target=".navbar-collapse.show"
                 data-toggle="collapse"
                 href="#Portfolio"
-                offset={window.innerWidth < 768 ? "335" : "80"}
+                offset={window.innerWidth < 768 ? "295" : "80"}
               >
                 <div className="navLink">Projects</div>
                 <hr className="navHr" />
@@ -79,7 +79,7 @@ function Navbar() {
                 data-target=".navbar-collapse.show"
                 data-toggle="collapse"
                 href="#Contact"
-                offset={window.innerWidth < 768 ? "335" : "80"}
+                offset={window.innerWidth < 768 ? "295" : "80"}
               >
                 <div className="navLink">Contact</div>
                 <hr className="navHr" />
