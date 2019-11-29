@@ -1,6 +1,6 @@
 import React from "react";
 import "./Navbar.css";
-import Resume from "../TJ_Resume.pdf";
+import Resume from "../TJB_Resume.pdf";
 import A from "react-anchor-link-smooth-scroll";
 
 function Navbar() {
@@ -97,7 +97,7 @@ function Navbar() {
                 <hr className="navHr" />
               </a>
             </li>
-            {/* <li className="nav-item">
+            <li className="nav-item">
               <a
                 className="link nav-link text-white font-weight-bold"
                 data-target=".navbar-collapse.show"
@@ -106,7 +106,7 @@ function Navbar() {
                 <div className="navLink">Blog</div>
                 <hr className="navHr" />
               </a>
-            </li> */}
+            </li>
           </ul>
         </div>
       </div>

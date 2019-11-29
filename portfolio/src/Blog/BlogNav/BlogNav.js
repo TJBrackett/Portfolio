@@ -1,21 +1,22 @@
-import React, {useState} from "react";
+import React, { useState } from "react";
 import "./BlogNav.css";
 import A from "react-anchor-link-smooth-scroll";
 
 export default function BlogNav(props) {
-    const [search, setSearch] = useState('')
-    const userSearch = (event) => {
-        setSearch(event.target.value)
-        props.sendData(search)
-    }
+  const posts = props.blogPosts;
+  const [search, setSearch] = useState("");
+  const [filteredPosts, setFilteredPosts] = useState("");
+  const userSearch = event => {
+    setSearch(event.target.value);
+    let searchPost = posts.filter(post => {
+      return search === post.title.substring(0, post.title.length)
+    })
+    props.sendData(searchPost);
+  };
   return (
     <nav className="nav-bg navbar sticky-top navbar-expand-md navbar-light">
       <div>
-        <A 
-            className="logo"
-            href="#BlogHome"
-            offset="400"
-        >
+        <A className="logo" href="#BlogHome" offset="400">
           TJB
         </A>
       </div>

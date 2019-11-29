@@ -13,14 +13,16 @@ function Blog() {
     title: '',
     body: ''
   }])
-  const [search, setSearch] = useState('')
+  const [sortedPosts, setSortedPost] = useState('')
+  const [displayedPosts, setDisplayedPosts] = useState('')
   
-  useEffect( () => {
+  useEffect(() => {
     GetPosts();
   });
 
 const userSearch = (data) => {
-  setSearch(data)
+  console.log(data)
+  setSortedPost(data)
 }
 
 const GetPosts = () => {
