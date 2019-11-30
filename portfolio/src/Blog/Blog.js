@@ -21,7 +21,6 @@ function Blog() {
   });
 
 const userSearch = (data) => {
-  console.log(data)
   setSortedPost(data)
 }
 

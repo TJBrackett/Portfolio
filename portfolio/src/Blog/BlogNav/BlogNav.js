@@ -1,18 +1,25 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "./BlogNav.css";
 import A from "react-anchor-link-smooth-scroll";
 
 export default function BlogNav(props) {
   const posts = props.blogPosts;
   const [search, setSearch] = useState("");
-  const [filteredPosts, setFilteredPosts] = useState("");
+  const [filteredPosts, setFilteredPosts] = useState([]);
+
+  useEffect(() => {
+    props.sendData(filteredPosts);
+  });
+
   const userSearch = event => {
     setSearch(event.target.value);
-    let searchPost = posts.filter(post => {
-      return search === post.title.substring(0, post.title.length)
-    })
-    props.sendData(searchPost);
+    setFilteredPosts(
+      posts.filter(post => {
+        return search === post.title.substring(0, search.length);
+      })
+    );
   };
+
   return (
     <nav className="nav-bg navbar sticky-top navbar-expand-md navbar-light">
       <div>
@@ -46,9 +53,9 @@ export default function BlogNav(props) {
               <input
                 type="text"
                 className="blogSearch"
-                placeholder="Search by Title or #Tag."
                 value={search}
                 onChange={userSearch}
+                placeholder="Search by Title or #Tag."
               ></input>
             </li>
             <li className="nav-item">
