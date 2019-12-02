@@ -22,6 +22,7 @@ function Blog() {
 
 const userSearch = (data) => {
   setSortedPost(data)
+  console.log(data)
 }
 
 const GetPosts = () => {

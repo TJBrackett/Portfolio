@@ -64,7 +64,7 @@ export default function BlogNav(props) {
                 data-target=".navbar-collapse.show"
                 href="/"
               >
-                <div className="navLink">Home</div>
+                <div className="navLink">Portfolio</div>
                 <hr className="navHr" />
               </a>
             </li>
