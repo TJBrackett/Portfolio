@@ -13,16 +13,28 @@ function Blog() {
     title: '',
     body: ''
   }])
-  const [sortedPosts, setSortedPost] = useState('')
-  const [displayedPosts, setDisplayedPosts] = useState('')
+  const [sortedPosts, setSortedPost] = useState([{
+    id: '',
+    title: '',
+    body: ''
+  }])
+  const [displayedPosts, setDisplayedPosts] = useState([{
+    id: '',
+    title: '',
+    body: ''
+  }])
   
   useEffect(() => {
     GetPosts();
-  });
+    if (sortedPosts.length > 0) {
+      setDisplayedPosts(sortedPosts)
+    } else {
+      setDisplayedPosts(allPosts)
+    }
+  }, [sortedPosts]);
 
 const userSearch = (data) => {
   setSortedPost(data)
-  console.log(data)
 }
 
 const GetPosts = () => {
@@ -49,7 +61,7 @@ const GetPosts = () => {
         <h1 className="display-4"  id="BlogHome">My Blog</h1>
         </div>
         </div>
-          {allPosts.map(post => (
+          {displayedPosts.map(post => (
             <BlogPosts
               key={post.id}
               id={post.id}

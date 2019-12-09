@@ -9,7 +9,7 @@ function Page404() {
     useEffect(() => {
         const randNum = Math.floor(Math.random() * quotes404.length)
         setQuote(quotes404[randNum])
-    })
+    }, [])
     return (
       <div className="header404" id="Page404">
         <div className="text-center text-white caption">
