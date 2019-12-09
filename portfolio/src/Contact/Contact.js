@@ -121,8 +121,8 @@ class Contact extends React.Component {
       <React.Fragment>
         <hr />
         <div className="contact-header text-center py-3 p-2" id="Contact">
-            <h1 className="display-4"  data-aos="fade-up-left" data-aos="fade-down" data-aos-duration="1750">Contact Me</h1>
-            <p className="lead"  data-aos="fade-up-right" data-aos="fade-down" data-aos-duration="1750">Have a question or want to work together?</p>
+            <h1 className="display-4" data-aos="fade-down" data-aos-duration="1750">Contact Me</h1>
+            <p className="lead" data-aos="fade-down" data-aos-duration="1750">Have a question or want to work together?</p>
         </div>
         <hr />
         <form className="bgContact" onSubmit={this.handleSubmit}>
