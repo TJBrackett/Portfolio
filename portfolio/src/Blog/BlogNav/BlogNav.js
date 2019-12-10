@@ -10,6 +10,7 @@ export default function BlogNav(props) {
   useEffect(() => {
     props.sendData(filteredPosts);
   }, [filteredPosts, props]);
+
   useEffect(() => {
     if (search.charAt(0) === '#') {
       setFilteredPosts(
@@ -28,7 +29,7 @@ export default function BlogNav(props) {
 
   const userSearch = event => {
     setSearch(event.target.value);
-  };
+  }
 
   return (
     <nav className="nav-bg navbar sticky-top navbar-expand-md navbar-light">

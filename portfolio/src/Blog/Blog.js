@@ -21,11 +21,14 @@ function Blog() {
     body: ''
   }])
   const [displayedPosts, setDisplayedPosts] = useState([{
+
     userId: '',
+
     id: '',
     title: '',
     body: ''
   }])
+
   const [isLoading, setIsLoading] = useState(true)
   const getPostUrl = "http://jsonplaceholder.typicode.com/posts";
   
