@@ -10,17 +10,24 @@ export default function BlogNav(props) {
   useEffect(() => {
     props.sendData(filteredPosts);
   }, [filteredPosts, props]);
+  useEffect(() => {
+    if (search.charAt(0) === '#') {
+      setFilteredPosts(
+      posts.filter(post => {
+        return search.substring(1, search.length) === String(post.userId);
+      })
+      )
+    } else {
+      setFilteredPosts(
+        posts.filter(post => {
+            return search === post.title.substring(0, search.length);
+        })
+      );
+    }
+  }, [posts, search])
 
   const userSearch = event => {
     setSearch(event.target.value);
-    if (search.substring(0) === '#') {
-      console.log(search)
-    }
-    setFilteredPosts(
-      posts.filter(post => {
-        return search === post.title.substring(0, search.length);
-      })
-    );
   };
 
   return (

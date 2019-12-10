@@ -9,42 +9,54 @@ import BlogNav from './BlogNav/BlogNav.js'
 function Blog() {
   //Need to create card layout and receive cards
   const [allPosts, setAllPost] = useState([{
+    userId: '',
     id: '',
     title: '',
     body: ''
   }])
   const [sortedPosts, setSortedPost] = useState([{
+    userId: '',
     id: '',
     title: '',
     body: ''
   }])
   const [displayedPosts, setDisplayedPosts] = useState([{
+    userId: '',
     id: '',
     title: '',
     body: ''
   }])
+  const [isLoading, setIsLoading] = useState(true)
+  const getPostUrl = "http://jsonplaceholder.typicode.com/posts";
   
   useEffect(() => {
-    GetPosts();
+    async function GetPosts() {
+    await fetch(getPostUrl)
+      .then(res => res.json())
+      .then(json => {
+        setAllPost(json)
+        setDisplayedPosts(allPosts)
+        setIsLoading(false)
+      })
+      .catch(err => console.log(err))
+    }
+    GetPosts()
+  }, [isLoading])
+
+  useEffect(() => {
     if (sortedPosts.length > 0) {
       setDisplayedPosts(sortedPosts)
+      if (displayedPosts.length = 0) {
+        // Display something indicating there are no results for their search
+      }
     } else {
       setDisplayedPosts(allPosts)
     }
-  }, [sortedPosts]);
+  }, [isLoading, sortedPosts]);
 
 const userSearch = (data) => {
   setSortedPost(data)
 }
-
-const GetPosts = () => {
-    const getPostUrl = "http://jsonplaceholder.typicode.com/posts";
-    fetch(getPostUrl)
-      .then(res => res.json())
-      .then(json => {
-        setAllPost(json)
-      })
-  }
 
   return (
     <React.Fragment>
@@ -61,9 +73,11 @@ const GetPosts = () => {
         <h1 className="display-4"  id="BlogHome">My Blog</h1>
         </div>
         </div>
+          {isLoading && <p>Fetching Posts</p>}
           {displayedPosts.map(post => (
             <BlogPosts
               key={post.id}
+              userId={post.userId}
               id={post.id}
               title={post.title}
               body={post.body}

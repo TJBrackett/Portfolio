@@ -178,7 +178,7 @@ class Contact extends React.Component {
                 rows="4"
                 value={this.state.message}
                 onChange={this.messageChange}
-                placeholder="Your Message"
+                placeholder="Message"
                 required
               ></textarea>
             </div>
