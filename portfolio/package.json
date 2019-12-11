@@ -12,6 +12,7 @@
     "express": "^4.17.1",
     "http-proxy": "^1.17.0",
     "http-proxy-middleware": "^0.19.1",
+    "mongoose": "^5.8.0",
     "react": "^16.9.0",
     "react-alert": "^5.5.0",
     "react-alert-template-basic": "^1.0.0",

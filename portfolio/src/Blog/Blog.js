@@ -21,9 +21,7 @@ function Blog() {
     body: ''
   }])
   const [displayedPosts, setDisplayedPosts] = useState([{
-
     userId: '',
-
     id: '',
     title: '',
     body: ''
@@ -49,9 +47,9 @@ function Blog() {
   useEffect(() => {
     if (sortedPosts.length > 0) {
       setDisplayedPosts(sortedPosts)
-      if (displayedPosts.length = 0) {
-        // Display something indicating there are no results for their search
-      }
+      // if (displayedPosts.length = 0) {
+      //   // Display something indicating there are no results for their search
+      // }
     } else {
       setDisplayedPosts(allPosts)
     }
@@ -67,7 +65,7 @@ const userSearch = (data) => {
       <div className="postContainer row" id="Posts">
         <div className="col-lg-2 col-md-2 col-sm-0 sideSection"></div>
         <div className="col-lg-8 col-md-8 col-sm-12 middleSection">
-        <BlogNav 
+        <BlogNav
           blogPosts={allPosts}
           sendData={userSearch}
         />
