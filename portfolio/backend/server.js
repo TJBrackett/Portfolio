@@ -1,15 +1,16 @@
-const nodemailer = require('nodemailer');
-const express = require('express');
-const bodyParser = require('body-parser');
-const fs = require('fs');
-const http = require('http');
-const https = require('https');
+import { createTransport } from 'nodemailer';
+import express, { json } from 'express';
+import { urlencoded } from 'body-parser';
+import { readFileSync } from 'fs';
+import { createServer } from 'http';
+import { createServer as _createServer } from 'https';
+import mongoose from 'mongoose';
 const app = express();
 
 const options = {
-    key: fs.readFileSync('/etc/letsencrypt/live/tjbrackett.com/privkey.pem', "utf8"),
-    cert: fs.readFileSync('/etc/letsencrypt/live/tjbrackett.com/cert.pem', "utf8"),
-    ca: fs.readFileSync('/etc/letsencrypt/live/tjbrackett.com/chain.pem', "utf8")
+    key: readFileSync('/etc/letsencrypt/live/tjbrackett.com/privkey.pem', "utf8"),
+    cert: readFileSync('/etc/letsencrypt/live/tjbrackett.com/cert.pem', "utf8"),
+    ca: readFileSync('/etc/letsencrypt/live/tjbrackett.com/chain.pem', "utf8")
 }
 app.use((req, res, next) => {
     res.header('Access-Control-Allow-Origin', "*");
@@ -18,8 +19,8 @@ app.use((req, res, next) => {
 });
 
 
-app.use(bodyParser.urlencoded({ extended: true }));
-app.use(express.json());
+app.use(urlencoded({ extended: true }));
+app.use(json());
 
 app.post('/email', (req, res) => {
     let name = req.body.name;
@@ -28,10 +29,8 @@ app.post('/email', (req, res) => {
     let subject = req.body.subject;
     let message = req.body.message;
     let mailOptions = "";
-    console.log(req.body);
-    console.log(req.hostname);
 
-    let transporter = nodemailer.createTransport({
+    let transporter = createTransport({
         service: 'gmail',
         secure: true,
         auth: {
@@ -60,9 +59,9 @@ app.post('/email', (req, res) => {
     res.send(req.body);
 })
 
-http.createServer(app).listen(8080, () => {
+createServer(app).listen(8080, () => {
     console.log("Server started on port 8080");
 });
-https.createServer(options, app).listen(8443, () => {
+_createServer(options, app).listen(8443, () => {
     console.log("Server started on port 8443");
 });
