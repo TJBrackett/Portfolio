@@ -54,6 +54,7 @@
 .middleSection::-webkit-scrollbar {
     width: 0px;
     visibility: hidden;
+    scrollbar-width: 0px;
 }
 
 .testP {

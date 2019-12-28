@@ -74,6 +74,7 @@ const userSearch = (data) => {
         <h1 className="display-4"  id="BlogHome">My Blog</h1>
         </div>
         </div>
+        <div className="d-flex justify-content-center flex-wrap">
           {isLoading && <p>Fetching Posts</p>}
           {displayedPosts.map(post => (
             <BlogPosts
@@ -84,6 +85,7 @@ const userSearch = (data) => {
               body={post.body}
             />
           ))}
+          </div>
           <div className="blogFooter">
           <Footer />
           </div>
@@ -94,11 +96,11 @@ const userSearch = (data) => {
   );
 }
 
-function Login() {
+function DevPage() {
   window.location.assign('/blog/dev')
 }
 
-function Render() {
+export default function Render() {
   const secretCode = [17, 57, 53, 50, 49];
 
   return (
@@ -106,12 +108,10 @@ function Render() {
       <Blog />
       <Konami
         code={secretCode}
-        action={Login}
+        action={DevPage}
         resetDelay={3000}
         timeout={5000}
       ></Konami>
     </React.Fragment>
   );
 }
-
-export default Render;
