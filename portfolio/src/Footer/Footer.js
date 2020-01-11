@@ -5,7 +5,7 @@ import "./Footer.css"
 
 function Footer() {
   const year = new Date().getFullYear()
-  const copyright = `© ${year} TJ Brackett`
+  const copyright = `© 2019 - ${year} TJ Brackett`
   return (
     <React.Fragment>
       <hr />
