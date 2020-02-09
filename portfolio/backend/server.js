@@ -51,10 +51,11 @@ app.post('/', (req, res) => {
         from: email,
         to: 'brackett.tj@gmail.com',
         subject: subject,
-        text: message + "\nName: " + name + "\nEmail: " + email + "\nPhone: " + phone
+        text: message + "\nName: " + name + "\nEmail: " + email + "\nPhone: " + phone,
     };
 
     transporter.sendMail(mailOptions, (error, info) => {
+        console.log(Date.now())
         if (error) {
             console.log(error);
         } else {
