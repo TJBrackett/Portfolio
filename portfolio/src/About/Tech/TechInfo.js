@@ -1,7 +1,7 @@
-import Angular from "../Icons/angular.png";
 import Apache from "../Icons/apache.png";
 import Cpp from "../Icons/cpp.png";
 import Css from "../Icons/css.png";
+import Docker from '../Icons/docker.png'
 import Firebase from "../Icons/firebase.png";
 import Git from "../Icons/git.png";
 import Html from "../Icons/html.png";
@@ -16,72 +16,58 @@ import Mysql from "../Icons/mysql.png";
 export const proficiency = [
   {
     icon: Apache,
-    name: "Apache",
-    level: "techImgTwo"
-  },
-  {
-    icon: Angular,
-    name: "Angular",
-    level: "techImgThree"
+    name: "Apache"
   },
   {
     icon: Cpp,
-    name: "C++",
-    level: "techImgThree"
+    name: "C++"
   },
   {
     icon: Css,
-    name: "CSS",
-    level: "techImgTwo"
+    name: "CSS"
+  },
+  {
+    icon: Docker,
+    name: "Docker"
   },
   {
     icon: Firebase,
-    name: "Firebase",
-    level: "techImgThree"
+    name: "Firebase"
   },
   {
     icon: Git,
-    name: "Git",
-    level: "techImgTwo"
+    name: "Git"
   },
   {
     icon: Html,
-    name: "HTML",
-    level: "techImgTwo"
+    name: "HTML"
   },
   {
     icon: Java,
-    name: "Java",
-    level: "techImgThree"
+    name: "Java"
   },
   {
     icon: Js,
-    name: "Javascript",
-    level: "techImgOne"
+    name: "Javascript"
   },
   {
     icon: Linux,
-    name: "Linux",
-    level: "techImgOne"
+    name: "Linux"
   },
   {
     icon: Mysql,
-    name: "MySQL",
-    level: "techImgOne"
+    name: "MySQL"
   },
   {
     icon: Node,
-    name: "Node.js",
-    level: "techImgOne"
+    name: "Node.js"
   },
   {
     icon: Python,
-    name: "Python",
-    level: "techImgThree"
+    name: "Python"
   },
   {
     icon: ReactIcon,
-    name: "React",
-    level: "techImgOne"
+    name: "React"
   }
 ];

@@ -90,3 +90,14 @@
   -webkit-text-fill-color: black;
   -webkit-box-shadow: 0 0 0px 1000px #557a95 inset;
 }
+
+.message{
+  resize: none;
+}
+
+input:invalid {
+  box-shadow:none;
+}
+textarea:invalid {
+  box-shadow:none;
+}

@@ -44,6 +44,7 @@ function Blog() {
     GetPosts()
   }, [isLoading])
 
+  //Updates the screen everytime a character is added to the searchbar in nav.
   useEffect(() => {
     if (sortedPosts.length > 0) {
       setDisplayedPosts(sortedPosts)

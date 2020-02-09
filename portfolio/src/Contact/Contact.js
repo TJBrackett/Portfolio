@@ -45,7 +45,7 @@ class Contact extends React.Component {
   }
 
   handleSubmit(event) {
-    const backendUrl = 'https://www.tjbrackett.com/email:8443';
+    const backendUrl = 'https://www.tjbrackett.com/:8443';
     event.preventDefault();
 
     fetch(backendUrl, {
@@ -126,8 +126,8 @@ class Contact extends React.Component {
         </div>
         <hr />
         <form className="bgContact" onSubmit={this.handleSubmit}>
-          <div className="form-row p-4 col-centered">
-            <div className="form-group col-lg-6 col-md-6 col-sm-12 col-centered mt-5 py-0" data-aos="fade-down" data-aos-duration="1750">
+          <div className="form-row p-4 col-centered" data-aos="fade-down" data-aos-duration="1750">
+            <div className="form-group col-lg-6 col-md-6 col-sm-12 col-centered mt-5 py-0">
               <input
                 type="text"
                 aria-label="name"
@@ -138,7 +138,7 @@ class Contact extends React.Component {
                 required
               />
             </div>
-            <div className="form-group col-lg-6 col-md-6 col-sm-12 col-centered mt-5 py-0" data-aos="fade-down" data-aos-duration="1750">
+            <div className="form-group col-lg-6 col-md-6 col-sm-12 col-centered mt-5 py-0">
               <input
                 type="email"
                 aria-label="email"
@@ -149,7 +149,7 @@ class Contact extends React.Component {
                 required
               />
             </div>
-            <div className="form-group col-lg-6 col-md-6 col-sm-12 col-centered mt-5 py-0" data-aos="fade-down" data-aos-duration="1750">
+            <div className="form-group col-lg-6 col-md-6 col-sm-12 col-centered mt-5 py-0">
               <input
                 type="text"
                 aria-label="phone"
@@ -160,7 +160,7 @@ class Contact extends React.Component {
                 required
               />
             </div>
-            <div className="form-group col-lg-6 col-md-6 col-sm-12 col-centered mt-5 py-0" data-aos="fade-down" data-aos-duration="1750">
+            <div className="form-group col-lg-6 col-md-6 col-sm-12 col-centered mt-5 py-0">
               <input
                 type="text"
                 aria-label="subject"
@@ -171,8 +171,9 @@ class Contact extends React.Component {
                 required
               />
             </div>
-            <div className="form-group col-12 col-centered mt-5 py-0" data-aos="fade-down" data-aos-duration="1750">
+            <div className="form-group col-12 col-centered mt-5 py-0">
               <textarea
+                type="text"
                 aria-label="message"
                 className="message form-control form-control-lg"
                 rows="4"
@@ -180,7 +181,7 @@ class Contact extends React.Component {
                 onChange={this.messageChange}
                 placeholder="Message"
                 required
-              ></textarea>
+              />
             </div>
             <button
               type="submit"

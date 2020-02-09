@@ -4,7 +4,7 @@ import { urlencoded } from 'body-parser';
 import { readFileSync } from 'fs';
 import { createServer } from 'http';
 import { createServer as _createServer } from 'https';
-import mongoose from 'mongoose';
+// import mongoose from 'mongoose';
 const app = express();
 
 const options = {
@@ -22,7 +22,7 @@ app.use((req, res, next) => {
 app.use(urlencoded({ extended: true }));
 app.use(json());
 
-app.post('/email', (req, res) => {
+app.post('/', (req, res) => {
     let name = req.body.name;
     let email = req.body.email;
     let phone = req.body.phone;
@@ -62,6 +62,6 @@ app.post('/email', (req, res) => {
 createServer(app).listen(8080, () => {
     console.log("Server started on port 8080");
 });
-_createServer(options, app).listen(8443, () => {
+createServer(options, app).listen(8443, () => {
     console.log("Server started on port 8443");
 });
