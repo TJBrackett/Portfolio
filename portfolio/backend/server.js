@@ -26,7 +26,7 @@ app.use((req, res, next) => {
 
 
 app.use(bodyParser.urlencoded({ extended: true }));
-app.use(json());
+app.use(express.json());
 
 app.post('/', (req, res) => {
     let name = req.body.name;
