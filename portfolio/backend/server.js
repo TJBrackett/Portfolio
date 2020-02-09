@@ -1,16 +1,22 @@
-import { createTransport } from 'nodemailer';
-import express, { json } from 'express';
-import { urlencoded } from 'body-parser';
-import { readFileSync } from 'fs';
-import { createServer } from 'http';
-import { createServer as _createServer } from 'https';
+// import { createTransport }  from 'nodemailer';
+// import express, { json } from 'express';
+// import { urlencoded } from 'body-parser';
+// import { readFileSync } from 'fs';
+// import { createServer } from 'http';
+// import { createServer as _createServer } from 'https';
 // import mongoose from 'mongoose';
+const nodemailer = require('nodemailer');
+const express = require('express');
+const bodyParser = require('body-parser');
+const fs = require('fs');
+const http = require('http');
+const https = require('https');
 const app = express();
 
 const options = {
-    key: readFileSync('/etc/letsencrypt/live/tjbrackett.com/privkey.pem', "utf8"),
-    cert: readFileSync('/etc/letsencrypt/live/tjbrackett.com/cert.pem', "utf8"),
-    ca: readFileSync('/etc/letsencrypt/live/tjbrackett.com/chain.pem', "utf8")
+    key: fs.readFileSync('/etc/letsencrypt/live/tjbrackett.com/privkey.pem', "utf8"),
+    cert: fs.readFileSync('/etc/letsencrypt/live/tjbrackett.com/cert.pem', "utf8"),
+    ca: fs.readFileSync('/etc/letsencrypt/live/tjbrackett.com/chain.pem', "utf8")
 }
 app.use((req, res, next) => {
     res.header('Access-Control-Allow-Origin', "*");

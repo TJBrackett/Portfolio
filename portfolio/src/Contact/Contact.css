@@ -66,13 +66,8 @@
 }
 
 .contactBtn:hover {
-  background: linear-gradient(
-    -45deg,
-    rgba(58, 56, 56),
-    #557a95,
-    rgba(58, 56, 56)
-  );
-  color: white;
+  background: #557a95;
+  color: rgba(58, 56, 56);
   border: 1px solid transparent;
   transition: 0.75s ease;
 }
