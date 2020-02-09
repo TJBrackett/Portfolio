@@ -45,7 +45,7 @@ class Contact extends React.Component {
   }
 
   handleSubmit(event) {
-    const backendUrl = 'https://www.tjbrackett.com/:8443';
+    const backendUrl = 'https://www.tjbrackett.com:8443';
     event.preventDefault();
 
     fetch(backendUrl, {
