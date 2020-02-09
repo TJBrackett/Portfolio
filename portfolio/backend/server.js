@@ -29,14 +29,14 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.json());
 
 app.post('/', (req, res) => {
-    let name = req.body.name;
-    let email = req.body.email;
-    let phone = req.body.phone;
-    let subject = req.body.subject;
-    let message = req.body.message;
+    const name = req.body.name;
+    const email = req.body.email;
+    const phone = req.body.phone;
+    const subject = req.body.subject;
+    const message = req.body.message;
     let mailOptions = "";
-
-    let transporter = nodemailer.createTransport({
+    console.log(phone)
+    const transporter = nodemailer.createTransport({
         service: 'gmail',
         secure: true,
         auth: {
