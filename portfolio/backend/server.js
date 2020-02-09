@@ -25,7 +25,7 @@ app.use((req, res, next) => {
 });
 
 
-app.use(urlencoded({ extended: true }));
+app.use(bodyParser.urlencoded({ extended: true }));
 app.use(json());
 
 app.post('/', (req, res) => {
@@ -36,7 +36,7 @@ app.post('/', (req, res) => {
     let message = req.body.message;
     let mailOptions = "";
 
-    let transporter = createTransport({
+    let transporter = nodemailer.createTransport({
         service: 'gmail',
         secure: true,
         auth: {
@@ -65,9 +65,9 @@ app.post('/', (req, res) => {
     res.send(req.body);
 })
 
-createServer(app).listen(8080, () => {
+http.createServer(app).listen(8080, () => {
     console.log("Server started on port 8080");
 });
-createServer(options, app).listen(8443, () => {
+https.createServer(options, app).listen(8443, () => {
     console.log("Server started on port 8443");
 });
