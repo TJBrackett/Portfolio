@@ -28,7 +28,7 @@ app.use((req, res, next) => {
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.json());
 
-app.post('/', (req, res) => {
+app.post('/email', (req, res) => {
     const name = req.body.name;
     const email = req.body.email;
     const phone = req.body.phone;
