@@ -2,7 +2,7 @@ import React, {useEffect, useState} from 'react';
 import "./Project.css"
 
 
-function Project(title, description, img, pageLink, githubLink, date) {
+function Project(title, description, img, pageLink, githubLink, date, role) {
   let pic = ''
   
   for (let key in img) {
@@ -40,7 +40,9 @@ function Project(title, description, img, pageLink, githubLink, date) {
             <img className="img-fluid card-img-top" src={pic} alt="projectPic" />
             <div className="projBottom">
               <h5 className="card-title text-center mt-2">{title}</h5>
-              <p className="card-text text-center text-wrap">{date} - {description}</p>
+              <p className="card-text text-center text-wrap">{description}<br></br>{role}<br></br>{date}</p>
+              {/* <p className="card-text text-center text-wrap">{role}</p>
+              <p className="card-text text-center text-wrap">{date}</p> */}
             </div>
             {showButtons}
           </div>

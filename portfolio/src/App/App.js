@@ -41,7 +41,7 @@ function Portfolio() {
           <h1 className="display-4" data-aos="fade-down" data-aos-duration="1750">Projects</h1>
           <p className="lead"  data-aos="fade-down" data-aos-duration="1750">
             A timeline of my progess in software development ranging from
-            previous schoolwork to my current personal projects.
+            previous schoolwork to my current projects.
           </p>
       </div>
       <hr />
@@ -52,7 +52,8 @@ function Portfolio() {
           ProjPics.Sticky,
           Sticky.pageLink,
           Sticky.githubLink,
-          Sticky.date
+          Sticky.date,
+          Sticky.role
         )}
         {Project(
           FinalProj.title,
@@ -60,7 +61,8 @@ function Portfolio() {
           ProjPics.Final,
           FinalProj.pageLink,
           FinalProj.githubLink,
-          FinalProj.date
+          FinalProj.date,
+          FinalProj.role
         )}
         {Project(
           Hackermap.title,
@@ -68,7 +70,8 @@ function Portfolio() {
           ProjPics.Hackermap,
           Hackermap.pageLink,
           Hackermap.githubLink,
-          Hackermap.date
+          Hackermap.date,
+          Hackermap.role
         )}
         {Project(
           Mycuru.title,
@@ -76,7 +79,8 @@ function Portfolio() {
           ProjPics.MyCuru,
           Mycuru.pageLink,
           Mycuru.githubLink,
-          Mycuru.date
+          Mycuru.date,
+          Mycuru.role
         )}
       </div>
     </React.Fragment>

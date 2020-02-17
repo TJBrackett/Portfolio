@@ -160,7 +160,7 @@
 
 @media only screen and (max-width: 500px) {
     .projImg {
-        height: 10rem;
+        height: 12rem;
         width: 19rem;
         transition: .75s ease;
         overflow: hidden;
@@ -170,5 +170,11 @@
     }
     .projImg:hover .projBtn {
         height: 30%;
+    }
+    .projImg:hover .singleProjBtn {
+        height: 30%;
+    }
+    .projImg:hover .projBtn {
+        height: 25%;
     }
 }

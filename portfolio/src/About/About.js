@@ -31,7 +31,6 @@ export function About() {
                   key={tech.name}
                   icon={tech.icon}
                   name={tech.name}
-                  level={tech.level}
                 ></Tech>
               ))}
             </div>
