@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useEffect, useState} from 'react';
 import "./Project.css"
 
 
@@ -8,6 +8,30 @@ function Project(title, description, img, pageLink, githubLink, date) {
   for (let key in img) {
     pic = img[key];
   }
+  const [showButtons, setButtons] = useState()
+  function Buttons() {
+    if (pageLink === "") {
+      return(
+     <div className="singleProjBtn" role="group">
+       <a type="button" className="btn singleBtn btn-secondary btn-outline-dark btn-lg col-6 text-center" href={githubLink} target="_blank" rel="noopener noreferrer">Github</a>
+     </div>
+    )} else if (githubLink === "") {
+      return(
+     <div className="singleProjBtn" role="group">
+       <a type="button" className="btn singleBtn btn-secondary btn-outline-dark btn-lg col-6 text-center" href={pageLink} target="_blank" rel="noopener noreferrer">Website</a>
+     </div>
+      )} else {
+      return(
+     <div className="btn-group projBtn" role="group">
+       <a type="button" className="btn githubBtn btn-secondary btn-outline-dark btn-lg col-6 text-center" href={githubLink} target="_blank" rel="noopener noreferrer">Github</a>
+       <a type="button" className="btn pageLinkBtn btn-secondary btn-outline-dark btn-lg col-6 text-center" href={pageLink} target="_blank" rel="noopener noreferrer">Website</a>
+     </div>
+      )}
+  }
+
+  useEffect(() => {
+    setButtons(Buttons())
+  }, [])
 
   return (
       <div className="projCard" data-aos="fade-down" data-aos-duration="1750">
@@ -18,10 +42,7 @@ function Project(title, description, img, pageLink, githubLink, date) {
               <h5 className="card-title text-center mt-2">{title}</h5>
               <p className="card-text text-center text-wrap">{date} - {description}</p>
             </div>
-            <div className="btn-group projBtn" role="group">
-              <a type="button" className="btn githubBtn btn-secondary btn-outline-dark btn-lg col-6 text-center" href={githubLink} target="_blank" rel="noopener noreferrer">Github</a>
-              <a type="button" className="btn pageLinkBtn btn-secondary btn-outline-dark btn-lg col-6 text-center" href={pageLink} target="_blank" rel="noopener noreferrer">Website</a>
-            </div>
+            {showButtons}
           </div>
         </div>
       </div>

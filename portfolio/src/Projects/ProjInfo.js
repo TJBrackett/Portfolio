@@ -1,6 +1,7 @@
 import Final from "../Projects/backgrounds/final.jpg"
 import StickyNotes from "../Projects/backgrounds/Lab03.jpg"
 import HackerMap from "../Projects/backgrounds/hackermap.jpg"
+import MyCuru from "../Projects/backgrounds/mycuru.jpg"
 
 export const Sticky = {
     title: "Sticky Notes",
@@ -21,13 +22,22 @@ export const FinalProj = {
 export const ProjPics = {
     Sticky: { StickyNotes },
     Final: { Final },
-    Hackermap: { HackerMap }
+    Hackermap: { HackerMap },
+    MyCuru: { MyCuru }
 }
 
 export const Hackermap = {
     title: "WIP - Hackermap",
     desc: "Express / Apache / MySQL / React",
-    pageLink: "https://github.com/TJBrackett/HackerMap/tree/develop",
+    pageLink: "",
     githubLink: "https://github.com/TJBrackett/HackerMap/tree/develop",
     date: "July 2019"
+}
+
+export const Mycuru = {
+    title: "MyCuru",
+    desc: "React / AWS / Python / Docker",
+    pageLink: "http://mycuru.com/categories",
+    githubLink: "",
+    date: "February 2020"
 }

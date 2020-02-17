@@ -3,7 +3,7 @@ import "./App.css";
 import Project from "../Projects/Project.js";
 import Navbar from "../Navbar/Navbar.js";
 import Footer from "../Footer/Footer.js";
-import { Sticky, FinalProj, Hackermap } from "../Projects/ProjInfo.js";
+import { Sticky, FinalProj, Hackermap, Mycuru } from "../Projects/ProjInfo.js";
 import { ProjPics } from "../Projects/ProjInfo.js";
 import A from "react-anchor-link-smooth-scroll";
 import About from "../About/About";
@@ -69,6 +69,14 @@ function Portfolio() {
           Hackermap.pageLink,
           Hackermap.githubLink,
           Hackermap.date
+        )}
+        {Project(
+          Mycuru.title,
+          Mycuru.desc,
+          ProjPics.MyCuru,
+          Mycuru.pageLink,
+          Mycuru.githubLink,
+          Mycuru.date
         )}
       </div>
     </React.Fragment>
