@@ -6,6 +6,7 @@
     max-width: 30rem;
     max-height: 30rem;
     margin-bottom: 1.2rem;
+    overflow: hidden;
 }
 
 .projImg {
