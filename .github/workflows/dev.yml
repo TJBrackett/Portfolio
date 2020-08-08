@@ -5,7 +5,7 @@ name: Dev Build
 
 on:
   push:
-    branches: [ master ]
+    branches: [ develop ]
   pull_request:
 
 jobs:
