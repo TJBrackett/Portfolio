@@ -20,4 +20,12 @@ jobs:
         username: ${{ secrets.USERNAME }}
         password: ${{ secrets.PASSWORD }}
         port: ${{ secrets.PORT }}
-        script: tjPortfolioDev
+        script: |
+          cd ~/TJ/portfolio
+          git pull portfolio develop
+          rm -rf /var/www/tjbrackett.com/*
+          npm i
+          npm run build
+          mv ~/TJ/portfolio/build/* /var/www/tjbrackett.com/
+          cd
+          exit
