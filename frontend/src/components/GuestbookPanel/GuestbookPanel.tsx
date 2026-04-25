@@ -19,7 +19,9 @@ function getNameError(name: string): string | null {
 }
 
 function fmtTimeLocal(iso: string): string {
-  const d = new Date(iso)
+  // Ensure the string is treated as UTC (backend stores utcnow without 'Z')
+  const utc = iso.endsWith('Z') || iso.includes('+') ? iso : iso + 'Z'
+  const d = new Date(utc)
   const date = d.toLocaleDateString('en-US', { year: 'numeric', month: 'short', day: 'numeric' })
   const time = d.toLocaleTimeString('en-US', { hour: 'numeric', minute: '2-digit' })
   return `${date} · ${time}`
