@@ -67,9 +67,10 @@ export function Globe({ pins, myLocation, visitorRank, snapTarget, onSnapHandled
   const prevMxRef     = useRef(0)
   const prevMyRef     = useRef(0)
 
-  // Snap animation cancel + post-initial-snap flag
-  const snapCancelRef   = useRef(false)
-  const postSnapDoneRef = useRef(false)
+  // Snap animation cancel + post-initial-snap flags
+  const snapCancelRef      = useRef(false)
+  const postSnapDoneRef    = useRef(false)
+  const initialSnapDoneRef = useRef(false)
 
   // Pinch zoom
   const touchDistRef = useRef<number | null>(null)
@@ -115,7 +116,7 @@ export function Globe({ pins, myLocation, visitorRank, snapTarget, onSnapHandled
 
     const scene  = new THREE.Scene()
     const camera = new THREE.PerspectiveCamera(42, W / H, 0.1, 200)
-    camera.position.set(0, 0, 5.8)
+    camera.position.set(0, 0, 10)
 
     const renderer = new THREE.WebGLRenderer({ canvas, antialias: true, alpha: true })
     renderer.setSize(W, H)
@@ -246,7 +247,8 @@ export function Globe({ pins, myLocation, visitorRank, snapTarget, onSnapHandled
     hitboxesRef.current.push(group.userData.hitbox)
 
     setMyLocText(`${myLocation.city}, ${myLocation.country}`)
-    setTimeout(() => snapToMyPin(true), 700)
+    const isTouch = window.matchMedia('(hover: none) and (pointer: coarse)').matches
+    setTimeout(() => snapToMyPin(true, !isTouch && !initialSnapDoneRef.current), 700)
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [myLocation])
 
@@ -358,6 +360,16 @@ export function Globe({ pins, myLocation, visitorRank, snapTarget, onSnapHandled
     prevMyRef.current = e.touches[0].clientY
   }
 
+  // ── Block browser pinch-zoom via non-passive listener ───────────────────
+  useEffect(() => {
+    const canvas = canvasRef.current!
+    const handler = (e: TouchEvent) => {
+      if (e.touches.length >= 2) e.preventDefault()
+    }
+    canvas.addEventListener('touchmove', handler, { passive: false })
+    return () => canvas.removeEventListener('touchmove', handler)
+  }, [])
+
   function onTouchMove(e: React.TouchEvent) {
     if (e.touches.length === 2 && touchDistRef.current !== null && cameraRef.current) {
       const dx = e.touches[0].clientX - e.touches[1].clientX
@@ -425,7 +437,7 @@ export function Globe({ pins, myLocation, visitorRank, snapTarget, onSnapHandled
   }
 
   // ── Snap to coords (generalised) ─────────────────────────────────────────
-  const snapToCoords = useCallback((lat: number, lon: number, resumeAfter = false) => {
+  const snapToCoords = useCallback((lat: number, lon: number, resumeAfter = false, zoomIn = false) => {
     if (!globeGroupRef.current) return
     setIsSpinning(false)
     isSpinningRef.current = false
@@ -436,6 +448,11 @@ export function Globe({ pins, myLocation, visitorRank, snapTarget, onSnapHandled
     const curY = globeGroupRef.current.rotation.y
     tY += Math.round((curY - tY) / (Math.PI * 2)) * Math.PI * 2
     const sY = curY, sX = globeGroupRef.current.rotation.x
+
+    // Optional zoom-in: animate camera z → 5.8 alongside the snap
+    const sZ = zoomIn && cameraRef.current ? cameraRef.current.position.z : null
+    const tZ = 5.8
+
     let p = 0
     const go = () => {
       if (snapCancelRef.current) return
@@ -444,6 +461,9 @@ export function Globe({ pins, myLocation, visitorRank, snapTarget, onSnapHandled
       const ease = t < 0.5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2
       globeGroupRef.current!.rotation.y = sY + (tY - sY) * ease
       globeGroupRef.current!.rotation.x = sX + (tX - sX) * ease
+      if (sZ !== null && cameraRef.current) {
+        cameraRef.current.position.z = sZ + (tZ - sZ) * ease
+      }
       if (p < 100) requestAnimationFrame(go)
     }
     go()
@@ -460,9 +480,10 @@ export function Globe({ pins, myLocation, visitorRank, snapTarget, onSnapHandled
   }, [])
 
   // ── Snap to my pin ────────────────────────────────────────────────────────
-  const snapToMyPin = useCallback((resumeAfter = false) => {
+  const snapToMyPin = useCallback((resumeAfter = false, zoomIn = false) => {
     if (!myLocation) { showToast('Still locating you…'); return }
-    snapToCoords(myLocation.lat, myLocation.lon, resumeAfter)
+    if (zoomIn) initialSnapDoneRef.current = true
+    snapToCoords(myLocation.lat, myLocation.lon, resumeAfter, zoomIn)
   }, [myLocation, snapToCoords])
 
   // ── Snap when snapTarget prop changes ────────────────────────────────────
