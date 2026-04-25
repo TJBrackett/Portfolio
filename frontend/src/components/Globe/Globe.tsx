@@ -3,14 +3,12 @@ import * as THREE from 'three'
 import type { MyLocation, Pin, TweakSettings } from '../../types'
 import { TWEAK_DEFAULTS } from '../../types'
 import {
-  GR,
   addPulseRings,
   createAtmosphere,
   createGlobeMesh,
   createGridLines,
   createPin,
   createStars,
-  ll2v3,
   type PinGroup,
 } from './globeUtils'
 import { GlobeToolbar } from '../Toolbar/GlobeToolbar'
@@ -38,7 +36,7 @@ function fmtTime(iso: string) {
   return new Date(iso).toLocaleDateString('en-US', { year: 'numeric', month: 'short', day: 'numeric' })
 }
 
-export function Globe({ pins, myLocation, visitCount, countryCount, visitorNumber, onGuestbookSubmit }: GlobeProps) {
+export function Globe({ pins, myLocation, visitorNumber, onGuestbookSubmit }: GlobeProps) {
   const canvasRef = useRef<HTMLCanvasElement>(null)
   const sectionRef = useRef<HTMLElement>(null)
 
