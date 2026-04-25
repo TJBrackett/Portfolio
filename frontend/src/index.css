@@ -173,10 +173,6 @@ html,body,#root{width:100%;height:100%;overflow:hidden;background:var(--bg);colo
 }
 .gb-submit:hover{background:rgba(var(--accent-rgb),0.18)}
 .gb-submit:disabled{opacity:0.35;cursor:not-allowed}
-.gb-entries{flex:1;overflow-y:auto;padding:14px 18px;display:flex;flex-direction:column;gap:8px}
-.gb-entries::-webkit-scrollbar{width:3px}
-.gb-entries::-webkit-scrollbar-track{background:transparent}
-.gb-entries::-webkit-scrollbar-thumb{background:var(--border);border-radius:2px}
 .ge{background:rgba(255,255,255,0.02);border:1px solid var(--border);border-radius:9px;padding:10px 12px;display:flex;gap:10px;align-items:flex-start;transition:border-color 0.2s}
 .ge:hover{border-color:rgba(var(--accent-rgb),0.2)}
 .ge-clickable{cursor:pointer}
@@ -190,11 +186,30 @@ html,body,#root{width:100%;height:100%;overflow:hidden;background:var(--bg);colo
 .ge-new{font-size:8px;font-family:var(--fm);padding:1px 6px;border-radius:10px;background:rgba(var(--accent-rgb),0.12);color:var(--accent)}
 .gb-empty{font-family:var(--fm);font-size:10px;color:var(--text-dim);text-align:center;padding:20px 0;letter-spacing:0.06em}
 
+/* ── GUESTBOOK SCROLL WRAPPER ── */
+.gb-scroll{flex:1;overflow:hidden;display:flex;flex-direction:column}
+.gb-scroll::-webkit-scrollbar{width:3px}
+.gb-scroll::-webkit-scrollbar-track{background:transparent}
+.gb-scroll::-webkit-scrollbar-thumb{background:var(--border);border-radius:2px}
+.gb-entries{flex:1;overflow-y:auto;padding:14px 18px;display:flex;flex-direction:column;gap:8px;padding-bottom:20px}
+
+/* ── GUESTBOOK SCROLL-TO-TOP BUTTON ── */
+.gb-scroll-top{
+  position:absolute;bottom:18px;right:18px;
+  width:30px;height:30px;border-radius:50%;
+  background:rgba(var(--accent-rgb),0.12);border:1px solid rgba(var(--accent-rgb),0.3);
+  color:var(--accent);font-size:15px;cursor:pointer;z-index:5;
+  display:flex;align-items:center;justify-content:center;
+  transition:background 0.2s;
+}
+.gb-scroll-top:hover{background:rgba(var(--accent-rgb),0.22)}
+
 /* ── GUESTBOOK FILTER ── */
-.gb-filter{padding:8px 18px;border-bottom:1px solid var(--border);flex-shrink:0}
+.gb-filter{padding:8px 18px;border-bottom:1px solid var(--border);flex-shrink:0;display:flex;align-items:center;justify-content:space-between;gap:8px}
 .gb-filter-label{display:flex;align-items:center;gap:8px;cursor:pointer;font-family:var(--fm);font-size:10px;color:var(--text-dim);letter-spacing:0.06em;user-select:none}
 .gb-filter-label input{accent-color:var(--accent);cursor:pointer;width:13px;height:13px}
 .gb-filter-label:hover{color:var(--text)}
+.gb-tz-label{font-family:var(--fm);font-size:9px;color:var(--text-dim);opacity:0.6;white-space:nowrap;letter-spacing:0.04em}
 
 /* ── LOC BAR (removed — visitor rank now shown in top-right label) ── */
 
@@ -247,4 +262,7 @@ html,body,#root{width:100%;height:100%;overflow:hidden;background:var(--bg);colo
   .tweaks-panel{left:16px;right:16px;width:auto;bottom:16px}
   .top-bar{left:0}
   .gb-panel{width:calc(100% - var(--toolbar-w));right:var(--toolbar-w)}
+  /* Whole panel scrolls on mobile */
+  .gb-scroll{overflow-y:auto;display:block}
+  .gb-entries{overflow-y:visible;padding-bottom:60px}
 }

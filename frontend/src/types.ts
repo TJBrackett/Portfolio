@@ -57,7 +57,7 @@ export interface TweakSettings {
 export const TWEAK_DEFAULTS: TweakSettings = {
   atmoColor: '#00e1ff',
   pinColor: '#e8eaf0',
-  signedColor: '#0cd463',
+  signedColor: '#3c9a65',
   pulseColor: '#0cd463',
   globeBright: 2.5,
   pinBright: 1.6,

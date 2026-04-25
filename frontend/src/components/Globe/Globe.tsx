@@ -571,7 +571,6 @@ export function Globe({ pins, myLocation, visitorRank, snapTarget, onSnapHandled
       <GuestbookPanel
         open={gbOpen}
         allPins={pins}
-        fmtTime={fmtTime}
         onClose={() => setGbOpen(false)}
         onSnapTo={onSnapTo}
         onSubmit={async (name, emoji) => {
