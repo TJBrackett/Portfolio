@@ -6,9 +6,10 @@ import { useVisitorSSE } from '../hooks/useVisitorSSE'
 import type { MyLocation } from '../types'
 
 export default function HomePage() {
-  const [myLocation, setMyLocation]     = useState<MyLocation | null>(null)
-  const [visitId, setVisitId]           = useState<number | null>(null)
-  const [visitorNumber, setVisitorNumber] = useState(0)
+  const [myLocation, setMyLocation]   = useState<MyLocation | null>(null)
+  const [visitId, setVisitId]         = useState<number | null>(null)
+  const [visitorRank, setVisitorRank] = useState<number>(0)
+  const [snapTarget, setSnapTarget]   = useState<{ lat: number; lon: number } | null>(null)
   const mountTime = useRef(Date.now())
 
   const pins = useVisitorSSE()
@@ -22,15 +23,12 @@ export default function HomePage() {
   useEffect(() => {
     trackVisit('/').then((res) => {
       setVisitId(res.visit_id)
+      setVisitorRank(res.visitor_rank)
       if (res.lat != null && res.lon != null) {
         setMyLocation({ lat: res.lat, lon: res.lon, city: res.city, country: res.country })
       }
     }).catch(() => {})
   }, [])
-
-  useEffect(() => {
-    setVisitorNumber(visitCount)
-  }, [visitCount])
 
   // Duration beacon on unload
   useEffect(() => {
@@ -56,9 +54,10 @@ export default function HomePage() {
       <Globe
         pins={pins}
         myLocation={myLocation}
-        visitCount={visitCount}
-        countryCount={countryCount}
-        visitorNumber={visitorNumber}
+        visitorRank={visitorRank}
+        snapTarget={snapTarget}
+        onSnapHandled={() => setSnapTarget(null)}
+        onSnapTo={(lat, lon) => setSnapTarget({ lat, lon })}
         onGuestbookSubmit={handleGuestbookSubmit}
       />
     </div>

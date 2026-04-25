@@ -26,6 +26,7 @@ export interface TrackResponse {
   city: string;
   country: string;
   is_new_globe_visitor: boolean;
+  visitor_rank: number;
 }
 
 export interface PinsResponse {
@@ -58,10 +59,10 @@ export const TWEAK_DEFAULTS: TweakSettings = {
   pinColor: '#e8eaf0',
   signedColor: '#0cd463',
   pulseColor: '#0cd463',
-  globeBright: 1.5,
+  globeBright: 2.5,
   pinBright: 1.6,
   pulseSize: 'small',
-  speedMult: 1,
+  speedMult: 3,
   globeTilt: 0.12,
   atmoOpacity: 0.55,
   showGrid: true,

@@ -21,16 +21,18 @@ function getNameError(name: string): string | null {
 
 interface GuestbookPanelProps {
   open: boolean
-  entries: Pin[]
+  allPins: Pin[]
   fmtTime: (iso: string) => string
   onClose: () => void
+  onSnapTo: (lat: number, lon: number) => void
   onSubmit: (name: string, emoji: string) => Promise<void>
 }
 
-export function GuestbookPanel({ open, entries, fmtTime, onClose, onSubmit }: GuestbookPanelProps) {
+export function GuestbookPanel({ open, allPins, fmtTime, onClose, onSnapTo, onSubmit }: GuestbookPanelProps) {
   const [selEmoji, setSelEmoji] = useState('👋')
   const [name, setName] = useState('')
   const [loading, setLoading] = useState(false)
+  const [showAllVisitors, setShowAllVisitors] = useState(false)
 
   const nameError = getNameError(name)
   const canSubmit = !loading && name.trim().length > 0 && !nameError
@@ -51,7 +53,8 @@ export function GuestbookPanel({ open, entries, fmtTime, onClose, onSubmit }: Gu
     setName(stripControlChars(e.target.value))
   }
 
-  const sorted = [...entries].sort((a, b) =>
+  const visiblePins = showAllVisitors ? allPins : allPins.filter((p) => p.type === 'signed')
+  const sorted = [...visiblePins].sort((a, b) =>
     new Date(b.signed_at ?? b.first_seen).getTime() - new Date(a.signed_at ?? a.first_seen).getTime()
   )
 
@@ -99,23 +102,47 @@ export function GuestbookPanel({ open, entries, fmtTime, onClose, onSubmit }: Gu
         </button>
       </div>
 
+      <div className="gb-filter">
+        <label className="gb-filter-label">
+          <input
+            type="checkbox"
+            checked={showAllVisitors}
+            onChange={(e) => setShowAllVisitors(e.target.checked)}
+          />
+          <span>Show all visitors</span>
+        </label>
+      </div>
+
       <div className="gb-entries">
         {sorted.length === 0 ? (
           <div className="gb-empty">No entries yet. Be the first!</div>
         ) : (
-          sorted.map((entry, i) => (
-            <div key={`${entry.lat}-${entry.lon}-${entry.signed_at}`} className="ge">
-              <div className="ge-emoji">{entry.emoji ?? '👤'}</div>
-              <div className="ge-body">
-                <div className="ge-name">
-                  {entry.name ?? 'Anonymous'}
-                  {i === 0 && <span className="ge-new">new</span>}
+          sorted.map((entry, i) => {
+            const isSigned = entry.type === 'signed'
+            const displayEmoji = isSigned ? (entry.emoji ?? '👋') : '🌐'
+            const displayName = isSigned ? (entry.name ?? 'Anonymous') : null
+            const timestamp = isSigned ? (entry.signed_at ?? entry.first_seen) : entry.first_seen
+            return (
+              <div
+                key={`${entry.lat}-${entry.lon}-${entry.first_seen}`}
+                className="ge ge-clickable"
+                onClick={() => onSnapTo(entry.lat, entry.lon)}
+                title="Click to snap globe to this location"
+              >
+                <div className="ge-emoji">{displayEmoji}</div>
+                <div className="ge-body">
+                  <div className="ge-name">
+                    {displayName ?? <span className="ge-anon">{[entry.city, entry.country].filter(Boolean).join(', ') || 'Unknown'}</span>}
+                    {i === 0 && <span className="ge-new">new</span>}
+                  </div>
+                  {displayName && (
+                    <div className="ge-loc">{[entry.city, entry.country].filter(Boolean).join(', ') || 'Unknown'}</div>
+                  )}
+                  <div className="ge-time">{fmtTime(timestamp)}</div>
                 </div>
-                <div className="ge-loc">{[entry.city, entry.country].filter(Boolean).join(', ') || 'Unknown'}</div>
-                <div className="ge-time">{fmtTime(entry.signed_at ?? entry.first_seen)}</div>
               </div>
-            </div>
-          ))
+            )
+          })
         )}
       </div>
     </div>

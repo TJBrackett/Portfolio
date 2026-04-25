@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import { Link } from 'react-router-dom'
 
 interface SideNavProps {
   visitCount: number
@@ -26,11 +27,25 @@ export function SideNav({ visitCount, countryCount, activeLink = 'Home' }: SideN
 
   return (
     <>
+      {/* Always-visible top bar (mobile: full width bar; desktop: hidden via CSS) */}
+      <div className="mobile-top-bar">
+        <button
+          className="hamburger-inline"
+          onClick={() => setMobileOpen((o) => !o)}
+          aria-label={mobileOpen ? 'Close navigation' : 'Open navigation'}
+        >
+          {mobileOpen ? '×' : '☰'}
+        </button>
+        <Link to="/" className="mobile-brand-link">TJ Brackett</Link>
+      </div>
+
       {/* Desktop nav */}
       <nav className="left-nav">
         <div className="nav-brand">
-          <span className="brand-tj">TJ</span>
-          <span className="brand-name">Brackett</span>
+          <Link to="/" className="brand-home-link">
+            <span className="brand-tj">TJ</span>
+            <span className="brand-name">Brackett</span>
+          </Link>
         </div>
         <ul className="nav-links">{links}</ul>
         <div className="nav-footer">
@@ -45,19 +60,16 @@ export function SideNav({ visitCount, countryCount, activeLink = 'Home' }: SideN
         </div>
       </nav>
 
-      {/* Mobile hamburger */}
-      <button className="hamburger" onClick={() => setMobileOpen(true)} aria-label="Open navigation">
-        ☰
-      </button>
-
       {/* Mobile overlay */}
       <div className={`mobile-nav-overlay${mobileOpen ? ' open' : ''}`}>
         <button className="mobile-nav-close" onClick={() => setMobileOpen(false)} aria-label="Close navigation">
           ×
         </button>
-        <div className="nav-brand">
-          <span className="brand-tj">TJ</span>
-          <span className="brand-name">Brackett</span>
+        <div className="nav-brand" style={{ marginTop: '16px' }}>
+          <Link to="/" className="brand-home-link" onClick={() => setMobileOpen(false)}>
+            <span className="brand-tj">TJ</span>
+            <span className="brand-name">Brackett</span>
+          </Link>
         </div>
         <ul className="mobile-nav-links">{links}</ul>
         <div className="nav-footer" style={{ marginTop: 'auto' }}>

@@ -19,9 +19,10 @@ import { VisitorCard } from '../VisitorCard/VisitorCard'
 interface GlobeProps {
   pins: Pin[]
   myLocation: MyLocation | null
-  visitCount: number
-  countryCount: number
-  visitorNumber: number
+  visitorRank: number
+  snapTarget: { lat: number; lon: number } | null
+  onSnapHandled: () => void
+  onSnapTo: (lat: number, lon: number) => void
   onGuestbookSubmit: (name: string, emoji: string) => Promise<void>
 }
 
@@ -33,10 +34,13 @@ interface SelectedPin {
 }
 
 function fmtTime(iso: string) {
-  return new Date(iso).toLocaleDateString('en-US', { year: 'numeric', month: 'short', day: 'numeric' })
+  const d = new Date(iso)
+  const date = d.toLocaleDateString('en-US', { year: 'numeric', month: 'short', day: 'numeric' })
+  const time = d.toLocaleTimeString('en-US', { hour: 'numeric', minute: '2-digit' })
+  return `${date} · ${time}`
 }
 
-export function Globe({ pins, myLocation, visitorNumber, onGuestbookSubmit }: GlobeProps) {
+export function Globe({ pins, myLocation, visitorRank, snapTarget, onSnapHandled, onSnapTo, onGuestbookSubmit }: GlobeProps) {
   const canvasRef = useRef<HTMLCanvasElement>(null)
   const sectionRef = useRef<HTMLElement>(null)
 
@@ -63,6 +67,16 @@ export function Globe({ pins, myLocation, visitorNumber, onGuestbookSubmit }: Gl
   const prevMxRef     = useRef(0)
   const prevMyRef     = useRef(0)
 
+  // Snap animation cancel + post-initial-snap flag
+  const snapCancelRef   = useRef(false)
+  const postSnapDoneRef = useRef(false)
+
+  // Pinch zoom
+  const touchDistRef = useRef<number | null>(null)
+
+  // Hover throttle
+  const lastHoverTimeRef = useRef(0)
+
   // Spin/speed: refs for the animation loop, state for UI
   const [isSpinning, setIsSpinning] = useState(true)
   const isSpinningRef = useRef(true)
@@ -71,6 +85,9 @@ export function Globe({ pins, myLocation, visitorNumber, onGuestbookSubmit }: Gl
 
   // UI state
   const [selectedPin, setSelectedPin] = useState<SelectedPin | null>(null)
+  const selectedPinRef = useRef<SelectedPin | null>(null)
+  const [hoveredPin, setHoveredPin]   = useState<SelectedPin | null>(null)
+  const hoveredPinRef = useRef<SelectedPin | null>(null)
   const [gbOpen, setGbOpen]           = useState(false)
   const [tweaksOpen, setTweaksOpen]   = useState(false)
   const [tweaks, setTweaks]           = useState<TweakSettings>(TWEAK_DEFAULTS)
@@ -78,6 +95,11 @@ export function Globe({ pins, myLocation, visitorNumber, onGuestbookSubmit }: Gl
   const [myLocText, setMyLocText]     = useState<string | null>(null)
 
   const tweaksRef = useRef<TweakSettings>(TWEAK_DEFAULTS)
+
+  function selectPin(sp: SelectedPin | null) {
+    selectedPinRef.current = sp
+    setSelectedPin(sp)
+  }
 
   function showToast(msg: string) {
     setToast(msg)
@@ -135,7 +157,7 @@ export function Globe({ pins, myLocation, visitorNumber, onGuestbookSubmit }: Gl
     const animate = () => {
       animFrameRef.current = requestAnimationFrame(animate)
       clockRef.current += 0.016
-      if (isSpinningRef.current && !isDraggingRef.current) {
+      if (isSpinningRef.current && !isDraggingRef.current && !hoveredPinRef.current && !selectedPinRef.current) {
         globeGroup.rotation.y += 0.0008 * speedMultRef.current
       }
       pulseRingsRef.current.forEach((ring) => {
@@ -277,6 +299,7 @@ export function Globe({ pins, myLocation, visitorNumber, onGuestbookSubmit }: Gl
 
   // ── Input ─────────────────────────────────────────────────────────────────
   function onMouseDown(e: React.MouseEvent) {
+    snapCancelRef.current = true
     isDraggingRef.current = true
     hasMovedRef.current   = false
     prevMxRef.current = e.clientX
@@ -284,14 +307,23 @@ export function Globe({ pins, myLocation, visitorNumber, onGuestbookSubmit }: Gl
   }
 
   function onMouseMove(e: React.MouseEvent) {
-    if (!isDraggingRef.current || !globeGroupRef.current) return
-    const dx = e.clientX - prevMxRef.current
-    const dy = e.clientY - prevMyRef.current
-    if (Math.abs(dx) > 1 || Math.abs(dy) > 1) hasMovedRef.current = true
-    globeGroupRef.current.rotation.y += dx * 0.004
-    globeGroupRef.current.rotation.x = Math.max(-1.1, Math.min(1.1, globeGroupRef.current.rotation.x + dy * 0.004))
-    prevMxRef.current = e.clientX
-    prevMyRef.current = e.clientY
+    if (isDraggingRef.current && globeGroupRef.current) {
+      const dx = e.clientX - prevMxRef.current
+      const dy = e.clientY - prevMyRef.current
+      if (Math.abs(dx) > 1 || Math.abs(dy) > 1) hasMovedRef.current = true
+      globeGroupRef.current.rotation.y += dx * 0.004
+      globeGroupRef.current.rotation.x = Math.max(-1.1, Math.min(1.1, globeGroupRef.current.rotation.x + dy * 0.004))
+      prevMxRef.current = e.clientX
+      prevMyRef.current = e.clientY
+    }
+    // Hover raycasting — throttled to ~30fps
+    if (!isDraggingRef.current) {
+      const now = Date.now()
+      if (now - lastHoverTimeRef.current > 33) {
+        lastHoverTimeRef.current = now
+        doHover(e.clientX, e.clientY)
+      }
+    }
   }
 
   function onMouseUp(e: React.MouseEvent) {
@@ -299,7 +331,27 @@ export function Globe({ pins, myLocation, visitorNumber, onGuestbookSubmit }: Gl
     isDraggingRef.current = false
   }
 
+  function onMouseLeave() {
+    isDraggingRef.current = false
+    hoveredPinRef.current = null
+    setHoveredPin(null)
+  }
+
+  function onWheel(e: React.WheelEvent) {
+    if (!cameraRef.current) return
+    const delta = e.deltaY > 0 ? 0.3 : -0.3
+    cameraRef.current.position.z = Math.max(2.5, Math.min(10, cameraRef.current.position.z + delta))
+  }
+
   function onTouchStart(e: React.TouchEvent) {
+    if (e.touches.length === 2) {
+      const dx = e.touches[0].clientX - e.touches[1].clientX
+      const dy = e.touches[0].clientY - e.touches[1].clientY
+      touchDistRef.current = Math.hypot(dx, dy)
+      isDraggingRef.current = false
+      return
+    }
+    snapCancelRef.current = true
     isDraggingRef.current = true
     hasMovedRef.current   = false
     prevMxRef.current = e.touches[0].clientX
@@ -307,6 +359,15 @@ export function Globe({ pins, myLocation, visitorNumber, onGuestbookSubmit }: Gl
   }
 
   function onTouchMove(e: React.TouchEvent) {
+    if (e.touches.length === 2 && touchDistRef.current !== null && cameraRef.current) {
+      const dx = e.touches[0].clientX - e.touches[1].clientX
+      const dy = e.touches[0].clientY - e.touches[1].clientY
+      const newDist = Math.hypot(dx, dy)
+      const delta = (touchDistRef.current - newDist) * 0.02
+      cameraRef.current.position.z = Math.max(2.5, Math.min(10, cameraRef.current.position.z + delta))
+      touchDistRef.current = newDist
+      return
+    }
     if (!isDraggingRef.current || !globeGroupRef.current) return
     const dx = e.touches[0].clientX - prevMxRef.current
     const dy = e.touches[0].clientY - prevMyRef.current
@@ -315,6 +376,34 @@ export function Globe({ pins, myLocation, visitorNumber, onGuestbookSubmit }: Gl
     globeGroupRef.current.rotation.x = Math.max(-1.1, Math.min(1.1, globeGroupRef.current.rotation.x + dy * 0.004))
     prevMxRef.current = e.touches[0].clientX
     prevMyRef.current = e.touches[0].clientY
+  }
+
+  function onTouchEnd(e: React.TouchEvent) {
+    touchDistRef.current = null
+    if (!hasMovedRef.current && isDraggingRef.current && e.changedTouches.length > 0) {
+      doClick(e.changedTouches[0].clientX, e.changedTouches[0].clientY)
+    }
+    isDraggingRef.current = false
+  }
+
+  function doHover(cx: number, cy: number) {
+    const canvas = canvasRef.current!
+    const rect = canvas.getBoundingClientRect()
+    const mouse = new THREE.Vector2(
+      ((cx - rect.left) / rect.width) * 2 - 1,
+      -((cy - rect.top) / rect.height) * 2 + 1,
+    )
+    const ray = new THREE.Raycaster()
+    ray.setFromCamera(mouse, cameraRef.current!)
+    const hits = ray.intersectObjects(hitboxesRef.current, false)
+    if (hits.length > 0) {
+      const { pin, isMe } = hits[0].object.userData as { pin: Pin; isMe: boolean }
+      hoveredPinRef.current = { pin, isMe, x: cx, y: cy }
+      if (!selectedPinRef.current) setHoveredPin({ pin, isMe, x: cx, y: cy })
+    } else {
+      hoveredPinRef.current = null
+      if (!selectedPinRef.current) setHoveredPin(null)
+    }
   }
 
   function doClick(cx: number, cy: number) {
@@ -329,25 +418,27 @@ export function Globe({ pins, myLocation, visitorNumber, onGuestbookSubmit }: Gl
     const hits = ray.intersectObjects(hitboxesRef.current, false)
     if (hits.length > 0) {
       const { pin, isMe } = hits[0].object.userData as { pin: Pin; isMe: boolean }
-      setSelectedPin({ pin, isMe, x: cx, y: cy })
+      selectPin({ pin, isMe, x: cx, y: cy })
     } else {
-      setSelectedPin(null)
+      selectPin(null)
     }
   }
 
-  // ── Snap to my pin ────────────────────────────────────────────────────────
-  const snapToMyPin = useCallback((resumeAfter = false) => {
-    if (!myLocation) { showToast('Still locating you…'); return }
+  // ── Snap to coords (generalised) ─────────────────────────────────────────
+  const snapToCoords = useCallback((lat: number, lon: number, resumeAfter = false) => {
+    if (!globeGroupRef.current) return
     setIsSpinning(false)
     isSpinningRef.current = false
+    snapCancelRef.current = false
 
-    let tY = -Math.PI / 2 - myLocation.lon * (Math.PI / 180)
-    const tX = myLocation.lat * (Math.PI / 180)
-    const curY = globeGroupRef.current!.rotation.y
+    let tY = -Math.PI / 2 - lon * (Math.PI / 180)
+    const tX = lat * (Math.PI / 180)
+    const curY = globeGroupRef.current.rotation.y
     tY += Math.round((curY - tY) / (Math.PI * 2)) * Math.PI * 2
-    const sY = curY, sX = globeGroupRef.current!.rotation.x
+    const sY = curY, sX = globeGroupRef.current.rotation.x
     let p = 0
     const go = () => {
+      if (snapCancelRef.current) return
       p++
       const t = p / 100
       const ease = t < 0.5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2
@@ -358,13 +449,29 @@ export function Globe({ pins, myLocation, visitorNumber, onGuestbookSubmit }: Gl
     go()
 
     if (resumeAfter) {
-      // After the initial page-load snap, resume spinning automatically
       setTimeout(() => {
-        setIsSpinning(true)
-        isSpinningRef.current = true
+        if (!postSnapDoneRef.current) {
+          postSnapDoneRef.current = true
+          setIsSpinning(true)
+          isSpinningRef.current = true
+        }
       }, 3000)
     }
-  }, [myLocation])
+  }, [])
+
+  // ── Snap to my pin ────────────────────────────────────────────────────────
+  const snapToMyPin = useCallback((resumeAfter = false) => {
+    if (!myLocation) { showToast('Still locating you…'); return }
+    snapToCoords(myLocation.lat, myLocation.lon, resumeAfter)
+  }, [myLocation, snapToCoords])
+
+  // ── Snap when snapTarget prop changes ────────────────────────────────────
+  useEffect(() => {
+    if (!snapTarget) return
+    snapToCoords(snapTarget.lat, snapTarget.lon)
+    onSnapHandled()
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [snapTarget])
 
   // ── Speed controls ────────────────────────────────────────────────────────
   function faster() {
@@ -381,12 +488,12 @@ export function Globe({ pins, myLocation, visitorNumber, onGuestbookSubmit }: Gl
   }
 
   // ── Overlay card position ─────────────────────────────────────────────────
-  function cardPos() {
-    if (!selectedPin || !sectionRef.current) return {}
+  function cardPos(sp: SelectedPin) {
+    if (!sectionRef.current) return {}
     const rect = sectionRef.current.getBoundingClientRect()
-    let lx = selectedPin.x - rect.left + 18
-    const ly = selectedPin.y - rect.top
-    if (lx + 260 > rect.width - 60) lx = selectedPin.x - rect.left - 260
+    let lx = sp.x - rect.left + 18
+    const ly = sp.y - rect.top
+    if (lx + 260 > rect.width - 60) lx = sp.x - rect.left - 260
     return { left: Math.max(8, lx), top: ly }
   }
 
@@ -398,17 +505,18 @@ export function Globe({ pins, myLocation, visitorNumber, onGuestbookSubmit }: Gl
         onMouseDown={onMouseDown}
         onMouseMove={onMouseMove}
         onMouseUp={onMouseUp}
-        onMouseLeave={() => { isDraggingRef.current = false }}
+        onMouseLeave={onMouseLeave}
+        onWheel={onWheel}
         onTouchStart={onTouchStart}
         onTouchMove={onTouchMove}
-        onTouchEnd={() => { isDraggingRef.current = false }}
+        onTouchEnd={onTouchEnd}
       />
 
       <div className="top-bar">
         <span className="top-l">Global Visitor Map</span>
         <span className="top-r">
           You{myLocText
-            ? <> — <span className="top-r-accent">{myLocText}</span></>
+            ? <> — <span className="top-r-accent">{myLocText}</span>{visitorRank ? <> · Visitor <span className="top-r-accent">#{visitorRank}</span></> : null}</>
             : ' — Locating...'}
         </span>
       </div>
@@ -426,32 +534,30 @@ export function Globe({ pins, myLocation, visitorNumber, onGuestbookSubmit }: Gl
         onToggleTweaks={() => setTweaksOpen((o) => !o)}
       />
 
-      {selectedPin && (
-        <VisitorCard
-          pin={selectedPin.pin}
-          isMe={selectedPin.isMe}
-          style={cardPos()}
-          fmtTime={fmtTime}
-          onClose={() => setSelectedPin(null)}
-        />
-      )}
+      {(selectedPin || hoveredPin) && (() => {
+        const active = selectedPin ?? hoveredPin!
+        return (
+          <VisitorCard
+            pin={active.pin}
+            isMe={active.isMe}
+            style={cardPos(active)}
+            fmtTime={fmtTime}
+            onClose={() => { selectPin(null); hoveredPinRef.current = null; setHoveredPin(null) }}
+          />
+        )
+      })()}
 
       <GuestbookPanel
         open={gbOpen}
-        entries={pins.filter((p) => p.type === 'signed')}
+        allPins={pins}
         fmtTime={fmtTime}
         onClose={() => setGbOpen(false)}
+        onSnapTo={onSnapTo}
         onSubmit={async (name, emoji) => {
           await onGuestbookSubmit(name, emoji)
           showToast(`Welcome, ${name}! You're on the map 🌍`)
         }}
       />
-
-      <div className="loc-bar">
-        You are visitor <span className="loc-accent">#{visitorNumber || '—'}</span>
-        &nbsp;·&nbsp;
-        {myLocText ?? 'Locating...'}
-      </div>
 
       <TweaksPanel
         open={tweaksOpen}
@@ -459,6 +565,7 @@ export function Globe({ pins, myLocation, visitorNumber, onGuestbookSubmit }: Gl
         speedMult={speedMult}
         onChange={(updates) => setTweaks((t) => ({ ...t, ...updates }))}
         onSpeedChange={(v) => { setSpeedMult(v); speedMultRef.current = v }}
+        onClose={() => setTweaksOpen(false)}
       />
 
       <div className={`toast${toast ? ' show' : ''}`}>{toast}</div>

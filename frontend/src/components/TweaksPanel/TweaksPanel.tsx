@@ -6,12 +6,16 @@ interface TweaksPanelProps {
   speedMult: number
   onChange: (updates: Partial<TweakSettings>) => void
   onSpeedChange: (v: number) => void
+  onClose: () => void
 }
 
-export function TweaksPanel({ open, tweaks, speedMult, onChange, onSpeedChange }: TweaksPanelProps) {
+export function TweaksPanel({ open, tweaks, speedMult, onChange, onSpeedChange, onClose }: TweaksPanelProps) {
   return (
     <div className={`tweaks-panel${open ? ' open' : ''}`}>
-      <div className="tweaks-title">Tweaks</div>
+      <div className="tweaks-hdr">
+        <div className="tweaks-title">Tweaks</div>
+        <button className="tweaks-close" onClick={onClose} aria-label="Close tweaks">×</button>
+      </div>
 
       <div className="tw-sec">Brightness</div>
       <div className="tr">

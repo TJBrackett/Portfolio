@@ -3,7 +3,7 @@ from datetime import datetime
 
 from fastapi import APIRouter, Depends, Request
 from fastapi.responses import StreamingResponse
-from sqlalchemy import select, update
+from sqlalchemy import func, select, update
 from sqlalchemy.ext.asyncio import AsyncSession
 
 from ..database import get_db
@@ -75,6 +75,13 @@ async def track_visitor(request: Request, db: AsyncSession = Depends(get_db)):
 
     await db.commit()
     await db.refresh(log)
+    await db.refresh(globe_visitor)
+
+    # Rank = number of unique globe visitors with id <= this visitor's id
+    rank_result = await db.execute(
+        select(func.count()).where(GlobeVisitor.id <= globe_visitor.id)
+    )
+    visitor_rank: int = rank_result.scalar_one()
 
     if is_new and geo["lat"] is not None:
         await sse_broker.broadcast("new_visitor", {
@@ -93,6 +100,7 @@ async def track_visitor(request: Request, db: AsyncSession = Depends(get_db)):
         "city": geo["city"],
         "country": geo["country"],
         "is_new_globe_visitor": is_new,
+        "visitor_rank": visitor_rank,
     }
 
 
