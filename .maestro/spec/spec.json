@@ -1,0 +1,1052 @@
+{
+  "project_name": "brackett.dev — Personal Portfolio Website",
+  "version": "1.0.0",
+  "created_at": "2026-04-05T16:22:06.661898",
+  "summary": "A full-stack personal portfolio website hosted at brackett.dev on a Linode server, designed to showcase TJ Brackett's DevOps engineering, software engineering, full-stack development, and AI integration skills to potential employers. The site features a dark-mode UI with subtle animations, modular project showcase pages, an AI chatbot persona (TJBot) powered by Claude, a Discord-bot-based contact form, a hidden admin dashboard, and comprehensive visitor/conversation logging.",
+  "goals": [
+    "Create a professional, visually impressive portfolio website that markets TJ Brackett to potential employers",
+    "Demonstrate technical breadth across DevOps, full-stack development, and AI integration through both content and the technology choices used to build the site itself",
+    "Provide an interactive AI chatbot (TJBot) that can answer questions about TJ's resume, experience, and projects",
+    "Showcase individual projects with dedicated pages in a modular structure that allows new projects to be added easily",
+    "Enable potential employers to view and download a resume and cover letter directly from the site",
+    "Provide a Discord-bot-backed contact form so employers can reach TJ directly",
+    "Collect and store visitor analytics and chatbot conversation logs for review via a hidden, secure admin dashboard",
+    "Launch as quickly as possible with no hard deadline"
+  ],
+  "requirements": [
+    {
+      "id": "REQ-001",
+      "title": "Dark Mode UI with Cool Color Palette",
+      "description": "The entire site must use a dark mode color scheme with a palette centered on cool greens and blues. The aesthetic should feel professional and polished — similar to a product marketing website — but advertising TJ Brackett as the 'product'. The design must demonstrate strong UI/UX principles.",
+      "category": "non-functional",
+      "priority": "critical",
+      "acceptance_criteria": [
+        "All pages render in dark mode with no light-mode fallback visible by default",
+        "Primary accent colors are drawn from a green/blue palette",
+        "Design is visually comparable to a professional SaaS or product marketing website",
+        "A UX-knowledgeable reviewer would consider the design polished and not cluttered"
+      ],
+      "related_requirements": [
+        "REQ-002",
+        "REQ-003"
+      ]
+    },
+    {
+      "id": "REQ-002",
+      "title": "Subtle Animations and Particle Effects",
+      "description": "The site must include subtle, non-intrusive animations including: particle effects (likely on the hero section background), scroll-triggered animations for section reveals, and animated transitions between states. Animations must be noticeable but not distracting or annoying — they should enhance the professional feel, not detract from it.",
+      "category": "functional",
+      "priority": "high",
+      "acceptance_criteria": [
+        "Hero section includes a calm particle or ambient background animation",
+        "At least one scroll-triggered animation is present (e.g., sections fade/slide in on scroll)",
+        "Animations do not cause layout shifts or performance degradation on mid-range hardware",
+        "Animations can be perceived as subtle — they enhance rather than dominate the experience",
+        "No animation loops in a way that becomes visually fatiguing after 30 seconds of viewing"
+      ],
+      "related_requirements": [
+        "REQ-001",
+        "REQ-004"
+      ]
+    },
+    {
+      "id": "REQ-003",
+      "title": "Sticky Navigation Header",
+      "description": "The site header must remain fixed/sticky at the top of the viewport at all times as the user scrolls. The header must contain navigation links, and the resume and cover letter download/view buttons.",
+      "category": "functional",
+      "priority": "critical",
+      "acceptance_criteria": [
+        "Header remains visible and fixed at the top of the viewport on all pages during scroll",
+        "Header contains navigation links to all major page sections",
+        "Header contains a 'Resume' button that opens the resume PDF in a new browser tab",
+        "Header contains a 'Cover Letter' button that opens the cover letter PDF in a new browser tab",
+        "Header is responsive and does not overflow on mobile viewports"
+      ],
+      "related_requirements": [
+        "REQ-013",
+        "REQ-014"
+      ]
+    },
+    {
+      "id": "REQ-004",
+      "title": "Hero Banner Section",
+      "description": "The landing page must open with a hero banner section displaying TJ's name, a cycling animated title, and a calm ambient background animation (e.g., particles). The title must cycle through: 'DevOps Engineer', 'Software Engineer', 'Full-Stack Developer', and 'Indie Game Dev' using smooth text transition animations.",
+      "category": "functional",
+      "priority": "critical",
+      "acceptance_criteria": [
+        "Hero section displays the name 'TJ Brackett' prominently",
+        "Title cycles through all four values: DevOps Engineer, Software Engineer, Full-Stack Developer, Indie Game Dev",
+        "Title cycling uses a smooth animation (e.g., fade, typewriter, or slide)",
+        "Background includes a calm ambient animation (particles or similar)",
+        "Hero section occupies at minimum the full viewport height on load",
+        "Resume and Cover Letter buttons are accessible from the sticky header visible over the hero"
+      ],
+      "related_requirements": [
+        "REQ-002",
+        "REQ-003"
+      ]
+    },
+    {
+      "id": "REQ-005",
+      "title": "About Me Section",
+      "description": "A dedicated 'About Me' section on the main landing page displaying TJ's professional bio and a photo of TJ. The initial bio copy will be sourced from the resume header blurb: 'As a self-sufficient self-starter with a strong passion for technology and automation, I bring a versatile skill set that seamlessly integrates into any team. With a proactive approach and a deep understanding of DevOps and Software Engineering principles, I consistently drive efficiency and innovation in fast-paced environments. I have over two years of experience working with AI models to produce production-ready code and infrastructure with a focus on security, stability, and scalability.' The photo will appear in this section alongside the text.",
+      "category": "functional",
+      "priority": "critical",
+      "acceptance_criteria": [
+        "About Me section is present on the main landing page",
+        "Bio text matches the approved resume header blurb",
+        "A photo of TJ is displayed in the About Me section alongside the bio text",
+        "Layout is responsive — photo and text stack gracefully on mobile",
+        "Section is reachable via the sticky navigation header"
+      ],
+      "related_requirements": [
+        "REQ-003",
+        "REQ-004"
+      ]
+    },
+    {
+      "id": "REQ-006",
+      "title": "Animated Skills/Tech Stack Revolving Banner",
+      "description": "A continuously revolving/scrolling banner section that displays icons and names of TJ's skills and technologies. The banner must auto-scroll horizontally in a loop without user interaction. Skills to display include: Python, Kubernetes, Docker, AWS Lambda, AWS S3, AWS DynamoDB, AWS SNS, AWS SQS, JavaScript/TypeScript, Golang, PostgreSQL, Linux, MySQL, SQLite, Git/GitHub, React, Ansible, Terraform, Jenkins. Skill categories to display include: CI/CD, Automation, Full-Stack Development, DevOps Engineering, Software Engineering, Large-Scale Datasets, Optimization.",
+      "category": "functional",
+      "priority": "high",
+      "acceptance_criteria": [
+        "Banner scrolls continuously and loops seamlessly without a visible jump",
+        "Each item displays both an icon and the technology/skill name",
+        "All listed technologies and skill categories are represented",
+        "Banner does not require user interaction to animate",
+        "Banner is responsive and does not break on mobile viewports",
+        "Animation is smooth and does not cause jank or high CPU usage"
+      ],
+      "related_requirements": [
+        "REQ-002"
+      ]
+    },
+    {
+      "id": "REQ-007",
+      "title": "Work Experience Timeline",
+      "description": "A work experience section on the main landing page displaying TJ's employment history in a timeline format. Entries must include: (1) TEKsystems at Apple TV — DevOps Engineer (current): bullet points as provided. (2) Neustar Inc — DevOps Engineer: bullet points as provided. (3) Trapp Technology — DevOps Technician: bullet points as provided. Full bullet point content is specified in the interview transcript.",
+      "category": "functional",
+      "priority": "critical",
+      "acceptance_criteria": [
+        "Timeline section is present on the main landing page",
+        "All three work experience entries are displayed with company name, role title, and employment status/dates",
+        "Each entry displays its associated bullet points from the resume",
+        "TEKsystems at Apple TV is marked as current position",
+        "Timeline layout is visually clear and chronologically ordered (most recent first)",
+        "Section is reachable via sticky navigation"
+      ],
+      "related_requirements": [
+        "REQ-003"
+      ]
+    },
+    {
+      "id": "REQ-008",
+      "title": "Featured Projects Grid / Section",
+      "description": "A projects section on the main landing page displaying cards for each current project. Each card links to a dedicated project detail page. Initial projects: (1) Indie Game Dev, (2) Home Network Command Center, (3) AI Automation Toolkit. The section must be designed so new project cards can be added with minimal code changes (modular/component-based).",
+      "category": "functional",
+      "priority": "critical",
+      "acceptance_criteria": [
+        "Projects section is present on the main landing page",
+        "Each project is represented by a card with at minimum: title, brief description, and a link to the detail page",
+        "Clicking a project card navigates to that project's dedicated page",
+        "Adding a new project requires only adding a new data entry and/or component — no structural refactoring needed",
+        "All three initial projects are present",
+        "Section is reachable via sticky navigation"
+      ],
+      "related_requirements": [
+        "REQ-009",
+        "REQ-003"
+      ]
+    },
+    {
+      "id": "REQ-009",
+      "title": "Modular Individual Project Detail Pages",
+      "description": "Each project must have its own dedicated page with in-depth details. The page template must be reusable/modular so new project pages can be created by populating a data structure or component props. Initial project page content: (1) Indie Game Dev — description, tech stack (Golang microservices, Pygame, Unity C#), placeholder for screenshots/demos, GitHub link TBD. (2) Home Network Command Center — description, tech stack (Python, Raspberry Pi, Discord bot), placeholder for screenshots/demos, GitHub link TBD. (3) AI Automation Toolkit — description, tech stack (LangGraph, FastAPI, ChromaDB, RAG, MCP server, LangSmith), placeholder for screenshots/demos, GitHub link TBD. All three pages are currently placeholders pending more content.",
+      "category": "functional",
+      "priority": "critical",
+      "acceptance_criteria": [
+        "Each of the three projects has a dedicated routed page",
+        "All three pages use the same reusable page template/component",
+        "Each page displays: project title, description, tech stack, placeholder areas for screenshots and demos",
+        "Placeholder areas are visually indicated as 'coming soon' or similar",
+        "A new project page can be added by creating a new data object — no new template code required",
+        "Pages are navigable from the main landing page project cards",
+        "Back navigation to the main page is available"
+      ],
+      "related_requirements": [
+        "REQ-008"
+      ]
+    },
+    {
+      "id": "REQ-010",
+      "title": "TJBot AI Chatbot",
+      "description": "An AI-powered chatbot named 'TJBot' integrated into the site, powered by the Anthropic Claude API. TJBot must be able to answer questions about TJ's resume, work experience, projects, and skills. It must have a defined persona and guardrails to keep conversations on-topic and prevent malicious usage. The chatbot must be placed in the 'Want to Learn More?' section alongside the Discord contact form.",
+      "category": "functional",
+      "priority": "critical",
+      "acceptance_criteria": [
+        "Chatbot is named 'TJBot' and has a consistent persona in its responses",
+        "TJBot can accurately answer questions about TJ's resume, experience, projects, and skills using provided context",
+        "TJBot politely redirects off-topic questions back to relevant topics",
+        "TJBot refuses or deflects prompt injection and malicious usage attempts",
+        "Chatbot UI is located in the 'Want to Learn More?' section",
+        "Conversation history persists within a single browser session",
+        "If Claude API is unavailable, the input is disabled and a status message is shown (see REQ-011)",
+        "All conversations are logged to the SQLite database (see REQ-020)"
+      ],
+      "related_requirements": [
+        "REQ-011",
+        "REQ-020",
+        "REQ-025",
+        "REQ-026"
+      ]
+    },
+    {
+      "id": "REQ-011",
+      "title": "TJBot API Status and Graceful Degradation",
+      "description": "If the Claude API is down, rate-limited, or otherwise unavailable, TJBot must gracefully degrade. The chatbot input field must be disabled and a visible status message must inform the user of the current Claude API status (e.g., 'TJBot is currently unavailable — Claude API is unreachable. Please try again later.').",
+      "category": "functional",
+      "priority": "high",
+      "acceptance_criteria": [
+        "When Claude API returns an error or is unreachable, the chat input is disabled",
+        "A user-visible status message explains that TJBot is currently unavailable",
+        "The status message references the Claude API being down, not a generic error",
+        "The rest of the page remains fully functional when TJBot is degraded",
+        "When the API recovers, the input re-enables (either on page refresh or via polling)"
+      ],
+      "related_requirements": [
+        "REQ-010"
+      ]
+    },
+    {
+      "id": "REQ-012",
+      "title": "Discord Bot Contact Form",
+      "description": "A contact form in the 'Want to Learn More?' section that sends messages to TJ via a Discord bot to a designated Discord server. The form must collect: name, phone number, email address, message body, and three checkboxes for response preference (Call, Text, Email — any combination allowed). Upon successful submission, a confirmation card must overlay the form area stating the message was sent successfully, with an X button to dismiss it.",
+      "category": "functional",
+      "priority": "high",
+      "acceptance_criteria": [
+        "Contact form collects: name, phone number, email, message body, and response preference checkboxes (Call, Text, Email)",
+        "At least one response preference checkbox must be selectable; all three can be selected simultaneously",
+        "Form submission sends all collected data to TJ's Discord server via a Discord bot",
+        "Discord message includes all form fields including which response preferences were selected",
+        "On successful submission, a confirmation card overlays the form area",
+        "Confirmation card contains a success message and an X button to dismiss it",
+        "Dismissing the card returns the form to its empty/ready state",
+        "Form validates required fields before submission",
+        "Discord bot and server must be created as part of this project"
+      ],
+      "related_requirements": [
+        "REQ-010"
+      ]
+    },
+    {
+      "id": "REQ-013",
+      "title": "Resume PDF — View and Download",
+      "description": "TJ's resume must be available as a PDF that opens in a new browser tab when the user clicks the Resume button in the sticky header. The browser's native PDF viewer will offer the download option. The file must be easily replaceable on the server.",
+      "category": "functional",
+      "priority": "critical",
+      "acceptance_criteria": [
+        "Clicking the Resume button opens the resume PDF in a new browser tab",
+        "The PDF is served such that the browser's native viewer is used, which includes a download option",
+        "Replacing the PDF file on the server updates what users see without code changes",
+        "Button is present in the sticky header at all times"
+      ],
+      "related_requirements": [
+        "REQ-003"
+      ]
+    },
+    {
+      "id": "REQ-014",
+      "title": "Cover Letter PDF — View and Download",
+      "description": "TJ's cover letter must be available as a PDF that opens in a new browser tab when the user clicks the Cover Letter button in the sticky header. The cover letter file must be easily swappable (replacing the file on the server is sufficient to update it).",
+      "category": "functional",
+      "priority": "high",
+      "acceptance_criteria": [
+        "Clicking the Cover Letter button opens the cover letter PDF in a new browser tab",
+        "The PDF is served such that the browser's native viewer is used, which includes a download option",
+        "Replacing the PDF file on the server is sufficient to update the cover letter — no code changes required",
+        "Button is present in the sticky header at all times"
+      ],
+      "related_requirements": [
+        "REQ-003"
+      ]
+    },
+    {
+      "id": "REQ-015",
+      "title": "Hidden Admin Dashboard — Konami Code Trigger",
+      "description": "A hidden admin login modal must be triggered by the Konami code (↑ ↑ ↓ ↓ ← → ← → B A) entered anywhere on the site. There must be no visible login button, link, or any UI element that hints at the existence of an admin interface. The login modal must not be discoverable through normal browsing.",
+      "category": "functional",
+      "priority": "high",
+      "acceptance_criteria": [
+        "No login button, link, or admin-related UI element is visible anywhere on the public site",
+        "Entering the Konami code sequence triggers the display of a login modal",
+        "The login modal does not appear under any other condition",
+        "The Konami code listener is active on all pages of the site",
+        "The modal can be dismissed without logging in"
+      ],
+      "related_requirements": [
+        "REQ-016",
+        "REQ-017",
+        "REQ-018"
+      ]
+    },
+    {
+      "id": "REQ-016",
+      "title": "Admin Authentication — Brute Force Protection and 2FA",
+      "description": "The admin login must be secured against brute force attacks with account lockout after 5 failed attempts. Two-factor authentication (TOTP, e.g., compatible with Google Authenticator or Authy — free) must be required in addition to a password. The lockout must be enforced server-side, not just client-side.",
+      "category": "non-functional",
+      "priority": "critical",
+      "acceptance_criteria": [
+        "After 5 consecutive failed login attempts from a given IP or for the admin account, the account is locked",
+        "Lockout is enforced server-side in the FastAPI backend",
+        "Locked account cannot be unlocked by the attacker — requires manual server-side reset or a timed unlock (spec to define duration)",
+        "TOTP-based 2FA is required after correct password entry",
+        "TOTP is compatible with standard authenticator apps (Google Authenticator, Authy)",
+        "2FA setup uses a free TOTP library (e.g., pyotp)",
+        "JWT or session token issued only after both password and TOTP are verified",
+        "Admin session tokens expire after a reasonable idle period (e.g., 30 minutes)"
+      ],
+      "related_requirements": [
+        "REQ-015",
+        "REQ-017"
+      ]
+    },
+    {
+      "id": "REQ-017",
+      "title": "Admin Dashboard — Content and Features",
+      "description": "Once authenticated, the admin dashboard must display: (1) TJBot conversation logs — full message history, timestamps, visitor IP, session ID; (2) Discord contact form submissions — all fields submitted; (3) Site visitor logs — IP address, page visited, visit timestamp, and visit duration. Admin must be able to delete individual entries from all three data sets. The visitor IP data is intended for potential future use in a world map visualization project.",
+      "category": "functional",
+      "priority": "high",
+      "acceptance_criteria": [
+        "Dashboard displays a table/list of TJBot conversation logs with full message history, timestamps, IP, and session ID",
+        "Dashboard displays a table/list of Discord contact form submissions with all submitted fields",
+        "Dashboard displays a table/list of site visitor logs with IP, page visited, timestamp, and duration",
+        "Admin can delete individual entries from each of the three data sets",
+        "Dashboard is only accessible after successful authentication (password + TOTP)",
+        "Dashboard is not linked from any public-facing page",
+        "Data is paginated or otherwise manageable for large record sets"
+      ],
+      "related_requirements": [
+        "REQ-015",
+        "REQ-016",
+        "REQ-018",
+        "REQ-019",
+        "REQ-020",
+        "REQ-021"
+      ]
+    },
+    {
+      "id": "REQ-018",
+      "title": "Visitor IP and Session Tracking",
+      "description": "All page visits across the entire site must be logged server-side. Logging must capture: visitor IP address, page/path visited, visit timestamp, and visit duration. IP/timestamp logging will be handled via FastAPI middleware parsing Nginx access log data or direct middleware logging. Visit duration will be captured via a client-side JavaScript beacon that pings the backend on page unload/beforeunload.",
+      "category": "functional",
+      "priority": "high",
+      "acceptance_criteria": [
+        "Every page visit on the site is logged to the SQLite database",
+        "Each log entry captures: IP address, page path, visit start timestamp, and visit duration",
+        "Visit duration is recorded via a client-side beacon sent on page unload",
+        "Logging occurs for all pages, not just the landing page",
+        "Logs are viewable in the admin dashboard",
+        "Logging does not noticeably impact page load performance"
+      ],
+      "related_requirements": [
+        "REQ-017",
+        "REQ-021"
+      ]
+    },
+    {
+      "id": "REQ-019",
+      "title": "Discord Contact Form Submission Logging",
+      "description": "All Discord contact form submissions must be stored in the SQLite database in addition to being sent to Discord. This allows the admin to review submissions via the admin dashboard even if Discord messages are missed.",
+      "category": "functional",
+      "priority": "high",
+      "acceptance_criteria": [
+        "Every contact form submission is persisted to the SQLite database",
+        "Stored data includes: name, phone number, email, message body, response preferences, and submission timestamp",
+        "Submissions are viewable and deletable in the admin dashboard",
+        "Database write and Discord message send are both attempted; failure of one does not prevent the other"
+      ],
+      "related_requirements": [
+        "REQ-012",
+        "REQ-017"
+      ]
+    },
+    {
+      "id": "REQ-020",
+      "title": "TJBot Conversation Logging",
+      "description": "All TJBot conversations must be logged to the SQLite database for admin review. Each conversation session must capture: session ID, visitor IP address, full message history (user and assistant turns), and timestamps for each message.",
+      "category": "functional",
+      "priority": "high",
+      "acceptance_criteria": [
+        "Every TJBot conversation is persisted to the SQLite database",
+        "Each session has a unique session ID",
+        "Visitor IP address is captured per session",
+        "Full message history (both user and TJBot turns) is stored",
+        "Timestamps are recorded per message",
+        "Conversations are viewable and deletable in the admin dashboard"
+      ],
+      "related_requirements": [
+        "REQ-010",
+        "REQ-017"
+      ]
+    },
+    {
+      "id": "REQ-021",
+      "title": "SQLite Database for All Persistent Data",
+      "description": "All persistent data — TJBot conversation logs, Discord contact form submissions, visitor/session logs, and admin authentication state — must be stored in a SQLite database on the Linode server. No external database service is required.",
+      "category": "constraint",
+      "priority": "critical",
+      "acceptance_criteria": [
+        "A single SQLite database file is used for all persistent application data",
+        "Database schema includes tables for: conversations, contact_submissions, visitor_logs, and admin_auth",
+        "Database file is stored in a location with appropriate file system permissions",
+        "Database is backed up as part of any deployment process (noted in deployment docs)"
+      ],
+      "related_requirements": [
+        "REQ-017",
+        "REQ-018",
+        "REQ-019",
+        "REQ-020"
+      ]
+    },
+    {
+      "id": "REQ-022",
+      "title": "Rate Limiting on Backend API",
+      "description": "The FastAPI backend must enforce rate limiting per IP address on all public-facing endpoints, particularly the TJBot chatbot endpoint and the contact form endpoint, to prevent abuse and control Claude API costs. Additionally, Claude API usage must be capped via Anthropic's built-in cost/usage limits configured in the Anthropic console.",
+      "category": "non-functional",
+      "priority": "critical",
+      "acceptance_criteria": [
+        "Rate limiting is applied per IP address on the /api/chat endpoint",
+        "Rate limiting is applied per IP address on the /api/contact endpoint",
+        "Requests exceeding the rate limit receive a 429 Too Many Requests response with a clear message",
+        "Rate limit thresholds are configurable via environment variables or config file",
+        "Claude API cost limits are configured in the Anthropic console (documented in deployment notes)",
+        "Rate limiting state is maintained in-memory or in SQLite — no external cache required"
+      ],
+      "related_requirements": [
+        "REQ-010",
+        "REQ-012"
+      ]
+    },
+    {
+      "id": "REQ-023",
+      "title": "Nginx Reverse Proxy Configuration",
+      "description": "Nginx must be installed and configured on the Linode server as the primary reverse proxy. It must: serve the React frontend static build, proxy API requests to the FastAPI backend, handle SSL/TLS termination for brackett.dev and api.brackett.dev, and coexist with the existing game dev project (Apache or direct service). The existing game dev project must remain live and accessible.",
+      "category": "constraint",
+      "priority": "critical",
+      "acceptance_criteria": [
+        "Nginx is installed and running on the Linode server",
+        "brackett.dev serves the React frontend (static build)",
+        "api.brackett.dev proxies to the FastAPI backend",
+        "SSL/TLS certificates are configured for both domains (e.g., Let's Encrypt)",
+        "The existing game dev project remains accessible (Nginx proxies to it or it runs on a separate port/subdomain)",
+        "HTTP traffic is redirected to HTTPS for all domains",
+        "Nginx configuration is documented in the project repo"
+      ],
+      "related_requirements": [
+        "REQ-024"
+      ]
+    },
+    {
+      "id": "REQ-024",
+      "title": "Domain Configuration — brackett.dev",
+      "description": "The portfolio must be accessible at brackett.dev. The backend API must be accessible at api.brackett.dev. DNS must be configured via Google Workspace (or the domain registrar) to point both domains to the Linode server's IP address. The entire stack (frontend and backend) will be hosted on the Linode server.",
+      "category": "constraint",
+      "priority": "critical",
+      "acceptance_criteria": [
+        "brackett.dev resolves to the Linode server and serves the portfolio frontend",
+        "api.brackett.dev resolves to the Linode server and serves the FastAPI backend",
+        "DNS A records are configured for both brackett.dev and api.brackett.dev",
+        "SSL certificates are valid and auto-renewing for both domains",
+        "www.brackett.dev redirects to brackett.dev (optional but recommended)"
+      ],
+      "related_requirements": [
+        "REQ-023"
+      ]
+    },
+    {
+      "id": "REQ-025",
+      "title": "TJBot Context and System Prompt",
+      "description": "TJBot must be initialized with a comprehensive system prompt and context document derived from a Markdown file containing TJ's full resume, work experience details, project descriptions, and any additional background TJ provides. The context document must be loaded server-side and injected into the Claude API system prompt. The MD file must be easily updatable without code changes.",
+      "category": "functional",
+      "priority": "critical",
+      "acceptance_criteria": [
+        "A Markdown context file (e.g., tjbot_context.md) exists in the backend and is loaded at startup or per-request",
+        "The system prompt instructs TJBot to answer only questions related to TJ's professional background, projects, and skills",
+        "The system prompt establishes the TJBot persona and name",
+        "The system prompt includes guardrails against off-topic, harmful, or prompt-injection attempts",
+        "Updating the MD file is sufficient to update TJBot's knowledge — no code changes required",
+        "TJBot accurately answers questions based on the provided context"
+      ],
+      "related_requirements": [
+        "REQ-010",
+        "REQ-011"
+      ]
+    },
+    {
+      "id": "REQ-026",
+      "title": "TJBot Guardrails and Safety",
+      "description": "TJBot must have explicit guardrails in its system prompt and optionally in backend validation to: (1) keep conversations focused on TJ's professional background, projects, and skills; (2) politely redirect off-topic questions; (3) refuse to execute or assist with prompt injection attempts; (4) not reveal its system prompt or internal instructions when asked.",
+      "category": "non-functional",
+      "priority": "critical",
+      "acceptance_criteria": [
+        "TJBot responds to off-topic questions with a polite redirect (e.g., 'I'm here to answer questions about TJ's work and experience')",
+        "TJBot does not reveal its system prompt when asked",
+        "TJBot does not comply with prompt injection attempts (e.g., 'ignore previous instructions')",
+        "TJBot does not produce harmful, offensive, or inappropriate content",
+        "Guardrail behavior is consistent across sessions"
+      ],
+      "related_requirements": [
+        "REQ-010",
+        "REQ-025"
+      ]
+    },
+    {
+      "id": "REQ-027",
+      "title": "Automated Testing Suite",
+      "description": "The project must include automated tests for both the backend and frontend. Backend: pytest-based unit and integration tests for FastAPI endpoints. Frontend: component tests using Vitest and React Testing Library. Manual testing will also be performed by TJ in addition to automated tests.",
+      "category": "non-functional",
+      "priority": "high",
+      "acceptance_criteria": [
+        "pytest test suite exists covering all FastAPI API endpoints",
+        "Tests cover happy path, error cases, and rate limiting behavior",
+        "Tests cover admin authentication including lockout and 2FA flows",
+        "React component tests exist for key components (chatbot, contact form, project cards)",
+        "All tests pass in CI before deployment",
+        "Test coverage report is generated"
+      ],
+      "related_requirements": []
+    },
+    {
+      "id": "REQ-028",
+      "title": "Modular and Maintainable Codebase",
+      "description": "The codebase must be structured for maintainability and extensibility. The React frontend must use a component-based architecture where new project pages, sections, or features can be added with minimal changes to existing code. The FastAPI backend must follow a clean separation of concerns (routers, services, models, database layer).",
+      "category": "non-functional",
+      "priority": "high",
+      "acceptance_criteria": [
+        "Adding a new project page requires only creating a new data object/config entry — no structural changes",
+        "Frontend components are reusable and documented",
+        "Backend follows a router/service/model separation",
+        "No hardcoded content that should be configurable (e.g., project data in a config/data file)",
+        "README documents how to add new projects and update content"
+      ],
+      "related_requirements": [
+        "REQ-008",
+        "REQ-009"
+      ]
+    },
+    {
+      "id": "REQ-029",
+      "title": "Responsive Design",
+      "description": "The portfolio must be fully responsive and usable on desktop, tablet, and mobile viewports. Given the target audience is employers who may view on any device, the mobile experience must be professional and not degraded.",
+      "category": "non-functional",
+      "priority": "high",
+      "acceptance_criteria": [
+        "All pages render correctly on viewport widths from 320px to 2560px",
+        "Sticky header collapses to a hamburger menu or equivalent on mobile",
+        "Revolving skills banner is functional on mobile",
+        "TJBot chatbot UI is usable on mobile",
+        "Contact form is usable on mobile",
+        "No horizontal scrollbars appear on any standard viewport size"
+      ],
+      "related_requirements": [
+        "REQ-001"
+      ]
+    },
+    {
+      "id": "REQ-030",
+      "title": "LinkedIn and GitHub Profile Links",
+      "description": "The site must include links to TJ's LinkedIn profile and GitHub profile. These should be accessible from the main landing page (e.g., in the hero section, footer, or header).",
+      "category": "functional",
+      "priority": "medium",
+      "acceptance_criteria": [
+        "A link to TJ's LinkedIn profile is present on the main landing page",
+        "A link to TJ's GitHub profile is present on the main landing page",
+        "Both links open in a new browser tab",
+        "Links are visually represented with recognizable icons"
+      ],
+      "related_requirements": [
+        "REQ-003"
+      ]
+    }
+  ],
+  "architecture": [
+    {
+      "name": "React Frontend",
+      "description": "Single-page application built with React that serves as the user-facing portfolio website. Compiled to a static build and served by Nginx. Handles all UI rendering, animations, routing between pages, chatbot UI, contact form UI, and client-side visitor duration tracking beacon.",
+      "technology": "React (with React Router for client-side routing), CSS/Tailwind or styled-components, animation library (GSAP, Framer Motion, or tsParticles — to be selected during implementation)",
+      "responsibilities": [
+        "Render all portfolio pages: landing page, individual project pages",
+        "Implement sticky header with navigation, resume, and cover letter buttons",
+        "Render hero banner with animated cycling titles and particle background",
+        "Render revolving skills/tech stack banner",
+        "Render About Me section with photo and bio",
+        "Render work experience timeline",
+        "Render featured projects grid with links to detail pages",
+        "Render modular project detail page template",
+        "Render 'Want to Learn More?' section with TJBot chatbot UI and Discord contact form",
+        "Manage TJBot conversation session state (in-memory, per session)",
+        "Send visit duration beacon to backend on page unload",
+        "Listen for Konami code and trigger hidden admin login modal",
+        "Render admin login modal with password and TOTP fields",
+        "Render admin dashboard (post-authentication) with conversation logs, contact submissions, and visitor logs"
+      ],
+      "dependencies": [
+        "FastAPI Backend",
+        "Nginx"
+      ]
+    },
+    {
+      "name": "FastAPI Backend",
+      "description": "Python-based REST API server handling all dynamic functionality: Claude API proxying for TJBot, Discord bot message dispatch for the contact form, SQLite database operations for logging and admin data, admin authentication (password + TOTP), and rate limiting. Runs as a systemd service on the Linode server.",
+      "technology": "Python 3.11+, FastAPI, Uvicorn (ASGI server), SQLite (via SQLAlchemy or aiosqlite), pyotp (TOTP), anthropic Python SDK, discord.py or discord-webhook, slowapi or custom rate limiting middleware",
+      "responsibilities": [
+        "Expose REST API endpoints for TJBot chat, contact form, visitor tracking, and admin operations",
+        "Proxy requests to Anthropic Claude API with system prompt and context injection",
+        "Enforce per-IP rate limiting on public endpoints",
+        "Log all TJBot conversations to SQLite",
+        "Log all contact form submissions to SQLite and dispatch to Discord",
+        "Log all visitor page visits and durations to SQLite",
+        "Handle admin authentication: password verification, TOTP verification, account lockout after 5 failed attempts, JWT session issuance",
+        "Serve admin dashboard data (conversations, submissions, visitor logs) to authenticated admin",
+        "Handle admin delete operations on log entries",
+        "Serve resume and cover letter PDF files (or Nginx handles this directly)",
+        "Check Claude API health status for TJBot degradation handling",
+        "Load TJBot context from tjbot_context.md at startup"
+      ],
+      "dependencies": [
+        "SQLite Database",
+        "Anthropic Claude API",
+        "Discord API"
+      ]
+    },
+    {
+      "name": "Nginx",
+      "description": "Reverse proxy and static file server sitting in front of all services on the Linode server. Handles SSL/TLS termination, serves the React static build for brackett.dev, proxies API requests to the FastAPI backend at api.brackett.dev, and routes traffic for the existing game dev project.",
+      "technology": "Nginx, Let's Encrypt (Certbot) for SSL",
+      "responsibilities": [
+        "Serve React static build files for brackett.dev",
+        "Proxy /api/* requests (or all api.brackett.dev requests) to FastAPI backend",
+        "Handle SSL/TLS termination for brackett.dev and api.brackett.dev",
+        "Redirect HTTP to HTTPS",
+        "Route traffic for the existing game dev project (separate server block)",
+        "Serve PDF files for resume and cover letter (or proxy to FastAPI)",
+        "Generate access logs for potential parsing into visitor tracking"
+      ],
+      "dependencies": [
+        "React Frontend",
+        "FastAPI Backend"
+      ]
+    },
+    {
+      "name": "SQLite Database",
+      "description": "Persistent storage for all application data including TJBot conversation logs, Discord contact form submissions, site visitor logs, and admin authentication state. Stored as a file on the Linode server.",
+      "technology": "SQLite 3, accessed via SQLAlchemy (sync or async) or aiosqlite from FastAPI",
+      "responsibilities": [
+        "Store TJBot conversation sessions and message history",
+        "Store Discord contact form submissions",
+        "Store site visitor logs (IP, page, timestamp, duration)",
+        "Store admin account credentials (hashed password, TOTP secret, lockout state)",
+        "Provide queryable data for admin dashboard"
+      ],
+      "dependencies": []
+    },
+    {
+      "name": "Anthropic Claude API",
+      "description": "External AI service used to power TJBot. The FastAPI backend calls this API with a system prompt containing TJ's context document and the conversation history to generate responses.",
+      "technology": "Anthropic Claude API (claude-3-5-sonnet or latest recommended model), anthropic Python SDK",
+      "responsibilities": [
+        "Generate TJBot responses based on system prompt, context, and conversation history",
+        "Enforce guardrails via system prompt instructions"
+      ],
+      "dependencies": []
+    },
+    {
+      "name": "Discord Bot",
+      "description": "A Discord bot created for this project that receives contact form submissions from the FastAPI backend and posts them to a designated channel in TJ's Discord server.",
+      "technology": "Discord API (via discord-webhook or discord.py), Discord Developer Portal bot registration",
+      "responsibilities": [
+        "Receive formatted contact form submission messages from FastAPI",
+        "Post messages to the designated Discord channel including all form fields and response preferences"
+      ],
+      "dependencies": [
+        "FastAPI Backend"
+      ]
+    },
+    {
+      "name": "Linode Cloud Server",
+      "description": "The hosting environment for the entire stack. Runs Nginx, the FastAPI backend (via systemd/uvicorn), the SQLite database file, and the React static build. Also hosts the existing game dev project.",
+      "technology": "Linode VPS, Linux (Ubuntu or similar), systemd",
+      "responsibilities": [
+        "Host all application components",
+        "Maintain SSL certificates via Certbot auto-renewal",
+        "Run Nginx as the primary web server/reverse proxy",
+        "Run FastAPI backend as a systemd service",
+        "Store SQLite database file with appropriate permissions",
+        "Store PDF files for resume and cover letter",
+        "Store tjbot_context.md context file",
+        "Cohost the existing game dev project"
+      ],
+      "dependencies": []
+    }
+  ],
+  "data_model": [
+    {
+      "name": "ChatSession",
+      "description": "Represents a single TJBot conversation session initiated by a site visitor",
+      "fields": {
+        "id": "INTEGER PRIMARY KEY AUTOINCREMENT",
+        "session_id": "TEXT UNIQUE NOT NULL — UUID generated client-side or server-side at session start",
+        "visitor_ip": "TEXT NOT NULL — IP address of the visitor",
+        "started_at": "DATETIME NOT NULL — timestamp when session was created",
+        "last_activity_at": "DATETIME NOT NULL — timestamp of last message in session"
+      },
+      "relationships": [
+        "ChatMessage via one-to-many (session_id)"
+      ]
+    },
+    {
+      "name": "ChatMessage",
+      "description": "Represents a single message turn within a TJBot conversation session",
+      "fields": {
+        "id": "INTEGER PRIMARY KEY AUTOINCREMENT",
+        "session_id": "TEXT NOT NULL — foreign key to ChatSession.session_id",
+        "role": "TEXT NOT NULL — 'user' or 'assistant'",
+        "content": "TEXT NOT NULL — message text content",
+        "timestamp": "DATETIME NOT NULL — when the message was sent/received"
+      },
+      "relationships": [
+        "ChatSession via many-to-one (session_id)"
+      ]
+    },
+    {
+      "name": "ContactSubmission",
+      "description": "Represents a contact form submission sent via the Discord bot",
+      "fields": {
+        "id": "INTEGER PRIMARY KEY AUTOINCREMENT",
+        "name": "TEXT NOT NULL — submitter's full name",
+        "phone_number": "TEXT NOT NULL — submitter's phone number",
+        "email": "TEXT NOT NULL — submitter's email address",
+        "message_body": "TEXT NOT NULL — the message content",
+        "response_pref_call": "BOOLEAN NOT NULL DEFAULT FALSE — whether Call was selected",
+        "response_pref_text": "BOOLEAN NOT NULL DEFAULT FALSE — whether Text was selected",
+        "response_pref_email": "BOOLEAN NOT NULL DEFAULT FALSE — whether Email was selected",
+        "submitted_at": "DATETIME NOT NULL — submission timestamp",
+        "discord_sent": "BOOLEAN NOT NULL DEFAULT FALSE — whether Discord dispatch succeeded",
+        "visitor_ip": "TEXT — IP address of submitter"
+      },
+      "relationships": []
+    },
+    {
+      "name": "VisitorLog",
+      "description": "Represents a single page visit by a site visitor across any page of the portfolio",
+      "fields": {
+        "id": "INTEGER PRIMARY KEY AUTOINCREMENT",
+        "visitor_ip": "TEXT NOT NULL — IP address of the visitor",
+        "page_path": "TEXT NOT NULL — the URL path visited (e.g., '/', '/projects/indie-game')",
+        "visited_at": "DATETIME NOT NULL — timestamp when the visit started",
+        "duration_seconds": "INTEGER — visit duration in seconds, populated by client beacon on unload (nullable until beacon fires)",
+        "user_agent": "TEXT — browser user agent string"
+      },
+      "relationships": []
+    },
+    {
+      "name": "AdminAccount",
+      "description": "Represents the single admin account for the hidden dashboard. Only one record should exist.",
+      "fields": {
+        "id": "INTEGER PRIMARY KEY AUTOINCREMENT",
+        "username": "TEXT UNIQUE NOT NULL — admin username",
+        "password_hash": "TEXT NOT NULL — bcrypt-hashed password",
+        "totp_secret": "TEXT NOT NULL — base32 TOTP secret for 2FA (pyotp compatible)",
+        "failed_attempts": "INTEGER NOT NULL DEFAULT 0 — consecutive failed login attempts",
+        "locked_until": "DATETIME — if set, account is locked until this timestamp",
+        "last_login_at": "DATETIME — timestamp of last successful login"
+      },
+      "relationships": []
+    },
+    {
+      "name": "AdminSession",
+      "description": "Represents an active admin session token (or can be handled via JWT without DB storage — implementation decision)",
+      "fields": {
+        "id": "INTEGER PRIMARY KEY AUTOINCREMENT",
+        "token_hash": "TEXT UNIQUE NOT NULL — hashed JWT or session token",
+        "created_at": "DATETIME NOT NULL",
+        "expires_at": "DATETIME NOT NULL — session expiry (e.g., 30 minutes from creation)",
+        "admin_id": "INTEGER NOT NULL — foreign key to AdminAccount.id"
+      },
+      "relationships": [
+        "AdminAccount via many-to-one (admin_id)"
+      ]
+    }
+  ],
+  "api_endpoints": [
+    {
+      "method": "POST",
+      "path": "/api/v1/chat",
+      "description": "Send a user message to TJBot. The backend appends the message to the session history, calls the Claude API with the system prompt and full history, logs the exchange to SQLite, and returns TJBot's response.",
+      "request_body": {
+        "session_id": "string — UUID for the current conversation session",
+        "message": "string — the user's message text"
+      },
+      "response_body": {
+        "session_id": "string",
+        "response": "string — TJBot's reply",
+        "timestamp": "string — ISO8601 timestamp"
+      },
+      "auth_required": false
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/chat/status",
+      "description": "Check the availability of the Claude API. Used by the frontend to determine whether to enable or disable the TJBot input.",
+      "request_body": {},
+      "response_body": {
+        "available": "boolean",
+        "message": "string — human-readable status message"
+      },
+      "auth_required": false
+    },
+    {
+      "method": "POST",
+      "path": "/api/v1/contact",
+      "description": "Submit a contact form entry. Stores the submission in SQLite and dispatches a formatted message to TJ's Discord server via the Discord bot.",
+      "request_body": {
+        "name": "string",
+        "phone_number": "string",
+        "email": "string",
+        "message_body": "string",
+        "response_pref_call": "boolean",
+        "response_pref_text": "boolean",
+        "response_pref_email": "boolean"
+      },
+      "response_body": {
+        "success": "boolean",
+        "message": "string — confirmation or error message"
+      },
+      "auth_required": false
+    },
+    {
+      "method": "POST",
+      "path": "/api/v1/visitor/track",
+      "description": "Log a page visit. Called by the frontend on page load to record IP, path, and timestamp. Also used by the duration beacon on page unload to update the duration for an existing visit record.",
+      "request_body": {
+        "page_path": "string — the URL path being visited",
+        "visit_id": "string or null — if provided, updates duration for existing visit; if null, creates new record",
+        "duration_seconds": "integer or null — only provided on unload beacon"
+      },
+      "response_body": {
+        "visit_id": "integer — the database ID of the visit record, returned on creation for use in the duration beacon"
+      },
+      "auth_required": false
+    },
+    {
+      "method": "POST",
+      "path": "/api/v1/admin/login",
+      "description": "Admin login step 1: validate username and password. Returns a temporary token for TOTP verification step. Enforces account lockout after 5 failed attempts.",
+      "request_body": {
+        "username": "string",
+        "password": "string"
+      },
+      "response_body": {
+        "success": "boolean",
+        "pre_auth_token": "string or null — short-lived token to be used in the TOTP step",
+        "message": "string — error message if failed, including lockout status"
+      },
+      "auth_required": false
+    },
+    {
+      "method": "POST",
+      "path": "/api/v1/admin/verify-totp",
+      "description": "Admin login step 2: validate the TOTP code using the pre-auth token from step 1. Issues a full session JWT on success.",
+      "request_body": {
+        "pre_auth_token": "string",
+        "totp_code": "string — 6-digit TOTP code"
+      },
+      "response_body": {
+        "success": "boolean",
+        "access_token": "string or null — JWT session token",
+        "expires_at": "string — ISO8601 expiry timestamp",
+        "message": "string"
+      },
+      "auth_required": false
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/admin/conversations",
+      "description": "Retrieve paginated list of TJBot conversation sessions with their messages for the admin dashboard.",
+      "request_body": {},
+      "response_body": {
+        "sessions": "array of ChatSession objects with nested ChatMessage arrays",
+        "total": "integer",
+        "page": "integer",
+        "page_size": "integer"
+      },
+      "auth_required": true
+    },
+    {
+      "method": "DELETE",
+      "path": "/api/v1/admin/conversations/{session_id}",
+      "description": "Delete a TJBot conversation session and all its messages.",
+      "request_body": {},
+      "response_body": {
+        "success": "boolean"
+      },
+      "auth_required": true
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/admin/contact-submissions",
+      "description": "Retrieve paginated list of Discord contact form submissions for the admin dashboard.",
+      "request_body": {},
+      "response_body": {
+        "submissions": "array of ContactSubmission objects",
+        "total": "integer",
+        "page": "integer",
+        "page_size": "integer"
+      },
+      "auth_required": true
+    },
+    {
+      "method": "DELETE",
+      "path": "/api/v1/admin/contact-submissions/{id}",
+      "description": "Delete a specific contact form submission.",
+      "request_body": {},
+      "response_body": {
+        "success": "boolean"
+      },
+      "auth_required": true
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/admin/visitor-logs",
+      "description": "Retrieve paginated list of visitor log entries for the admin dashboard.",
+      "request_body": {},
+      "response_body": {
+        "logs": "array of VisitorLog objects",
+        "total": "integer",
+        "page": "integer",
+        "page_size": "integer"
+      },
+      "auth_required": true
+    },
+    {
+      "method": "DELETE",
+      "path": "/api/v1/admin/visitor-logs/{id}",
+      "description": "Delete a specific visitor log entry.",
+      "request_body": {},
+      "response_body": {
+        "success": "boolean"
+      },
+      "auth_required": true
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/admin/me",
+      "description": "Validate the current admin session token and return basic session info. Used by the frontend to verify the session is still valid.",
+      "request_body": {},
+      "response_body": {
+        "valid": "boolean",
+        "expires_at": "string"
+      },
+      "auth_required": true
+    }
+  ],
+  "constraints": [
+    "The entire stack (frontend and backend) must be hosted on the existing Linode server",
+    "The domain brackett.dev must be used, with api.brackett.dev as the backend subdomain",
+    "DNS is managed via Google Workspace or the associated domain registrar",
+    "Nginx must be used as the reverse proxy — Apache may remain for the game dev project but Nginx is the primary entry point",
+    "The existing game dev project on the Linode server must remain live and accessible after the portfolio is deployed",
+    "SQLite must be used as the database — no external database service",
+    "The Anthropic Claude API must be used for TJBot — no other LLM provider",
+    "A Discord bot must be created for the contact form — no email-based contact form",
+    "The admin interface must have no visible entry point — only accessible via Konami code",
+    "Admin authentication must require both a password and TOTP (2FA) — single-factor auth is not acceptable",
+    "Account lockout must occur after exactly 5 failed login attempts",
+    "TOTP implementation must use a free library (e.g., pyotp) — no paid 2FA service",
+    "The cover letter PDF must be swappable by replacing a file on the server with no code changes",
+    "The TJBot context document must be a Markdown file updatable without code changes",
+    "All project pages must use a single reusable template component — no duplicated page templates",
+    "The React frontend must be built as a static build served by Nginx",
+    "The FastAPI backend must run as a persistent service (systemd) on the Linode server",
+    "SSL/TLS must be configured for all public-facing domains (Let's Encrypt recommended)",
+    "Rate limiting must be enforced server-side per IP address — client-side rate limiting alone is not acceptable",
+    "Claude API cost limits must also be configured in the Anthropic console as a secondary safeguard"
+  ],
+  "assumptions": [
+    "TJ will provide the actual photo file, resume PDF, and cover letter PDF before the corresponding features are implemented",
+    "TJ will provide a completed tjbot_context.md file with full resume details, project descriptions, and background before TJBot is finalized",
+    "The Linode server has been wiped since the previous Apache/game dev setup — Apache is not currently running and port 80/443 are available for Nginx",
+    "The game dev project will need to be re-deployed on the Linode server alongside the portfolio — its specific port and configuration will need to be determined during deployment",
+    "TJ will create the Discord server and provide the bot token and channel ID during the Discord bot setup phase",
+    "The Google Workspace account controls DNS for brackett.dev and TJ has access to configure DNS records",
+    "The Linode server is running a modern Linux distribution (Ubuntu 22.04 LTS assumed) with sufficient resources for Nginx + FastAPI + SQLite",
+    "TJ will provide GitHub and LinkedIn profile URLs before the social links feature is implemented",
+    "The three project pages are intentionally placeholder/incomplete — full content (screenshots, demos, GitHub links) will be added in future iterations",
+    "More projects will be added to the portfolio over time — the modular structure must accommodate this without architectural changes",
+    "The admin dashboard is a single-user system — only one admin account will ever exist",
+    "Admin session timeout will be set to 30 minutes of inactivity (configurable)",
+    "Account lockout duration after 5 failed attempts will be 15 minutes (configurable) — TJ to confirm",
+    "The pre-auth token for the two-step admin login will expire after 5 minutes",
+    "Visit duration tracking via beforeunload beacon may not be 100% reliable (browser behavior varies) — this is acceptable",
+    "The revolving skills banner will use SVG icons from a library such as Simple Icons or Devicons for technology logos",
+    "The React frontend will use React Router for client-side routing between the landing page and project detail pages",
+    "The FastAPI backend will use JWT (JSON Web Tokens) for admin session management",
+    "CORS will be configured on the FastAPI backend to allow requests from brackett.dev only",
+    "The Claude model to use will be claude-3-5-sonnet-20241022 or the latest recommended model at time of implementation",
+    "TJ's name is TJ Brackett and the chatbot persona name TJBot is derived from this"
+  ],
+  "tech_stack": {
+    "frontend_framework": "React 18+",
+    "frontend_routing": "React Router v6",
+    "frontend_language": "TypeScript",
+    "frontend_styling": "Tailwind CSS or CSS Modules (to be decided during implementation)",
+    "frontend_animations": "To be selected during implementation — candidates: GSAP, Framer Motion, tsParticles (for particle effects)",
+    "frontend_testing": "Vitest + React Testing Library",
+    "frontend_build_tool": "Vite",
+    "backend_framework": "FastAPI (Python 3.11+)",
+    "backend_server": "Uvicorn (ASGI)",
+    "backend_language": "Python 3.11+",
+    "backend_orm": "SQLAlchemy (async) or aiosqlite",
+    "backend_database": "SQLite 3",
+    "backend_auth": "pyotp (TOTP/2FA), bcrypt (password hashing), python-jose or PyJWT (JWT sessions)",
+    "backend_rate_limiting": "slowapi or custom FastAPI middleware",
+    "backend_ai_client": "anthropic Python SDK",
+    "backend_discord": "discord-webhook or discord.py",
+    "backend_testing": "pytest + httpx (async test client for FastAPI)",
+    "reverse_proxy": "Nginx",
+    "ssl": "Let's Encrypt via Certbot",
+    "hosting": "Linode VPS",
+    "process_management": "systemd",
+    "version_control": "Git / GitHub",
+    "domain": "brackett.dev (Google Workspace DNS)",
+    "ai_provider": "Anthropic Claude API",
+    "contact_messaging": "Discord Bot (Discord API)"
+  },
+  "diagrams": {
+    "architecture": "graph TD\n  subgraph Client[\"Client Browser\"]\n    React[\"React 18 SPA\\n(TypeScript + Vite)\"]\n    Router[\"React Router v6\"]\n    Animations[\"Animations\\n(Framer Motion / GSAP / tsParticles)\"]\n    AdminUI[\"Hidden Admin Dashboard\\n(Konami Code Trigger)\"]\n  end\n\n  subgraph Linode[\"Linode VPS (Ubuntu 22.04)\"]\n    Nginx[\"Nginx\\nReverse Proxy + Static Server\\n(SSL via Let's Encrypt)\"]\n\n    subgraph Backend[\"FastAPI Backend (Python 3.11+)\"]\n      API[\"REST API\\n(Uvicorn ASGI)\"]\n      RateLimit[\"Rate Limiting\\n(slowapi / middleware)\"]\n      AuthService[\"Auth Service\\n(bcrypt + pyotp + JWT)\"]\n      ChatService[\"TJBot Chat Service\"]\n      ContactService[\"Contact Form Service\"]\n      VisitorService[\"Visitor Tracking Service\"]\n      AdminService[\"Admin Data Service\"]\n      ContextMD[\"tjbot_context.md\\n(loaded at startup)\"]\n    end\n\n    SQLite[(\"SQLite Database\\nportfolio.db\")]\n    StaticFiles[\"Static Files\\n(React Build, PDFs)\"]\n    GameDev[\"Existing Game Dev Project\\n(separate port)\"]\n  end\n\n  subgraph External[\"External Services\"]\n    Claude[\"Anthropic Claude API\\n(claude-3-5-sonnet)\"]\n    Discord[\"Discord API\\n(Bot + Channel)\"]\n  end\n\n  React -->|\"HTTP/HTTPS requests\"| Nginx\n  Nginx -->|\"Serve static build\"| StaticFiles\n  Nginx -->|\"Proxy api.brackett.dev\"| API\n  Nginx -->|\"Route game.brackett.dev\"| GameDev\n\n  API --> RateLimit\n  RateLimit --> ChatService\n  RateLimit --> ContactService\n  RateLimit --> VisitorService\n  API --> AuthService\n  API --> AdminService\n\n  ChatService -->|\"Load context\"| ContextMD\n  ChatService -->|\"Claude API calls\"| Claude\n  ChatService -->|\"Log conversations\"| SQLite\n\n  ContactService -->|\"Store submissions\"| SQLite\n  ContactService -->|\"Send message\"| Discord\n\n  VisitorService -->|\"Log visits\"| SQLite\n\n  AuthService -->|\"Read/write auth state\"| SQLite\n  AdminService -->|\"Query all tables\"| SQLite\n\n  AdminUI -->|\"Konami code triggers modal\"| React\n  AdminUI -->|\"Auth + data requests\"| API",
+    "data_flow": "flowchart TD\n  subgraph Visitor[\"Site Visitor\"]\n    VBrowser[\"Browser\"]\n  end\n\n  subgraph FE[\"React Frontend\"]\n    PageLoad[\"Page Load Event\"]\n    ChatUI[\"TJBot Chat UI\"]\n    ContactForm[\"Contact Form\"]\n    BeaconJS[\"Duration Beacon\\n(beforeunload)\"]  \n    KonamiListener[\"Konami Code Listener\"]\n    AdminModal[\"Admin Login Modal\"]\n  end\n\n  subgraph BE[\"FastAPI Backend\"]\n    VisitTrack[\"/api/v1/visitor/track\"]\n    ChatEndpoint[\"/api/v1/chat\"]\n    ChatStatus[\"/api/v1/chat/status\"]\n    ContactEndpoint[\"/api/v1/contact\"]\n    AdminLogin[\"/api/v1/admin/login\"]\n    AdminTOTP[\"/api/v1/admin/verify-totp\"]\n    AdminData[\"/api/v1/admin/*\"]\n    RateLimiter[\"Rate Limiter\\n(per IP)\"]\n    SystemPrompt[\"System Prompt Builder\\n+ tjbot_context.md\"]\n  end\n\n  subgraph Storage[\"SQLite Database\"]\n    VisitorLogs[(\"visitor_logs\")]\n    ChatSessions[(\"chat_sessions\")]\n    ChatMessages[(\"chat_messages\")]\n    ContactSubmissions[(\"contact_submissions\")]\n    AdminAccount[(\"admin_account\")]\n  end\n\n  subgraph Ext[\"External\"]\n    ClaudeAPI[\"Anthropic Claude API\"]\n    DiscordAPI[\"Discord Bot / Channel\"]\n  end\n\n  VBrowser -->|\"Navigates to brackett.dev\"| PageLoad\n  PageLoad -->|\"POST page_path + IP\"| VisitTrack\n  VisitTrack --> RateLimiter\n  RateLimiter -->|\"Write visit record\"| VisitorLogs\n  VisitTrack -->|\"Return visit_id\"| BeaconJS\n  BeaconJS -->|\"POST visit_id + duration on unload\"| VisitTrack\n  VisitTrack -->|\"Update duration_seconds\"| VisitorLogs\n\n  VBrowser -->|\"Types message\"| ChatUI\n  ChatUI -->|\"Check availability\"| ChatStatus\n  ChatStatus -->|\"Ping Claude API\"| ClaudeAPI\n  ClaudeAPI -->|\"Status response\"| ChatStatus\n  ChatStatus -->|\"Enable/disable input\"| ChatUI\n  ChatUI -->|\"POST session_id + message\"| ChatEndpoint\n  ChatEndpoint --> RateLimiter\n  RateLimiter -->|\"Build prompt\"| SystemPrompt\n  SystemPrompt -->|\"System prompt + history\"| ClaudeAPI\n  ClaudeAPI -->|\"AI response\"| ChatEndpoint\n  ChatEndpoint -->|\"Write session + messages\"| ChatSessions\n  ChatEndpoint -->|\"Write messages\"| ChatMessages\n  ChatEndpoint -->|\"Return response\"| ChatUI\n\n  VBrowser -->|\"Fills out form\"| ContactForm\n  ContactForm -->|\"POST form fields\"| ContactEndpoint\n  ContactEndpoint --> RateLimiter\n  RateLimiter -->|\"Write submission\"| ContactSubmissions\n  RateLimiter -->|\"Send formatted message\"| DiscordAPI\n  ContactEndpoint -->|\"Success/failure\"| ContactForm\n  ContactForm -->|\"Show confirmation card\"| VBrowser\n\n  VBrowser -->|\"Enters Konami code\"| KonamiListener\n  KonamiListener -->|\"Reveal modal\"| AdminModal\n  AdminModal -->|\"POST username + password\"| AdminLogin\n  AdminLogin -->|\"Verify hash, check lockout\"| AdminAccount\n  AdminLogin -->|\"Return pre_auth_token\"| AdminModal\n  AdminModal -->|\"POST pre_auth_token + TOTP\"| AdminTOTP\n  AdminTOTP -->|\"Verify TOTP (pyotp)\"| AdminAccount\n  AdminTOTP -->|\"Issue JWT\"| AdminModal\n  AdminModal -->|\"Authenticated — load dashboard\"| AdminData\n  AdminData -->|\"Query all tables\"| Storage",
+    "erd": "erDiagram\n  ChatSession {\n    INTEGER id PK\n    TEXT session_id UK\n    TEXT visitor_ip\n    DATETIME started_at\n    DATETIME last_activity_at\n  }\n\n  ChatMessage {\n    INTEGER id PK\n    TEXT session_id FK\n    TEXT role\n    TEXT content\n    DATETIME timestamp\n  }\n\n  ContactSubmission {\n    INTEGER id PK\n    TEXT name\n    TEXT phone_number\n    TEXT email\n    TEXT message_body\n    BOOLEAN response_pref_call\n    BOOLEAN response_pref_text\n    BOOLEAN response_pref_email\n    DATETIME submitted_at\n    BOOLEAN discord_sent\n    TEXT visitor_ip\n  }\n\n  VisitorLog {\n    INTEGER id PK\n    TEXT visitor_ip\n    TEXT page_path\n    DATETIME visited_at\n    INTEGER duration_seconds\n    TEXT user_agent\n  }\n\n  AdminAccount {\n    INTEGER id PK\n    TEXT username UK\n    TEXT password_hash\n    TEXT totp_secret\n    INTEGER failed_attempts\n    DATETIME locked_until\n    DATETIME last_login_at\n  }\n\n  AdminSession {\n    INTEGER id PK\n    TEXT token_hash UK\n    DATETIME created_at\n    DATETIME expires_at\n    INTEGER admin_id FK\n  }\n\n  ChatSession ||--o{ ChatMessage : \"has many\"\n  AdminAccount ||--o{ AdminSession : \"has many\""
+  },
+  "open_questions": [
+    "What is the exact Linode server OS and version? (Ubuntu 22.04 LTS assumed — confirm before deployment)",
+    "What port is the game dev project intended to run on, and does it need its own subdomain (e.g., game.brackett.dev)?",
+    "What is the desired account lockout duration after 5 failed admin login attempts? (30 minutes assumed — confirm)",
+    "Should the admin dashboard be a separate React route (e.g., /admin) within the same React app, or a completely separate mini-app? (Same app with protected route recommended)",
+    "Should the Konami code listener be active on all pages including project detail pages, or only the main landing page?",
+    "What specific Claude model should be used? (claude-3-5-sonnet-20241022 assumed — confirm or specify)",
+    "What are the desired rate limit thresholds? (e.g., 20 chat messages per IP per hour, 5 contact form submissions per IP per day — TJ to specify)",
+    "Should the visitor tracking beacon also capture referrer URL (where the visitor came from)?",
+    "Should the admin dashboard display any aggregate analytics (e.g., total visits today, most visited pages) in addition to raw log tables?",
+    "Is there a preference for the React frontend styling approach — Tailwind CSS, CSS Modules, or styled-components?",
+    "Should the TJBot chat UI support markdown rendering in responses (e.g., bold text, bullet points, code blocks)?",
+    "Should there be a footer on the site, and if so, what should it contain (e.g., copyright, social links, quick nav)?",
+    "What is TJ's GitHub profile URL and LinkedIn profile URL for the social links?",
+    "Should the contact form include any spam protection beyond rate limiting (e.g., honeypot field, reCAPTCHA)?",
+    "Should the PDF files (resume, cover letter) be served directly by Nginx as static files, or through a FastAPI endpoint that can log download events?",
+    "Is there a preference for the specific Claude model tier (Haiku for cost savings vs. Sonnet/Opus for quality)?",
+    "Should the admin be able to export data (e.g., CSV export of visitor logs for the future IP mapping project)?",
+    "What should happen to the admin session if the browser tab is closed — should the session persist across browser restarts or expire immediately?"
+  ],
+  "interview_session_id": "ad7b9c44-00d"
+}

@@ -1,0 +1,12 @@
+{
+  "permissions": {
+    "allow": [
+      "WebFetch(domain:api.anthropic.com)",
+      "Bash(python3 -c ' *)",
+      "Bash(python3)",
+      "Bash(sqlite3 /d/misc_code/portfolio/data/maestro.db \".tables\")",
+      "Bash(npm create *)",
+      "PowerShell(Get-Command node, npm, npx -ErrorAction SilentlyContinue)"
+    ]
+  }
+}
