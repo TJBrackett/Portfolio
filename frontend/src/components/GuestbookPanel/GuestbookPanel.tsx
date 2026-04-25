@@ -32,7 +32,7 @@ export function GuestbookPanel({ open, allPins, fmtTime, onClose, onSnapTo, onSu
   const [selEmoji, setSelEmoji] = useState('👋')
   const [name, setName] = useState('')
   const [loading, setLoading] = useState(false)
-  const [showAllVisitors, setShowAllVisitors] = useState(false)
+  const [showAllVisitors, setShowAllVisitors] = useState(true)
 
   const nameError = getNameError(name)
   const canSubmit = !loading && name.trim().length > 0 && !nameError
