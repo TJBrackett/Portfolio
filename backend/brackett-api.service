@@ -1,14 +1,14 @@
 [Unit]
-Description=brackett.dev FastAPI backend
+Description=tjbrackett.com FastAPI backend
 After=network.target
 
 [Service]
 Type=simple
 User=www-data
-WorkingDirectory=/var/www/brackett.dev/backend
-Environment="PATH=/var/www/brackett.dev/backend/.venv/bin"
-EnvironmentFile=/var/www/brackett.dev/backend/.env.production
-ExecStart=/var/www/brackett.dev/backend/.venv/bin/uvicorn app.main:app --host 127.0.0.1 --port 8000 --workers 1
+WorkingDirectory=/var/www/portfolio/backend
+Environment="PATH=/var/www/portfolio/backend/.venv/bin"
+EnvironmentFile=/var/www/portfolio/backend/.env.production
+ExecStart=/var/www/portfolio/backend/.venv/bin/uvicorn app.main:app --host 127.0.0.1 --port 8000 --workers 1
 Restart=always
 RestartSec=5
 

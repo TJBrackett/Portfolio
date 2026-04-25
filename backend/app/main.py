@@ -15,11 +15,11 @@ async def lifespan(app: FastAPI):
     yield
 
 
-app = FastAPI(title="brackett.dev API", lifespan=lifespan)
+app = FastAPI(title="tjbrackett.com API", lifespan=lifespan)
 
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["https://brackett.dev", "https://www.brackett.dev", "http://localhost:5173"],
+    allow_origins=["https://tjbrackett.com", "https://www.tjbrackett.com", "http://localhost:5173"],
     allow_methods=["*"],
     allow_headers=["*"],
 )
