@@ -1,9 +1,11 @@
 import { useState } from 'react'
 import { Link, NavLink } from 'react-router-dom'
+import type { HealthStatus } from '../../hooks/useHealthCheck'
 
 interface SideNavProps {
   visitCount: number
   countryCount: number
+  health?: HealthStatus
 }
 
 const NAV_LINKS = [
@@ -18,8 +20,11 @@ const DOC_LINKS = [
   { label: 'Cover Letter', href: '/cover-letter.pdf'  },
 ] as const
 
-export function SideNav({ visitCount, countryCount }: SideNavProps) {
+export function SideNav({ visitCount, countryCount, health = 'checking' }: SideNavProps) {
   const [mobileOpen, setMobileOpen] = useState(false)
+
+  const dotClass = health === 'up' ? 'live-dot' : health === 'down' ? 'live-dot live-dot--down' : 'live-dot live-dot--checking'
+  const statusLabel = health === 'up' ? 'LIVE' : health === 'down' ? 'OFFLINE' : '…'
 
   const links = NAV_LINKS.map(({ label, to }) => (
     <li key={label}>
@@ -72,8 +77,8 @@ export function SideNav({ visitCount, countryCount }: SideNavProps) {
             <div>across <span className="c-num">{countryCount || '—'}</span> countries</div>
           </div>
           <div className="nav-status">
-            <div className="live-dot" />
-            <span>LIVE</span>
+            <div className={dotClass} />
+            <span>{statusLabel}</span>
           </div>
         </div>
       </nav>
@@ -97,8 +102,8 @@ export function SideNav({ visitCount, countryCount }: SideNavProps) {
             <div>across <span className="c-num">{countryCount || '—'}</span> countries</div>
           </div>
           <div className="nav-status">
-            <div className="live-dot" />
-            <span>LIVE</span>
+            <div className={dotClass} />
+            <span>{statusLabel}</span>
           </div>
         </div>
       </div>
