@@ -94,11 +94,10 @@ export function GuestbookPanel({ open, allPins, onClose, onSnapTo, onSubmit }: G
     if (isMobileRef.current) onClose()
   }
 
-  // "new" badge: the single newest signed entry across ALL pins (independent of filter)
-  const newestSignedKey = (() => {
-    const signed = allPins.filter((p) => p.type === 'signed')
-    if (!signed.length) return null
-    const newest = signed.reduce((a, b) =>
+  // "new" badge: the single most recent entry across ALL pins
+  const newestKey = (() => {
+    if (!allPins.length) return null
+    const newest = allPins.reduce((a, b) =>
       new Date(a.signed_at ?? a.first_seen) > new Date(b.signed_at ?? b.first_seen) ? a : b
     )
     return `${newest.lat}|${newest.lon}|${newest.first_seen}`
@@ -176,7 +175,7 @@ export function GuestbookPanel({ open, allPins, onClose, onSnapTo, onSubmit }: G
               const displayEmoji = isSigned ? (entry.emoji ?? '👋') : '🌐'
               const displayName = isSigned ? (entry.name ?? 'Anonymous') : null
               const timestamp = isSigned ? (entry.signed_at ?? entry.first_seen) : entry.first_seen
-              const isNew = isSigned && key === newestSignedKey
+              const isNew = key === newestKey
               return (
                 <div
                   key={key}

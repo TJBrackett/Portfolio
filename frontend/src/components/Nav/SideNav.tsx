@@ -36,7 +36,7 @@ export function SideNav({ visitCount, countryCount, activeLink = 'Home' }: SideN
         >
           {mobileOpen ? '×' : '☰'}
         </button>
-        <Link to="/" className="mobile-brand-link">TJ Brackett</Link>
+        {!mobileOpen && <Link to="/" className="mobile-brand-link">TJ Brackett</Link>}
       </div>
 
       {/* Desktop nav */}
