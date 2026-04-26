@@ -1,24 +1,19 @@
 import { useEffect, useRef, useState } from 'react'
 import { Globe } from '../components/Globe/Globe'
-import { SideNav } from '../components/Nav/SideNav'
-import { signGuestbook, trackVisit } from '../api/client'
-import { useVisitorSSE } from '../hooks/useVisitorSSE'
-import type { MyLocation } from '../types'
+import { trackVisit, signGuestbook } from '../api/client'
+import type { MyLocation, Pin } from '../types'
 
-export default function HomePage() {
-  const [myLocation, setMyLocation]   = useState<MyLocation | null>(null)
+interface HomePageProps {
+  pins: Pin[]
+  myLocation: MyLocation | null
+  setMyLocation: (loc: MyLocation) => void
+}
+
+export default function HomePage({ pins, myLocation, setMyLocation }: HomePageProps) {
   const [visitId, setVisitId]         = useState<number | null>(null)
   const [visitorRank, setVisitorRank] = useState<number>(0)
   const [snapTarget, setSnapTarget]   = useState<{ lat: number; lon: number } | null>(null)
   const mountTime = useRef(Date.now())
-
-  const pins = useVisitorSSE()
-
-  const visitCount   = pins.length + (myLocation ? 1 : 0)
-  const countryCount = new Set([
-    ...pins.map((p) => p.country),
-    ...(myLocation ? [myLocation.country] : []),
-  ]).size
 
   useEffect(() => {
     trackVisit('/').then((res) => {
@@ -49,17 +44,14 @@ export default function HomePage() {
   }
 
   return (
-    <div className="app">
-      <SideNav visitCount={visitCount} countryCount={countryCount} />
-      <Globe
-        pins={pins}
-        myLocation={myLocation}
-        visitorRank={visitorRank}
-        snapTarget={snapTarget}
-        onSnapHandled={() => setSnapTarget(null)}
-        onSnapTo={(lat, lon) => setSnapTarget({ lat, lon })}
-        onGuestbookSubmit={handleGuestbookSubmit}
-      />
-    </div>
+    <Globe
+      pins={pins}
+      myLocation={myLocation}
+      visitorRank={visitorRank}
+      snapTarget={snapTarget}
+      onSnapHandled={() => setSnapTarget(null)}
+      onSnapTo={(lat, lon) => setSnapTarget({ lat, lon })}
+      onGuestbookSubmit={handleGuestbookSubmit}
+    />
   )
 }

@@ -1,28 +1,45 @@
 import { useState } from 'react'
-import { Link } from 'react-router-dom'
+import { Link, NavLink } from 'react-router-dom'
 
 interface SideNavProps {
   visitCount: number
   countryCount: number
-  activeLink?: string
 }
 
-const NAV_LINKS = ['Home', 'About', 'Work', 'Contact'] as const
+const NAV_LINKS = [
+  { label: 'Home',    to: '/'        },
+  { label: 'About',   to: '/about'   },
+  { label: 'Work',    to: '/work'    },
+  { label: 'Contact', to: '/contact' },
+] as const
 
-export function SideNav({ visitCount, countryCount, activeLink = 'Home' }: SideNavProps) {
+const DOC_LINKS = [
+  { label: 'Resume',       href: '/resume.pdf'        },
+  { label: 'Cover Letter', href: '/cover-letter.pdf'  },
+] as const
+
+export function SideNav({ visitCount, countryCount }: SideNavProps) {
   const [mobileOpen, setMobileOpen] = useState(false)
 
-  const links = NAV_LINKS.map((label) => (
+  const links = NAV_LINKS.map(({ label, to }) => (
     <li key={label}>
-      <a
-        href="#"
-        className={`nav-link${activeLink === label ? ' active' : ''}`}
-        onClick={(e) => { e.preventDefault(); setMobileOpen(false) }}
+      <NavLink
+        to={to}
+        end={to === '/'}
+        className={({ isActive }) => `nav-link${isActive ? ' active' : ''}`}
+        onClick={() => setMobileOpen(false)}
       >
         <span className="nav-dot" />
         {label}
-      </a>
+      </NavLink>
     </li>
+  ))
+
+  const docBtns = DOC_LINKS.map(({ label, href }) => (
+    <a key={label} href={href} target="_blank" rel="noopener noreferrer" className="nav-doc-btn">
+      <span className="nav-doc-icon">↗</span>
+      {label}
+    </a>
   ))
 
   return (
@@ -48,6 +65,7 @@ export function SideNav({ visitCount, countryCount, activeLink = 'Home' }: SideN
           </Link>
         </div>
         <ul className="nav-links">{links}</ul>
+        <div className="nav-doc-btns">{docBtns}</div>
         <div className="nav-footer">
           <div className="visitor-counter">
             <div><span className="c-num">{visitCount || '—'}</span> visitors</div>
@@ -72,7 +90,8 @@ export function SideNav({ visitCount, countryCount, activeLink = 'Home' }: SideN
           </Link>
         </div>
         <ul className="mobile-nav-links">{links}</ul>
-        <div className="nav-footer" style={{ marginTop: 'auto' }}>
+        <div className="nav-doc-btns" style={{ marginTop: 'auto' }}>{docBtns}</div>
+        <div className="nav-footer">
           <div className="visitor-counter">
             <div><span className="c-num">{visitCount || '—'}</span> visitors</div>
             <div>across <span className="c-num">{countryCount || '—'}</span> countries</div>

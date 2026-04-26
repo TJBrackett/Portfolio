@@ -499,9 +499,15 @@ export function Globe({ pins, myLocation, visitorRank, snapTarget, onSnapHandled
   function faster() {
     const v = Math.min(5, parseFloat((speedMult + 0.5).toFixed(1)))
     setSpeedMult(v); speedMultRef.current = v
+    if (!isSpinning) { setIsSpinning(true); isSpinningRef.current = true }
   }
   function slower() {
-    const v = Math.max(0.25, parseFloat((speedMult - 0.5).toFixed(1)))
+    if (speedMult <= 0.5) {
+      // Already at minimum — turn off spin instead of going to 0.25
+      setIsSpinning(false); isSpinningRef.current = false
+      return
+    }
+    const v = Math.max(0.5, parseFloat((speedMult - 0.5).toFixed(1)))
     setSpeedMult(v); speedMultRef.current = v
   }
   function toggleSpin() {

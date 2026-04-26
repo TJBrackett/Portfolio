@@ -37,4 +37,24 @@ export async function signGuestbook(name: string, emoji: string): Promise<Guestb
   return res.json();
 }
 
+export interface ContactPayload {
+  name: string
+  email: string
+  phone_number: string
+  message_body: string
+  response_pref_call: boolean
+  response_pref_text: boolean
+  response_pref_email: boolean
+}
+
+export async function submitContact(data: ContactPayload): Promise<{ success: boolean; message: string }> {
+  const res = await fetch(`${BASE}/contact`, {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify(data),
+  });
+  if (!res.ok) throw new Error('contact submit failed');
+  return res.json();
+}
+
 export const VISITOR_STREAM_URL = `${BASE}/visitors/stream`;
