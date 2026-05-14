@@ -595,6 +595,10 @@ export function Globe({ pins, myLocation, visitorRank, snapTarget, onSnapHandled
         onClose={() => setTweaksOpen(false)}
       />
 
+      <button className="gb-cta-btn" onClick={() => setGbOpen((o) => !o)}>
+        Sign Visitor's Book
+      </button>
+
       <div className={`toast${toast ? ' show' : ''}`}>{toast}</div>
     </section>
   )
