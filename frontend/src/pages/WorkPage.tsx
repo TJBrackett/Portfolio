@@ -2,6 +2,12 @@ import { useState } from 'react'
 
 type ProjectStatus = 'active' | 'in-progress'
 
+interface ProjectLink {
+  label: string
+  href: string
+  accent?: boolean
+}
+
 interface Project {
   id: string
   name: string
@@ -12,10 +18,27 @@ interface Project {
   tags: string[]
   github?: string
   demo?: string
+  links?: ProjectLink[]
   paragraphs: string[]
 }
 
 const PROJECTS: Project[] = [
+  {
+    id: 'universum',
+    name: 'Universum',
+    tagline: 'A digital tabletop wargame mixing miniature figurines, card systems, and hex-tile strategy.',
+    status: 'in-progress',
+    category: 'Game Dev',
+    tags: ['Golang', 'C#', 'Python', 'Microservices', 'API', 'Systems Design', 'Game Design', 'Unity'],
+    links: [
+      { label: 'Designer Wiki', href: '/universum-designer-wiki.html', accent: true }
+    ],
+    paragraphs: [
+      `Universum is the project that keeps expanding. At its core, it\u2019s a digital tabletop wargame, the kind you\u2019d expect to see on a physical table with miniature figurines, hex tiles, and a hand of cards, but built for a screen. The design borrows from miniature wargames, collectible card games, and strategy titles and tries to blend their mechanics into something cohesive rather than frankensteined.`,
+      `The hex-tile board governs movement, line of sight, and terrain interaction. Figurines have stats, abilities, and equipment loadouts. Cards are played from hand to trigger effects, modify unit behavior, or respond to the opponent\u2019s moves. The systems run deep, part of what makes this a long-term project is designing interactions that feel fair and discoverable without being simple.`,
+      `Chess 3 was built as a direct spinoff to isolate and prototype hex movement systems before wiring them into Universum\u2019s more complex rules engine. Development is ongoing, with the game's mechanics constantly evolving as I playtest and iterate on the design. The ultimate goal is a polished digital experience that captures the tactile joy of tabletop gaming while leveraging the unique possibilities of a digital platform. The wiki below details everything that currently works in the prototype with additional features planned. I've also created a a GUI tool to help quickly design and iterate on new content for the game.`,
+    ],
+  },
   {
     id: 'portfolio',
     name: 'tjbrackett.com',
@@ -41,19 +64,6 @@ const PROJECTS: Project[] = [
       `The core idea behind Maestro is that most AI coding tools fail because they start writing before they understand. Maestro runs a structured architect interview first, a batched Q&A loop that progressively refines project requirements until it has enough context to be useful. That interview gets converted into a structured spec, which gets indexed into a ChromaDB RAG system.`,
       `From there, LangGraph-based agent teams execute work against the spec. A smart routing layer sends trivial tasks to cheaper models and complex tasks to heavier ones, with full token cost tracking and configurable budget limits. Human-in-the-loop checkpoints keep things from going off the rails autonomously.`,
       `The toolkit exposes three MCP servers, making it usable from Claude Code, ChatGPT, and other LLM tools as an external knowledge and orchestration layer. Git hooks auto-index commits, validate changes against the spec, and track cost per commit. A React dashboard surfaces agent activity, specs, prompt versions, and cost metrics in real time.`,
-    ],
-  },
-  {
-    id: 'universum',
-    name: 'Universum',
-    tagline: 'A digital tabletop wargame mixing miniature figurines, card systems, and hex-tile strategy.',
-    status: 'in-progress',
-    category: 'Game Dev',
-    tags: ['Game Design', 'Tabletop', 'Hex Grid', 'Systems Design', 'Wargame'],
-    paragraphs: [
-      `Universum is the project that keeps expanding. At its core, it\u2019s a digital tabletop wargame, the kind you\u2019d expect to see on a physical table with miniature figurines, hex tiles, and a hand of cards, but built for a screen. The design borrows from miniature wargames, collectible card games, and strategy titles and tries to blend their mechanics into something cohesive rather than frankensteined.`,
-      `The hex-tile board governs movement, line of sight, and terrain interaction. Figurines have stats, abilities, and equipment loadouts. Cards are played from hand to trigger effects, modify unit behavior, or respond to the opponent\u2019s moves. The systems run deep, part of what makes this a long-term project is designing interactions that feel fair and discoverable without being simple.`,
-      `Chess 3 was built as a direct spinoff to isolate and prototype hex movement systems before wiring them into Universum\u2019s more complex rules engine. Development is ongoing, with the server architecture currently being laid out.`,
     ],
   },
   {
@@ -133,7 +143,7 @@ function WorkDetail({ project }: { project: Project }) {
       <div className="work-tags">
         {project.tags.map(t => <span key={t} className="work-tag">{t}</span>)}
       </div>
-      {(project.github || project.demo) && (
+      {(project.github || project.demo || project.links?.length) && (
         <div className="work-links">
           {project.github && (
             <a href={project.github} target="_blank" rel="noopener noreferrer" className="work-link-btn">GitHub ↗</a>
@@ -141,6 +151,17 @@ function WorkDetail({ project }: { project: Project }) {
           {project.demo && (
             <a href={project.demo} target="_blank" rel="noopener noreferrer" className="work-link-btn work-link-btn--demo">Live Demo ↗</a>
           )}
+          {project.links?.map(link => (
+            <a
+              key={link.href}
+              href={link.href}
+              target="_blank"
+              rel="noopener noreferrer"
+              className={`work-link-btn${link.accent ? ' work-link-btn--demo' : ''}`}
+            >
+              {link.label} ↗
+            </a>
+          ))}
         </div>
       )}
     </div>
