@@ -136,13 +136,10 @@ function WorkDetail({ project }: { project: Project }) {
         </span>
       </div>
       <h2 className="work-title">{project.name}</h2>
-      <p className="work-tagline">{project.tagline}</p>
-      <div className="work-body">
-        {project.paragraphs.map((p, i) => <p key={i}>{p}</p>)}
-      </div>
       <div className="work-tags">
         {project.tags.map(t => <span key={t} className="work-tag">{t}</span>)}
       </div>
+      <p className="work-tagline">{project.tagline}</p>
       {(project.github || project.demo || project.links?.length) && (
         <div className="work-links">
           {project.github && (
@@ -164,6 +161,9 @@ function WorkDetail({ project }: { project: Project }) {
           ))}
         </div>
       )}
+      <div className="work-body">
+        {project.paragraphs.map((p, i) => <p key={i}>{p}</p>)}
+      </div>
     </div>
   )
 }
